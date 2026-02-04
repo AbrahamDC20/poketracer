@@ -1,0 +1,96 @@
+A2a-1 || Heracross || Planta || 2 Rombos || Sobre Luz Triunfal
+A2a-2 || Burmy || Planta || 1 Rombo || Sobre Luz Triunfal
+A2a-3 || Mothim || Planta || 2 Rombos || Sobre Luz Triunfal
+A2a-4 || Combee || Planta || 1 Rombo || Sobre Luz Triunfal
+A2a-5 || Vespiquen || Planta || 2 Rombos || Sobre Luz Triunfal
+A2a-6 || Cherubi || Planta || 1 Rombo || Sobre Luz Triunfal
+A2a-7 || Cherrim || Planta || 2 Rombos || Sobre Luz Triunfal
+A2a-8 || Cherrim || Planta || 2 Rombos || Sobre Luz Triunfal
+A2a-9 || Carnivine || Planta || 3 Rombos || Sobre Luz Triunfal
+A2a-10 || Leafeon EX || Planta || 4 Rombos || Sobre Luz Triunfal
+A2a-11 || Houndour || Fuego || 1 Rombo || Sobre Luz Triunfal
+A2a-12 || Houndoom || Fuego || 2 Rombos || Sobre Luz Triunfal
+A2a-13 || Heatran || Fuego || 3 Rombos || Sobre Luz Triunfal
+A2a-14 || Marill || Agua || 1 Rombo || Sobre Luz Triunfal
+A2a-15 || Azumarill || Agua || 1 Rombo || Sobre Luz Triunfal
+A2a-16 || Barboach || Agua || 1 Rombo || Sobre Luz Triunfal
+A2a-17 || Whiscash || Agua || 2 Rombos || Sobre Luz Triunfal
+A2a-18 || Snorunt || Agua || 1 Rombo || Sobre Luz Triunfal
+A2a-19 || Froslass || Agua || 2 Rombos || Sobre Luz Triunfal
+A2a-20 || Snover || Agua || 1 Rombo || Sobre Luz Triunfal
+A2a-21 || Abomasnow || Agua || 3 Rombos || Sobre Luz Triunfal
+A2a-22 || Glaceon EX || Agua || 4 Rombos || Sobre Luz Triunfal
+A2a-23 || Palkia Origen || Agua || 3 Rombos || Sobre Luz Triunfal
+A2a-24 || Phione || Agua || 2 Rombos || Sobre Luz Triunfal
+A2a-25 || Pikachu || Electrico || 1 Rombo || Sobre Luz Triunfal
+A2a-26 || Raichu || Electrico || 3 Rombos || Sobre Luz Triunfal
+A2a-27 || Electrike || Electrico || 1 Rombo || Sobre Luz Triunfal
+A2a-28 || Manectric || Electrico || 2 Rombos || Sobre Luz Triunfal
+A2a-29 || Clefairy || Psiquico || 1 Rombo || Sobre Luz Triunfal
+A2a-30 || Clefable || Psiquico || 2 Rombos || Sobre Luz Triunfal
+A2a-31 || Gastly || Psiquico || 1 Rombo || Sobre Luz Triunfal
+A2a-32 || Haunter || Psiquico || 1 Rombo || Sobre Luz Triunfal
+A2a-33 || Gengar || Psiquico || 2 Rombos || Sobre Luz Triunfal
+A2a-34 || Unown || Psiquico || 2 Rombos || Sobre Luz Triunfal
+A2a-35 || Rotom || Psiquico || 3 Rombos || Sobre Luz Triunfal
+A2a-36 || Sudowoodo || Lucha || 2 Rombos || Sobre Luz Triunfal
+A2a-37 || Phanpy || Lucha || 1 Rombo || Sobre Luz Triunfal
+A2a-38 || Donphan || Lucha || 2 Rombos || Sobre Luz Triunfal
+A2a-39 || Larvitar || Lucha || 1 Rombo || Sobre Luz Triunfal
+A2a-40 || Pupitar || Lucha || 2 Rombos || Sobre Luz Triunfal
+A2a-41 || Tyranitar || Oscuro || 3 Rombos || Sobre Luz Triunfal
+A2a-42 || Nosepass || Lucha || 1 Rombo || Sobre Luz Triunfal
+A2a-43 || Meditite || Lucha || 1 Rombo || Sobre Luz Triunfal
+A2a-44 || Medicham || Lucha || 2 Rombos || Sobre Luz Triunfal
+A2a-45 || Gible || Lucha || 1 Rombo || Sobre Luz Triunfal
+A2a-46 || Gabite || Lucha || 1 Rombo || Sobre Luz Triunfal
+A2a-47 || Garchomp EX || Lucha || 4 Rombos || Sobre Luz Triunfal
+A2a-48 || Zubat || Oscuro || 1 Rombo || Sobre Luz Triunfal
+A2a-49 || Golbat || Oscuro || 1 Rombo || Sobre Luz Triunfal
+A2a-50 || Crobat || Oscuro || 3 Rombos || Sobre Luz Triunfal
+A2a-51 || Croagunk || Oscuro || 1 Rombo || Sobre Luz Triunfal
+A2a-52 || Toxicroak || Oscuro || 2 Rombos || Sobre Luz Triunfal
+A2a-53 || Magnemite || Acero || 1 Rombo || Sobre Luz Triunfal
+A2a-54 || Magneton || Acero || 1 Rombo || Sobre Luz Triunfal
+A2a-55 || Magnezone || Acero || 3 Rombos || Sobre Luz Triunfal
+A2a-56 || Mawile || Acero || 1 Rombo || Sobre Luz Triunfal
+A2a-57 || Probopass EX || Acero || 4 Rombos || Sobre Luz Triunfal
+A2a-58 || Bronzor || Acero || 1 Rombo || Sobre Luz Triunfal
+A2a-59 || Bronzong || Acero || 2 Rombos || Sobre Luz Triunfal
+A2a-60 || Dialga Origen || Acero || 3 Rombos || Sobre Luz Triunfal
+A2a-61 || Giratina || Dragon || 3 Rombos || Sobre Luz Triunfal
+A2a-62 || Eevee || Incoloro || 1 Rombo || Sobre Luz Triunfal
+A2a-63 || Snorlax || Incoloro || 2 Rombos || Sobre Luz Triunfal
+A2a-64 || Hoothoot || Incoloro || 1 Rombo || Sobre Luz Triunfal
+A2a-65 || Noctowl || Incoloro || 2 Rombos || Sobre Luz Triunfal
+A2a-66 || Starly || Incoloro || 1 Rombo || Sobre Luz Triunfal
+A2a-67 || Staravia || Incoloro || 1 Rombo || Sobre Luz Triunfal
+A2a-68 || Staraptor || Incoloro || 2 Rombos || Sobre Luz Triunfal
+A2a-69 || Shaymin || Incoloro || 3 Rombos || Sobre Luz Triunfal
+A2a-70 || Arceus || Incoloro || 3 Rombos || Sobre Luz Triunfal
+A2a-71 || Arceus EX || Incoloro || 4 Rombos || Sobre Luz Triunfal
+A2a-72 || Nákara || Entrenador || 2 Rombos || Sobre Luz Triunfal
+A2a-73 || Anciana de Pueblo Caelestis || Entrenador || 2 Rombos || Sobre Luz Triunfal
+A2a-74 || Israel || Entrenador || 2 Rombos || Sobre Luz Triunfal
+A2a-75 || Adamas || Entrenador || 2 Rombos || Sobre Luz Triunfal
+A2a-76 || Houndoom || Fuego || 1 Estrella || Sobre Luz Triunfal
+A2a-77 || Marill || Agua || 1 Estrella || Sobre Luz Triunfal
+A2a-78 || Unown || Psiquico || 1 Estrella || Sobre Luz Triunfal
+A2a-79 || Sudowoodo || Lucha || 1 Estrella || Sobre Luz Triunfal
+A2a-80 || Magnemite || Acero || 1 Estrella || Sobre Luz Triunfal
+A2a-81 || Shaymin || Incoloro || 1 Estrella || Sobre Luz Triunfal
+A2a-82 || Leafeon EX || Planta || 2 Estrellas || Sobre Luz Triunfal
+A2a-83 || Glaceon EX || Agua || 2 Estrellas || Sobre Luz Triunfal
+A2a-84 || Garchomp EX || Lucha || 2 Estrellas || Sobre Luz Triunfal
+A2a-85 || Probopass EX || Acero || 2 Estrellas || Sobre Luz Triunfal
+A2a-86 || Arceus EX || Incoloro || 2 Estrellas || Sobre Luz Triunfal
+A2a-87 || Nákara || Entrenador || 2 Estrellas || Sobre Luz Triunfal
+A2a-88 || Anciana de Pueblo Caelestis || Entrenador || 2 Estrellas || Sobre Luz Triunfal
+A2a-89 || Israel || Entrenador || 2 Estrellas || Sobre Luz Triunfal
+A2a-90 || Adamas || Entrenador || 2 Estrellas || Sobre Luz Triunfal
+A2a-91 || Leafeon EX || Planta || 2 Estrellas || Sobre Luz Triunfal
+A2a-92 || Glaceon EX || Agua || 2 Estrellas || Sobre Luz Triunfal
+A2a-93 || Garchomp EX || Lucha || 2 Estrellas || Sobre Luz Triunfal
+A2a-94 || Probopass EX || Acero || 2 Estrellas || Sobre Luz Triunfal
+A2a-95 || Arceus EX || Incoloro || 3 Estrellas || Sobre Luz Triunfal
+A2a-96 || Arceus EX || Incoloro || Corona || Sobre Luz Triunfal

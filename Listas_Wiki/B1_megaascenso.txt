@@ -1,0 +1,331 @@
+B1-1 || Pinsir || Planta || 1 Rombo || Sobre Mega-Blaziken
+B1-2 || Mega-Pinsir EX || Planta || 4 Rombos || Sobre Mega-Blaziken
+B1-3 || Wurmple || Planta || 1 Rombo || Sobre Mega-Blaziken
+B1-4 || Silcoon || Planta || 1 Rombo || Sobre Mega-Blaziken
+B1-5 || Beautifly || Planta || 3 Rombos || Sobre Mega-Blaziken
+B1-6 || Cascoon || Planta || 1 Rombo || Sobre Mega-Blaziken
+B1-7 || Dustox || Planta || 3 Rombos || Sobre Mega-Blaziken
+B1-8 || Seedot || Planta || 1 Rombo || Sobre Mega-Blaziken
+B1-9 || Nuzleaf || Planta || 2 Rombos || Sobre Mega-Blaziken
+B1-10 || Shiftry || Planta || 3 Rombos || Sobre Mega-Blaziken
+B1-11 || Shroomish || Planta || 1 Rombo || Sobre Megaascenso
+B1-12 || Breloom || Planta || 2 Rombos || Sobre Megaascenso
+B1-13 || Pansage || Planta || 1 Rombo || Sobre Mega-Gyarados
+B1-14 || Simisage || Planta || 1 Rombo || Sobre Mega-Gyarados
+B1-15 || Cottonee || Planta || 1 Rombo || Sobre Mega-Altaria
+B1-16 || Whimsicott EX || Planta || 4 Rombos || Sobre Mega-Altaria
+B1-17 || Petilil || Planta || 1 Rombo || Sobre Mega-Altaria
+B1-18 || Lilligant || Planta || 3 Rombos || Sobre Mega-Altaria
+B1-19 || Maractus || Planta || 1 Rombo || Sobre Megaascenso
+B1-20 || Virizion || Planta || 3 Rombos || Sobre Mega-Altaria
+B1-21 || Skiddo || Planta || 1 Rombo || Sobre Mega-Altaria
+B1-22 || Gogoat || Planta || 1 Rombo || Sobre Mega-Altaria
+B1-23 || Phantump || Planta || 1 Rombo || Sobre Megaascenso
+B1-24 || Trevenant || Planta || 2 Rombos || Sobre Megaascenso
+B1-25 || Grookey || Planta || 1 Rombo || Sobre Mega-Altaria
+B1-26 || Thwackey || Planta || 2 Rombos || Sobre Mega-Altaria
+B1-27 || Rillaboom || Planta || 3 Rombos || Sobre Mega-Altaria
+B1-28 || Growlithe || Fuego || 1 Rombo || Sobre Mega-Blaziken
+B1-29 || Arcanine || Fuego || 2 Rombos || Sobre Mega-Blaziken
+B1-30 || Ponyta || Fuego || 1 Rombo || Sobre Mega-Blaziken
+B1-31 || Rapidash EX || Fuego || 4 Rombos || Sobre Mega-Blaziken
+B1-32 || Ho-Oh || Fuego || 3 Rombos || Sobre Mega-Blaziken
+B1-33 || Torchic || Fuego || 1 Rombo || Sobre Mega-Blaziken
+B1-34 || Combusken || Fuego || 2 Rombos || Sobre Mega-Blaziken
+B1-35 || Blaziken || Fuego || 3 Rombos || Sobre Mega-Blaziken
+B1-36 || Mega-Blaziken EX || Fuego || 4 Rombos || Sobre Mega-Blaziken
+B1-37 || Pansear || Fuego || 1 Rombo || Sobre Mega-Blaziken
+B1-38 || Simisear || Fuego || 1 Rombo || Sobre Mega-Blaziken
+B1-39 || Darumaka || Fuego || 1 Rombo || Sobre Mega-Gyarados
+B1-40 || Darmanitan || Fuego || 2 Rombos || Sobre Mega-Gyarados
+B1-41 || Litwick || Fuego || 1 Rombo || Sobre Mega-Altaria
+B1-42 || Lampent || Fuego || 2 Rombos || Sobre Mega-Altaria
+B1-43 || Chandelure || Fuego || 3 Rombos || Sobre Mega-Altaria
+B1-44 || Heatmor || Fuego || 1 Rombo || Sobre Megaascenso
+B1-45 || Litleo || Fuego || 1 Rombo || Sobre Mega-Blaziken
+B1-46 || Pyroar || Fuego || 3 Rombos || Sobre Mega-Blaziken
+B1-47 || Turtonator || Fuego || 2 Rombos || Sobre Mega-Gyarados
+B1-48 || Psyduck || Agua || 1 Rombo || Sobre Mega-Blaziken
+B1-49 || Golduck || Agua || 1 Rombo || Sobre Mega-Blaziken
+B1-50 || Magikarp || Agua || 1 Rombo || Sobre Mega-Gyarados
+B1-51 || Gyarados || Agua || 3 Rombos || Sobre Mega-Gyarados
+B1-52 || Mega-Gyarados EX || Agua || 4 Rombos || Sobre Mega-Gyarados
+B1-53 || Lotad || Agua || 1 Rombo || Sobre Mega-Altaria
+B1-54 || Lombre || Agua || 2 Rombos || Sobre Mega-Altaria
+B1-55 || Ludicolo || Agua || 3 Rombos || Sobre Mega-Altaria
+B1-56 || Wailmer || Agua || 1 Rombo || Sobre Mega-Gyarados
+B1-57 || Wailord || Agua || 3 Rombos || Sobre Mega-Gyarados
+B1-58 || Corphish || Agua || 1 Rombo || Sobre Megaascenso
+B1-59 || Crawdaunt || Agua || 2 Rombos || Sobre Megaascenso
+B1-60 || Luvdisc || Agua || 1 Rombo || Sobre Mega-Altaria
+B1-61 || Panpour || Agua || 1 Rombo || Sobre Mega-Altaria
+B1-62 || Simipour || Agua || 1 Rombo || Sobre Mega-Altaria
+B1-63 || Tympole || Agua || 1 Rombo || Sobre Megaascenso
+B1-64 || Palpitoad || Agua || 1 Rombo || Sobre Megaascenso
+B1-65 || Seismitoad || Agua || 2 Rombos || Sobre Megaascenso
+B1-66 || Tirtouga || Agua || 2 Rombos || Sobre Mega-Gyarados
+B1-67 || Carracosta || Agua || 3 Rombos || Sobre Mega-Gyarados
+B1-68 || Frillish || Agua || 1 Rombo || Sobre Mega-Gyarados
+B1-69 || Jellicent || Agua || 3 Rombos || Sobre Mega-Gyarados
+B1-70 || Keldeo || Agua || 3 Rombos || Sobre Mega-Blaziken
+B1-71 || Froakie || Agua || 1 Rombo || Sobre Mega-Gyarados
+B1-72 || Frogadier || Agua || 2 Rombos || Sobre Mega-Gyarados
+B1-73 || Greninja EX || Agua || 4 Rombos || Sobre Mega-Gyarados
+B1-74 || Bergmite || Agua || 1 Rombo || Sobre Mega-Gyarados
+B1-75 || Avalugg || Agua || 2 Rombos || Sobre Mega-Gyarados
+B1-76 || Chewtle || Agua || 1 Rombo || Sobre Mega-Gyarados
+B1-77 || Drednaw || Agua || 2 Rombos || Sobre Mega-Gyarados
+B1-78 || Arrokuda || Agua || 1 Rombo || Sobre Mega-Gyarados
+B1-79 || Barraskewda || Agua || 2 Rombos || Sobre Mega-Gyarados
+B1-80 || Eiscue || Agua || 3 Rombos || Sobre Mega-Blaziken
+B1-81 || Jolteon EX || Electrico || 4 Rombos || Sobre Mega-Gyarados
+B1-82 || Mareep || Electrico || 1 Rombo || Sobre Mega-Altaria
+B1-83 || Flaaffy || Electrico || 2 Rombos || Sobre Mega-Altaria
+B1-84 || Ampharos || Electrico || 3 Rombos || Sobre Mega-Altaria
+B1-85 || Mega-Ampharos EX || Electrico || 4 Rombos || Sobre Mega-Altaria
+B1-86 || Shinx || Electrico || 1 Rombo || Sobre Mega-Blaziken
+B1-87 || Luxio || Electrico || 2 Rombos || Sobre Mega-Blaziken
+B1-88 || Luxray || Electrico || 3 Rombos || Sobre Mega-Blaziken
+B1-89 || Pachirisu || Electrico || 1 Rombo || Sobre Megaascenso
+B1-90 || Blitzle || Electrico || 1 Rombo || Sobre Mega-Blaziken
+B1-91 || Zebstrika || Electrico || 2 Rombos || Sobre Mega-Blaziken
+B1-92 || Joltik || Electrico || 1 Rombo || Sobre Megaascenso
+B1-93 || Galvantula || Electrico || 2 Rombos || Sobre Megaascenso
+B1-94 || Dedenne || Electrico || 1 Rombo || Sobre Mega-Altaria
+B1-95 || Yamper || Electrico || 1 Rombo || Sobre Mega-Altaria
+B1-96 || Boltund || Electrico || 2 Rombos || Sobre Mega-Altaria
+B1-97 || Natu || Psiquico || 1 Rombo || Sobre Megaascenso
+B1-98 || Xatu || Psiquico || 2 Rombos || Sobre Megaascenso
+B1-99 || Misdreavus || Psiquico || 1 Rombo || Sobre Megaascenso
+B1-100 || Mismagius || Psiquico || 2 Rombos || Sobre Megaascenso
+B1-101 || Sableye || Psiquico || 1 Rombo || Sobre Mega-Altaria
+B1-102 || Mega-Altaria EX || Dragon || 4 Rombos || Sobre Mega-Altaria
+B1-103 || Duskull || Psiquico || 1 Rombo || Sobre Mega-Blaziken
+B1-104 || Dusclops || Psiquico || 2 Rombos || Sobre Mega-Blaziken
+B1-105 || Dusknoir || Psiquico || 3 Rombos || Sobre Mega-Blaziken
+B1-106 || Jirachi || Psiquico || 3 Rombos || Sobre Mega-Altaria
+B1-107 || Drifloon || Psiquico || 1 Rombo || Sobre Mega-Altaria
+B1-108 || Drifblim || Psiquico || 2 Rombos || Sobre Mega-Altaria
+B1-109 || Chingling || Psiquico || 3 Rombos || Sobre Megaascenso
+B1-110 || Yamask || Psiquico || 1 Rombo || Sobre Mega-Gyarados
+B1-111 || Cofagrigus || Psiquico || 3 Rombos || Sobre Mega-Gyarados
+B1-112 || Gothita || Psiquico || 1 Rombo || Sobre Mega-Altaria
+B1-113 || Gothorita || Psiquico || 2 Rombos || Sobre Mega-Altaria
+B1-114 || Gothitelle || Psiquico || 3 Rombos || Sobre Mega-Altaria
+B1-115 || Spritzee || Psiquico || 1 Rombo || Sobre Megaascenso
+B1-116 || Aromatisse || Psiquico || 2 Rombos || Sobre Megaascenso
+B1-117 || Swirlix || Psiquico || 1 Rombo || Sobre Mega-Altaria
+B1-118 || Slurpuff || Psiquico || 2 Rombos || Sobre Mega-Altaria
+B1-119 || Carbink || Psiquico || 1 Rombo || Sobre Mega-Altaria
+B1-120 || Klefki || Psiquico || 3 Rombos || Sobre Mega-Gyarados
+B1-121 || Indeedee EX || Psiquico || 4 Rombos || Sobre Mega-Altaria
+B1-122 || Sandshrew || Lucha || 1 Rombo || Sobre Megaascenso
+B1-123 || Sandslash || Lucha || 2 Rombos || Sobre Megaascenso
+B1-124 || Hitmonchan EX || Lucha || 4 Rombos || Sobre Mega-Blaziken
+B1-125 || Sudowoodo || Lucha || 1 Rombo || Sobre Megaascenso
+B1-126 || Makuhita || Lucha || 1 Rombo || Sobre Mega-Blaziken
+B1-127 || Hariyama || Lucha || 2 Rombos || Sobre Mega-Blaziken
+B1-128 || Hippopotas || Lucha || 1 Rombo || Sobre Mega-Gyarados
+B1-129 || Hippowdon || Lucha || 2 Rombos || Sobre Mega-Gyarados
+B1-130 || Sandile || Lucha || 1 Rombo || Sobre Mega-Gyarados
+B1-131 || Krokorok || Lucha || 2 Rombos || Sobre Mega-Gyarados
+B1-132 || Krookodile || Lucha || 3 Rombos || Sobre Mega-Gyarados
+B1-133 || Archen || Lucha || 2 Rombos || Sobre Mega-Blaziken
+B1-134 || Archeops || Lucha || 3 Rombos || Sobre Mega-Blaziken
+B1-135 || Golett || Lucha || 1 Rombo || Sobre Mega-Blaziken
+B1-136 || Golurk || Lucha || 3 Rombos || Sobre Mega-Blaziken
+B1-137 || Terrakion || Lucha || 3 Rombos || Sobre Mega-Gyarados
+B1-138 || Pancham || Lucha || 1 Rombo || Sobre Mega-Gyarados
+B1-139 || Crabrawler || Lucha || 1 Rombo || Sobre Mega-Blaziken
+B1-140 || Crabominable || Lucha || 2 Rombos || Sobre Mega-Blaziken
+B1-141 || Stufful || Lucha || 1 Rombo || Sobre Mega-Blaziken
+B1-142 || Bewear || Lucha || 2 Rombos || Sobre Mega-Blaziken
+B1-143 || Sandygast || Lucha || 1 Rombo || Sobre Megaascenso
+B1-144 || Palossand || Lucha || 2 Rombos || Sobre Megaascenso
+B1-145 || Rolycoly || Lucha || 1 Rombo || Sobre Mega-Gyarados
+B1-146 || Carkol || Lucha || 2 Rombos || Sobre Mega-Gyarados
+B1-147 || Coalossal || Lucha || 3 Rombos || Sobre Mega-Gyarados
+B1-148 || Murkrow || Oscuro || 1 Rombo || Sobre Mega-Gyarados
+B1-149 || Honchkrow || Oscuro || 3 Rombos || Sobre Mega-Gyarados
+B1-150 || Absol || Oscuro || 2 Rombos || Sobre Mega-Gyarados
+B1-151 || Mega-Absol EX || Oscuro || 4 Rombos || Sobre Mega-Gyarados
+B1-152 || Skorupi || Oscuro || 1 Rombo || Sobre Mega-Gyarados
+B1-153 || Drapion || Oscuro || 2 Rombos || Sobre Mega-Gyarados
+B1-154 || Darkrai || Oscuro || 3 Rombos || Sobre Mega-Altaria
+B1-155 || Deino || Oscuro || 1 Rombo || Sobre Mega-Gyarados
+B1-156 || Zweilous || Oscuro || 2 Rombos || Sobre Mega-Gyarados
+B1-157 || Hydreigon || Oscuro || 3 Rombos || Sobre Mega-Gyarados
+B1-158 || Pangoro || Oscuro || 3 Rombos || Sobre Mega-Gyarados
+B1-159 || Skrelp || Oscuro || 1 Rombo || Sobre Mega-Blaziken
+B1-160 || Dragalge EX || Oscuro || 4 Rombos || Sobre Mega-Blaziken
+B1-161 || Mareanie || Oscuro || 1 Rombo || Sobre Megaascenso
+B1-162 || Toxapex || Oscuro || 2 Rombos || Sobre Megaascenso
+B1-163 || Impidimp || Oscuro || 1 Rombo || Sobre Mega-Altaria
+B1-164 || Morgrem || Oscuro || 2 Rombos || Sobre Mega-Altaria
+B1-165 || Grimmsnarl || Oscuro || 3 Rombos || Sobre Mega-Altaria
+B1-166 || Ferroseed || Acero || 1 Rombo || Sobre Megaascenso
+B1-167 || Ferrothorn || Acero || 2 Rombos || Sobre Megaascenso
+B1-168 || Durant || Acero || 1 Rombo || Sobre Megaascenso
+B1-169 || Cobalion || Acero || 3 Rombos || Sobre Mega-Blaziken
+B1-170 || Honedge || Acero || 1 Rombo || Sobre Mega-Blaziken
+B1-171 || Doublade || Acero || 2 Rombos || Sobre Mega-Blaziken
+B1-172 || Aegislash || Acero || 3 Rombos || Sobre Mega-Blaziken
+B1-173 || Meltan || Acero || 1 Rombo || Sobre Mega-Gyarados
+B1-174 || Melmetal EX || Acero || 4 Rombos || Sobre Mega-Gyarados
+B1-175 || Corviknight || Acero || 3 Rombos || Sobre Mega-Blaziken
+B1-176 || Druddigon || Dragon || 1 Rombo || Sobre Mega-Gyarados
+B1-177 || Goomy || Dragon || 1 Rombo || Sobre Mega-Altaria
+B1-178 || Sliggoo || Dragon || 2 Rombos || Sobre Mega-Altaria
+B1-179 || Goodra || Dragon || 3 Rombos || Sobre Mega-Altaria
+B1-180 || Pidgey || Incoloro || 1 Rombo || Sobre Megaascenso
+B1-181 || Pidgeotto || Incoloro || 1 Rombo || Sobre Megaascenso
+B1-182 || Pidgeot || Incoloro || 2 Rombos || Sobre Megaascenso
+B1-183 || Tauros EX || Incoloro || 4 Rombos || Sobre Mega-Altaria
+B1-184 || Eevee || Incoloro || 1 Rombo || Sobre Mega-Gyarados
+B1-185 || Aipom || Incoloro || 1 Rombo || Sobre Mega-Altaria
+B1-186 || Ambipom || Incoloro || 2 Rombos || Sobre Mega-Altaria
+B1-187 || Miltank || Incoloro || 1 Rombo || Sobre Megaascenso
+B1-188 || Zigzagoon || Incoloro || 1 Rombo || Sobre Megaascenso
+B1-189 || Linoone || Incoloro || 2 Rombos || Sobre Megaascenso
+B1-190 || Whismur || Incoloro || 1 Rombo || Sobre Mega-Gyarados
+B1-191 || Loudred || Incoloro || 1 Rombo || Sobre Mega-Gyarados
+B1-192 || Exploud || Incoloro || 3 Rombos || Sobre Mega-Gyarados
+B1-193 || Skitty || Incoloro || 1 Rombo || Sobre Mega-Gyarados
+B1-194 || Delcatty || Incoloro || 3 Rombos || Sobre Mega-Gyarados
+B1-195 || Spinda || Incoloro || 1 Rombo || Sobre Mega-Altaria
+B1-196 || Swablu || Incoloro || 1 Rombo || Sobre Mega-Altaria
+B1-197 || Altaria || Incoloro || 3 Rombos || Sobre Mega-Altaria
+B1-198 || Chatot || Incoloro || 1 Rombo || Sobre Megaascenso
+B1-199 || Patrat || Incoloro || 1 Rombo || Sobre Megaascenso
+B1-200 || Watchog || Incoloro || 2 Rombos || Sobre Megaascenso
+B1-201 || Lillipup || Incoloro || 1 Rombo || Sobre Mega-Altaria
+B1-202 || Herdier || Incoloro || 2 Rombos || Sobre Mega-Altaria
+B1-203 || Stoutland || Incoloro || 3 Rombos || Sobre Mega-Altaria
+B1-204 || Rufflet || Incoloro || 1 Rombo || Sobre Mega-Blaziken
+B1-205 || Braviary || Incoloro || 2 Rombos || Sobre Mega-Blaziken
+B1-206 || Furfrou || Incoloro || 2 Rombos || Sobre Mega-Blaziken
+B1-207 || Furfrou || Incoloro || 2 Rombos || Sobre Mega-Altaria
+B1-208 || Furfrou || Incoloro || 2 Rombos || Sobre Mega-Gyarados
+B1-209 || Rookidee || Incoloro || 1 Rombo || Sobre Mega-Blaziken
+B1-210 || Corvisquire || Incoloro || 2 Rombos || Sobre Mega-Blaziken
+B1-211 || Wooloo || Incoloro || 1 Rombo || Sobre Mega-Altaria
+B1-212 || Dubwool || Incoloro || 2 Rombos || Sobre Mega-Altaria
+B1-213 || Ruleta Jugarreta || Entrenador || 2 Rombos || Sobre Mega-Blaziken
+B1-214 || Fósil Pluma || Entrenador || 1 Rombo || Sobre Mega-Blaziken
+B1-215 || Mazo Golpeador || Entrenador || 2 Rombos || Sobre Mega-Gyarados
+B1-216 || Fósil Tapa || Entrenador || 1 Rombo || Sobre Mega-Gyarados
+B1-217 || Refuerzo Fuego || Entrenador || 2 Rombos || Sobre Mega-Blaziken
+B1-218 || Baya Zidra || Entrenador || 2 Rombos || Sobre Mega-Altaria
+B1-219 || Casco Pesado || Entrenador || 2 Rombos || Sobre Mega-Gyarados
+B1-220 || Manoplas Suerte || Entrenador || 2 Rombos || Sobre Mega-Altaria
+B1-221 || Ciprián || Entrenador || 2 Rombos || Sobre Mega-Gyarados
+B1-222 || Kaudan || Entrenador || 2 Rombos || Sobre Mega-Blaziken
+B1-223 || Aura || Entrenador || 2 Rombos || Sobre Mega-Blaziken
+B1-224 || Fantina || Entrenador || 2 Rombos || Sobre Mega-Altaria
+B1-225 || Copiona || Entrenador || 2 Rombos || Sobre Mega-Gyarados
+B1-226 || Ariana || Entrenador || 2 Rombos || Sobre Mega-Altaria
+B1-227 || Beautifly || Planta || 1 Estrella || Sobre Mega-Blaziken
+B1-228 || Skiddo || Planta || 1 Estrella || Sobre Mega-Altaria
+B1-229 || Rillaboom || Planta || 1 Estrella || Sobre Mega-Altaria
+B1-230 || Growlithe || Fuego || 1 Estrella || Sobre Mega-Blaziken
+B1-231 || Chandelure || Fuego || 1 Estrella || Sobre Mega-Altaria
+B1-232 || Magikarp || Agua || 1 Estrella || Sobre Mega-Gyarados
+B1-233 || Ludicolo || Agua || 1 Estrella || Sobre Mega-Altaria
+B1-234 || Jellicent || Agua || 1 Estrella || Sobre Mega-Gyarados
+B1-235 || Keldeo || Agua || 1 Estrella || Sobre Mega-Blaziken
+B1-236 || Eiscue || Agua || 1 Estrella || Sobre Mega-Altaria
+B1-237 || Luxray || Electrico || 1 Estrella || Sobre Mega-Blaziken
+B1-238 || Cofagrigus || Psiquico || 1 Estrella || Sobre Mega-Gyarados
+B1-239 || Keldeo || Lucha || 1 Estrella || Sobre Mega-Altaria
+B1-240 || Makuhita || Lucha || 1 Estrella || Sobre Mega-Blaziken
+B1-241 || Hippowdon || Lucha || 1 Estrella || Sobre Mega-Gyarados
+B1-242 || Archeops || Lucha || 1 Estrella || Sobre Mega-Blaziken
+B1-243 || Pancham || Lucha || 1 Estrella || Sobre Mega-Gyarados
+B1-244 || Honchkrow || Oscuro || 1 Estrella || Sobre Mega-Gyarados
+B1-245 || Hydreigon || Oscuro || 1 Estrella || Sobre Mega-Gyarados
+B1-246 || Corviknight || Acero || 1 Estrella || Sobre Mega-Blaziken
+B1-247 || Goomy || Dragon || 1 Estrella || Sobre Mega-Altaria
+B1-248 || Delcatty || Incoloro || 1 Estrella || Sobre Mega-Gyarados
+B1-249 || Stoutland || Incoloro || 1 Estrella || Sobre Mega-Altaria
+B1-250 || Rufflet || Incoloro || 1 Estrella || Sobre Mega-Blaziken
+B1-251 || Mega-Pinsir EX || Planta || 2 Estrellas || Sobre Mega-Blaziken
+B1-252 || Whimsicott EX || Planta || 2 Estrellas || Sobre Mega-Altaria
+B1-253 || Rapidash EX || Fuego || 2 Estrellas || Sobre Mega-Blaziken
+B1-254 || Mega-Blaziken EX || Fuego || 2 Estrellas || Sobre Mega-Blaziken
+B1-255 || Mega-Gyarados EX || Agua || 2 Estrellas || Sobre Mega-Gyarados
+B1-256 || Greninja EX || Agua || 2 Estrellas || Sobre Mega-Gyarados
+B1-257 || Jolteon EX || Electrico || 2 Estrellas || Sobre Mega-Gyarados
+B1-258 || Mega-Ampharos EX || Electrico || 2 Estrellas || Sobre Mega-Altaria
+B1-259 || Mega-Altaria EX || Dragon || 2 Estrellas || Sobre Mega-Altaria
+B1-260 || Indeedee EX || Psiquico || 2 Estrellas || Sobre Mega-Altaria
+B1-261 || Hitmonchan EX || Lucha || 2 Estrellas || Sobre Mega-Blaziken
+B1-262 || Mega-Absol EX || Oscuro || 2 Estrellas || Sobre Mega-Gyarados
+B1-263 || Dragalge EX || Oscuro || 2 Estrellas || Sobre Mega-Blaziken
+B1-264 || Melmetal EX || Acero || 2 Estrellas || Sobre Mega-Gyarados
+B1-265 || Tauros EX || Incoloro || 2 Estrellas || Sobre Mega-Altaria
+B1-266 || Ciprián || Entrenador || 2 Estrellas || Sobre Mega-Gyarados
+B1-267 || Kaudan || Entrenador || 2 Estrellas || Sobre Mega-Blaziken
+B1-268 || Aura || Entrenador || 2 Estrellas || Sobre Mega-Blaziken
+B1-269 || Fantina || Entrenador || 2 Estrellas || Sobre Mega-Altaria
+B1-270 || Copiona || Entrenador || 2 Estrellas || Sobre Mega-Gyarados
+B1-271 || Ariana || Entrenador || 2 Estrellas || Sobre Mega-Altaria
+B1-272 || Mega-Pinsir EX || Planta || 2 Estrellas || Sobre Mega-Blaziken
+B1-273 || Whimsicott EX || Planta || 2 Estrellas || Sobre Mega-Altaria
+B1-274 || Rapidash EX || Fuego || 2 Estrellas || Sobre Mega-Blaziken
+B1-275 || Greninja EX || Agua || 2 Estrellas || Sobre Mega-Gyarados
+B1-276 || Jolteon EX || Electrico || 2 Estrellas || Sobre Mega-Gyarados
+B1-277 || Mega-Ampharos EX || Electrico || 2 Estrellas || Sobre Mega-Altaria
+B1-278 || Indeedee EX || Psiquico || 2 Estrellas || Sobre Mega-Altaria
+B1-279 || Hitmonchan EX || Lucha || 2 Estrellas || Sobre Mega-Blaziken
+B1-280 || Mega-Absol EX || Oscuro || 2 Estrellas|| Sobre Mega-Gyarados
+B1-281 || Dragalge EX || Oscuro || 2 Estrellas || Sobre Mega-Blaziken
+B1-282 || Melmetal EX || Acero || 2 Estrellas || Sobre Mega-Gyarados
+B1-283 || Tauros EX || Incoloro || 2 Estrellas || Sobre Mega-Altaria
+B1-284 || Mega-Blaziken EX || Fuego || 3 Estrellas || Sobre Mega-Blaziken
+B1-285 || Mega-Gyarados EX || Agua || 3 Estrellas || Sobre Mega-Gyarados
+B1-286 || Mega-Altaria EX || Dragon || 3 Estrellas || Sobre Mega-Altaria
+B1-287 || Bellsprout || Planta || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-288 || Weepinbell || Planta || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-289 || Victreebel || Planta || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-290 || Rowlet || Planta || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-291 || Dartrix || Planta || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-292 || Moltres || Fuego || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-293 || Litten || Fuego || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-294 || Torracat || Fuego || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-295 || Poliwag || Agua || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-296 || Poliwhirl || Agua || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-297 || Poliwrath || Agua || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-298 || Articuno || Agua || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-299 || Manaphy || Agua || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-300 || Popplio || Agua || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-301 || Brionne || Agua || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-302 || Zapdos || Electrico || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-303 || Oricorio || Electrico || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-304 || Zeraora || Electrico || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-305 || Drowzee || Psiquico || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-306 || Hypno || Psiquico || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-307 || Geodude || Lucha || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-308 || Graveler || Lucha || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-309 || Golem || Lucha || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-310 || Rockruff || Lucha || Shiny 1 Estrella || Sobre Mega-Gyarados
+B1-311 || Diglett de Alola || Acero || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-312 || Meowth || Incoloro || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-313 || Persian || Incoloro || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-314 || Doduo || Incoloro || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-315 || Dodrio || Incoloro || Shiny 1 Estrella || Sobre Mega-Blaziken
+B1-316 || Bidoof || Incoloro || Shiny 1 Estrella || Sobre Mega-Altaria
+B1-317 || Decidueye EX || Planta || Shiny 2 Estrellas || Sobre Mega-Blaziken
+B1-318 || Incineroar EX || Fuego || Shiny 2 Estrellas || Sobre Mega-Gyarados
+B1-319 || Palkia EX || Agua || Shiny 2 Estrellas || Sobre Mega-Altaria
+B1-320 || Primarina EX || Agua || Shiny 2 Estrellas || Sobre Mega-Altaria
+B1-321 || Pikachu EX || Electrico || Shiny 2 Estrellas || Sobre Mega-Gyarados
+B1-322 || Tapu Koko EX || Electrico || Shiny 2 Estrellas || Sobre Mega-Blaziken
+B1-323 || Lycanroc EX || Lucha || Shiny 2 Estrellas || Sobre Mega-Gyarados
+B1-324 || Passimian EX || Lucha || Shiny 2 Estrellas || Sobre Mega-Altaria
+B1-325 || Dugtrio de Alola EX || Acero || Shiny 2 Estrellas || Sobre Mega-Blaziken
+B1-326 || Dialga EX || Acero || Shiny 2 Estrellas || Sobre Mega-Altaria
+B1-327 || Bibarel EX || Incoloro || Shiny 2 Estrellas || Sobre Mega-Altaria
+B1-328 || Arceus EX || Incoloro || Shiny 2 Estrellas || Sobre Mega-Gyarados
+B1-329 || Lilligant || Planta || Corona || Sobre Megaascenso
+B1-330 || Klefki || Psiquico || Corona || Sobre Megaascenso
+B1-331 || Refuerzo Fuego || Entrenador || Corona || Sobre Megaascenso

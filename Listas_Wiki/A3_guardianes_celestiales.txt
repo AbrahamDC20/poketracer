@@ -1,0 +1,239 @@
+A3-1 || Exeggcute || Planta || 1 Rombo || Sobre Lunala
+A3-2 || Exeggutor de Alola || Planta || 3 Rombos || Sobre Lunala
+A3-3 || Surskit || Planta || 1 Rombo || Sobre Guardianes Celestiales
+A3-4 || Masquerain || Planta || 2 Rombos || Sobre Guardianes Celestiales
+A3-5 || Maractus || Planta || 1 Rombo || Sobre Lunala
+A3-6 || Karrablast || Planta || 1 Rombo || Sobre Guardianes Celestiales
+A3-7 || Phantump || Planta || 1 Rombo || Sobre Solgaleo
+A3-8 || Trevenant || Planta || 2 Rombos || Sobre Solgaleo
+A3-9 || Rowlet || Planta || 1 Rombo || Sobre Solgaleo
+A3-10 || Rowlet || Planta || 1 Rombo || Sobre Lunala
+A3-11 || Dartrix || Planta || 2 Rombos || Sobre Lunala
+A3-12 || Decidueye EX || Planta || 4 Rombos || Sobre Lunala
+A3-13 || Grubbin || Planta || 1 Rombo || Sobre Lunala
+A3-14 || Fomantis || Planta || 1 Rombo || Sobre Guardianes Celestiales
+A3-15 || Lurantis || Planta || 2 Rombos || Sobre Guardianes Celestiales
+A3-16 || Morelull || Planta || 1 Rombo || Sobre Lunala
+A3-17 || Shiinotic || Planta || 2 Rombos || Sobre Lunala
+A3-18 || Bounsweet || Planta || 1 Rombo || Sobre Solgaleo
+A3-19 || Steenee || Planta || 2 Rombos || Sobre Solgaleo
+A3-20 || Tsareena || Planta || 3 Rombos || Sobre Solgaleo
+A3-21 || Wimpod || Planta || 1 Rombo || Sobre Solgaleo
+A3-22 || Golisopod || Planta || 3 Rombos || Sobre Solgaleo
+A3-23 || Dhelmise EX || Planta || 4 Rombos || Sobre Solgaleo
+A3-24 || Tapu Bulu || Planta || 3 Rombos || Sobre Solgaleo
+A3-25 || Growlithe || Fuego || 1 Rombo || Sobre Guardianes Celestiales
+A3-26 || Arcanine || Fuego || 2 Rombos || Sobre Guardianes Celestiales
+A3-27 || Marowak de Alola || Fuego || 2 Rombos || Sobre Lunala
+A3-28 || Fletchinder || Fuego || 1 Rombo || Sobre Solgaleo
+A3-29 || Talonflame || Fuego || 3 Rombos || Sobre Solgaleo
+A3-30 || Litten || Fuego || 1 Rombo || Sobre Solgaleo
+A3-31 || Litten || Fuego || 1 Rombo || Sobre Lunala
+A3-32 || Torracat || Fuego || 2 Rombos || Sobre Solgaleo
+A3-33 || Incineroar EX || Fuego || 4 Rombos || Sobre Solgaleo
+A3-34 || Oricorio || Fuego || 2 Rombos || Sobre Lunala
+A3-35 || Salandit || Fuego || 1 Rombo || Sobre Guardianes Celestiales
+A3-36 || Salazzle || Fuego || 1 Rombo || Sobre Guardianes Celestiales
+A3-37 || Turtonator || Fuego || 3 Rombos || Sobre Lunala
+A3-38 || Sandshrew de Alola || Agua || 1 Rombo || Sobre Guardianes Celestiales
+A3-39 || Sandslash de Alola || Agua || 2 Rombos || Sobre Guardianes Celestiales
+A3-40 || Vulpix de Alola || Agua || 1 Rombo || Sobre Lunala
+A3-41 || Ninetales de Alola || Agua || 3 Rombos || Sobre Lunala
+A3-42 || Shellder || Agua || 1 Rombo || Sobre Solgaleo
+A3-43 || Cloyster || Agua || 2 Rombos || Sobre Solgaleo
+A3-44 || Lapras || Agua || 2 Rombos || Sobre Solgaleo
+A3-45 || Popplio || Agua || 1 Rombo || Sobre Lunala
+A3-46 || Popplio || Agua || 1 Rombo || Sobre Solgaleo
+A3-47 || Brionne || Agua || 2 Rombos || Sobre Lunala
+A3-48 || Primarina || Agua || 3 Rombos || Sobre Lunala
+A3-49 || Crabominable EX || Agua || 4 Rombos || Sobre Solgaleo
+A3-50 || Wishiwashi || Agua || 1 Rombo || Sobre Lunala
+A3-51 || Wishiwashi EX || Agua || 4 Rombos || Sobre Lunala
+A3-52 || Dewpider || Agua || 1 Rombo || Sobre Solgaleo
+A3-53 || Araquanid || Agua || 2 Rombos || Sobre Solgaleo
+A3-54 || Pyukumuku || Agua || 1 Rombo || Sobre Lunala
+A3-55 || Bruxish || Agua || 1 Rombo || Sobre Guardianes Celestiales
+A3-56 || Tapu Fini || Agua || 3 Rombos || Sobre Lunala
+A3-57 || Pikachu || Electrico || 1 Rombo || Sobre Solgaleo
+A3-58 || Raichu de Alola EX || Electrico || 4 Rombos || Sobre Solgaleo
+A3-59 || Geodude de Alola || Electrico || 1 Rombo || Sobre Solgaleo
+A3-60 || Graveler de Alola || Electrico || 2 Rombos || Sobre Solgaleo
+A3-61 || Golem de Alola || Electrico || 3 Rombos || Sobre Solgaleo
+A3-62 || Helioptile || Electrico || 1 Rombo || Sobre Guardianes Celestiales
+A3-63 || Heliolisk || Electrico || 1 Rombo || Sobre Guardianes Celestiales
+A3-64 || Charjabug || Electrico || 2 Rombos || Sobre Lunala
+A3-65 || Vikavolt || Electrico || 3 Rombos || Sobre Lunala
+A3-66 || Oricorio || Electrico || 3 Rombos || Sobre Solgaleo
+A3-67 || Togedemaru || Electrico || 1 Rombo || Sobre Lunala
+A3-68 || Tapu Koko || Electrico || 3 Rombos || Sobre Solgaleo
+A3-69 || Mr. Mime || Psiquico || 2 Rombos || Sobre Solgaleo
+A3-70 || Sableye || Psiquico || 2 Rombos || Sobre Guardianes Celestiales
+A3-71 || Spoink || Psiquico || 1 Rombo || Sobre Guardianes Celestiales
+A3-72 || Grumpig || Psiquico || 2 Rombos || Sobre Guardianes Celestiales
+A3-73 || Lunatone || Psiquico || 1 Rombo || Sobre Lunala
+A3-74 || Shuppet || Psiquico || 1 Rombo || Sobre Guardianes Celestiales
+A3-75 || Banette || Psiquico || 1 Rombo || Sobre Guardianes Celestiales
+A3-76 || Oricorio || Psiquico || 2 Rombos || Sobre Solgaleo
+A3-77 || Oricorio || Psiquico || 2 Rombos || Sobre Lunala
+A3-78 || Cutiefly || Psiquico || 1 Rombo || Sobre Solgaleo
+A3-79 || Ribombee || Psiquico || 1 Rombo || Sobre Solgaleo
+A3-80 || Comfey || Psiquico || 3 Rombos || Sobre Solgaleo
+A3-81 || Sandygast || Psiquico || 1 Rombo || Sobre Solgaleo
+A3-82 || Palossand || Psiquico || 3 Rombos || Sobre Solgaleo
+A3-83 || Mimikyu || Psiquico || 1 Rombo || Sobre Lunala
+A3-84 || Tapu Lele || Psiquico || 3 Rombos || Sobre Lunala
+A3-85 || Cosmog || Psiquico || 1 Rombo || Sobre Guardianes Celestiales
+A3-86 || Cosmoem || Psiquico || 2 Rombos || Sobre Guardianes Celestiales
+A3-87 || Lunala EX || Psiquico || 4 Rombos || Sobre Lunala
+A3-88 || Necrozma || Psiquico || 3 Rombos || Sobre Lunala
+A3-89 || Cubone || Lucha || 1 Rombo || Sobre Lunala
+A3-90 || Makuhita || Lucha || 1 Rombo || Sobre Guardianes Celestiales
+A3-91 || Hariyama || Lucha || 2 Rombos || Sobre Guardianes Celestiales
+A3-92 || Solrock || Lucha || 1 Rombo || Sobre Solgaleo
+A3-93 || Drilbur || Lucha || 1 Rombo || Sobre Guardianes Celestiales
+A3-94 || Timburr || Lucha || 1 Rombo || Sobre Lunala
+A3-95 || Gurdurr || Lucha || 2 Rombos || Sobre Lunala
+A3-96 || Conkeldurr || Lucha || 3 Rombos || Sobre Lunala
+A3-97 || Crabrawler || Lucha || 1 Rombo || Sobre Solgaleo
+A3-98 || Rockruff || Lucha || 1 Rombo || Sobre Lunala
+A3-99 || Rockruff || Lucha || 1 Rombo || Sobre Solgaleo
+A3-100 || Lycanroc || Lucha || 3 Rombos || Sobre Solgaleo
+A3-101 || Lycanroc || Lucha || 3 Rombos || Sobre Lunala
+A3-102 || Mudbray || Lucha || 1 Rombo || Sobre Solgaleo
+A3-103 || Mudsdale || Lucha || 2 Rombos || Sobre Solgaleo
+A3-104 || Passimian EX || Lucha || 4 Rombos || Sobre Lunala
+A3-105 || Minior || Lucha || 2 Rombos || Sobre Lunala
+A3-106 || Rattata de Alola || Oscuro || 1 Rombo || Sobre Lunala
+A3-107 || Raticate de Alola || Oscuro || 2 Rombos || Sobre Lunala
+A3-108 || Meowth de Alola || Oscuro || 1 Rombo || Sobre Solgaleo
+A3-109 || Persian de Alola || Oscuro || 3 Rombos || Sobre Lunala
+A3-110 || Grimer de Alola || Oscuro || 1 Rombo || Sobre Lunala
+A3-111 || Muk de Alola EX || Oscuro || 4 Rombos || Sobre Lunala
+A3-112 || Absol || Oscuro || 3 Rombos || Sobre Lunala
+A3-113 || Trubbish || Oscuro || 1 Rombo || Sobre Guardianes Celestiales
+A3-114 || Garbodor || Oscuro || 2 Rombos || Sobre Guardianes Celestiales
+A3-115 || Mareanie || Oscuro || 1 Rombo || Sobre Lunala
+A3-116 || Toxapex || Oscuro || 1 Rombo || Sobre Lunala
+A3-117 || Diglett de Alola || Acero || 1 Rombo || Sobre Guardianes Celestiales
+A3-118 || Dugtrio de Alola || Acero || 1 Rombo || Sobre Guardianes Celestiales
+A3-119 || Excadrill || Acero || 2 Rombos || Sobre Guardianes Celestiales
+A3-120 || Escavalier || Acero || 2 Rombos || Sobre Guardianes Celestiales
+A3-121 || Klefki || Acero || 3 Rombos || Sobre Solgaleo
+A3-122 || Solgaleo EX || Acero || 4 Rombos || Sobre Solgaleo
+A3-123 || Magearna || Acero || 3 Rombos || Sobre Solgaleo
+A3-124 || Drampa || Dragon || 3 Rombos || Sobre Solgaleo
+A3-125 || Jangmo-o || Dragon || 1 Rombo || Sobre Lunala
+A3-126 || Hakamo-o || Dragon || 2 Rombos || Sobre Lunala
+A3-127 || Kommo-o || Dragon || 3 Rombos || Sobre Lunala
+A3-128 || Tauros || Incoloro || 2 Rombos || Sobre Guardianes Celestiales
+A3-129 || Skitty || Incoloro || 1 Rombo || Sobre Guardianes Celestiales
+A3-130 || Delcatty || Incoloro || 2 Rombos || Sobre Guardianes Celestiales
+A3-131 || Fletchling || Incoloro || 1 Rombo || Sobre Solgaleo
+A3-132 || Hawlucha || Incoloro || 2 Rombos || Sobre Solgaleo
+A3-133 || Pikipek || Incoloro || 1 Rombo || Sobre Guardianes Celestiales
+A3-134 || Trumbeak || Incoloro || 1 Rombo || Sobre Guardianes Celestiales
+A3-135 || Toucannon || Incoloro || 2 Rombos || Sobre Guardianes Celestiales
+A3-136 || Yungoos || Incoloro || 1 Rombo || Sobre Solgaleo
+A3-137 || Gumshoos || Incoloro || 1 Rombo || Sobre Solgaleo
+A3-138 || Stufful || Incoloro || 1 Rombo || Sobre Lunala
+A3-139 || Bewear || Incoloro || 3 Rombos || Sobre Lunala
+A3-140 || Oranguru || Incoloro || 3 Rombos || Sobre Lunala
+A3-141 || Komala || Incoloro || 2 Rombos || Sobre Solgaleo
+A3-142 || Malasada Maxi || Entrenador || 2 Rombos || Sobre Guardianes Celestiales
+A3-143 || Red de Pesca || Entrenador || 2 Rombos || Sobre Lunala
+A3-144 || Caramelo Raro || Entrenador || 2 Rombos || Sobre Guardianes Celestiales
+A3-145 || RotomDex || Entrenador || 2 Rombos || Sobre Solgaleo
+A3-146 || Flecha Venenosa || Entrenador || 2 Rombos || Sobre Lunala
+A3-147 || Capa Hoja || Entrenador || 2 Rombos || Sobre Solgaleo
+A3-148 || Zarala || Entrenador || 2 Rombos || Sobre Lunala
+A3-149 || Liam || Entrenador || 2 Rombos || Sobre Lunala
+A3-150 || Kiawe || Entrenador || 2 Rombos || Sobre Lunala
+A3-151 || Guzmán || Entrenador || 2 Rombos || Sobre Lunala
+A3-152 || Capitana Nereida || Entrenador || 2 Rombos || Sobre Solgaleo
+A3-153 || Chris || Entrenador || 2 Rombos || Sobre Solgaleo
+A3-154 || Lulú || Entrenador || 2 Rombos || Sobre Solgaleo
+A3-155 || Lylia || Entrenador || 2 Rombos || Sobre Solgaleo
+A3-156 || Exeggutor de Alola || Planta || 1 Estrella || Sobre Lunala
+A3-157 || Morelull || Planta || 1 Estrella || Sobre Lunala
+A3-158 || Tsareena || Planta || 1 Estrella || Sobre Solgaleo
+A3-159 || Tapu Bulu || Planta || 1 Estrella || Sobre Solgaleo
+A3-160 || Marowak de Alola || Fuego || 1 Estrella || Sobre Lunala
+A3-161 || Turtonator || Fuego || 1 Estrella || Sobre Lunala
+A3-162 || Vulpix de Alola || Agua || 1 Estrella || Sobre Lunala
+A3-163 || Pyukumuku || Agua || 1 Estrella || Sobre Lunala
+A3-164 || Tapu Fini || Agua || 1 Estrella || Sobre Lunala
+A3-165 || Oricorio || Electrico || 1 Estrella || Sobre Solgaleo
+A3-166 || Tapu Koko || Electrico || 1 Estrella || Sobre Solgaleo
+A3-167 || Cutiefly || Psiquico || 1 Estrella || Sobre Solgaleo
+A3-168 || Comfey || Psiquico || 1 Estrella || Sobre Solgaleo
+A3-169 || Sandygast || Psiquico || 1 Estrella || Sobre Solgaleo
+A3-170 || Tapu Lele || Psiquico || 1 Estrella || Sobre Lunala
+A3-171 || Cosmog || Psiquico || 1 Estrella || Sobre Lunala
+A3-172 || Rockruff || Lucha || 1 Estrella || Sobre Lunala
+A3-173 || Mudsdale || Lucha || 1 Estrella || Sobre Solgaleo
+A3-174 || Minior || Lucha || 1 Estrella || Sobre Lunala
+A3-175 || Magearna || Acero || 1 Estrella || Sobre Solgaleo
+A3-176 || Drampa || Dragon || 1 Estrella || Sobre Solgaleo
+A3-177 || Pikipek || Incoloro || 1 Estrella || Sobre Lunala
+A3-178 || Bewear || Incoloro || 1 Estrella || Sobre Lunala
+A3-179 || Komala || Incoloro || 1 Estrella || Sobre Solgaleo
+A3-180 || Decidueye EX || Planta || 2 Estrellas || Sobre Lunala
+A3-181 || Dhelmise EX || Planta || 2 Estrellas || Sobre Solgaleo
+A3-182 || Incineroar EX || Fuego || 2 Estrellas || Sobre Solgaleo
+A3-183 || Crabominable EX || Agua || 2 Estrellas || Sobre Solgaleo
+A3-184 || Wishiwashi EX || Agua || 2 Estrellas || Sobre Lunala
+A3-185 || Raichu de Alola EX || Electrico || 2 Estrellas || Sobre Solgaleo
+A3-186 || Lunala EX || Psiquico || 2 Estrellas || Sobre Lunala
+A3-187 || Passimian EX || Lucha || 2 Estrellas || Sobre Lunala
+A3-188 || Muk de Alola EX || Oscuro || 2 Estrellas || Sobre Lunala
+A3-189 || Solgaleo EX || Acero || 2 Estrellas || Sobre Solgaleo
+A3-190 || Zarala || Entrenador || 2 Estrellas || Sobre Lunala
+A3-191 || Liam || Entrenador || 2 Estrellas || Sobre Lunala
+A3-192 || Kiawe || Entrenador || 2 Estrellas || Sobre Lunala
+A3-193 || Guzmán || Entrenador || 2 Estrellas || Sobre Lunala
+A3-194 || Capitana Nereida || Entrenador || 2 Estrellas || Sobre Solgaleo
+A3-195 || Chris || Entrenador || 2 Estrellas || Sobre Solgaleo
+A3-196 || Lulú || Entrenador || 2 Estrellas || Sobre Solgaleo
+A3-197 || Lylia || Entrenador || 2 Estrellas || Sobre Solgaleo
+A3-198 || Decidueye EX || Planta || 2 Estrellas Arcoíris || Sobre Lunala
+A3-199 || Dhelmise EX || Planta || 2 Estrellas Arcoíris || Sobre Solgaleo
+A3-200 || Incineroar EX || Fuego || 2 Estrellas Arcoíris || Sobre Solgaleo
+A3-201 || Crabominable EX || Agua || 2 Estrellas Arcoíris || Sobre Solgaleo
+A3-202 || Wishiwashi EX || Agua || 2 Estrellas Arcoíris || Sobre Lunala
+A3-203 || Raichu de Alola EX || Electrico || 2 Estrellas Arcoíris || Sobre Solgaleo
+A3-204 || Lunala EX || Psiquico || 2 Estrellas Arcoíris || Sobre Lunala
+A3-205 || Passimian EX || Lucha || 2 Estrellas Arcoíris || Sobre Lunala
+A3-206 || Muk de Alola EX || Oscuro || 2 Estrellas Arcoíris || Sobre Lunala
+A3-207 || Solgaleo EX || Acero || 2 Estrellas Arcoíris || Sobre Solgaleo
+A3-208 || Guzmán || Entrenador || 3 Estrellas || Sobre Lunala
+A3-209 || Lylia || Entrenador || 3 Estrellas || Sobre Solgaleo
+A3-210 || Bulbasaur || Planta || Shiny 1 Estrella || Sobre Solgaleo
+A3-211 || Ivysaur || Planta || Shiny 1 Estrella || Sobre Solgaleo
+A3-212 || Venusaur || Planta || Shiny 1 Estrella || Sobre Solgaleo
+A3-213 || Exeggcute || Planta || Shiny 1 Estrella || Sobre Lunala
+A3-214 || Exeggutor || Planta || Shiny 1 Estrella || Sobre Lunala
+A3-215 || Squirtle || Agua || Shiny 1 Estrella || Sobre Lunala
+A3-216 || Wartortle || Agua || Shiny 1 Estrella || Sobre Lunala
+A3-217 || Blastoise || Agua || Shiny 1 Estrella || Sobre Lunala
+A3-218 || Staryu || Agua || Shiny 1 Estrella || Sobre Solgaleo
+A3-219 || Starmie || Agua || Shiny 1 Estrella || Sobre Solgaleo
+A3-220 || Gastly || Psiquico || Shiny 1 Estrella || Sobre Lunala
+A3-221 || Haunter || Psiquico || Shiny 1 Estrella || Sobre Lunala
+A3-222 || Gengar || Psiquico || Shiny 1 Estrella || Sobre Lunala
+A3-223 || Machop || Lucha || Shiny 1 Estrella || Sobre Solgaleo
+A3-224 || Machoke || Lucha || Shiny 1 Estrella || Sobre Solgaleo
+A3-225 || Machamp || Lucha || Shiny 1 Estrella || Sobre Solgaleo
+A3-226 || Cubone || Lucha || Shiny 1 Estrella || Sobre Lunala
+A3-227 || Marowak || Lucha || Shiny 1 Estrella || Sobre Lunala
+A3-228 || Jigglypuff || Incoloro || Shiny 1 Estrella || Sobre Solgaleo
+A3-229 || Wigglytuff || Incoloro || Shiny 1 Estrella || Sobre Solgaleo
+A3-230 || Venusaur EX || Planta || Shiny 2 Estrellas || Sobre Solgaleo
+A3-231 || Exeggutor EX || Planta || Shiny 2 Estrellas || Sobre Lunala
+A3-232 || Blastoise EX || Agua || Shiny 2 Estrellas || Sobre Lunala
+A3-233 || Starmie EX || Agua || Shiny 2 Estrellas || Sobre Solgaleo
+A3-234 || Gengar EX || Psiquico || Shiny 2 Estrellas || Sobre Lunala
+A3-235 || Machamp EX || Lucha || Shiny 2 Estrellas || Sobre Solgaleo
+A3-236 || Marowak EX || Lucha || Shiny 2 Estrellas || Sobre Lunala
+A3-237 || Wigglytuff EX || Incoloro || Shiny 2 Estrellas || Sobre Solgaleo
+A3-238 || Lunala EX || Psiquico || Corona || Sobre Lunala
+A3-239 || Solgaleo EX || Acero || Corona || Sobre Solgaleo

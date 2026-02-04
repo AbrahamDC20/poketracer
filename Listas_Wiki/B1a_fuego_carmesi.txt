@@ -1,0 +1,103 @@
+B1a-1 || Bulbasaur || Planta || 1 Rombo || Sobre Fuego Carmesí
+B1a-2 || Ivysaur || Planta || 2 Rombos || Sobre Fuego Carmesí
+B1a-3 || Venusaur || Planta || 3 Rombos || Sobre Fuego Carmesí
+B1a-4 || Mega-Venusaur EX || Planta || 4 Rombos || Sobre Fuego Carmesí
+B1a-5 || Spinarak || Planta || 1 Rombo || Sobre Fuego Carmesí
+B1a-6 || Ariados || Planta || 2 Rombos || Sobre Fuego Carmesí
+B1a-7 || Sunkern || Planta || 1 Rombo || Sobre Fuego Carmesí
+B1a-8 || Sunflora || Planta || 2 Rombos || Sobre Fuego Carmesí
+B1a-9 || Burmy || Planta || 1 Rombo || Sobre Fuego Carmesí
+B1a-10 || Mothim || Planta || 1 Rombo || Sobre Fuego Carmesí
+B1a-11 || Charmander || Fuego || 1 Rombo || Sobre Fuego Carmesí
+B1a-12 || Charmeleon || Fuego || 2 Rombos || Sobre Fuego Carmesí
+B1a-13 || Charizard || Fuego || 3 Rombos || Sobre Fuego Carmesí
+B1a-14 || Mega-Charizard Y EX || Fuego || 4 Rombos || Sobre Fuego Carmesí
+B1a-15 || Houndour || Fuego || 1 Rombo || Sobre Fuego Carmesí
+B1a-16 || Houndoom || Fuego || 1 Rombo || Sobre Fuego Carmesí
+B1a-17 || Squirtle || Agua || 1 Rombo || Sobre Fuego Carmesí
+B1a-18 || Wartortle || Agua || 2 Rombos || Sobre Fuego Carmesí
+B1a-19 || Blastoise || Agua || 3 Rombos || Sobre Fuego Carmesí
+B1a-20 || Mega-Blastoise EX || Agua || 4 Rombos || Sobre Fuego Carmesí
+B1a-21 || Basculin || Agua || 1 Rombo || Sobre Fuego Carmesí
+B1a-22 || Clauncher || Agua || 1 Rombo || Sobre Fuego Carmesí
+B1a-23 || Clawitzer || Agua || 2 Rombos || Sobre Fuego Carmesí
+B1a-24 || Magnemite || Electrico || 1 Rombo || Sobre Fuego Carmesí
+B1a-25 || Magneton || Electrico || 2 Rombos || Sobre Fuego Carmesí
+B1a-26 || Magnezone || Electrico || 3 Rombos || Sobre Fuego Carmesí
+B1a-27 || Emolga || Electrico || 1 Rombo || Sobre Fuego Carmesí
+B1a-28 || Helioptile || Electrico || 1 Rombo || Sobre Fuego Carmesí
+B1a-29 || Heliolisk || Electrico || 2 Rombos || Sobre Fuego Carmesí
+B1a-30 || Misdreavus || Psiquico || 1 Rombo || Sobre Fuego Carmesí
+B1a-31 || Mismagius || Psiquico || 2 Rombos || Sobre Fuego Carmesí
+B1a-32 || Solosis || Psiquico || 1 Rombo || Sobre Fuego Carmesí
+B1a-33 || Duosion || Psiquico || 2 Rombos || Sobre Fuego Carmesí
+B1a-34 || Reuniclus || Psiquico || 3 Rombos || Sobre Fuego Carmesí
+B1a-35 || Spritzee || Psiquico || 1 Rombo || Sobre Fuego Carmesí
+B1a-36 || Aromatisse || Psiquico || 1 Rombo || Sobre Fuego Carmesí
+B1a-37 || Xerneas || Psiquico || 3 Rombos || Sobre Fuego Carmesí
+B1a-38 || Onix || Lucha || 1 Rombo || Sobre Fuego Carmesí
+B1a-39 || Makuhita || Lucha || 1 Rombo || Sobre Fuego Carmesí
+B1a-40 || Hariyama || Lucha || 2 Rombos || Sobre Fuego Carmesí
+B1a-41 || Nosepass || Lucha || 1 Rombo || Sobre Fuego Carmesí
+B1a-42 || Mega-Lopunny EX || Lucha || 4 Rombos || Sobre Fuego Carmesí
+B1a-43 || Mienfoo || Lucha || 1 Rombo || Sobre Fuego Carmesí
+B1a-44 || Mienshao || Lucha || 1 Rombo || Sobre Fuego Carmesí
+B1a-45 || Grimer || Oscuro || 1 Rombo || Sobre Fuego Carmesí
+B1a-46 || Muk || Oscuro || 1 Rombo || Sobre Fuego Carmesí
+B1a-47 || Purrloin || Oscuro || 1 Rombo || Sobre Fuego Carmesí
+B1a-48 || Liepard || Oscuro || 2 Rombos || Sobre Fuego Carmesí
+B1a-49 || Trubbish || Oscuro || 1 Rombo || Sobre Fuego Carmesí
+B1a-50 || Garbodor || Oscuro || 2 Rombos || Sobre Fuego Carmesí
+B1a-51 || Steelix || Acero || 2 Rombos || Sobre Fuego Carmesí
+B1a-52 || Mega-Steelix EX || Acero || 4 Rombos || Sobre Fuego Carmesí
+B1a-53 || Probopass || Acero || 2 Rombos || Sobre Fuego Carmesí
+B1a-54 || Genesect || Acero || 3 Rombos || Sobre Fuego Carmesí
+B1a-55 || Ditto || Incoloro || 2 Rombos || Sobre Fuego Carmesí
+B1a-56 || Porygon || Incoloro || 1 Rombo || Sobre Fuego Carmesí
+B1a-57 || Porygon2 || Incoloro || 2 Rombos || Sobre Fuego Carmesí
+B1a-58 || Porygon-Z || Incoloro || 3 Rombos || Sobre Fuego Carmesí
+B1a-59 || Starly || Incoloro || 1 Rombo || Sobre Fuego Carmesí
+B1a-60 || Staravia || Incoloro || 1 Rombo || Sobre Fuego Carmesí
+B1a-61 || Staraptor || Incoloro || 2 Rombos || Sobre Fuego Carmesí
+B1a-62 || Buneary || Incoloro || 1 Rombo || Sobre Fuego Carmesí
+B1a-63 || Lopunny || Incoloro || 2 Rombos || Sobre Fuego Carmesí
+B1a-64 || Bouffalant || Incoloro || 2 Rombos || Sobre Fuego Carmesí
+B1a-65 || Furfrou || Incoloro || 2 Rombos || Sobre Fuego Carmesí
+B1a-66 || Mochila de Lem || Entrenador || 2 Rombos || Sobre Fuego Carmesí
+B1a-67 || Extracto de Maduración || Entrenador || 2 Rombos || Sobre Fuego Carmesí
+B1a-68 || Lem || Entrenador || 2 Rombos || Sobre Fuego Carmesí
+B1a-69 || Serena || Entrenador || 2 Rombos || Sobre Fuego Carmesí
+B1a-70 || Ariados || Planta || 1 Estrella || Sobre Fuego Carmesí
+B1a-71 || Sunflora || Planta || 1 Estrella || Sobre Fuego Carmesí
+B1a-72 || Reuniclus || Psiquico || 1 Estrella || Sobre Fuego Carmesí
+B1a-73 || Xerneas || Psiquico || 1 Estrella || Sobre Fuego Carmesí
+B1a-74 || Trubbish || Oscuro || 1 Estrella || Sobre Fuego Carmesí
+B1a-75 || Buneary || Incoloro || 1 Estrella || Sobre Fuego Carmesí
+B1a-76 || Mega-Venusaur EX || Planta || 2 Estrellas || Sobre Fuego Carmesí
+B1a-77 || Mega-Charizard Y EX || Fuego || 2 Estrellas || Sobre Fuego Carmesí
+B1a-78 || Mega-Blastoise EX || Agua || 2 Estrellas || Sobre Fuego Carmesí
+B1a-79 || Mega-Lopunny EX || Lucha || 2 Estrellas || Sobre Fuego Carmesí
+B1a-80 || Mega-Steelix EX || Acero || 2 Estrellas || Sobre Fuego Carmesí
+B1a-81 || Lem || Entrenador || 2 Estrellas || Sobre Fuego Carmesí
+B1a-82 || Serena || Entrenador || 2 Estrellas || Sobre Fuego Carmesí
+B1a-83 || Mega-Venusaur EX || Planta || 2 Estrellas || Sobre Fuego Carmesí
+B1a-84 || Mega-Blastoise EX || Agua || 2 Estrellas || Sobre Fuego Carmesí
+B1a-85 || Mega-Lopunny EX || Lucha || 2 Estrellas || Sobre Fuego Carmesí
+B1a-86 || Mega-Steelix EX || Acero || 2 Estrellas || Sobre Fuego Carmesí
+B1a-87 || Mega-Charizard Y EX || Fuego || 3 Estrellas || Sobre Fuego Carmesí
+B1a-88 || Oddish || Planta || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-89 || Gloom || Planta || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-90 || Vileplume || Planta || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-91 || Charizard || Fuego || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-92 || Shellder || Agua || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-93 || Cloyster || Agua || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-94 || Sandshrew || Lucha || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-95 || Sandslash || Lucha || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-96 || Código Cero || Incoloro || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-97 || Silvally || Incoloro || Shiny 1 Estrella || Sobre Fuego Carmesí
+B1a-98 || Buzzwole EX || Planta || Shiny 2 Estrellas || Sobre Fuego Carmesí
+B1a-99 || Lunala EX || Psiquico || Shiny 2 Estrellas || Sobre Fuego Carmesí
+B1a-100 || Guzzlord EX || Oscuro || Shiny 2 Estrellas || Sobre Fuego Carmesí
+B1a-101 || Solgaleo EX || Acero || Shiny 2 Estrellas || Sobre Fuego Carmesí
+B1a-102 || Aegislash || Acero || Corona || Sobre Fuego Carmesí
+B1a-103 || Extracto de Maduración || Entrenador || Corona || Sobre Fuego Carmesí

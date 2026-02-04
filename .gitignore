@@ -1,0 +1,15 @@
+# Dependencias (NUNCA SUBIR)
+node_modules/
+
+# Archivos de entorno y seguridad (NUNCA SUBIR)
+.env
+
+# Archivos de base de datos y respaldos
+respaldo.sql
+*.sqlite
+*.db
+
+# Ejecutables y temporales
+turso.exe
+turso.tar.gz
+*.log

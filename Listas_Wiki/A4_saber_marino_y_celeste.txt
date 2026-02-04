@@ -1,0 +1,241 @@
+A4-1 || Oddish || Planta || 1 Rombo || Sobre Lugia
+A4-2 || Gloom || Planta || 2 Rombos || Sobre Lugia
+A4-3 || Bellossom || Planta || 3 Rombos || Sobre Lugia
+A4-4 || Tangela || Planta || 1 Rombo || Sobre Ho-Oh
+A4-5 || Tangrowth || Planta || 3 Rombos || Sobre Ho-Oh
+A4-6 || Scyther || Planta || 1 Rombo || Sobre Lugia
+A4-7 || Pinsir || Planta || 1 Rombo || Sobre Lugia
+A4-8 || Chikorita || Planta || 1 Rombo || Sobre Lugia
+A4-9 || Bayleef || Planta || 2 Rombos || Sobre Lugia
+A4-10 || Meganium || Planta || 3 Rombos || Sobre Lugia
+A4-11 || Ledyba || Planta || 1 Rombo || Sobre Lugia
+A4-12 || Ledian || Planta || 1 Rombo || Sobre Lugia
+A4-13 || Hoppip || Planta || 1 Rombo || Sobre Ho-Oh
+A4-14 || Skiploom || Planta || 2 Rombos || Sobre Ho-Oh
+A4-15 || Jumpluff || Planta || 3 Rombos || Sobre Ho-Oh
+A4-16 || Sunkern || Planta || 1 Rombo || Sobre Saber Marino y Celeste
+A4-17 || Sunflora || Planta || 2 Rombos || Sobre Saber Marino y Celeste
+A4-18 || Yanma || Planta || 1 Rombo || Sobre Saber Marino y Celeste
+A4-19 || Yanmega || Planta || 2 Rombos || Sobre Saber Marino y Celeste
+A4-20 || Pineco || Planta || 1 Rombo || Sobre Saber Marino y Celeste
+A4-21 || Shuckle EX || Planta || 4 Rombos || Sobre Lugia
+A4-22 || Heracross || Planta || 3 Rombos || Sobre Ho-Oh
+A4-23 || Cherubi || Planta || 1 Rombo || Sobre Saber Marino y Celeste
+A4-24 || Cherrim || Planta || 2 Rombos || Sobre Saber Marino y Celeste
+A4-25 || Vulpix || Fuego || 1 Rombo || Sobre Lugia
+A4-26 || Ninetales || Fuego || 3 Rombos || Sobre Lugia
+A4-27 || Cyndaquil || Fuego || 1 Rombo || Sobre Lugia
+A4-28 || Quilava || Fuego || 2 Rombos || Sobre Lugia
+A4-29 || Typhlosion || Fuego || 3 Rombos || Sobre Lugia
+A4-30 || Slugma || Fuego || 1 Rombo || Sobre Ho-Oh
+A4-31 || Magcargo || Fuego || 2 Rombos || Sobre Ho-Oh
+A4-32 || Magby || Fuego || 3 Rombos || Sobre Ho-Oh
+A4-33 || Entei || Fuego || 3 Rombos || Sobre Ho-Oh
+A4-34 || Ho-Oh EX || Fuego || 4 Rombos || Sobre Ho-Oh
+A4-35 || Darumaka || Fuego || 1 Rombo || Sobre Saber Marino y Celeste
+A4-36 || Darmanitan || Fuego || 2 Rombos || Sobre Saber Marino y Celeste
+A4-37 || Heatmor || Fuego || 1 Rombo || Sobre Saber Marino y Celeste
+A4-38 || Poliwag || Agua || 1 Rombo || Sobre Lugia
+A4-39 || Poliwhirl || Agua || 2 Rombos || Sobre Lugia
+A4-40 || Politoed || Agua || 3 Rombos || Sobre Lugia
+A4-41 || Horsea || Agua || 1 Rombo || Sobre Lugia
+A4-42 || Seadra || Agua || 2 Rombos || Sobre Lugia
+A4-43 || Kingdra EX || Agua || 4 Rombos || Sobre Lugia
+A4-44 || Magikarp || Agua || 1 Rombo || Sobre Lugia
+A4-45 || Gyarados || Agua || 3 Rombos || Sobre Lugia
+A4-46 || Totodile || Agua || 1 Rombo || Sobre Ho-Oh
+A4-47 || Croconaw || Agua || 2 Rombos || Sobre Ho-Oh
+A4-48 || Feraligatr || Agua || 3 Rombos || Sobre Ho-Oh
+A4-49 || Marill || Agua || 1 Rombo || Sobre Ho-Oh
+A4-50 || Azumarill || Agua || 2 Rombos || Sobre Ho-Oh
+A4-51 || Wooper || Agua || 1 Rombo || Sobre Lugia
+A4-52 || Quagsire || Agua || 2 Rombos || Sobre Lugia
+A4-53 || Qwilfish || Agua || 2 Rombos || Sobre Lugia
+A4-54 || Corsola || Agua || 1 Rombo || Sobre Lugia
+A4-55 || Remoraid || Agua || 1 Rombo || Sobre Lugia
+A4-56 || Octillery || Agua || 3 Rombos || Sobre Lugia
+A4-57 || Delibird || Agua || 2 Rombos || Sobre Ho-Oh
+A4-58 || Mantine || Agua || 2 Rombos || Sobre Lugia
+A4-59 || Suicune || Agua || 3 Rombos || Sobre Lugia
+A4-60 || Corphish || Agua || 1 Rombo || Sobre Lugia
+A4-61 || Crawdaunt || Agua || 3 Rombos || Sobre Lugia
+A4-62 || Ducklett || Agua || 1 Rombo || Sobre Ho-Oh
+A4-63 || Swanna || Agua || 2 Rombos || Sobre Ho-Oh
+A4-64 || Chinchou || Electrico || 1 Rombo || Sobre Lugia
+A4-65 || Lanturn EX || Electrico || 4 Rombos || Sobre Lugia
+A4-66 || Pichu || Electrico || 3 Rombos || Sobre Lugia
+A4-67 || Mareep || Electrico || 1 Rombo || Sobre Lugia
+A4-68 || Flaaffy || Electrico || 2 Rombos || Sobre Lugia
+A4-69 || Ampharos || Electrico || 3 Rombos || Sobre Lugia
+A4-70 || Elekid || Electrico || 3 Rombos || Sobre Lugia
+A4-71 || Raikou || Electrico || 3 Rombos || Sobre Ho-Oh
+A4-72 || Emolga || Electrico || 1 Rombo || Sobre Ho-Oh
+A4-73 || Slowpoke || Psiquico || 1 Rombo || Sobre Lugia
+A4-74 || Slowking || Psiquico || 2 Rombos || Sobre Lugia
+A4-75 || Smoochum || Psiquico || 3 Rombos || Sobre Ho-Oh
+A4-76 || Jynx || Psiquico || 1 Rombo || Sobre Ho-Oh
+A4-77 || Cleffa || Psiquico || 3 Rombos || Sobre Lugia
+A4-78 || Togepi || Psiquico || 1 Rombo || Sobre Ho-Oh
+A4-79 || Togetic || Psiquico || 2 Rombos || Sobre Ho-Oh
+A4-80 || Togekiss || Psiquico || 3 Rombos || Sobre Ho-Oh
+A4-81 || Natu || Psiquico || 1 Rombo || Sobre Lugia
+A4-82 || Xatu || Psiquico || 3 Rombos || Sobre Lugia
+A4-83 || Espeon EX || Psiquico || 4 Rombos || Sobre Lugia
+A4-84 || Unown || Psiquico || 3 Rombos || Sobre Ho-Oh
+A4-85 || Unown || Psiquico || 3 Rombos || Sobre Lugia
+A4-86 || Wobbuffet || Psiquico || 1 Rombo || Sobre Lugia
+A4-87 || Girafarig || Psiquico || 1 Rombo || Sobre Ho-Oh
+A4-88 || Snubbull || Psiquico || 1 Rombo || Sobre Ho-Oh
+A4-89 || Granbull || Psiquico || 2 Rombos || Sobre Ho-Oh
+A4-90 || Munna || Psiquico || 1 Rombo || Sobre Ho-Oh
+A4-91 || Musharna || Psiquico || 2 Rombos || Sobre Ho-Oh
+A4-92 || Onix || Lucha || 1 Rombo || Sobre Ho-Oh
+A4-93 || Sudowoodo || Lucha || 1 Rombo || Sobre Ho-Oh
+A4-94 || Gligar || Lucha || 1 Rombo || Sobre Ho-Oh
+A4-95 || Gliscor || Lucha || 2 Rombos || Sobre Ho-Oh
+A4-96 || Swinub || Lucha || 1 Rombo || Sobre Ho-Oh
+A4-97 || Piloswine || Lucha || 2 Rombos || Sobre Ho-Oh
+A4-98 || Mamoswine || Lucha || 3 Rombos || Sobre Ho-Oh
+A4-99 || Phanpy || Lucha || 1 Rombo || Sobre Ho-Oh
+A4-100 || Donphan EX || Lucha || 4 Rombos || Sobre Ho-Oh
+A4-101 || Tyrogue || Lucha || 3 Rombos || Sobre Ho-Oh
+A4-102 || Hitmontop || Lucha || 1 Rombo || Sobre Saber Marino y Celeste
+A4-103 || Larvitar || Lucha || 1 Rombo || Sobre Ho-Oh
+A4-104 || Pupitar || Lucha || 2 Rombos || Sobre Ho-Oh
+A4-105 || Binacle || Lucha || 1 Rombo || Sobre Lugia
+A4-106 || Barbaracle || Lucha || 2 Rombos || Sobre Lugia
+A4-107 || Zubat || Oscuro || 1 Rombo || Sobre Ho-Oh
+A4-108 || Golbat || Oscuro || 2 Rombos || Sobre Ho-Oh
+A4-109 || Crobat EX || Oscuro || 4 Rombos || Sobre Ho-Oh
+A4-110 || Spinarak || Oscuro || 1 Rombo || Sobre Ho-Oh
+A4-111 || Ariados || Oscuro || 2 Rombos || Sobre Ho-Oh
+A4-112 || Umbreon EX || Oscuro || 4 Rombos || Sobre Ho-Oh
+A4-113 || Murkrow || Oscuro || 1 Rombo || Sobre Lugia
+A4-114 || Honchkrow || Oscuro || 2 Rombos || Sobre Lugia
+A4-115 || Sneasel || Oscuro || 1 Rombo || Sobre Lugia
+A4-116 || Weavile || Oscuro || 2 Rombos || Sobre Lugia
+A4-117 || Houndour || Oscuro || 1 Rombo || Sobre Saber Marino y Celeste
+A4-118 || Houndoom || Oscuro || 2 Rombos || Sobre Saber Marino y Celeste
+A4-119 || Tyranitar || Oscuro || 3 Rombos || Sobre Ho-Oh
+A4-120 || Absol || Oscuro || 2 Rombos || Sobre Saber Marino y Celeste
+A4-121 || Forretress || Acero || 2 Rombos || Sobre Saber Marino y Celeste
+A4-122 || Steelix || Acero || 3 Rombos || Sobre Ho-Oh
+A4-123 || Scizor || Acero || 3 Rombos || Sobre Lugia
+A4-124 || Skarmory EX || Acero || 4 Rombos || Sobre Ho-Oh
+A4-125 || Mawile || Acero || 1 Rombo || Sobre Saber Marino y Celeste
+A4-126 || Klink || Acero || 1 Rombo || Sobre Ho-Oh
+A4-127 || Klang || Acero || 2 Rombos || Sobre Ho-Oh
+A4-128 || Klinklang || Acero || 3 Rombos || Sobre Ho-Oh
+A4-129 || Spearow || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-130 || Fearow || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-131 || Chansey || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-132 || Blissey || Incoloro || 3 Rombos || Sobre Ho-Oh
+A4-133 || Kangaskhan || Incoloro || 3 Rombos || Sobre Ho-Oh
+A4-134 || Eevee || Incoloro || 1 Rombo || Sobre Saber Marino y Celeste
+A4-135 || Porygon || Incoloro || 1 Rombo || Sobre Lugia
+A4-136 || Porygon2 || Incoloro || 2 Rombos || Sobre Lugia
+A4-137 || Porygon-Z || Incoloro || 3 Rombos || Sobre Lugia
+A4-138 || Sentret || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-139 || Furret || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-140 || Hoothoot || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-141 || Noctowl || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-142 || Aipom || Incoloro || 1 Rombo || Sobre Saber Marino y Celeste
+A4-143 || Ambipom || Incoloro || 1 Rombo || Sobre Saber Marino y Celeste
+A4-144 || Dunsparce || Incoloro || 1 Rombo || Sobre Saber Marino y Celeste
+A4-145 || Teddiursa || Incoloro || 1 Rombo || Sobre Ho-Oh
+A4-146 || Ursaring || Incoloro || 2 Rombos || Sobre Ho-Oh
+A4-147 || Stantler || Incoloro || 2 Rombos || Sobre Ho-Oh
+A4-148 || Smeargle || Incoloro || 2 Rombos || Sobre Lugia
+A4-149 || Lugia EX || Incoloro || 4 Rombos || Sobre Lugia
+A4-150 || Bouffalant || Incoloro || 2 Rombos || Sobre Saber Marino y Celeste
+A4-151 || Permuta Elemental || Entrenador || 2 Rombos || Sobre Lugia
+A4-152 || Squirgadera || Entrenador || 2 Rombos || Sobre Lugia
+A4-153 || Peto de Acero || Entrenador || 2 Rombos || Sobre Ho-Oh
+A4-154 || Colgante Sombrío || Entrenador || 2 Rombos || Sobre Ho-Oh
+A4-155 || Bufanda Rescatadora || Entrenador || 2 Rombos || Sobre Saber Marino y Celeste
+A4-156 || Mento || Entrenador || 2 Rombos || Sobre Lugia
+A4-157 || Lira || Entrenador || 2 Rombos || Sobre Lugia
+A4-158 || Plata || Entrenador || 2 Rombos || Sobre Ho-Oh
+A4-159 || Pescador || Entrenador || 2 Rombos || Sobre Lugia
+A4-160 || Yasmina || Entrenador || 2 Rombos || Sobre Ho-Oh
+A4-161 || Montañero || Entrenador || 2 Rombos || Sobre Ho-Oh
+A4-162 || Chikorita || Planta || 1 Estrella || Sobre Lugia
+A4-163 || Bellossom || Planta || 1 Estrella || Sobre Lugia
+A4-164 || Heracross || Planta || 1 Estrella || Sobre Ho-Oh
+A4-165 || Cyndaquil || Fuego || 1 Estrella || Sobre Lugia
+A4-166 || Magby || Fuego || 1 Estrella || Sobre Ho-Oh
+A4-167 || Totodile || Agua || 1 Estrella || Sobre Ho-Oh
+A4-168 || Qwilfish || Agua || 1 Estrella || Sobre Lugia
+A4-169 || Octillery || Agua || 1 Estrella || Sobre Lugia
+A4-170 || Delibird || Agua || 1 Estrella || Sobre Ho-Oh
+A4-171 || Pichu || Electrico || 1 Estrella || Sobre Lugia
+A4-172 || Ampharos || Electrico || 1 Estrella || Sobre Lugia
+A4-173 || Togepi || Psiquico || 1 Estrella || Sobre Ho-Oh
+A4-174 || Xatu || Psiquico || 1 Estrella || Sobre Lugia
+A4-175 || Wobbuffet || Psiquico || 1 Estrella || Sobre Lugia
+A4-176 || Gligar || Lucha || 1 Estrella || Sobre Ho-Oh
+A4-177 || Spinarak || Oscuro || 1 Estrella || Sobre Ho-Oh
+A4-178 || Murkrow || Oscuro || 1 Estrella || Sobre Lugia
+A4-179 || Tyranitar || Oscuro || 1 Estrella || Sobre Ho-Oh
+A4-180 || Scizor || Acero || 1 Estrella || Sobre Lugia
+A4-181 || Sentret || Incoloro || 1 Estrella || Sobre Ho-Oh
+A4-182 || Hoothoot || Incoloro || 1 Estrella || Sobre Ho-Oh
+A4-183 || Stantler || Incoloro || 1 Estrella || Sobre Ho-Oh
+A4-184 || Smeargle || Incoloro || 1 Estrella || Sobre Lugia
+A4-185 || Blissey || Incoloro || 1 Estrella || Sobre Ho-Oh
+A4-186 || Shuckle EX || Planta || 2 Estrellas || Sobre Lugia
+A4-187 || Ho-Oh EX || Fuego || 2 Estrellas || Sobre Ho-Oh
+A4-188 || Kingdra EX || Agua || 2 Estrellas || Sobre Lugia
+A4-189 || Lanturn EX || Electrico || 2 Estrellas || Sobre Lugia
+A4-190 || Espeon EX || Psiquico || 2 Estrellas || Sobre Lugia
+A4-191 || Donphan EX || Lucha || 2 Estrellas || Sobre Ho-Oh
+A4-192 || Crobat EX || Oscuro || 2 Estrellas || Sobre Ho-Oh
+A4-193 || Umbreon EX || Oscuro || 2 Estrellas || Sobre Ho-Oh
+A4-194 || Skarmory EX || Acero || 2 Estrellas || Sobre Ho-Oh
+A4-195 || Lugia EX || Incoloro || 2 Estrellas || Sobre Lugia
+A4-196 || Mento || Entrenador || 2 Estrellas || Sobre Lugia
+A4-197 || Lira || Entrenador || 2 Estrellas || Sobre Lugia
+A4-198 || Plata || Entrenador || 2 Estrellas || Sobre Ho-Oh
+A4-199 || Pescador || Entrenador || 2 Estrellas || Sobre Lugia
+A4-200 || Yasmina || Entrenador || 2 Estrellas || Sobre Ho-Oh
+A4-201 || Montañero || Entrenador || 2 Estrellas || Sobre Ho-Oh
+A4-202 || Shuckle EX || Planta || 2 Estrellas Arcoíris || Sobre Lugia
+A4-203 || Kingdra EX || Agua || 2 Estrellas Arcoíris || Sobre Lugia
+A4-204 || Lanturn EX || Electrico || 2 Estrellas Arcoíris || Sobre Lugia
+A4-205 || Espeon EX || Psiquico || 2 Estrellas Arcoíris || Sobre Lugia
+A4-206 || Donphan EX || Lucha || 2 Estrellas Arcoíris || Sobre Ho-Oh
+A4-207 || Crobat EX || Oscuro || 2 Estrellas Arcoíris || Sobre Ho-Oh
+A4-208 || Umbreon EX || Oscuro || 2 Estrellas Arcoíris || Sobre Ho-Oh
+A4-209 || Skarmory EX || Acero || 2 Estrellas Arcoíris || Sobre Ho-Oh
+A4-210 || Ho-Oh EX || Fuego || 3 Estrellas || Sobre Ho-Oh
+A4-211 || Lugia EX || Incoloro || 3 Estrellas || Sobre Lugia
+A4-212 || Yanma || Planta || Shiny 1 Estrella || Sobre Saber Marino y Celeste
+A4-213 || Flareon || Fuego || Shiny 1 Estrella || Sobre Saber Marino y Celeste
+A4-214 || Magikarp || Agua || Shiny 1 Estrella || Sobre Lugia
+A4-215 || Gyarados || Agua || Shiny 1 Estrella || Sobre Lugia
+A4-216 || Vaporeon || Agua || Shiny 1 Estrella || Sobre Lugia
+A4-217 || Magnemite || Electrico || Shiny 1 Estrella || Sobre Lugia
+A4-218 || Magneton || Electrico || Shiny 1 Estrella || Sobre Lugia
+A4-219 || Jolteon || Electrico || Shiny 1 Estrella || Sobre Lugia
+A4-220 || Misdreavus || Psiquico || Shiny 1 Estrella || Sobre Ho-Oh
+A4-221 || Mankey || Lucha || Shiny 1 Estrella || Sobre Ho-Oh
+A4-222 || Primeape || Lucha || Shiny 1 Estrella || Sobre Ho-Oh
+A4-223 || Nidoran♀ || Oscuro || Shiny 1 Estrella || Sobre Lugia
+A4-224 || Nidorina || Oscuro || Shiny 1 Estrella || Sobre Lugia
+A4-225 || Nidoqueen || Oscuro || Shiny 1 Estrella || Sobre Lugia
+A4-226 || Nidoran♂ || Oscuro || Shiny 1 Estrella || Sobre Ho-Oh
+A4-227 || Nidorino || Oscuro || Shiny 1 Estrella || Sobre Ho-Oh
+A4-228 || Nidoking || Oscuro || Shiny 1 Estrella || Sobre Ho-Oh
+A4-229 || Sneasel || Oscuro || Shiny 1 Estrella || Sobre Lugia
+A4-230 || Lickitung || Incoloro || Shiny 1 Estrella || Sobre Ho-Oh
+A4-231 || Eevee || Incoloro || Shiny 1 Estrella || Sobre Ho-Oh
+A4-232 || Yanmega EX || Planta || Shiny 2 Estrellas || Sobre Ho-Oh
+A4-233 || Leafeon EX || Planta || Shiny 2 Estrellas || Sobre Ho-Oh
+A4-234 || Gyarados EX || Agua || Shiny 2 Estrellas || Sobre Lugia
+A4-235 || Glaceon EX || Agua || Shiny 2 Estrellas || Sobre Lugia
+A4-236 || Pachirisu EX || Electrico || Shiny 2 Estrellas || Sobre Lugia
+A4-237 || Mismagius EX || Psiquico || Shiny 2 Estrellas || Sobre Ho-Oh
+A4-238 || Weavile EX || Oscuro || Shiny 2 Estrellas || Sobre Lugia
+A4-239 || Lickilicky EX || Incoloro || Shiny 2 Estrellas || Sobre Ho-Oh
+A4-240 || Ho-Oh EX || Fuego || Corona || Sobre Saber Marino y Celeste
+A4-241 || Lugia EX || Incoloro || Corona || Sobre Saber Marino y Celeste

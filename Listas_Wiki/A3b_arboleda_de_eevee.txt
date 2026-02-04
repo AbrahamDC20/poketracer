@@ -1,0 +1,107 @@
+A3b-1 || Tropius || Planta || 2 Rombos || Sobre Arboleda de Eevee
+A3b-2 || Leafeon || Planta || 3 Rombos || Sobre Arboleda de Eevee
+A3b-3 || Bounsweet || Planta || 1 Rombo || Sobre Arboleda de Eevee
+A3b-4 || Steenee || Planta || 1 Rombo || Sobre Arboleda de Eevee
+A3b-5 || Tsareena || Planta || 2 Rombos || Sobre Arboleda de Eevee
+A3b-6 || Applin || Planta || 1 Rombo || Sobre Arboleda de Eevee
+A3b-7 || Appletun || Planta || 2 Rombos || Sobre Arboleda de Eevee
+A3b-8 || Flareon || Fuego || 3 Rombos || Sobre Arboleda de Eevee
+A3b-9 || Flareon EX || Fuego || 4 Rombos || Sobre Arboleda de Eevee
+A3b-10 || Torkoal || Fuego || 1 Rombo || Sobre Arboleda de Eevee
+A3b-11 || Litten || Fuego || 1 Rombo || Sobre Arboleda de Eevee
+A3b-12 || Torracat || Fuego || 1 Rombo || Sobre Arboleda de Eevee
+A3b-13 || Incineroar || Fuego || 2 Rombos || Sobre Arboleda de Eevee
+A3b-14 || Salandit || Fuego || 1 Rombo || Sobre Arboleda de Eevee
+A3b-15 || Salazzle || Fuego || 2 Rombos || Sobre Arboleda de Eevee
+A3b-16 || Vaporeon || Agua || 3 Rombos || Sobre Arboleda de Eevee
+A3b-17 || Glaceon || Agua || 3 Rombos || Sobre Arboleda de Eevee
+A3b-18 || Vanillite || Agua || 1 Rombo || Sobre Arboleda de Eevee
+A3b-19 || Vanillish || Agua || 1 Rombo || Sobre Arboleda de Eevee
+A3b-20 || Vanilluxe || Agua || 2 Rombos || Sobre Arboleda de Eevee
+A3b-21 || Alomomola || Agua || 1 Rombo || Sobre Arboleda de Eevee
+A3b-22 || Popplio || Agua || 1 Rombo || Sobre Arboleda de Eevee
+A3b-23 || Brionne || Agua || 1 Rombo || Sobre Arboleda de Eevee
+A3b-24 || Primarina EX || Agua || 4 Rombos || Sobre Arboleda de Eevee
+A3b-25 || Jolteon || Electrico || 3 Rombos || Sobre Arboleda de Eevee
+A3b-26 || Joltik || Electrico || 1 Rombo || Sobre Arboleda de Eevee
+A3b-27 || Galvantula || Electrico || 2 Rombos || Sobre Arboleda de Eevee
+A3b-28 || Espeon || Psiquico || 3 Rombos || Sobre Arboleda de Eevee
+A3b-29 || Woobat || Psiquico || 1 Rombo || Sobre Arboleda de Eevee
+A3b-30 || Swoobat || Psiquico || 2 Rombos || Sobre Arboleda de Eevee
+A3b-31 || Swirlix || Psiquico || 1 Rombo || Sobre Arboleda de Eevee
+A3b-32 || Slurpuff || Psiquico || 2 Rombos || Sobre Arboleda de Eevee
+A3b-33 || Sylveon || Psiquico || 3 Rombos || Sobre Arboleda de Eevee
+A3b-34 || Sylveon EX || Psiquico || 4 Rombos || Sobre Arboleda de Eevee
+A3b-35 || Mimikyu || Psiquico || 2 Rombos || Sobre Arboleda de Eevee
+A3b-36 || Milcery || Psiquico || 1 Rombo || Sobre Arboleda de Eevee
+A3b-37 || Alcremie || Psiquico || 2 Rombos || Sobre Arboleda de Eevee
+A3b-38 || Barboach || Lucha || 1 Rombo || Sobre Arboleda de Eevee
+A3b-39 || Whiscash || Lucha || 2 Rombos || Sobre Arboleda de Eevee
+A3b-40 || Mienfoo || Lucha || 1 Rombo || Sobre Arboleda de Eevee
+A3b-41 || Mienshao || Lucha || 2 Rombos || Sobre Arboleda de Eevee
+A3b-42 || Carbink || Lucha || 1 Rombo || Sobre Arboleda de Eevee
+A3b-43 || Umbreon || Oscuro || 3 Rombos || Sobre Arboleda de Eevee
+A3b-44 || Sableye || Oscuro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-45 || Purrloin || Oscuro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-46 || Liepard || Oscuro || 2 Rombos || Sobre Arboleda de Eevee
+A3b-47 || Mawile || Acero || 1 Rombo || Sobre Arboleda de Eevee
+A3b-48 || Togedemaru || Acero || 1 Rombo || Sobre Arboleda de Eevee
+A3b-49 || Meltan || Acero || 1 Rombo || Sobre Arboleda de Eevee
+A3b-50 || Melmetal || Acero || 2 Rombos || Sobre Arboleda de Eevee
+A3b-51 || Dratini || Dragon || 1 Rombo || Sobre Arboleda de Eevee
+A3b-52 || Dragonair || Dragon || 1 Rombo || Sobre Arboleda de Eevee
+A3b-53 || Dragonite EX || Dragon || 4 Rombos || Sobre Arboleda de Eevee
+A3b-54 || Drampa || Dragon || 2 Rombos || Sobre Arboleda de Eevee
+A3b-55 || Eevee || Incoloro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-56 || Eevee EX || Incoloro || 4 Rombos || Sobre Arboleda de Eevee
+A3b-57 || Snorlax EX || Incoloro || 4 Rombos || Sobre Arboleda de Eevee
+A3b-58 || Aipom || Incoloro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-59 || Ambipom || Incoloro || 2 Rombos || Sobre Arboleda de Eevee
+A3b-60 || Chatot || Incoloro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-61 || Audino || Incoloro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-62 || Minccino || Incoloro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-63 || Cinccino || Incoloro || 2 Rombos || Sobre Arboleda de Eevee
+A3b-64 || Skwovet || Incoloro || 1 Rombo || Sobre Arboleda de Eevee
+A3b-65 || Greedent || Incoloro || 2 Rombos || Sobre Arboleda de Eevee
+A3b-66 || Mochila de Eevee || Entrenador || 2 Rombos || Sobre Arboleda de Eevee
+A3b-67 || Restos || Entrenador || 2 Rombos || Sobre Arboleda de Eevee
+A3b-68 || Tilo || Entrenador || 2 Rombos || Sobre Arboleda de Eevee
+A3b-69 || Noa || Entrenador || 2 Rombos || Sobre Arboleda de Eevee
+A3b-70 || Leafeon || Planta || 1 Estrella || Sobre Arboleda de Eevee
+A3b-71 || Flareon || Fuego || 1 Estrella || Sobre Arboleda de Eevee
+A3b-72 || Vaporeon || Agua || 1 Estrella || Sobre Arboleda de Eevee
+A3b-73 || Glaceon || Agua || 1 Estrella || Sobre Arboleda de Eevee
+A3b-74 || Jolteon || Electrico || 1 Estrella || Sobre Arboleda de Eevee
+A3b-75 || Espeon || Psiquico || 1 Estrella || Sobre Arboleda de Eevee
+A3b-76 || Sylveon || Psiquico || 1 Estrella || Sobre Arboleda de Eevee
+A3b-77 || Umbreon || Oscuro || 1 Estrella || Sobre Arboleda de Eevee
+A3b-78 || Eevee || Incoloro || 1 Estrella || Sobre Arboleda de Eevee
+A3b-79 || Flareon EX || Fuego || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-80 || Primarina EX || Agua || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-81 || Sylveon EX || Psiquico || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-82 || Dragonite EX || Dragon || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-83 || Eevee EX || Incoloro || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-84 || Snorlax EX || Incoloro || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-85 || Tilo || Entrenador || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-86 || Noa || Entrenador || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-87 || Flareon EX || Fuego || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-88 || Primarina EX || Agua || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-89 || Sylveon EX || Psiquico || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-90 || Dragonite EX || Dragon || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-91 || Snorlax EX || Incoloro || 2 Estrellas || Sobre Arboleda de Eevee
+A3b-92 || Eevee EX || Incoloro || 3 Estrellas || Sobre Arboleda de Eevee
+A3b-93 || Pinsir || Planta || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-94 || Lapras || Agua || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-95 || Voltorb || Electrico || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-96 || Electrode || Electrico || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-97 || Ralts || Psiquico || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-98 || Kirlia || Psiquico || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-99 || Gardevoir || Psiquico || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-100 || Ekans || Oscuro || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-101 || Arbok || Oscuro || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-102 || Farfetch’d || Incoloro || Shiny 1 Estrella || Sobre Arboleda de Eevee
+A3b-103 || Moltres EX || Fuego || Shiny 2 Estrellas || Sobre Arboleda de Eevee
+A3b-104 || Articuno EX || Agua || Shiny 2 Estrellas || Sobre Arboleda de Eevee
+A3b-105 || Zapdos EX || Electrico || Shiny 2 Estrellas || Sobre Arboleda de Eevee
+A3b-106 || Gallade EX || Lucha || Shiny 2 Estrellas || Sobre Arboleda de Eevee
+A3b-107 || Mochila de Eevee || Entrenador || Corona || Sobre Arboleda de Eevee

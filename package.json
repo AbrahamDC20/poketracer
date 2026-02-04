@@ -1,0 +1,59 @@
+{
+  "name": "poketracker-pro",
+  "version": "1.0.0",
+  "description": "Gestor profesional de colección y mercado para Pokémon TCG Pocket",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "electron": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "pokemon",
+    "tcg",
+    "pocket",
+    "tracker",
+    "collection",
+    "manager"
+  ],
+  "author": "Admin",
+  "license": "ISC",
+  "build": {
+    "appId": "com.poketracker.pro",
+    "productName": "PokeTracker Pro",
+    "win": {
+      "target": "nsis",
+      "icon": "public/assets/images/card-back.webp"
+    },
+    "files": [
+      "**/*",
+      "!dist/**/*",
+      "!**/*.ts",
+      "!*.map",
+      "!package-lock.json"
+    ],
+    "asar": true,
+    "extraResources": [
+      "./database/**",
+      "./Listas_Wiki/**"
+    ]
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.4",
+    "compression": "^1.7.4",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^4.22.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

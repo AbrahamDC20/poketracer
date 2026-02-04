@@ -1,0 +1,111 @@
+A2b-1 || Weedle || Planta || 1 Rombo || Sobre Festival Brillante
+A2b-2 || Kakuna || Planta || 2 Rombos || Sobre Festival Brillante
+A2b-3 || Beedrill EX || Planta || 4 Rombos || Sobre Festival Brillante
+A2b-4 || Pinsir || Planta || 1 Rombo || Sobre Festival Brillante
+A2b-5 || Sprigatito || Planta || 1 Rombo || Sobre Festival Brillante
+A2b-6 || Floragato || Planta || 2 Rombos || Sobre Festival Brillante
+A2b-7 || Meowscarada || Planta || 3 Rombos || Sobre Festival Brillante
+A2b-8 || Charmander || Fuego || 1 Rombo || Sobre Festival Brillante
+A2b-9 || Charmeleon || Fuego || 2 Rombos || Sobre Festival Brillante
+A2b-10 || Charizard EX || Fuego || 4 Rombos || Sobre Festival Brillante
+A2b-11 || Magmar || Fuego || 1 Rombo || Sobre Festival Brillante
+A2b-12 || Magmortar || Fuego || 3 Rombos || Sobre Festival Brillante
+A2b-13 || Tauros de Paldea || Fuego || 2 Rombos || Sobre Festival Brillante
+A2b-14 || Tentacool || Agua || 1 Rombo || Sobre Festival Brillante
+A2b-15 || Tentacruel || Agua || 2 Rombos || Sobre Festival Brillante
+A2b-16 || Buizel || Agua || 1 Rombo || Sobre Festival Brillante
+A2b-17 || Floatzel || Agua || 2 Rombos || Sobre Festival Brillante
+A2b-18 || Wiglett || Agua || 1 Rombo || Sobre Festival Brillante
+A2b-19 || Wugtrio EX || Agua || 4 Rombos || Sobre Festival Brillante
+A2b-20 || Dondozo || Agua || 3 Rombos || Sobre Festival Brillante
+A2b-21 || Tatsugiri || Agua || 2 Rombos || Sobre Festival Brillante
+A2b-22 || Pikachu EX || Electrico || 4 Rombos || Sobre Festival Brillante
+A2b-23 || Voltorb || Electrico || 1 Rombo || Sobre Festival Brillante
+A2b-24 || Electrode || Electrico || 2 Rombos || Sobre Festival Brillante
+A2b-25 || Pachirisu || Electrico || 2 Rombos || Sobre Festival Brillante
+A2b-26 || Pawmi || Electrico || 1 Rombo || Sobre Festival Brillante
+A2b-27 || Pawmo || Electrico || 2 Rombos || Sobre Festival Brillante
+A2b-28 || Pawmot || Electrico || 3 Rombos || Sobre Festival Brillante
+A2b-29 || Abra || Psiquico || 1 Rombo || Sobre Festival Brillante
+A2b-30 || Kadabra || Psiquico || 2 Rombos || Sobre Festival Brillante
+A2b-31 || Alakazam || Psiquico || 3 Rombos || Sobre Festival Brillante
+A2b-32 || Mr. Mime || Psiquico || 1 Rombo || Sobre Festival Brillante
+A2b-33 || Drifloon || Psiquico || 1 Rombo || Sobre Festival Brillante
+A2b-34 || Drifblim || Psiquico || 2 Rombos || Sobre Festival Brillante
+A2b-35 || Giratina EX || Psiquico || 4 Rombos || Sobre Festival Brillante
+A2b-36 || Gimmighoul || Psiquico || 1 Rombo || Sobre Festival Brillante
+A2b-37 || Machop || Lucha || 1 Rombo || Sobre Festival Brillante
+A2b-38 || Machoke || Lucha || 1 Rombo || Sobre Festival Brillante
+A2b-39 || Machamp || Lucha || 3 Rombos || Sobre Festival Brillante
+A2b-40 || Hitmonlee || Lucha || 1 Rombo || Sobre Festival Brillante
+A2b-41 || Hitmonchan || Lucha || 1 Rombo || Sobre Festival Brillante
+A2b-42 || Riolu || Lucha || 1 Rombo || Sobre Festival Brillante
+A2b-43 || Lucario EX || Lucha || 4 Rombos || Sobre Festival Brillante
+A2b-44 || Flamigo || Lucha || 2 Rombos || Sobre Festival Brillante
+A2b-45 || Ekans || Oscuro || 1 Rombo || Sobre Festival Brillante
+A2b-46 || Arbok || Oscuro || 2 Rombos || Sobre Festival Brillante
+A2b-47 || Wooper de Paldea || Oscuro || 1 Rombo || Sobre Festival Brillante
+A2b-48 || Clodsire de Paldea EX || Oscuro || 4 Rombos || Sobre Festival Brillante
+A2b-49 || Spiritomb || Oscuro || 2 Rombos || Sobre Festival Brillante
+A2b-50 || Shroodle || Oscuro || 1 Rombo || Sobre Festival Brillante
+A2b-51 || Grafaiai || Oscuro || 3 Rombos || Sobre Festival Brillante
+A2b-52 || Tinkatink || Acero || 1 Rombo || Sobre Festival Brillante
+A2b-53 || Tinkatuff || Acero || 2 Rombos || Sobre Festival Brillante
+A2b-54 || Tinkaton EX || Acero || 4 Rombos || Sobre Festival Brillante
+A2b-55 || Varoom || Acero || 1 Rombo || Sobre Festival Brillante
+A2b-56 || Revavroom || Acero || 2 Rombos || Sobre Festival Brillante
+A2b-57 || Gholdengo || Acero || 3 Rombos || Sobre Festival Brillante
+A2b-58 || Rattata || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-59 || Raticate || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-60 || Jigglypuff || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-61 || Wigglytuff || Incoloro || 3 Rombos || Sobre Festival Brillante
+A2b-62 || Lickitung || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-63 || Lickilicky || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-64 || Bidoof || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-65 || Bibarel EX || Incoloro || 4 Rombos || Sobre Festival Brillante
+A2b-66 || Buneary || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-67 || Lopunny || Incoloro || 1 Rombo || Sobre Festival Brillante
+A2b-68 || Cyclizar || Incoloro || 2 Rombos || Sobre Festival Brillante
+A2b-69 || e-Nigma || Entrenador || 2 Rombos || Sobre Festival Brillante
+A2b-70 || Chica del Centro Pokémon || Entrenador || 2 Rombos || Sobre Festival Brillante
+A2b-71 || Rojo || Entrenador || 2 Rombos || Sobre Festival Brillante
+A2b-72 || Recluta del Team Rocket || Entrenador || 2 Rombos || Sobre Festival Brillante
+A2b-73 || Meowscarada || Planta || 1 Estrella || Sobre Festival Brillante
+A2b-74 || Buizel || Agua || 1 Estrella || Sobre Festival Brillante
+A2b-75 || Tatsugiri || Agua || 1 Estrella || Sobre Festival Brillante
+A2b-76 || Grafaiai || Oscuro || 1 Estrella || Sobre Festival Brillante
+A2b-77 || Gholdengo || Acero || 1 Estrella || Sobre Festival Brillante
+A2b-78 || Wigglytuff || Incoloro || 1 Estrella || Sobre Festival Brillante
+A2b-79 || Beedrill EX || Planta || 2 Estrellas || Sobre Festival Brillante
+A2b-80 || Charizard EX || Fuego || 2 Estrellas || Sobre Festival Brillante
+A2b-81 || Wugtrio EX || Agua || 2 Estrellas || Sobre Festival Brillante
+A2b-82 || Pikachu EX || Electrico || 2 Estrellas || Sobre Festival Brillante
+A2b-83 || Giratina EX || Psiquico || 2 Estrellas || Sobre Festival Brillante
+A2b-84 || Lucario EX || Lucha || 2 Estrellas || Sobre Festival Brillante
+A2b-85 || Clodsire de Paldea EX || Oscuro || 2 Estrellas || Sobre Festival Brillante
+A2b-86 || Tinkaton EX || Acero || 2 Estrellas || Sobre Festival Brillante
+A2b-87 || Bibarel EX || Incoloro || 2 Estrellas || Sobre Festival Brillante
+A2b-88 || e-Nigma || Entrenador || 2 Estrellas || Sobre Festival Brillante
+A2b-89 || Chica del Centro Pokémon || Entrenador || 2 Estrellas || Sobre Festival Brillante
+A2b-90 || Rojo || Entrenador || 2 Estrellas || Sobre Festival Brillante
+A2b-91 || Recluta del Team Rocket || Entrenador || 2 Estrellas || Sobre Festival Brillante
+A2b-92 || Pikachu EX || Electrico || 2 Estrellas Arcoíris || Sobre Festival Brillante
+A2b-93 || Clodsire de Paldea EX || Oscuro || 2 Estrellas Arcoíris || Sobre Festival Brillante
+A2b-94 || Tinkaton EX || Acero || 2 Estrellas Arcoíris || Sobre Festival Brillante
+A2b-95 || Bibarel EX || Incoloro || 2 Estrellas Arcoíris || Sobre Festival Brillante
+A2b-96 || Giratina EX || Psiquico || 3 Estrellas || Sobre Festival Brillante
+A2b-97 || Weedle || Planta || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-98 || Kakuna || Planta || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-99 || Charmander || Fuego || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-100 || Charmeleon || Fuego || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-101 || Wiglett || Agua || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-102 || Dondozo || Agua || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-103 || Pachirisu || Electrico || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-104 || Riolu || Lucha || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-105 || Varoom || Acero || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-106 || Revavroom || Acero || Shiny 1 Estrella || Sobre Festival Brillante
+A2b-107 || Beedrill EX || Planta || Shiny 2 Estrellas || Sobre Festival Brillante
+A2b-108 || Charizard EX || Fuego || Shiny 2 Estrellas || Sobre Festival Brillante
+A2b-109 || Wugtrio EX || Agua || Shiny 2 Estrellas || Sobre Festival Brillante
+A2b-110 || Lucario EX || Lucha || Shiny 2 Estrellas || Sobre Festival Brillante
+A2b-111 || Poké Ball || Entrenador || Corona || Sobre Festival Brillante

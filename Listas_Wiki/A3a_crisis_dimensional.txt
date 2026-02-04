@@ -1,0 +1,103 @@
+A3a-1 || Petilil || Planta || 1 Rombo || Sobre Crisis Dimensional
+A3a-2 || Lilligant || Planta || 1 Rombo || Sobre Crisis Dimensional
+A3a-3 || Rowlet || Planta || 1 Rombo || Sobre Crisis Dimensional
+A3a-4 || Dartrix || Planta || 2 Rombos || Sobre Crisis Dimensional
+A3a-5 || Decidueye || Planta || 3 Rombos || Sobre Crisis Dimensional
+A3a-6 || Buzzwole EX || Planta || 4 Rombos || Sobre Crisis Dimensional
+A3a-7 || Pheromosa || Planta || 2 Rombos || Sobre Crisis Dimensional
+A3a-8 || Kartana || Planta || 1 Rombo || Sobre Crisis Dimensional
+A3a-9 || Blacephalon || Fuego || 2 Rombos || Sobre Crisis Dimensional
+A3a-10 || Mantine || Agua || 1 Rombo || Sobre Crisis Dimensional
+A3a-11 || Carvanha || Agua || 1 Rombo || Sobre Crisis Dimensional
+A3a-12 || Sharpedo || Agua || 2 Rombos || Sobre Crisis Dimensional
+A3a-13 || Shinx || Electrico || 1 Rombo || Sobre Crisis Dimensional
+A3a-14 || Luxio || Electrico || 1 Rombo || Sobre Crisis Dimensional
+A3a-15 || Luxray || Electrico || 3 Rombos || Sobre Crisis Dimensional
+A3a-16 || Blitzle || Electrico || 1 Rombo || Sobre Crisis Dimensional
+A3a-17 || Zebstrika || Electrico || 1 Rombo || Sobre Crisis Dimensional
+A3a-18 || Emolga || Electrico || 1 Rombo || Sobre Crisis Dimensional
+A3a-19 || Tapu Koko EX || Electrico || 4 Rombos || Sobre Crisis Dimensional
+A3a-20 || Xurkitree || Electrico || 2 Rombos || Sobre Crisis Dimensional
+A3a-21 || Zeraora || Electrico || 3 Rombos || Sobre Crisis Dimensional
+A3a-22 || Clefairy || Psiquico || 1 Rombo || Sobre Crisis Dimensional
+A3a-23 || Clefable || Psiquico || 2 Rombos || Sobre Crisis Dimensional
+A3a-24 || Phantump || Psiquico || 1 Rombo || Sobre Crisis Dimensional
+A3a-25 || Trevenant || Psiquico || 1 Rombo || Sobre Crisis Dimensional
+A3a-26 || Morelull || Psiquico || 1 Rombo || Sobre Crisis Dimensional
+A3a-27 || Shiinotic || Psiquico || 3 Rombos || Sobre Crisis Dimensional
+A3a-28 || Meditite || Lucha || 1 Rombo || Sobre Crisis Dimensional
+A3a-29 || Medicham || Lucha || 2 Rombos || Sobre Crisis Dimensional
+A3a-30 || Baltoy || Lucha || 1 Rombo || Sobre Crisis Dimensional
+A3a-31 || Claydol || Lucha || 2 Rombos || Sobre Crisis Dimensional
+A3a-32 || Rockruff || Lucha || 1 Rombo || Sobre Crisis Dimensional
+A3a-33 || Lycanroc EX || Lucha || 4 Rombos || Sobre Crisis Dimensional
+A3a-34 || Passimian || Lucha || 1 Rombo || Sobre Crisis Dimensional
+A3a-35 || Sandygast || Lucha || 1 Rombo || Sobre Crisis Dimensional
+A3a-36 || Palossand || Lucha || 2 Rombos || Sobre Crisis Dimensional
+A3a-37 || Meowth de Alola || Oscuro || 1 Rombo || Sobre Crisis Dimensional
+A3a-38 || Persian de Alola || Oscuro || 2 Rombos || Sobre Crisis Dimensional
+A3a-39 || Sandile || Oscuro || 1 Rombo || Sobre Crisis Dimensional
+A3a-40 || Krokorok || Oscuro || 1 Rombo || Sobre Crisis Dimensional
+A3a-41 || Krookodile || Oscuro || 2 Rombos || Sobre Crisis Dimensional
+A3a-42 || Nihilego || Oscuro || 3 Rombos || Sobre Crisis Dimensional
+A3a-43 || Guzzlord EX || Oscuro || 4 Rombos || Sobre Crisis Dimensional
+A3a-44 || Poipole || Oscuro || 1 Rombo || Sobre Crisis Dimensional
+A3a-45 || Naganadel || Oscuro || 3 Rombos || Sobre Crisis Dimensional
+A3a-46 || Diglett de Alola || Acero || 1 Rombo || Sobre Crisis Dimensional
+A3a-47 || Dugtrio de Alola EX || Acero || 4 Rombos || Sobre Crisis Dimensional
+A3a-48 || Aron || Acero || 1 Rombo || Sobre Crisis Dimensional
+A3a-49 || Lairon || Acero || 1 Rombo || Sobre Crisis Dimensional
+A3a-50 || Aggron || Acero || 2 Rombos || Sobre Crisis Dimensional
+A3a-51 || Ferroseed || Acero || 1 Rombo || Sobre Crisis Dimensional
+A3a-52 || Ferrothorn || Acero || 2 Rombos || Sobre Crisis Dimensional
+A3a-53 || Stakataka || Acero || 2 Rombos || Sobre Crisis Dimensional
+A3a-54 || Lillipup || Incoloro || 1 Rombo || Sobre Crisis Dimensional
+A3a-55 || Herdier || Incoloro || 1 Rombo || Sobre Crisis Dimensional
+A3a-56 || Stoutland || Incoloro || 2 Rombos || Sobre Crisis Dimensional
+A3a-57 || Stufful || Incoloro || 1 Rombo || Sobre Crisis Dimensional
+A3a-58 || Bewear || Incoloro || 2 Rombos || Sobre Crisis Dimensional
+A3a-59 || Oranguru || Incoloro || 1 Rombo || Sobre Crisis Dimensional
+A3a-60 || Código Cero || Incoloro || 2 Rombos || Sobre Crisis Dimensional
+A3a-61 || Silvally || Incoloro || 3 Rombos || Sobre Crisis Dimensional
+A3a-62 || Celesteela || Incoloro || 3 Rombos || Sobre Crisis Dimensional
+A3a-63 || Muro Ente || Entrenador || 2 Rombos || Sobre Crisis Dimensional
+A3a-64 || Repelente || Entrenador || 2 Rombos || Sobre Crisis Dimensional
+A3a-65 || Cable Eléctrico || Entrenador || 2 Rombos || Sobre Crisis Dimensional
+A3a-66 || Entita || Entrenador || 2 Rombos || Sobre Crisis Dimensional
+A3a-67 || Gladio || Entrenador || 2 Rombos || Sobre Crisis Dimensional
+A3a-68 || Handsome || Entrenador || 2 Rombos || Sobre Crisis Dimensional
+A3a-69 || Samina || Entrenador || 2 Rombos || Sobre Crisis Dimensional
+A3a-70 || Rowlet || Planta || 1 Estrella || Sobre Crisis Dimensional
+A3a-71 || Pheromosa || Planta || 1 Estrella || Sobre Crisis Dimensional
+A3a-72 || Blacephalon || Fuego || 1 Estrella || Sobre Crisis Dimensional
+A3a-73 || Meowth de Alola || Oscuro || 1 Estrella || Sobre Crisis Dimensional
+A3a-74 || Silvally || Incoloro || 1 Estrella || Sobre Crisis Dimensional
+A3a-75 || Celesteela || Incoloro || 1 Estrella || Sobre Crisis Dimensional
+A3a-76 || Buzzwole EX || Planta || 2 Estrellas || Sobre Crisis Dimensional
+A3a-77 || Tapu Koko EX || Electrico || 2 Estrellas || Sobre Crisis Dimensional
+A3a-78 || Lycanroc EX || Lucha || 2 Estrellas || Sobre Crisis Dimensional
+A3a-79 || Guzzlord EX || Oscuro || 2 Estrellas || Sobre Crisis Dimensional
+A3a-80 || Dugtrio de Alola EX || Acero || 2 Estrellas || Sobre Crisis Dimensional
+A3a-81 || Gladio || Entrenador || 2 Estrellas || Sobre Crisis Dimensional
+A3a-82 || Handsome || Entrenador || 2 Estrellas || Sobre Crisis Dimensional
+A3a-83 || Samina || Entrenador || 2 Estrellas || Sobre Crisis Dimensional
+A3a-84 || Tapu Koko EX || Electrico || 2 Estrellas || Sobre Crisis Dimensional
+A3a-85 || Lycanroc EX || Lucha || 2 Estrellas || Sobre Crisis Dimensional
+A3a-86 || Guzzlord EX || Oscuro || 2 Estrellas || Sobre Crisis Dimensional
+A3a-87 || Dugtrio de Alola EX || Acero || 2 Estrellas || Sobre Crisis Dimensional
+A3a-88 || Buzzwole EX || Planta || 3 Estrellas || Sobre Crisis Dimensional
+A3a-89 || Growlithe || Fuego || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-90 || Arcanine || Fuego || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-91 || Froakie || Agua || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-92 || Frogadier || Agua || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-93 || Greninja || Agua || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-94 || Jynx || Psiquico || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-95 || Pidgey || Incoloro || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-96 || Pidgeotto || Incoloro || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-97 || Pidgeot || Incoloro || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-98 || Aerodactyl || Incoloro || Shiny 1 Estrella || Sobre Crisis Dimensional
+A3a-99 || Celebi EX || Planta || Shiny 2 Estrellas || Sobre Crisis Dimensional
+A3a-100 || Arcanine EX || Fuego || Shiny 2 Estrellas || Sobre Crisis Dimensional
+A3a-101 || Aerodactyl EX || Lucha || Shiny 2 Estrellas || Sobre Crisis Dimensional
+A3a-102 || Pidgeot EX || Incoloro || Shiny 2 Estrellas || Sobre Crisis Dimensional
+A3a-103 || Nihilego || Oscuro || Corona || Sobre Crisis Dimensional

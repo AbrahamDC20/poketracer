@@ -1,0 +1,286 @@
+A1-1 || Bulbasaur || Planta || 1 Rombo || Sobre Mewtwo
+A1-2 || Ivysaur || Planta || 2 Rombos || Sobre Mewtwo
+A1-3 || Venusaur || Planta || 3 Rombos || Sobre Mewtwo
+A1-4 || Venusaur EX || Planta || 4 Rombos || Sobre Mewtwo
+A1-5 || Caterpie || Planta || 1 Rombo || Sobre Pikachu
+A1-6 || Metapod || Planta || 1 Rombo || Sobre Pikachu
+A1-7 || Butterfree || Planta || 3 Rombos || Sobre Pikachu
+A1-8 || Weedle || Planta || 1 Rombo || Sobre Mewtwo
+A1-9 || Kakuna || Planta || 1 Rombo || Sobre Mewtwo
+A1-10 || Beedrill || Planta || 3 Rombos || Sobre Mewtwo
+A1-11 || Oddish || Planta || 1 Rombo || Sobre Charizard
+A1-12 || Gloom || Planta || 2 Rombos || Sobre Charizard
+A1-13 || Vileplume || Planta || 3 Rombos || Sobre Charizard
+A1-14 || Paras || Planta || 1 Rombo || Sobre Pikachu
+A1-15 || Parasect || Planta || 2 Rombos || Sobre Pikachu
+A1-16 || Venonat || Planta || 1 Rombo || Sobre Mewtwo
+A1-17 || Venomoth || Planta || 2 Rombos || Sobre Mewtwo
+A1-18 || Bellsprout || Planta || 1 Rombo || Sobre Charizard
+A1-19 || Weepinbell || Planta || 2 Rombos || Sobre Charizard
+A1-20 || Victreebel || Planta || 3 Rombos || Sobre Charizard
+A1-21 || Exeggcute || Planta || 1 Rombo || Sobre Charizard
+A1-22 || Exeggutor || Planta || 3 Rombos || Sobre Charizard
+A1-23 || Exeggutor EX || Planta || 4 Rombos || Sobre Charizard
+A1-24 || Tangela || Planta || 1 Rombo || Sobre Charizard
+A1-25 || Scyther || Planta || 1 Rombo || Sobre Mewtwo
+A1-26 || Pinsir || Planta || 2 Rombos || Sobre Genes Formidables
+A1-27 || Cottonee || Planta || 1 Rombo || Sobre Genes Formidables
+A1-28 || Whimsicott || Planta || 2 Rombos || Sobre Genes Formidables
+A1-29 || Petilil || Planta || 1 Rombo || Sobre Genes Formidables
+A1-30 || Lilligant || Planta || 2 Rombos || Sobre Genes Formidables
+A1-31 || Skiddo || Planta || 1 Rombo || Sobre Charizard
+A1-32 || Gogoat || Planta || 1 Rombo || Sobre Charizard
+A1-33 || Charmander || Fuego || 1 Rombo || Sobre Charizard
+A1-34 || Charmeleon || Fuego || 2 Rombos || Sobre Charizard
+A1-35 || Charizard || Fuego || 3 Rombos || Sobre Charizard
+A1-36 || Charizard EX || Fuego || 4 Rombos || Sobre Charizard
+A1-37 || Vulpix || Fuego || 1 Rombo || Sobre Charizard
+A1-38 || Ninetales || Fuego || 2 Rombos || Sobre Charizard
+A1-39 || Growlithe || Fuego || 1 Rombo || Sobre Pikachu
+A1-40 || Arcanine || Fuego || 3 Rombos || Sobre Pikachu
+A1-41 || Arcanine EX || Fuego || 4 Rombos || Sobre Pikachu
+A1-42 || Ponyta || Fuego || 1 Rombo || Sobre Genes Formidables
+A1-43 || Rapidash || Fuego || 2 Rombos || Sobre Genes Formidables
+A1-44 || Magmar || Fuego || 1 Rombo || Sobre Charizard
+A1-45 || Flareon || Fuego || 3 Rombos || Sobre Charizard
+A1-46 || Moltres || Fuego || 3 Rombos || Sobre Charizard
+A1-47 || Moltres EX || Fuego || 4 Rombos || Sobre Charizard
+A1-48 || Heatmor || Fuego || 1 Rombo || Sobre Genes Formidables
+A1-49 || Salandit || Fuego || 1 Rombo || Sobre Mewtwo
+A1-50 || Salazzle || Fuego || 1 Rombo || Sobre Mewtwo
+A1-51 || Sizzlipede || Fuego || 1 Rombo || Sobre Genes Formidables
+A1-52 || Centiskorch || Fuego || 2 Rombos || Sobre Genes Formidables
+A1-53 || Squirtle || Agua || 1 Rombo || Sobre Pikachu
+A1-54 || Wartortle || Agua || 2 Rombos || Sobre Pikachu
+A1-55 || Blastoise || Agua || 3 Rombos || Sobre Pikachu
+A1-56 || Blastoise EX || Agua || 4 Rombos || Sobre Pikachu
+A1-57 || Psyduck || Agua || 1 Rombo || Sobre Genes Formidables
+A1-58 || Golduck || Agua || 2 Rombos || Sobre Genes Formidables
+A1-59 || Poliwag || Agua || 1 Rombo || Sobre Charizard
+A1-60 || Poliwhirl || Agua || 2 Rombos || Sobre Charizard
+A1-61 || Poliwrath || Agua || 3 Rombos || Sobre Charizard
+A1-62 || Tentacool || Agua || 1 Rombo || Sobre Mewtwo
+A1-63 || Tentacruel || Agua || 2 Rombos || Sobre Mewtwo
+A1-64 || Seel || Agua || 1 Rombo || Sobre Pikachu
+A1-65 || Dewgong || Agua || 2 Rombos || Sobre Pikachu
+A1-66 || Shellder || Agua || 1 Rombo || Sobre Mewtwo
+A1-67 || Cloyster || Agua || 2 Rombos || Sobre Mewtwo
+A1-68 || Krabby || Agua || 1 Rombo || Sobre Mewtwo
+A1-69 || Kingler || Agua || 2 Rombos || Sobre Mewtwo
+A1-70 || Horsea || Agua || 1 Rombo || Sobre Pikachu
+A1-71 || Seadra || Agua || 2 Rombos || Sobre Pikachu
+A1-72 || Goldeen || Agua || 1 Rombo || Sobre Pikachu
+A1-73 || Seaking || Agua || 1 Rombo || Sobre Pikachu
+A1-74 || Staryu || Agua || 1 Rombo || Sobre Charizard
+A1-75 || Starmie || Agua || 2 Rombos || Sobre Charizard
+A1-76 || Starmie EX || Agua || 4 Rombos || Sobre Charizard
+A1-77 || Magikarp || Agua || 1 Rombo || Sobre Pikachu
+A1-78 || Gyarados || Agua || 3 Rombos || Sobre Pikachu
+A1-79 || Lapras || Agua || 3 Rombos || Sobre Charizard
+A1-80 || Vaporeon || Agua || 3 Rombos || Sobre Mewtwo
+A1-81 || Omanyte || Agua || 2 Rombos || Sobre Pikachu
+A1-82 || Omastar || Agua || 3 Rombos || Sobre Pikachu
+A1-83 || Articuno || Agua || 3 Rombos || Sobre Mewtwo
+A1-84 || Articuno EX || Agua || 4 Rombos || Sobre Mewtwo
+A1-85 || Ducklett || Agua || 1 Rombo || Sobre Charizard
+A1-86 || Swanna || Agua || 2 Rombos || Sobre Charizard
+A1-87 || Froakie || Agua || 1 Rombo || Sobre Charizard
+A1-88 || Frogadier || Agua || 2 Rombos || Sobre Charizard
+A1-89 || Greninja || Agua || 3 Rombos || Sobre Charizard
+A1-90 || Pyukumuku || Agua || 1 Rombo || Sobre Charizard
+A1-91 || Bruxish || Agua || 2 Rombos || Sobre Genes Formidables
+A1-92 || Snom || Agua || 1 Rombo || Sobre Genes Formidables
+A1-93 || Frosmoth || Agua || 2 Rombos || Sobre Genes Formidables
+A1-94 || Pikachu || Electrico || 1 Rombo || Sobre Pikachu
+A1-95 || Raichu || Electrico || 3 Rombos || Sobre Pikachu
+A1-96 || Pikachu EX || Electrico || 4 Rombos || Sobre Pikachu
+A1-97 || Magnemite || Electrico || 1 Rombo || Sobre Pikachu
+A1-98 || Magneton || Electrico || 3 Rombos || Sobre Pikachu
+A1-99 || Voltorb || Electrico || 1 Rombo || Sobre Pikachu
+A1-100 || Electrode || Electrico || 2 Rombos || Sobre Pikachu
+A1-101 || Electabuzz || Electrico || 1 Rombo || Sobre Pikachu
+A1-102 || Jolteon || Electrico || 3 Rombos || Sobre Pikachu
+A1-103 || Zapdos || Electrico || 3 Rombos || Sobre Pikachu
+A1-104 || Zapdos EX || Electrico || 4 Rombos || Sobre Pikachu
+A1-105 || Blitzle || Electrico || 1 Rombo || Sobre Genes Formidables
+A1-106 || Zebstrika || Electrico || 2 Rombos || Sobre Genes Formidables
+A1-107 || Tynamo || Electrico || 1 Rombo || Sobre Mewtwo
+A1-108 || Eelektrik || Electrico || 2 Rombos || Sobre Mewtwo
+A1-109 || Eelektross || Electrico || 3 Rombos || Sobre Mewtwo
+A1-110 || Helioptile || Electrico || 1 Rombo || Sobre Genes Formidables
+A1-111 || Heliolisk || Electrico || 1 Rombo || Sobre Genes Formidables
+A1-112 || Pincurchin || Electrico || 2 Rombos || Sobre Genes Formidables
+A1-113 || Clefairy || Psiquico || 1 Rombo || Sobre Pikachu
+A1-114 || Clefable || Psiquico || 2 Rombos || Sobre Pikachu
+A1-115 || Abra || Psiquico || 1 Rombo || Sobre Charizard
+A1-116 || Kadabra || Psiquico || 2 Rombos || Sobre Charizard
+A1-117 || Alakazam || Psiquico || 3 Rombos || Sobre Charizard
+A1-118 || Slowpoke || Psiquico || 1 Rombo || Sobre Genes Formidables
+A1-119 || Slowbro || Psiquico || 2 Rombos || Sobre Genes Formidables
+A1-120 || Gastly || Psiquico || 1 Rombo || Sobre Mewtwo
+A1-121 || Haunter || Psiquico || 2 Rombos || Sobre Mewtwo
+A1-122 || Gengar || Psiquico || 3 Rombos || Sobre Mewtwo
+A1-123 || Gengar EX || Psiquico || 4 Rombos || Sobre Mewtwo
+A1-124 || Drowzee || Psiquico || 1 Rombo || Sobre Pikachu
+A1-125 || Hypno || Psiquico || 3 Rombos || Sobre Pikachu
+A1-126 || Mr. Mime || Psiquico || 2 Rombos || Sobre Mewtwo
+A1-127 || Jynx || Psiquico || 1 Rombo || Sobre Mewtwo
+A1-128 || Mewtwo || Psiquico || 3 Rombos || Sobre Mewtwo
+A1-129 || Mewtwo EX || Psiquico || 4 Rombos || Sobre Mewtwo
+A1-130 || Ralts || Psiquico || 1 Rombo || Sobre Mewtwo
+A1-131 || Kirlia || Psiquico || 2 Rombos || Sobre Mewtwo
+A1-132 || Gardevoir || Psiquico || 3 Rombos || Sobre Mewtwo
+A1-133 || Woobat || Psiquico || 1 Rombo || Sobre Genes Formidables
+A1-134 || Swoobat || Psiquico || 1 Rombo || Sobre Genes Formidables
+A1-135 || Golett || Psiquico || 1 Rombo || Sobre Genes Formidables
+A1-136 || Golurk || Psiquico || 2 Rombos || Sobre Genes Formidables
+A1-137 || Sandshrew || Lucha || 1 Rombo || Sobre Genes Formidables
+A1-138 || Sandslash || Lucha || 2 Rombos || Sobre Genes Formidables
+A1-139 || Diglett || Lucha || 1 Rombo || Sobre Pikachu
+A1-140 || Dugtrio || Lucha || 2 Rombos || Sobre Pikachu
+A1-141 || Mankey || Lucha || 1 Rombo || Sobre Charizard
+A1-142 || Primeape || Lucha || 2 Rombos || Sobre Charizard
+A1-143 || Machop || Lucha || 1 Rombo || Sobre Charizard
+A1-144 || Machoke || Lucha || 2 Rombos || Sobre Charizard
+A1-145 || Machamp || Lucha || 3 Rombos || Sobre Charizard
+A1-146 || Machamp EX || Lucha || 4 Rombos || Sobre Charizard
+A1-147 || Geodude || Lucha || 1 Rombo || Sobre Pikachu
+A1-148 || Graveler || Lucha || 2 Rombos || Sobre Pikachu
+A1-149 || Golem || Lucha || 3 Rombos || Sobre Pikachu
+A1-150 || Onix || Lucha || 2 Rombos || Sobre Pikachu
+A1-151 || Cubone || Lucha || 1 Rombo || Sobre Mewtwo
+A1-152 || Marowak || Lucha || 2 Rombos || Sobre Mewtwo
+A1-153 || Marowak EX || Lucha || 4 Rombos || Sobre Mewtwo
+A1-154 || Hitmonlee || Lucha || 1 Rombo || Sobre Mewtwo
+A1-155 || Hitmonchan || Lucha || 1 Rombo || Sobre Charizard
+A1-156 || Rhyhorn || Lucha || 1 Rombo || Sobre Mewtwo
+A1-157 || Rhydon || Lucha || 2 Rombos || Sobre Mewtwo
+A1-158 || Kabuto || Lucha || 2 Rombos || Sobre Charizard
+A1-159 || Kabutops || Lucha || 3 Rombos || Sobre Charizard
+A1-160 || Mienfoo || Lucha || 1 Rombo || Sobre Pikachu
+A1-161 || Mienshao || Lucha || 2 Rombos || Sobre Pikachu
+A1-162 || Clobbopus || Lucha || 1 Rombo || Sobre Genes Formidables
+A1-163 || Grapploct || Lucha || 2 Rombos || Sobre Genes Formidables
+A1-164 || Ekans || Oscuro || 1 Rombo || Sobre Genes Formidables
+A1-165 || Arbok || Oscuro || 2 Rombos || Sobre Genes Formidables
+A1-166 || Nidoran♀ || Oscuro || 1 Rombo || Sobre Pikachu
+A1-167 || Nidorina || Oscuro || 2 Rombos || Sobre Pikachu
+A1-168 || Nidoqueen || Oscuro || 3 Rombos || Sobre Pikachu
+A1-169 || Nidoran♂ || Oscuro || 1 Rombo || Sobre Pikachu
+A1-170 || Nidorino || Oscuro || 2 Rombos || Sobre Pikachu
+A1-171 || Nidoking || Oscuro || 3 Rombos || Sobre Pikachu
+A1-172 || Zubat || Oscuro || 1 Rombo || Sobre Mewtwo
+A1-173 || Golbat || Oscuro || 2 Rombos || Sobre Mewtwo
+A1-174 || Grimer || Oscuro || 1 Rombo || Sobre Mewtwo
+A1-175 || Muk || Oscuro || 3 Rombos || Sobre Mewtwo
+A1-176 || Koffing || Oscuro || 1 Rombo || Sobre Mewtwo
+A1-177 || Weezing || Oscuro || 3 Rombos || Sobre Mewtwo
+A1-178 || Mawile || Acero || 1 Rombo || Sobre Charizard
+A1-179 || Pawniard || Acero || 1 Rombo || Sobre Genes Formidables
+A1-180 || Bisharp || Acero || 2 Rombos || Sobre Genes Formidables
+A1-181 || Meltan || Acero || 1 Rombo || Sobre Charizard
+A1-182 || Melmetal || Acero || 3 Rombos || Sobre Charizard
+A1-183 || Dratini || Dragon || 1 Rombo || Sobre Mewtwo
+A1-184 || Dragonair || Dragon || 2 Rombos || Sobre Mewtwo
+A1-185 || Dragonite || Dragon || 3 Rombos || Sobre Mewtwo
+A1-186 || Pidgey || Incoloro || 1 Rombo || Sobre Mewtwo
+A1-187 || Pidgeotto || Incoloro || 1 Rombo || Sobre Mewtwo
+A1-188 || Pidgeot || Incoloro || 3 Rombos || Sobre Mewtwo
+A1-189 || Rattata || Incoloro || 1 Rombo || Sobre Genes Formidables
+A1-190 || Raticate || Incoloro || 1 Rombo || Sobre Genes Formidables
+A1-191 || Spearow || Incoloro || 1 Rombo || Sobre Charizard
+A1-192 || Fearow || Incoloro || 1 Rombo || Sobre Charizard
+A1-193 || Jigglypuff || Incoloro || 1 Rombo || Sobre Pikachu
+A1-194 || Wigglytuff || Incoloro || 1 Rombo || Sobre Pikachu
+A1-195 || Wigglytuff EX || Incoloro || 4 Rombos || Sobre Pikachu
+A1-196 || Meowth || Incoloro || 1 Rombo || Sobre Charizard
+A1-197 || Persian || Incoloro || 2 Rombos || Sobre Charizard
+A1-198 || Farfetch’d || Incoloro || 1 Rombo || Sobre Genes Formidables
+A1-199 || Doduo || Incoloro || 1 Rombo || Sobre Genes Formidables
+A1-200 || Dodrio || Incoloro || 2 Rombos || Sobre Genes Formidables
+A1-201 || Lickitung || Incoloro || 2 Rombos || Sobre Mewtwo
+A1-202 || Chansey || Incoloro || 2 Rombos || Sobre Pikachu
+A1-203 || Kangaskhan || Incoloro || 3 Rombos || Sobre Charizard
+A1-204 || Tauros || Incoloro || 2 Rombos || Sobre Charizard
+A1-205 || Ditto || Incoloro || 3 Rombos || Sobre Mewtwo
+A1-206 || Eevee || Incoloro || 1 Rombo || Sobre Charizard
+A1-207 || Eevee || Incoloro || 1 Rombo || Sobre Mewtwo
+A1-208 || Eevee || Incoloro || 1 Rombo || Sobre Pikachu
+A1-209 || Porygon || Incoloro || 2 Rombos || Sobre Mewtwo
+A1-210 || Aerodactyl || Incoloro || 3 Rombos || Sobre Mewtwo
+A1-211 || Snorlax || Incoloro || 3 Rombos || Sobre Pikachu
+A1-212 || Minccino || Incoloro || 1 Rombo || Sobre Genes Formidables
+A1-213 || Cinccino || Incoloro || 2 Rombos || Sobre Genes Formidables
+A1-214 || Wooloo || Incoloro || 1 Rombo || Sobre Genes Formidables
+A1-215 || Dubwool || Incoloro || 1 Rombo || Sobre Genes Formidables
+A1-216 || Fósil Hélix || Entrenador || 1 Rombo || Sobre Pikachu
+A1-217 || Fósil Domo || Entrenador || 1 Rombo || Sobre Charizard
+A1-218 || Ámbar Viejo || Entrenador || 1 Rombo || Sobre Mewtwo
+A1-219 || Erika || Entrenador || 2 Rombos || Sobre Charizard
+A1-220 || Misty || Entrenador || 2 Rombos || Sobre Pikachu
+A1-221 || Blaine || Entrenador || 2 Rombos || Sobre Charizard
+A1-222 || Koga || Entrenador || 2 Rombos || Sobre Mewtwo
+A1-223 || Giovanni || Entrenador || 2 Rombos || Sobre Mewtwo
+A1-224 || Brock || Entrenador || 2 Rombos || Sobre Pikachu
+A1-225 || Sabrina || Entrenador || 2 Rombos || Sobre Charizard
+A1-226 || Teniente Surge || Entrenador || 2 Rombos || Sobre Pikachu
+A1-227 || Bulbasaur || Planta || 1 Estrella || Sobre Mewtwo
+A1-228 || Gloom || Planta || 1 Estrella || Sobre Charizard
+A1-229 || Pinsir || Planta || 1 Estrella || Sobre Charizard
+A1-230 || Charmander || Fuego || 1 Estrella || Sobre Charizard
+A1-231 || Rapidash || Fuego || 1 Estrella || Sobre Charizard
+A1-232 || Squirtle || Agua || 1 Estrella || Sobre Pikachu
+A1-233 || Gyarados || Agua || 1 Estrella || Sobre Pikachu
+A1-234 || Lapras || Agua || 1 Estrella || Sobre Charizard
+A1-235 || Electrode || Electrico || 1 Estrella || Sobre Pikachu
+A1-236 || Alakazam || Psiquico || 1 Estrella || Sobre Charizard
+A1-237 || Slowpoke || Psiquico || 1 Estrella || Sobre Charizard
+A1-238 || Diglett || Lucha || 1 Estrella || Sobre Pikachu
+A1-239 || Cubone || Lucha || 1 Estrella || Sobre Mewtwo
+A1-240 || Nidoqueen || Oscuro || 1 Estrella || Sobre Pikachu
+A1-241 || Nidoking || Oscuro || 1 Estrella || Sobre Pikachu
+A1-242 || Golbat || Oscuro || 1 Estrella || Sobre Mewtwo
+A1-243 || Weezing || Oscuro || 1 Estrella || Sobre Mewtwo
+A1-244 || Dragonite || Dragon || 1 Estrella || Sobre Mewtwo
+A1-245 || Pidgeot || Incoloro || 1 Estrella || Sobre Mewtwo
+A1-246 || Meowth || Incoloro || 1 Estrella || Sobre Charizard
+A1-247 || Ditto || Incoloro || 1 Estrella || Sobre Mewtwo
+A1-248 || Eevee || Incoloro || 1 Estrella || Sobre Pikachu
+A1-249 || Porygon || Incoloro || 1 Estrella || Sobre Mewtwo
+A1-250 || Snorlax || Incoloro || 1 Estrella || Sobre Pikachu
+A1-251 || Venusaur EX || Planta || 2 Estrellas || Sobre Mewtwo
+A1-252 || Exeggutor EX || Planta || 2 Estrellas || Sobre Charizard
+A1-253 || Charizard EX || Fuego || 2 Estrellas || Sobre Charizard
+A1-254 || Arcanine EX || Fuego || 2 Estrellas || Sobre Pikachu
+A1-255 || Moltres EX || Fuego || 2 Estrellas || Sobre Charizard
+A1-256 || Blastoise EX || Agua || 2 Estrellas || Sobre Pikachu
+A1-257 || Starmie EX || Agua || 2 Estrellas || Sobre Charizard
+A1-258 || Articuno EX || Agua || 2 Estrellas || Sobre Mewtwo
+A1-259 || Pikachu EX || Electrico || 2 Estrellas || Sobre Pikachu
+A1-260 || Zapdos EX || Electrico || 2 Estrellas || Sobre Pikachu
+A1-261 || Gengar EX || Psiquico || 2 Estrellas || Sobre Mewtwo
+A1-262 || Mewtwo EX || Psiquico || 2 Estrellas || Sobre Mewtwo
+A1-263 || Machamp EX || Lucha || 2 Estrellas || Sobre Charizard
+A1-264 || Marowak EX || Lucha || 2 Estrellas || Sobre Mewtwo
+A1-265 || Wigglytuff EX || Incoloro || 2 Estrellas || Sobre Pikachu
+A1-266 || Erika || Entrenador || 2 Estrellas || Sobre Charizard
+A1-267 || Misty || Entrenador || 2 Estrellas || Sobre Pikachu
+A1-268 || Blaine || Entrenador || 2 Estrellas || Sobre Charizard
+A1-269 || Koga || Entrenador || 2 Estrellas || Sobre Mewtwo
+A1-270 || Giovanni || Entrenador || 2 Estrellas || Sobre Mewtwo
+A1-271 || Brock || Entrenador || 2 Estrellas || Sobre Pikachu
+A1-272 || Sabrina || Entrenador || 2 Estrellas || Sobre Charizard
+A1-273 || Teniente Surge || Entrenador || 2 Estrellas || Sobre Pikachu
+A1-274 || Moltres EX || Fuego || 2 Estrellas || Sobre Charizard
+A1-275 || Articuno EX || Agua || 2 Estrellas || Sobre Mewtwo
+A1-276 || Zapdos EX || Electrico || 2 Estrellas || Sobre Pikachu
+A1-277 || Gengar EX || Psiquico || 2 Estrellas || Sobre Mewtwo
+A1-278 || Machamp EX || Lucha || 2 Estrellas || Sobre Charizard
+A1-279 || Wigglytuff EX || Incoloro || 2 Estrellas || Sobre Pikachu
+A1-280 || Charizard EX || Fuego || 3 Estrellas || Sobre Charizard
+A1-281 || Pikachu EX || Electrico || 3 Estrellas || Sobre Pikachu
+A1-282 || Mewtwo EX || Psiquico || 3 Estrellas || Sobre Mewtwo
+A1-283 || Mew || Psiquico || 3 Estrellas || Sobre Genes Formidables
+A1-284 || Charizard EX || Fuego || Corona || Sobre Charizard
+A1-285 || Pikachu EX || Electrico || Corona || Sobre Pikachu
+A1-286 || Mewtwo EX || Psiquico || Corona || Sobre Mewtwo

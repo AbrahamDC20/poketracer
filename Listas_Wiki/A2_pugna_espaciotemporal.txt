@@ -1,0 +1,207 @@
+A2-1 || Oddish || Planta || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-2 || Gloom || Planta || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-3 || Bellossom || Planta || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-4 || Tangela || Planta || 1 Rombo || Sobre Dialga
+A2-5 || Tangrowth || Planta || 2 Rombos || Sobre Dialga
+A2-6 || Yanma || Planta || 1 Rombo || Sobre Dialga
+A2-7 || Yanmega EX || Planta || 4 Rombos || Sobre Dialga
+A2-8 || Roselia || Planta || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-9 || Roserade || Planta || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-10 || Turtwig || Planta || 1 Rombo || Sobre Palkia
+A2-11 || Grotle || Planta || 2 Rombos || Sobre Palkia
+A2-12 || Torterra || Planta || 3 Rombos || Sobre Palkia
+A2-13 || Kricketot || Planta || 1 Rombo || Sobre Palkia
+A2-14 || Kricketune || Planta || 1 Rombo || Sobre Palkia
+A2-15 || Burmy || Planta || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-16 || Wormadam || Planta || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-17 || Combee || Planta || 1 Rombo || Sobre Dialga
+A2-18 || Vespiquen || Planta || 2 Rombos || Sobre Dialga
+A2-19 || Carnivine || Planta || 2 Rombos || Sobre Palkia
+A2-20 || Leafeon || Planta || 3 Rombos || Sobre Dialga
+A2-21 || Rotom Corte || Planta || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-22 || Shaymin || Planta || 3 Rombos || Sobre Dialga
+A2-23 || Magmar || Fuego || 1 Rombo || Sobre Palkia
+A2-24 || Magmortar || Fuego || 3 Rombos || Sobre Palkia
+A2-25 || Slugma || Fuego || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-26 || Magcargo || Fuego || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-27 || Chimchar || Fuego || 1 Rombo || Sobre Palkia
+A2-28 || Monferno || Fuego || 2 Rombos || Sobre Palkia
+A2-29 || Infernape EX || Fuego || 4 Rombos || Sobre Palkia
+A2-30 || Rotom Calor || Fuego || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-31 || Swinub || Agua || 1 Rombo || Sobre Dialga
+A2-32 || Piloswine || Agua || 2 Rombos || Sobre Dialga
+A2-33 || Mamoswine || Agua || 3 Rombos || Sobre Dialga
+A2-34 || Regice || Agua || 2 Rombos || Sobre Palkia
+A2-35 || Piplup || Agua || 1 Rombo || Sobre Palkia
+A2-36 || Prinplup || Agua || 2 Rombos || Sobre Palkia
+A2-37 || Empoleon || Agua || 3 Rombos || Sobre Palkia
+A2-38 || Buizel || Agua || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-39 || Floatzel || Agua || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-40 || Shellos || Agua || 1 Rombo || Sobre Palkia
+A2-41 || Gastrodon || Agua || 2 Rombos || Sobre Palkia
+A2-42 || Finneon || Agua || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-43 || Lumineon || Agua || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-44 || Snover || Agua || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-45 || Abomasnow || Agua || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-46 || Glaceon || Agua || 3 Rombos || Sobre Palkia
+A2-47 || Rotom Lavado || Agua || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-48 || Rotom Frío || Agua || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-49 || Palkia EX || Agua || 4 Rombos || Sobre Palkia
+A2-50 || Manaphy || Agua || 2 Rombos || Sobre Palkia
+A2-51 || Magnemite || Electrico || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-52 || Magneton || Electrico || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-53 || Magnezone || Electrico || 3 Rombos || Sobre Pugna Espaciotemporal
+A2-54 || Voltorb || Electrico || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-55 || Electrode || Electrico || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-56 || Electabuzz || Electrico || 1 Rombo || Sobre Dialga
+A2-57 || Electivire || Electrico || 3 Rombos || Sobre Dialga
+A2-58 || Shinx || Electrico || 1 Rombo || Sobre Dialga
+A2-59 || Luxio || Electrico || 2 Rombos || Sobre Dialga
+A2-60 || Luxray || Electrico || 3 Rombos || Sobre Dialga
+A2-61 || Pachirisu EX || Electrico || 4 Rombos || Sobre Dialga
+A2-62 || Rotom || Electrico || 1 Rombo || Sobre Palkia
+A2-63 || Togepi || Psiquico || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-64 || Togetic || Psiquico || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-65 || Togekiss || Psiquico || 3 Rombos || Sobre Pugna Espaciotemporal
+A2-66 || Misdreavus || Psiquico || 1 Rombo || Sobre Palkia
+A2-67 || Mismagius EX || Psiquico || 4 Rombos || Sobre Palkia
+A2-68 || Ralts || Psiquico || 1 Rombo || Sobre Dialga
+A2-69 || Kirlia || Psiquico || 1 Rombo || Sobre Dialga
+A2-70 || Duskull || Psiquico || 1 Rombo || Sobre Dialga
+A2-71 || Dusclops || Psiquico || 2 Rombos || Sobre Dialga
+A2-72 || Dusknoir || Psiquico || 3 Rombos || Sobre Dialga
+A2-73 || Drifloon || Psiquico || 1 Rombo || Sobre Dialga
+A2-74 || Drifblim || Psiquico || 2 Rombos || Sobre Dialga
+A2-75 || Uxie || Psiquico || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-76 || Mesprit || Psiquico || 3 Rombos || Sobre Pugna Espaciotemporal
+A2-77 || Azelf || Psiquico || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-78 || Giratina || Dragon || 3 Rombos || Sobre Palkia
+A2-79 || Cresselia || Psiquico || 3 Rombos || Sobre Palkia
+A2-80 || Rhyhorn || Lucha || 1 Rombo || Sobre Palkia
+A2-81 || Rhydon || Lucha || 2 Rombos || Sobre Palkia
+A2-82 || Rhyperior || Lucha || 3 Rombos || Sobre Palkia
+A2-83 || Gligar || Lucha || 1 Rombo || Sobre Dialga
+A2-84 || Gliscor || Lucha || 2 Rombos || Sobre Dialga
+A2-85 || Hitmontop || Lucha || 1 Rombo || Sobre Dialga
+A2-86 || Nosepass || Lucha || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-87 || Regirock || Lucha || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-88 || Cranidos || Lucha || 2 Rombos || Sobre Dialga
+A2-89 || Rampardos || Lucha || 3 Rombos || Sobre Dialga
+A2-90 || Wormadam || Lucha || 1 Rombo || Sobre Dialga
+A2-91 || Riolu || Lucha || 1 Rombo || Sobre Dialga
+A2-92 || Lucario || Lucha || 3 Rombos || Sobre Dialga
+A2-93 || Hippopotas || Lucha || 1 Rombo || Sobre Palkia
+A2-94 || Hippowdon || Lucha || 2 Rombos || Sobre Palkia
+A2-95 || Gallade EX || Lucha || 4 Rombos || Sobre Dialga
+A2-96 || Murkrow || Oscuro || 1 Rombo || Sobre Dialga
+A2-97 || Honchkrow || Oscuro || 2 Rombos || Sobre Dialga
+A2-98 || Sneasel || Oscuro || 1 Rombo || Sobre Palkia
+A2-99 || Weavile EX || Oscuro || 4 Rombos || Sobre Palkia
+A2-100 || Poochyena || Oscuro || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-101 || Mightyena || Oscuro || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-102 || Stunky || Oscuro || 1 Rombo || Sobre Dialga
+A2-103 || Skuntank || Oscuro || 2 Rombos || Sobre Dialga
+A2-104 || Spiritomb || Oscuro || 2 Rombos || Sobre Palkia
+A2-105 || Skorupi || Oscuro || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-106 || Drapion || Oscuro || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-107 || Croagunk || Oscuro || 1 Rombo || Sobre Dialga
+A2-108 || Toxicroak || Oscuro || 2 Rombos || Sobre Dialga
+A2-109 || Darkrai || Oscuro || 3 Rombos || Sobre Dialga
+A2-110 || Darkrai EX || Oscuro || 4 Rombos || Sobre Dialga
+A2-111 || Skarmory || Acero || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-112 || Registeel || Acero || 2 Rombos || Sobre Dialga
+A2-113 || Shieldon || Acero || 2 Rombos || Sobre Palkia
+A2-114 || Bastiodon || Acero || 3 Rombos || Sobre Palkia
+A2-115 || Wormadam || Acero || 1 Rombo || Sobre Palkia
+A2-116 || Bronzor || Acero || 1 Rombo || Sobre Dialga
+A2-117 || Bronzong || Acero || 2 Rombos || Sobre Dialga
+A2-118 || Probopass || Acero || 2 Rombos || Sobre Pugna Espaciotemporal
+A2-119 || Dialga EX || Acero || 4 Rombos || Sobre Dialga
+A2-120 || Heatran || Acero || 3 Rombos || Sobre Dialga
+A2-121 || Gible || Dragon || 1 Rombo || Sobre Palkia
+A2-122 || Gabite || Dragon || 2 Rombos || Sobre Palkia
+A2-123 || Garchomp || Dragon || 3 Rombos || Sobre Palkia
+A2-124 || Lickitung || Incoloro || 1 Rombo || Sobre Palkia
+A2-125 || Lickilicky EX || Incoloro || 4 Rombos || Sobre Palkia
+A2-126 || Eevee || Incoloro || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-127 || Porygon || Incoloro || 1 Rombo || Sobre Palkia
+A2-128 || Porygon2 || Incoloro || 2 Rombos || Sobre Palkia
+A2-129 || Porygon-Z || Incoloro || 3 Rombos || Sobre Palkia
+A2-130 || Aipom || Incoloro || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-131 || Ambipom || Incoloro || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-132 || Starly || Incoloro || 1 Rombo || Sobre Palkia
+A2-133 || Staravia || Incoloro || 1 Rombo || Sobre Palkia
+A2-134 || Staraptor || Incoloro || 2 Rombos || Sobre Palkia
+A2-135 || Bidoof || Incoloro || 1 Rombo || Sobre Dialga
+A2-136 || Bibarel || Incoloro || 1 Rombo || Sobre Dialga
+A2-137 || Buneary || Incoloro || 1 Rombo || Sobre Dialga
+A2-138 || Lopunny || Incoloro || 1 Rombo || Sobre Dialga
+A2-139 || Glameow || Incoloro || 1 Rombo || Sobre Palkia
+A2-140 || Purugly || Incoloro || 2 Rombos || Sobre Palkia
+A2-141 || Chatot || Incoloro || 1 Rombo || Sobre Palkia
+A2-142 || Rotom Ventilador || Incoloro || 1 Rombo || Sobre Pugna Espaciotemporal
+A2-143 || Regigigas || Incoloro || 3 Rombos || Sobre Pugna Espaciotemporal
+A2-144 || Fósil Cráneo || Entrenador || 1 Rombo || Sobre Dialga
+A2-145 || Fósil Coraza || Entrenador || 1 Rombo || Sobre Palkia
+A2-146 || Comunicación Pokémon || Entrenador || 2 Rombos || Sobre Dialga
+A2-147 || Capa Gigante || Entrenador || 2 Rombos || Sobre Dialga
+A2-148 || Casco Dentado || Entrenador || 2 Rombos || Sobre Palkia
+A2-149 || Baya Ziuela || Entrenador || 2 Rombos || Sobre Palkia
+A2-150 || Helio || Entrenador || 2 Rombos || Sobre Palkia
+A2-151 || Recluta del Equipo Galaxia || Entrenador || 2 Rombos || Sobre Dialga
+A2-152 || Cintia || Entrenador || 2 Rombos || Sobre Palkia
+A2-153 || Lectro || Entrenador || 2 Rombos || Sobre Dialga
+A2-154 || Maya || Entrenador || 2 Rombos || Sobre Dialga
+A2-155 || Venus || Entrenador || 2 Rombos || Sobre Palkia
+A2-156 || Tangrowth || Planta || 1 Estrella || Sobre Dialga
+A2-157 || Combee || Planta || 1 Estrella || Sobre Dialga
+A2-158 || Carnivine || Planta || 1 Estrella || Sobre Palkia
+A2-159 || Shaymin || Planta || 1 Estrella || Sobre Dialga
+A2-160 || Mamoswine || Agua || 1 Estrella || Sobre Dialga
+A2-161 || Gastrodon || Agua || 1 Estrella || Sobre Palkia
+A2-162 || Manaphy || Agua || 1 Estrella || Sobre Palkia
+A2-163 || Shinx || Electrico || 1 Estrella || Sobre Dialga
+A2-164 || Rotom || Electrico || 1 Estrella || Sobre Palkia
+A2-165 || Drifloon || Psiquico || 1 Estrella || Sobre Dialga
+A2-166 || Mesprit || Psiquico || 1 Estrella || Sobre Dialga
+A2-167 || Giratina || Dragon || 1 Estrella || Sobre Palkia
+A2-168 || Cresselia || Psiquico || 1 Estrella || Sobre Palkia
+A2-169 || Rhyperior || Lucha || 1 Estrella || Sobre Palkia
+A2-170 || Lucario || Lucha || 1 Estrella || Sobre Dialga
+A2-171 || Hippopotas || Lucha || 1 Estrella || Sobre Palkia
+A2-172 || Spiritomb || Oscuro || 1 Estrella || Sobre Palkia
+A2-173 || Croagunk || Oscuro || 1 Estrella || Sobre Dialga
+A2-174 || Heatran || Acero || 1 Estrella || Sobre Dialga
+A2-175 || Garchomp || Dragon || 1 Estrella || Sobre Palkia
+A2-176 || Staraptor || Incoloro || 1 Estrella || Sobre Palkia
+A2-177 || Bidoof || Incoloro || 1 Estrella || Sobre Dialga
+A2-178 || Glameow || Incoloro || 1 Estrella || Sobre Palkia
+A2-179 || Regigigas || Incoloro || 1 Estrella || Sobre Dialga
+A2-180 || Yanmega EX || Planta || 2 Estrellas || Sobre Dialga
+A2-181 || Infernape EX || Fuego || 2 Estrellas || Sobre Palkia
+A2-182 || Palkia EX || Agua || 2 Estrellas || Sobre Palkia
+A2-183 || Pachirisu EX || Electrico || 2 Estrellas || Sobre Dialga
+A2-184 || Mismagius EX || Psiquico || 2 Estrellas || Sobre Palkia
+A2-185 || Gallade EX || Lucha || 2 Estrellas || Sobre Dialga
+A2-186 || Weavile EX || Oscuro || 2 Estrellas || Sobre Palkia
+A2-187 || Darkrai EX || Oscuro || 2 Estrellas || Sobre Dialga
+A2-188 || Dialga EX || Acero || 2 Estrellas || Sobre Dialga
+A2-189 || Lickilicky EX || Incoloro || 2 Estrellas || Sobre Palkia
+A2-190 || Helio || Entrenador || 2 Estrellas || Sobre Palkia
+A2-191 || Recluta del Equipo Galaxia || Entrenador || 2 Estrellas || Sobre Dialga
+A2-192 || Cintia || Entrenador || 2 Estrellas || Sobre Palkia
+A2-193 || Lectro || Entrenador || 2 Estrellas || Sobre Dialga
+A2-194 || Maya || Entrenador || 2 Estrellas || Sobre Dialga
+A2-195 || Venus || Entrenador || 2 Estrellas || Sobre Palkia
+A2-196 || Yanmega EX || Planta || 2 Estrellas Arcoíris || Sobre Dialga
+A2-197 || Infernape EX || Fuego || 2 Estrellas Arcoíris || Sobre Palkia
+A2-198 || Pachirisu EX || Electrico || 2 Estrellas Arcoíris || Sobre Dialga
+A2-199 || Mismagius EX || Psiquico || 2 Estrellas Arcoíris || Sobre Palkia
+A2-200 || Gallade EX || Lucha || 2 Estrellas Arcoíris || Sobre Dialga
+A2-201 || Weavile EX || Oscuro || 2 Estrellas Arcoíris || Sobre Palkia
+A2-202 || Darkrai EX || Oscuro || 2 Estrellas Arcoíris || Sobre Dialga
+A2-203 || Lickilicky EX || Incoloro || 2 Estrellas Arcoíris || Sobre Palkia
+A2-204 || Palkia EX || Agua || 3 Estrellas || Sobre Palkia
+A2-205 || Dialga EX || Acero || 3 Estrellas || Sobre Dialga
+A2-206 || Palkia EX || Agua || Corona || Sobre Pugna Espaciotemporal
+A2-207 || Dialga EX || Acero || Corona || Sobre Pugna Espaciotemporal

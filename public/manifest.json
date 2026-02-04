@@ -1,0 +1,21 @@
+{
+  "name": "PokéTracker Pro",
+  "short_name": "PokeTracker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c1b",
+  "theme_color": "#0a0c1b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/images/card-back.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/assets/images/card-back.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+A4a-1 || Hoppip || Planta || 1 Rombo || Sobre Manantial Oculto
+A4a-2 || Skiploom || Planta || 2 Rombos || Sobre Manantial Oculto
+A4a-3 || Jumpluff EX || Planta || 4 Rombos || Sobre Manantial Oculto
+A4a-4 || Sunkern || Planta || 1 Rombo || Sobre Manantial Oculto
+A4a-5 || Sunflora || Planta || 2 Rombos || Sobre Manantial Oculto
+A4a-6 || Celebi || Planta || 3 Rombos || Sobre Manantial Oculto
+A4a-7 || Durant || Planta || 1 Rombo || Sobre Manantial Oculto
+A4a-8 || Slugma || Fuego || 1 Rombo || Sobre Manantial Oculto
+A4a-9 || Magcargo || Fuego || 2 Rombos || Sobre Manantial Oculto
+A4a-10 || Entei EX || Fuego || 4 Rombos || Sobre Manantial Oculto
+A4a-11 || Fletchinder || Fuego || 1 Rombo || Sobre Manantial Oculto
+A4a-12 || Talonflame || Fuego || 2 Rombos || Sobre Manantial Oculto
+A4a-13 || Poliwag || Agua || 1 Rombo || Sobre Manantial Oculto
+A4a-14 || Poliwhirl || Agua || 2 Rombos || Sobre Manantial Oculto
+A4a-15 || Tentacool || Agua || 1 Rombo || Sobre Manantial Oculto
+A4a-16 || Tentacruel || Agua || 2 Rombos || Sobre Manantial Oculto
+A4a-17 || Slowpoke || Agua || 1 Rombo || Sobre Manantial Oculto
+A4a-18 || Slowking || Agua || 2 Rombos || Sobre Manantial Oculto
+A4a-19 || Jynx || Agua || 1 Rombo || Sobre Manantial Oculto
+A4a-20 || Suicune EX || Agua || 4 Rombos || Sobre Manantial Oculto
+A4a-21 || Feebas || Agua || 1 Rombo || Sobre Manantial Oculto
+A4a-22 || Milotic || Agua || 3 Rombos || Sobre Manantial Oculto
+A4a-23 || Mantyke || Agua || 3 Rombos || Sobre Manantial Oculto
+A4a-24 || Cryogonal || Agua || 1 Rombo || Sobre Manantial Oculto
+A4a-25 || Raikou EX || Electrico || 4 Rombos || Sobre Manantial Oculto
+A4a-26 || Tynamo || Electrico || 1 Rombo || Sobre Manantial Oculto
+A4a-27 || Eelektrik || Electrico || 1 Rombo || Sobre Manantial Oculto
+A4a-28 || Eelektross || Electrico || 2 Rombos || Sobre Manantial Oculto
+A4a-29 || Stunfisk || Electrico || 1 Rombo || Sobre Manantial Oculto
+A4a-30 || Yamper || Electrico || 1 Rombo || Sobre Manantial Oculto
+A4a-31 || Boltund || Electrico || 3 Rombos || Sobre Manantial Oculto
+A4a-32 || Misdreavus || Psiquico || 1 Rombo || Sobre Manantial Oculto
+A4a-33 || Mismagius || Psiquico || 2 Rombos || Sobre Manantial Oculto
+A4a-34 || Corsola de Galar || Psiquico || 1 Rombo || Sobre Manantial Oculto
+A4a-35 || Cursola de Galar || Psiquico || 3 Rombos || Sobre Manantial Oculto
+A4a-36 || Latias || Psiquico || 3 Rombos || Sobre Manantial Oculto
+A4a-37 || Latios || Psiquico || 3 Rombos || Sobre Manantial Oculto
+A4a-38 || Frillish || Psiquico || 1 Rombo || Sobre Manantial Oculto
+A4a-39 || Jellicent || Psiquico || 2 Rombos || Sobre Manantial Oculto
+A4a-40 || Diglett || Lucha || 1 Rombo || Sobre Manantial Oculto
+A4a-41 || Dugtrio || Lucha || 2 Rombos || Sobre Manantial Oculto
+A4a-42 || Poliwrath EX || Lucha || 4 Rombos || Sobre Manantial Oculto
+A4a-43 || Phanpy || Lucha || 1 Rombo || Sobre Manantial Oculto
+A4a-44 || Donphan || Lucha || 2 Rombos || Sobre Manantial Oculto
+A4a-45 || Relicanth || Lucha || 1 Rombo || Sobre Manantial Oculto
+A4a-46 || Dwebble || Lucha || 1 Rombo || Sobre Manantial Oculto
+A4a-47 || Crustle || Lucha || 2 Rombos || Sobre Manantial Oculto
+A4a-48 || Seviper || Oscuro || 1 Rombo || Sobre Manantial Oculto
+A4a-49 || Zorua || Oscuro || 1 Rombo || Sobre Manantial Oculto
+A4a-50 || Zoroark || Oscuro || 3 Rombos || Sobre Manantial Oculto
+A4a-51 || Inkay || Oscuro || 1 Rombo || Sobre Manantial Oculto
+A4a-52 || Malamar || Oscuro || 2 Rombos || Sobre Manantial Oculto
+A4a-53 || Skrelp || Oscuro || 1 Rombo || Sobre Manantial Oculto
+A4a-54 || Dragalge || Oscuro || 1 Rombo || Sobre Manantial Oculto
+A4a-55 || Altaria || Dragon || 3 Rombos || Sobre Manantial Oculto
+A4a-56 || Farfetch'd || Incoloro || 1 Rombo || Sobre Manantial Oculto
+A4a-57 || Lickitung || Incoloro || 1 Rombo || Sobre Manantial Oculto
+A4a-58 || Lickilicky || Incoloro || 2 Rombos || Sobre Manantial Oculto
+A4a-59 || Igglybuff || Incoloro || 3 Rombos || Sobre Manantial Oculto
+A4a-60 || Teddiursa || Incoloro || 1 Rombo || Sobre Manantial Oculto
+A4a-61 || Ursaring || Incoloro || 2 Rombos || Sobre Manantial Oculto
+A4a-62 || Miltank || Incoloro || 2 Rombos || Sobre Manantial Oculto
+A4a-63 || Azurill || Incoloro || 3 Rombos || Sobre Manantial Oculto
+A4a-64 || Swablu || Incoloro || 1 Rombo || Sobre Manantial Oculto
+A4a-65 || Zangoose || Incoloro || 2 Rombos || Sobre Manantial Oculto
+A4a-66 || Fletchling || Incoloro || 1 Rombo || Sobre Manantial Oculto
+A4a-67 || Balsa Hinchable || Entrenador || 2 Rombos || Sobre Manantial Oculto
+A4a-68 || Luz Evocadora || Entrenador || 2 Rombos || Sobre Manantial Oculto
+A4a-69 || Blanca || Entrenador || 2 Rombos || Sobre Manantial Oculto
+A4a-70 || Mercader Ambulante || Entrenador || 2 Rombos || Sobre Manantial Oculto
+A4a-71 || Morti || Entrenador || 2 Rombos || Sobre Manantial Oculto
+A4a-72 || Milotic || Agua || 1 Estrella || Sobre Manantial Oculto
+A4a-73 || Stunfisk || Electrico || 1 Estrella || Sobre Manantial Oculto
+A4a-74 || Yamper || Electrico || 1 Estrella || Sobre Manantial Oculto
+A4a-75 || Latios || Psiquico || 1 Estrella || Sobre Manantial Oculto
+A4a-76 || Phanpy || Lucha || 1 Estrella || Sobre Manantial Oculto
+A4a-77 || Azurill || Incoloro || 1 Estrella || Sobre Manantial Oculto
+A4a-78 || Jumpluff EX || Planta || 2 Estrellas || Sobre Manantial Oculto
+A4a-79 || Entei EX || Fuego || 2 Estrellas || Sobre Manantial Oculto
+A4a-80 || Suicune EX || Agua || 2 Estrellas || Sobre Manantial Oculto
+A4a-81 || Raikou EX || Electrico || 2 Estrellas || Sobre Manantial Oculto
+A4a-82 || Poliwrath EX || Lucha || 2 Estrellas || Sobre Manantial Oculto
+A4a-83 || Blanca || Entrenador || 2 Estrellas || Sobre Manantial Oculto
+A4a-84 || Mercader Ambulante || Entrenador || 2 Estrellas || Sobre Manantial Oculto
+A4a-85 || Morti || Entrenador || 2 Estrellas || Sobre Manantial Oculto
+A4a-86 || Jumpluff EX || Planta || 2 Estrellas || Sobre Manantial Oculto
+A4a-87 || Entei EX || Fuego || 2 Estrellas || Sobre Manantial Oculto
+A4a-88 || Raikou EX || Electrico || 2 Estrellas || Sobre Manantial Oculto
+A4a-89 || Poliwrath EX || Lucha || 2 Estrellas || Sobre Manantial Oculto
+A4a-90 || Suicune EX || Agua || 3 Estrellas || Sobre Manantial Oculto
+A4a-91 || Chimchar || Fuego || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-92 || Monferno || Fuego || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-93 || Psyduck || Agua || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-94 || Golduck || Agua || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-95 || Krabby || Agua || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-96 || Kingler || Agua || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-97 || Pyukumuku || Agua || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-98 || Gible || Lucha || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-99 || Gabite || Lucha || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-100 || Wooper de Paldea || Oscuro || Shiny 1 Estrella || Sobre Manantial Oculto
+A4a-101 || Infernape EX || Fuego || Shiny 2 Estrellas || Sobre Manantial Oculto
+A4a-102 || Mew EX || Psiquico || Shiny 2 Estrellas || Sobre Manantial Oculto
+A4a-103 || Garchomp EX || Lucha || Shiny 2 Estrellas || Sobre Manantial Oculto
+A4a-104 || Clodsire de Paldea EX || Oscuro || Shiny 2 Estrellas || Sobre Manantial Oculto
+A4a-105 || Mantyke || Agua || Corona || Sobre Manantial Oculto

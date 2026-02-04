@@ -1,0 +1,252 @@
+/* ==========================================================================
+   POKÉTRACKER PRO - DESIGN TOKENS SYSTEM (CORE VARIABLES)
+   Versión: 6.0.0 (Enhanced Edition)
+   Descripción: Sistema centralizado de variables CSS.
+   Controla colores, tipografía, espaciado, capas Z y animaciones.
+   ========================================================================== */
+
+:root {
+    /* --------------------------------------------------------------------------
+       1. TIPOGRAFÍA Y FUENTES
+       -------------------------------------------------------------------------- */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', sans-serif; /* Para Títulos y Números Grandes */
+    --font-mono: 'Courier Prime', monospace; /* Para Datos Técnicos/IDs */
+
+    /* --------------------------------------------------------------------------
+       2. DIMENSIONES DE LAYOUT (RESPONSIVE BASE)
+       -------------------------------------------------------------------------- */
+    --header-height: 80px;
+    --toolbar-height: 60px;
+    --sidebar-width: 300px;
+    --sidebar-width-collapsed: 80px;
+    
+    /* Espaciado del Sistema */
+    --gap-xxs: 4px;
+    --gap-xs: 8px;
+    --gap-sm: 16px;
+    --gap-md: 24px;
+    --gap-lg: 32px;
+    --gap-xl: 48px;
+    --gap-xxl: 80px;
+
+    /* Radios de Borde */
+    --radius-xs: 6px;
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 26px;
+    --radius-xl: 40px;
+    --radius-full: 9999px;
+
+    /* --------------------------------------------------------------------------
+       3. SISTEMA DE CAPAS (Z-INDEX HIERARCHY)
+       CRÍTICO: No modificar sin revisar mobile.css y desktop.css
+       -------------------------------------------------------------------------- */
+    --z-back: -10;
+    --z-base: 1;
+    --z-card: 10;
+    --z-card-hover: 50;
+    --z-controls: 60;      /* Botones sobre cartas */
+    --z-sticky: 100;
+    --z-nav: 500;
+    --z-sidebar: 9000;
+    --z-overlay: 9500;
+    --z-loader: 10000;
+    --z-modal: 11000;      /* Siempre encima de todo */
+    --z-toast: 12000;      /* Notificaciones urgentes */
+
+    /* --------------------------------------------------------------------------
+       4. ANIMACIONES Y TRANSICIONES (MOTION)
+       -------------------------------------------------------------------------- */
+    --t-fast: 0.15s;
+    --t-normal: 0.3s;
+    --t-slow: 0.5s;
+    
+    /* Curvas de Movimiento */
+    --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efecto goma */
+    --ease-squish: cubic-bezier(0.34, 1.56, 0.64, 1);       /* Para botones */
+
+    /* --------------------------------------------------------------------------
+       5. SOMBRAS Y PROFUNDIDAD
+       -------------------------------------------------------------------------- */
+    --shadow-flat: 0 0 0 transparent;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 15px 45px rgba(0, 0, 0, 0.45);
+    --shadow-dream: 0 20px 60px rgba(0, 0, 0, 0.6); /* Sombra suave y difusa */
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    
+    /* --------------------------------------------------------------------------
+       6. COLORES DE RAREZA (SISTEMA GLOBAL)
+       Uso futuro para bordes de cartas específicos
+       -------------------------------------------------------------------------- */
+    --rarity-common: #a1a1aa;      /* Gris Zinc */
+    --rarity-uncommon: #2dd4bf;    /* Teal */
+    --rarity-rare: #3b82f6;        /* Azul */
+    --rarity-super: #a855f7;       /* Púrpura */
+    --rarity-secret: #f43f5e;      /* Rosa */
+    --rarity-gold: #fbbf24;        /* Oro */
+    --rarity-crown: #000000;       /* Negro/Corona */
+}
+
+/* ==========================================================================
+   TEMAS (COLOR PALETTES)
+   ========================================================================== */
+
+/* 1. NEÓN (Cyberpunk / Dark Default) */
+[data-theme="neon"] {
+    --bg-main: #050507;
+    --bg-grad: radial-gradient(circle at 50% 0%, #1e1e2e 0%, #050507 100%);
+    --bg-panel: rgba(18, 20, 28, 0.92);
+    --bg-card: #0f1116;
+    --bg-input: #0a0b0e;
+    --bg-hover: rgba(255, 255, 255, 0.08);
+
+    --text-main: #e2e8f0;
+    --text-light: #ffffff;
+    --text-muted: #94a3b8;
+    --text-inverse: #000000;
+
+    --accent-primary: #00f2ff;
+    --accent-secondary: #7000ff;
+    --accent-glow: rgba(0, 242, 255, 0.4);
+
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.25);
+
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+    --gold: #fbbf24;
+
+    --glass: blur(20px);
+}
+
+/* 2. LIGHT (Solar / Clean) */
+[data-theme="light"] {
+    --bg-main: #f8fafc;
+    --bg-grad: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --bg-panel: rgba(255, 255, 255, 0.92);
+    --bg-card: #ffffff;
+    --bg-input: #f1f5f9;
+    --bg-hover: #e2e8f0;
+
+    --text-main: #334155;
+    --text-light: #0f172a;
+    --text-muted: #64748b;
+    --text-inverse: #ffffff;
+
+    --accent-primary: #0ea5e9;
+    --accent-secondary: #6366f1;
+    --accent-glow: rgba(14, 165, 233, 0.25);
+
+    --border-color: #cbd5e1;
+    --border-hover: #94a3b8;
+
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --info: #2563eb;
+    --gold: #d97706;
+
+    --glass: blur(12px);
+}
+
+/* 3. FUEGO (Magma / Intense) */
+[data-theme="fuego"] {
+    --bg-main: #0f0202;
+    --bg-grad: radial-gradient(circle at 50% 100%, #450a0a 0%, #000000 100%);
+    --bg-panel: rgba(20, 5, 5, 0.95);
+    --bg-card: #2b0808;
+    --bg-input: #150303;
+    --bg-hover: rgba(255, 100, 100, 0.15);
+
+    --text-main: #fdba74;
+    --text-light: #fff7ed;
+    --text-muted: #9f1239;
+    --text-inverse: #000000;
+
+    --accent-primary: #ef4444;
+    --accent-secondary: #f97316;
+    --accent-glow: rgba(239, 68, 68, 0.6);
+
+    --border-color: #7f1d1d;
+    --border-hover: #ef4444;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ff0000;
+    --gold: #fbbf24;
+
+    --glass: blur(15px);
+}
+
+/* 4. AGUA (Deep Sea / Calm) */
+[data-theme="agua"] {
+    --bg-main: #020617;
+    --bg-grad: linear-gradient(to bottom, #0f172a, #020617);
+    --bg-panel: rgba(15, 23, 42, 0.92);
+    --bg-card: #1e293b;
+    --bg-input: #0f172a;
+    --bg-hover: rgba(56, 189, 248, 0.15);
+
+    --text-main: #bae6fd;
+    --text-light: #f0f9ff;
+    --text-muted: #475569;
+    --text-inverse: #000000;
+
+    --accent-primary: #38bdf8;
+    --accent-secondary: #0284c7;
+    --accent-glow: rgba(56, 189, 248, 0.4);
+
+    --border-color: #1e293b;
+    --border-hover: #38bdf8;
+
+    --success: #34d399;
+    --warning: #fbbf24;
+    --danger: #f43f5e;
+    --gold: #fcd34d;
+
+    --glass: blur(20px);
+}
+
+/* 5. GAMEBOY (Retro / Monochrome) */
+[data-theme="gameboy"] {
+    --bg-main: #8b9c0f;
+    --bg-grad: none;
+    --bg-panel: #9bbc0f;
+    --bg-card: #9bbc0f;
+    --bg-input: #306230;
+    --bg-hover: #0f380f;
+
+    --text-main: #0f380f;
+    --text-light: #0f380f;
+    --text-muted: #306230;
+    --text-inverse: #9bbc0f;
+
+    --accent-primary: #0f380f;
+    --accent-secondary: #306230;
+    --accent-glow: none;
+
+    --border-color: #0f380f;
+    --border-hover: #0f380f;
+
+    --success: #0f380f;
+    --warning: #0f380f;
+    --danger: #0f380f;
+    --gold: #0f380f;
+
+    /* Override de radios para look pixel */
+    --radius-xs: 0;
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
+    --radius-xl: 0;
+    --radius-full: 0;
+    
+    --glass: none;
+}

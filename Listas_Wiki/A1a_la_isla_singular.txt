@@ -1,0 +1,86 @@
+A1a-1 || Exeggcute || Planta || 1 Rombo || Sobre La Isla Singular
+A1a-2 || Exeggutor || Planta || 2 Rombos || Sobre La Isla Singular
+A1a-3 || Celebi EX || Planta || 4 Rombos || Sobre La Isla Singular
+A1a-4 || Snivy || Planta || 1 Rombo || Sobre La Isla Singular
+A1a-5 || Servine || Planta || 2 Rombos || Sobre La Isla Singular
+A1a-6 || Serperior || Planta || 3 Rombos || Sobre La Isla Singular
+A1a-7 || Morelull || Planta || 1 Rombo || Sobre La Isla Singular
+A1a-8 || Shiinotic || Planta || 2 Rombos || Sobre La Isla Singular
+A1a-9 || Dhelmise || Planta || 2 Rombos || Sobre La Isla Singular
+A1a-10 || Ponyta || Fuego || 1 Rombo || Sobre La Isla Singular
+A1a-11 || Rapidash || Fuego || 2 Rombos || Sobre La Isla Singular
+A1a-12 || Magmar || Fuego || 2 Rombos || Sobre La Isla Singular
+A1a-13 || Larvesta || Fuego || 1 Rombo || Sobre La Isla Singular
+A1a-14 || Volcarona || Fuego || 3 Rombos || Sobre La Isla Singular
+A1a-15 || Salandit || Fuego || 1 Rombo || Sobre La Isla Singular
+A1a-16 || Salazzle || Fuego || 1 Rombo || Sobre La Isla Singular
+A1a-17 || Magikarp || Agua || 1 Rombo || Sobre La Isla Singular
+A1a-18 || Gyarados EX || Agua || 4 Rombos || Sobre La Isla Singular
+A1a-19 || Vaporeon || Agua || 3 Rombos || Sobre La Isla Singular
+A1a-20 || Finneon || Agua || 1 Rombo || Sobre La Isla Singular
+A1a-21 || Lumineon || Agua || 2 Rombos || Sobre La Isla Singular
+A1a-22 || Chewtle || Agua || 1 Rombo || Sobre La Isla Singular
+A1a-23 || Drednaw || Agua || 2 Rombos || Sobre La Isla Singular
+A1a-24 || Cramorant || Agua || 1 Rombo || Sobre La Isla Singular
+A1a-25 || Pikachu || Electrico || 1 Rombo || Sobre La Isla Singular
+A1a-26 || Raichu || Electrico || 3 Rombos || Sobre La Isla Singular
+A1a-27 || Electabuzz || Electrico || 2 Rombos || Sobre La Isla Singular
+A1a-28 || Joltik || Electrico || 1 Rombo || Sobre La Isla Singular
+A1a-29 || Galvantula || Electrico || 2 Rombos || Sobre La Isla Singular
+A1a-30 || Dedenne || Psiquico || 1 Rombo || Sobre La Isla Singular
+A1a-31 || Mew || Psiquico || 3 Rombos || Sobre La Isla Singular
+A1a-32 || Mew EX || Psiquico || 4 Rombos || Sobre La Isla Singular
+A1a-33 || Sigilyph || Psiquico || 2 Rombos || Sobre La Isla Singular
+A1a-34 || Elgyem || Psiquico || 1 Rombo || Sobre La Isla Singular
+A1a-35 || Beheeyem || Psiquico || 2 Rombos || Sobre La Isla Singular
+A1a-36 || Flabébé || Psiquico || 1 Rombo || Sobre La Isla Singular
+A1a-37 || Floette || Psiquico || 1 Rombo || Sobre La Isla Singular
+A1a-38 || Florges || Psiquico || 2 Rombos || Sobre La Isla Singular
+A1a-39 || Swirlix || Psiquico || 1 Rombo || Sobre La Isla Singular
+A1a-40 || Slurpuff || Psiquico || 1 Rombo || Sobre La Isla Singular
+A1a-41 || Mankey || Lucha || 1 Rombo || Sobre La Isla Singular
+A1a-42 || Primeape || Lucha || 1 Rombo || Sobre La Isla Singular
+A1a-43 || Geodude || Lucha || 1 Rombo || Sobre La Isla Singular
+A1a-44 || Graveler || Lucha || 2 Rombos || Sobre La Isla Singular
+A1a-45 || Golem || Lucha || 3 Rombos || Sobre La Isla Singular
+A1a-46 || Aerodactyl EX || Lucha || 4 Rombos || Sobre La Isla Singular
+A1a-47 || Marshadow || Lucha || 3 Rombos || Sobre La Isla Singular
+A1a-48 || Stonjourner || Lucha || 2 Rombos || Sobre La Isla Singular
+A1a-49 || Koffing || Oscuro || 1 Rombo || Sobre La Isla Singular
+A1a-50 || Weezing || Oscuro || 2 Rombos || Sobre La Isla Singular
+A1a-51 || Purrloin || Oscuro || 1 Rombo || Sobre La Isla Singular
+A1a-52 || Liepard || Oscuro || 1 Rombo || Sobre La Isla Singular
+A1a-53 || Venipede || Oscuro || 1 Rombo || Sobre La Isla Singular
+A1a-54 || Whirlipede || Oscuro || 1 Rombo || Sobre La Isla Singular
+A1a-55 || Scolipede || Oscuro || 2 Rombos || Sobre La Isla Singular
+A1a-56 || Druddigon || Dragon || 2 Rombos || Sobre La Isla Singular
+A1a-57 || Pidgey || Incoloro || 1 Rombo || Sobre La Isla Singular
+A1a-58 || Pidgeotto || Incoloro || 1 Rombo || Sobre La Isla Singular
+A1a-59 || Pidgeot EX || Incoloro || 4 Rombos || Sobre La Isla Singular
+A1a-60 || Tauros || Incoloro || 3 Rombos || Sobre La Isla Singular
+A1a-61 || Eevee || Incoloro || 1 Rombo || Sobre La Isla Singular
+A1a-62 || Chatot || Incoloro || 1 Rombo || Sobre La Isla Singular
+A1a-63 || Ámbar Viejo || Entrenador || 1 Rombo || Sobre La Isla Singular
+A1a-64 || Pokéflauta || Entrenador || 2 Rombos || Sobre La Isla Singular
+A1a-65 || Losa Singular || Entrenador || 2 Rombos || Sobre La Isla Singular
+A1a-66 || Explorador Novel || Entrenador || 2 Rombos || Sobre La Isla Singular
+A1a-67 || Azul || Entrenador || 2 Rombos || Sobre La Isla Singular
+A1a-68 || Hoja || Entrenador || 2 Rombos || Sobre La Isla Singular
+A1a-69 || Exeggutor || Planta || 1 Estrella || Sobre La Isla Singular
+A1a-70 || Serperior || Planta || 1 Estrella || Sobre La Isla Singular
+A1a-71 || Salandit || Fuego || 1 Estrella || Sobre La Isla Singular
+A1a-72 || Vaporeon || Agua || 1 Estrella || Sobre La Isla Singular
+A1a-73 || Dedenne || Psiquico || 1 Estrella || Sobre La Isla Singular
+A1a-74 || Marshadow || Lucha || 1 Estrella || Sobre La Isla Singular
+A1a-75 || Celebi EX || Planta || 2 Estrellas || Sobre La Isla Singular
+A1a-76 || Gyarados EX || Agua || 2 Estrellas || Sobre La Isla Singular
+A1a-77 || Mew EX || Psiquico || 2 Estrellas || Sobre La Isla Singular
+A1a-78 || Aerodactyl EX || Lucha || 2 Estrellas || Sobre La Isla Singular
+A1a-79 || Pidgeot EX || Incoloro || 2 Estrellas || Sobre La Isla Singular
+A1a-80 || Explorador Novel || Entrenador || 2 Estrellas || Sobre La Isla Singular
+A1a-81 || Azul || Entrenador || 2 Estrellas || Sobre La Isla Singular
+A1a-82 || Hoja || Entrenador || 2 Estrellas || Sobre La Isla Singular
+A1a-83 || Mew EX || Psiquico || 2 Estrellas || Sobre La Isla Singular
+A1a-84 || Aerodactyl EX || Lucha || 2 Estrellas || Sobre La Isla Singular
+A1a-85 || Celebi EX || Planta || 3 Estrellas || Sobre La Isla Singular
+A1a-86 || Mew EX || Psiquico || Corona || Sobre La Isla Singular
