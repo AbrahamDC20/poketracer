@@ -28,6 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <script src="js/app_bundle.js"></script>
+    <script type="module" src="js/main.js"></script>
 
 </head>
 
@@ -78,11 +79,29 @@
                     <small>Crear Cuenta</small>
                 </div>
             </div>
+            
+            <div id="login-modal" class="hidden" style="margin-top: 20px;">
+                 <div id="login-form" class="hidden">
+                     </div>
+                 
+                 <div id="register-form" class="hidden" style="background:rgba(0,0,0,0.5); padding:15px; border-radius:10px;">
+                     <h3 style="margin-bottom:10px;">Crear Nueva Cuenta</h3>
+                     <input type="text" id="reg-username" placeholder="Tu Nombre..." style="width:100%; margin-bottom:10px; padding:10px; border-radius:5px;">
+                     <input type="password" id="reg-password" placeholder="Elige un PIN..." style="width:100%; margin-bottom:10px; padding:10px; border-radius:5px;">
+                     <div style="display:flex; gap:10px;">
+                         <button class="btn-outline" onclick="document.getElementById('login-modal').classList.add('hidden')" style="flex:1;">Cancelar</button>
+                         <button class="btn-save" onclick="registerNewUser()" style="flex:1;">Crear</button>
+                     </div>
+                 </div>
+            </div>
+
         </div>
     </div>
 
     <div id="app-container" x-show="currentUser" x-cloak>
         
+        <div id="menu-overlay" class="mobile-sidebar-overlay" :class="{'active': showMobileSidebar}" @click="toggleMobileSidebar()"></div>
+
         <button class="menu-trigger" @click="toggleMobileSidebar()">☰</button>
 
         <aside class="sidebar">
@@ -138,8 +157,7 @@
             </div>
         </aside>
 
-        <div class="mobile-sidebar-overlay" :class="{'active': showMobileSidebar}" @click="toggleMobileSidebar()"></div>
-        <div class="mobile-sidebar" :class="{'open': showMobileSidebar}">
+        <div id="side-menu" class="mobile-sidebar" :class="{'open': showMobileSidebar}">
             <div class="sidebar-header">
                 <div class="user-profile">
                     <div class="avatar-circle" :style="currentUser?.avatar_img ? `background-image:url(${currentUser.avatar_img});` : ''"></div>
@@ -350,44 +368,46 @@
             <div x-show="tab==='grid'" class="tab-pane fade-in-up">
                 
                 <div class="toolbar">
-                    <div class="search-wrapper">
-                        <input type="text" x-model="filters.search" placeholder="Buscar por Nombre, Número, Tipo...">
-                        <button class="btn-mic" :class="{'listening': isListening}" @click="toggleVoice">🎤</button>
-                    </div>
-                    
-                    <div class="energy-filter-group">
-                        <button class="btn-energy-filter" :class="{'active': !filters.energy}" @click="filters.energy = ''" title="Ver Todos">♾️</button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Planta'}" @click="filters.energy = filters.energy === 'Planta' ? '' : 'Planta'"><img :src="mediaManager.loadEnergyIcon('Planta', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Fuego'}" @click="filters.energy = filters.energy === 'Fuego' ? '' : 'Fuego'"><img :src="mediaManager.loadEnergyIcon('Fuego', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Agua'}" @click="filters.energy = filters.energy === 'Agua' ? '' : 'Agua'"><img :src="mediaManager.loadEnergyIcon('Agua', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Electrico'}" @click="filters.energy = filters.energy === 'Electrico' ? '' : 'Electrico'"><img :src="mediaManager.loadEnergyIcon('Electrico', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Psíquico'}" @click="filters.energy = filters.energy === 'Psíquico' ? '' : 'Psíquico'"><img :src="mediaManager.loadEnergyIcon('Psíquico', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Lucha'}" @click="filters.energy = filters.energy === 'Lucha' ? '' : 'Lucha'"><img :src="mediaManager.loadEnergyIcon('Lucha', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Oscuro'}" @click="filters.energy = filters.energy === 'Oscuro' ? '' : 'Oscuro'"><img :src="mediaManager.loadEnergyIcon('Oscuro', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Acero'}" @click="filters.energy = filters.energy === 'Acero' ? '' : 'Acero'"><img :src="mediaManager.loadEnergyIcon('Acero', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Dragon'}" @click="filters.energy = filters.energy === 'Dragon' ? '' : 'Dragon'"><img :src="mediaManager.loadEnergyIcon('Dragon', TYPE_MAP)"></button>
-                        <button class="btn-energy-filter" :class="{'active': filters.energy === 'Incoloro'}" @click="filters.energy = filters.energy === 'Incoloro' ? '' : 'Incoloro'"><img :src="mediaManager.loadEnergyIcon('Incoloro', TYPE_MAP)"></button>
-                    </div>
-
-                    <div class="mobile-controls-grid">
-                        <button @click="hideOwned = !hideOwned" class="btn-outline" :style="hideOwned ? 'background:var(--accent-primary); color:var(--bg-main);' : ''">
-                            <span x-text="hideOwned ? '👁️ Faltantes' : '👁️ Todo'"></span>
-                        </button>
-
-                        <select x-model="filters.rarity" class="image-ready-select">
-                            <template x-for="opt in rarityOptions" :key="opt.val"><option :value="opt.val" x-text="opt.label"></option></template>
-                        </select>
-
-                        <select x-model="filters.sortBy" class="image-ready-select">
-                            <option value="id_asc">🔢 Nº</option>
-                            <option value="name_asc">🔤 Nombre</option>
-                            <option value="owned_desc">🔢 Cantidad</option>
-                        </select>
-
-                        <button @click="bulkMode = !bulkMode" class="btn-outline" x-text="bulkMode?'✏️ Edición':'👁️ Vista'"></button>
+                    <div class="inventory-controls">
+                        <div class="search-wrapper">
+                            <input type="text" x-model="filters.search" placeholder="Buscar por Nombre, Número, Tipo...">
+                            <button class="btn-mic" :class="{'listening': isListening}" @click="toggleVoice">🎤</button>
+                        </div>
                         
-                        <div style="display:flex; align-items:center; justify-content:center; font-size:0.95em; font-weight:bold; color:var(--text-muted); background:var(--bg-input); border:1px solid var(--border-color); border-radius:12px; padding:0 25px; height:50px; min-width: 120px;">
-                            <span x-text="saveStatus" :style="saveStatus.includes('Error') ? 'color:var(--danger)' : (saveStatus.includes('Guardando') ? 'color:var(--accent-primary)' : 'color:var(--success)')"></span>
+                        <div class="energy-filter-group">
+                            <button class="btn-energy-filter" :class="{'active': !filters.energy}" @click="filters.energy = ''" title="Ver Todos">♾️</button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Planta'}" @click="filters.energy = filters.energy === 'Planta' ? '' : 'Planta'"><img :src="mediaManager.loadEnergyIcon('Planta', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Fuego'}" @click="filters.energy = filters.energy === 'Fuego' ? '' : 'Fuego'"><img :src="mediaManager.loadEnergyIcon('Fuego', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Agua'}" @click="filters.energy = filters.energy === 'Agua' ? '' : 'Agua'"><img :src="mediaManager.loadEnergyIcon('Agua', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Electrico'}" @click="filters.energy = filters.energy === 'Electrico' ? '' : 'Electrico'"><img :src="mediaManager.loadEnergyIcon('Electrico', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Psíquico'}" @click="filters.energy = filters.energy === 'Psíquico' ? '' : 'Psíquico'"><img :src="mediaManager.loadEnergyIcon('Psíquico', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Lucha'}" @click="filters.energy = filters.energy === 'Lucha' ? '' : 'Lucha'"><img :src="mediaManager.loadEnergyIcon('Lucha', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Oscuro'}" @click="filters.energy = filters.energy === 'Oscuro' ? '' : 'Oscuro'"><img :src="mediaManager.loadEnergyIcon('Oscuro', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Acero'}" @click="filters.energy = filters.energy === 'Acero' ? '' : 'Acero'"><img :src="mediaManager.loadEnergyIcon('Acero', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Dragon'}" @click="filters.energy = filters.energy === 'Dragon' ? '' : 'Dragon'"><img :src="mediaManager.loadEnergyIcon('Dragon', TYPE_MAP)"></button>
+                            <button class="btn-energy-filter" :class="{'active': filters.energy === 'Incoloro'}" @click="filters.energy = filters.energy === 'Incoloro' ? '' : 'Incoloro'"><img :src="mediaManager.loadEnergyIcon('Incoloro', TYPE_MAP)"></button>
+                        </div>
+
+                        <div class="mobile-controls-grid">
+                            <button @click="hideOwned = !hideOwned" class="btn-outline" :style="hideOwned ? 'background:var(--accent-primary); color:var(--bg-main);' : ''">
+                                <span x-text="hideOwned ? '👁️ Faltantes' : '👁️ Todo'"></span>
+                            </button>
+
+                            <select x-model="filters.rarity" class="image-ready-select">
+                                <template x-for="opt in rarityOptions" :key="opt.val"><option :value="opt.val" x-text="opt.label"></option></template>
+                            </select>
+
+                            <select x-model="filters.sortBy" class="image-ready-select">
+                                <option value="id_asc">🔢 Nº</option>
+                                <option value="name_asc">🔤 Nombre</option>
+                                <option value="owned_desc">🔢 Cantidad</option>
+                            </select>
+
+                            <button @click="bulkMode = !bulkMode" class="btn-outline" x-text="bulkMode?'✏️ Edición':'👁️ Vista'"></button>
+                            
+                            <div style="display:flex; align-items:center; justify-content:center; font-size:0.95em; font-weight:bold; color:var(--text-muted); background:var(--bg-input); border:1px solid var(--border-color); border-radius:12px; padding:0 25px; height:50px; min-width: 120px;">
+                                <span x-text="saveStatus" :style="saveStatus.includes('Error') ? 'color:var(--danger)' : (saveStatus.includes('Guardando') ? 'color:var(--accent-primary)' : 'color:var(--success)')"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -643,8 +663,30 @@
                                     <template x-for="acc in accounts"><option :value="acc.id_cuenta" x-text="acc.nombre"></option></template>
                                 </select>
                             </div>
+                            
+                            <div style="display:flex; gap:5px; margin-bottom:10px; margin-top:15px;">
+                                <select id="admin-filter-rarity" onchange="filterAdminCards()" style="flex:1; padding:8px; border-radius:5px; background:#333; color:white; border:1px solid #555;">
+                                    <option value="ALL">Todas Rarezas</option>
+                                    <option value="1 Rombo">♦</option>
+                                    <option value="2 Rombos">♦♦</option>
+                                    <option value="3 Rombos">♦♦♦</option>
+                                    <option value="4 Rombos">♦♦♦♦</option>
+                                    <option value="1 Estrella">⭐</option>
+                                    <option value="2 Estrellas">⭐⭐</option>
+                                    <option value="Corona">👑</option>
+                                </select>
+                                <select id="admin-filter-exp" onchange="filterAdminCards()" style="flex:1; padding:8px; border-radius:5px; background:#333; color:white; border:1px solid #555;">
+                                    <option value="ALL">Todas Exp.</option>
+                                    <option value="genes formidables">A1</option>
+                                    <option value="isla singular">A1a</option>
+                                    <option value="pugna">A2</option>
+                                </select>
+                            </div>
+
                             <div class="card-picker-area" x-show="adminTrade.userA">
                                 <input type="text" x-model="adminTrade.searchA" class="admin-search-input" placeholder="Buscar..." @input="filterAdminInventory('A')">
+                                <select id="admin-card-select" style="display:none;"></select> 
+                                
                                 <div class="results-dropdown" x-show="adminUserAInventoryFiltered.length > 0" style="max-height:200px; overflow-y:auto; border:1px solid var(--border-color); background:var(--bg-panel); z-index:100; position:relative;">
                                     <template x-for="c in adminUserAInventoryFiltered">
                                         <div class="result-item" @click="selectAdminCard(c, 'A')" style="display:flex; align-items:center; gap:10px; padding:10px; border-bottom:1px solid rgba(255,255,255,0.05);">
@@ -656,6 +698,7 @@
                                                 </div>
                                             </div>
                                             <div style="font-size:0.7rem; color:var(--gold); font-weight:bold;" x-text="c.rareza"></div>
+                                            <span style="display:none;" x-text="c.rareza + ' ' + c.expansion"></span>
                                         </div>
                                     </template>
                                 </div>

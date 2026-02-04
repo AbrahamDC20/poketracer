@@ -132,3 +132,63 @@ document.addEventListener('alpine:init', () => {
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js').catch(() => {});
 }
+
+/* --- FIXES LÓGICA INTERFAZ (AÑADIDO PARA CORREGIR ERRORES) --- */
+
+// 1. Función Global para Filtros Admin
+// Se necesita 'window' porque el HTML la llama directamente con onchange=""
+window.filterAdminCards = function() {
+    const rarityVal = document.getElementById('admin-filter-rarity').value;
+    const expVal = document.getElementById('admin-filter-exp').value;
+    const select = document.getElementById('admin-card-select'); 
+    
+    // Si no encuentra el select (ej: no estás logueado como admin), no hace nada
+    if(!select) return;
+
+    const options = select.querySelectorAll('option');
+    let foundVisible = false;
+
+    options.forEach(opt => {
+        const text = opt.textContent; // Ej: "Pikachu (1 Rombo) [A1]"
+        let show = true;
+        
+        // Filtros (asume que el texto es tipo "Nombre (Rareza) [Expansion]")
+        if (rarityVal !== 'ALL' && !text.includes(rarityVal)) show = false;
+        if (expVal !== 'ALL' && !text.toLowerCase().includes(expVal.toLowerCase())) show = false;
+        
+        opt.style.display = show ? 'block' : 'none';
+        
+        // Seleccionar automáticamente el primero visible para que no se quede seleccionado uno oculto
+        if(show && !foundVisible) {
+            select.value = opt.value;
+            foundVisible = true;
+        }
+    });
+};
+
+// 2. Listeners Globales para Menú y Modal
+document.addEventListener('click', function(e) {
+    
+    // Arreglo botón "Crear Cuenta"
+    // Busca si el clic fue en el botón ID "btn-create-account" o clase "add-new"
+    if (e.target.closest('#btn-create-account') || e.target.closest('.add-new')) {
+        const modal = document.getElementById('login-modal');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        
+        if (modal) {
+            modal.classList.remove('hidden'); // Abrir modal
+            // Truco: Ocultar login y mostrar registro
+            if(loginForm) loginForm.classList.add('hidden');
+            if(registerForm) registerForm.classList.remove('hidden');
+        }
+    }
+
+    // Arreglo Cerrar menú lateral al tocar el fondo oscuro
+    if (e.target.id === 'menu-overlay') {
+        const menu = document.getElementById('side-menu');
+        const overlay = document.getElementById('menu-overlay');
+        if(menu) menu.classList.remove('open');
+        if(overlay) overlay.classList.remove('active');
+    }
+});

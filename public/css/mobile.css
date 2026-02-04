@@ -1,6 +1,6 @@
 /* ==========================================================================
    POKÉTRACKER PRO - SISTEMA DE ESTILOS MÓVIL (Touch First)
-   Versión: 5.5.0 (Ultimate Suite Mobile - Expanded & Complete)
+   Versión: 5.5.1 (Fixed & Complete)
    Descripción: Adaptación completa, autónoma y con menú lateral para < 768px
    ========================================================================== */
 
@@ -747,6 +747,16 @@ h3 {
     margin-bottom: 20px;
 }
 
+/* FIX 1: Controles de Inventario (Fondo para tapar al hacer scroll y z-index) */
+.inventory-controls {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 15px;
+    /* Usamos var de bg o un color oscuro por defecto si no existe la variable */
+    background-color: var(--bg-main, #050507); 
+    padding: 10px 0; /* Un poco de aire arriba y abajo */
+}
+
 .search-wrapper {
     position: relative;
     width: 100%;
@@ -934,6 +944,15 @@ h3 {
 }
 
 /* 11. SOCIAL RADAR */
+/* FIX 2: Ancho de contenedores Social y Mercado */
+.social-container, .market-grid, .gift-center {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    box-sizing: border-box;
+    padding-right: 5px;
+}
+
 .cerebro-list {
     display: flex;
     flex-direction: column;
@@ -973,6 +992,11 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.trade-card, .gift-card {
+    width: 96%; /* Para que no toque bordes */
+    margin: 10px auto;
 }
 
 .trade-card-large {
@@ -1122,6 +1146,19 @@ h3 {
     min-height: 140px;
 }
 
+/* FIX 3: Botones Admin (Texto ajustado) */
+.admin-panel button {
+    white-space: normal !important; /* Permite saltos de línea */
+    height: auto !important;
+    min-height: 55px;
+    padding: 5px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+
 /* 14. EXTRAS (MODALES, TOASTS, MENU) */
 .modal-overlay {
     padding: 20px;
@@ -1219,3 +1256,7 @@ h3 {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+/* FIX 4: Z-Index para Menú y Overlay */
+#menu-overlay { z-index: 9998; }
+#side-menu { z-index: 9999; }
