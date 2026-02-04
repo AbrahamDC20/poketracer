@@ -225,23 +225,6 @@ export const adminModule = {
         } catch(e) { this.showToast("Error", "error"); }
     },
 
-    async adminUpdateUser(user) {
-        try {
-            await fetch('/api/admin/account/update', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    id_cuenta: user.id_cuenta,
-                    tipo: user.tipo,
-                    prioridad: user.prioridad
-                })
-            });
-            this.showToast("Usuario actualizado", "success");
-        } catch (e) {
-            this.showToast("Error actualizando", "error");
-        }
-    },
-
     // --- HERRAMIENTAS DE MANTENIMIENTO ---
 
     async adminFixRarities() {
@@ -302,7 +285,7 @@ export const adminModule = {
         r.onload = async (ev) => {
             try {
                 const dataObj = JSON.parse(ev.target.result);
-                await fetch('/api/admin/import_db', { // Asegurar ruta en backend
+                await fetch('/api/admin/import_db', { // Asegúrate de tener esta ruta configurada
                     method:'POST', 
                     headers:{'Content-Type':'application/json'},
                     body: JSON.stringify(dataObj)
@@ -325,5 +308,22 @@ export const adminModule = {
         const r = await fetch('/api/admin/tools/clean_db', {method:'POST'});
         const d = await r.json();
         this.showToast(d.msg, "success");
+    },
+    
+    async adminUpdateUser(user) {
+        try {
+            await fetch('/api/admin/account/update', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    id_cuenta: user.id_cuenta,
+                    tipo: user.tipo,
+                    prioridad: user.prioridad
+                })
+            });
+            this.showToast("Usuario actualizado", "success");
+        } catch (e) {
+            this.showToast("Error actualizando", "error");
+        }
     }
 };

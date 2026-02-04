@@ -81,33 +81,31 @@ export const authModule = {
         this.socialData = { shares: [], trades: [] };
     },
 
-    // --- FUNCIONES DE REGISTRO (LOGICA SIMPLIFICADA PARA FIX) ---
+    // --- FUNCIONES DE REGISTRO (FIX PARA EL BOTÓN 'NUEVO') ---
 
     openCreateUserModal() {
-        // 1. Ocultar la rejilla de perfiles
         const grid = document.querySelector('.profiles-grid');
+        const form = document.getElementById('register-form');
+        const title = document.querySelector('.login-title');
+
         if(grid) grid.style.display = 'none';
         
-        // 2. Mostrar el formulario (ya está en el sitio correcto en HTML)
-        const form = document.getElementById('register-form');
         if(form) {
-            form.style.display = 'block';
-            form.classList.remove('hidden');
+            form.classList.remove('hidden'); // Quitar clase CSS si existe
+            form.style.display = 'block';    // Forzar display block
         }
         
-        // 3. Cambiar título
-        const title = document.querySelector('.login-title');
         if(title) title.innerText = "Crear Nuevo Entrenador";
     },
 
     cancelCreateUser() {
         const grid = document.querySelector('.profiles-grid');
-        if(grid) grid.style.display = 'grid';
-        
         const form = document.getElementById('register-form');
+        const title = document.querySelector('.login-title');
+
+        if(grid) grid.style.display = 'grid';
         if(form) form.style.display = 'none';
         
-        const title = document.querySelector('.login-title');
         if(title) title.innerText = "Seleccionar Perfil";
     },
 

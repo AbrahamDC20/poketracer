@@ -24,33 +24,72 @@
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 900px)">
     
     <style>
+        /* Fix 5: Filtros ABAJO en Grid de Cartas */
         @media (max-width: 900px) {
-            /* Fix Pestañas montadas */
-            .inventory-controls, .toolbar {
-                position: sticky !important;
-                top: 0 !important;
-                z-index: 50 !important;
+            .inventory-controls, 
+            .tab-pane[x-show="tab==='grid'"] .toolbar {
+                position: fixed !important;
+                bottom: 0 !important;
+                top: auto !important;
+                left: 0 !important;
+                width: 100% !important;
+                z-index: 1000 !important;
                 background-color: var(--bg-main) !important;
-                padding-bottom: 10px !important;
+                padding: 10px !important;
+                border-top: 1px solid var(--border-color) !important;
+                box-shadow: 0 -5px 20px rgba(0,0,0,0.8) !important;
+                margin: 0 !important;
             }
+            
+            /* Empujar cartas para que no se tapen */
             .cards-grid {
-                margin-top: 15px !important;
-                padding-top: 15px !important;
+                padding-top: 10px !important;
+                padding-bottom: 240px !important; /* Espacio para los controles de abajo */
+                margin-top: 0 !important;
                 z-index: 1 !important;
             }
-            /* Fix Social Cortado */
+
+            /* Fix 6: Social Cards Completas */
             .social-split-view { display: block !important; width: 100% !important; }
-            .social-column { width: 100% !important; padding: 0 !important; overflow: visible !important; margin-bottom: 40px !important; }
-            .trade-capsule, .gift-ticket { width: 96% !important; margin: 5px auto !important; }
-            /* Fix Menú Overlay */
+            .social-column { width: 100% !important; padding: 0 5px !important; margin-bottom: 60px !important; overflow: visible !important; }
+            
+            /* Tarjeta de intercambio en columna vertical */
+            .trade-capsule {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                background: rgba(255,255,255,0.05) !important;
+                margin-bottom: 15px !important;
+                padding: 10px !important;
+                height: auto !important;
+            }
+            .capsule-left, .capsule-mid, .capsule-right {
+                width: 100% !important;
+                display: block !important;
+                text-align: center !important;
+                margin-bottom: 10px !important;
+            }
+            
+            /* Footer Social (Recursos) siempre visible arriba de los filtros o fijo */
+            .social-footer {
+                position: fixed !important;
+                bottom: 0 !important;
+                z-index: 1100 !important;
+                background: rgba(0,0,0,0.95) !important;
+                width: 100% !important;
+                border-top: 1px solid var(--accent-primary) !important;
+            }
+
+            /* Fix 7: Menú Z-Index */
             #menu-overlay { z-index: 9998 !important; }
             #side-menu { z-index: 9999 !important; }
-            /* Fix Textos Admin */
+            
+            /* Botones Admin Ajustados */
             .admin-panel button, .btn-save, .btn-outline {
                 white-space: normal !important;
+                line-height: 1.1 !important;
                 height: auto !important;
-                min-height: 45px !important;
-                font-size: 0.8rem !important;
+                min-height: 45px;
             }
         }
     </style>
@@ -112,7 +151,7 @@
                 </div>
             </div>
             
-            <div id="register-form" style="display:none; padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.2); border-radius:10px;">
+            <div id="register-form" class="hidden" style="padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.5); border-radius:10px;">
                 <h3 style="margin-bottom:15px; color:white;">✨ Nuevo Entrenador</h3>
                 <input type="text" id="reg-username" placeholder="Tu Nombre..." style="width:100%; margin-bottom:15px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <input type="password" id="reg-password" placeholder="Elige un PIN (4 dígitos)..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
@@ -186,7 +225,7 @@
 
         <div id="side-menu" class="mobile-sidebar" :class="{'open': showMobileSidebar}">
             <div class="sidebar-header" style="position:relative;">
-                <button onclick="closeSideMenu()" style="position:absolute; top:15px; right:15px; font-size:1.5rem; color:white; z-index:100;">✕</button>
+                <button onclick="closeSideMenu()" style="position:absolute; top:15px; right:15px; font-size:1.5rem; color:white; background:none; border:none; z-index:100;">✕</button>
                 
                 <div class="user-profile">
                     <div class="avatar-circle" :style="currentUser?.avatar_img ? `background-image:url(${currentUser.avatar_img});` : ''"></div>
@@ -323,61 +362,6 @@
                     </div>
                 </div>
 
-                <div style="display:flex; gap:35px; flex-wrap:wrap;" :class="{'zen-hidden': zenMode}">
-                    
-                    <div class="card-panel" style="flex:1; min-width:300px; display:flex; flex-direction:column; align-items:center;">
-                        <h3 style="width:100%">📊 Rarezas</h3>
-                        <div style="height:250px; width:100%; position:relative;">
-                            <canvas id="rarityChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="card-panel" style="flex:1.5; min-width:350px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
-                            <h3 style="margin:0;">📈 Progreso</h3>
-                            <div class="toggle-pill">
-                                <div class="toggle-option" :class="{'active': !showSecrets}" @click="showSecrets=false">Normal</div>
-                                <div class="toggle-option" :class="{'active': showSecrets}" @click="showSecrets=true">Full</div>
-                            </div>
-                        </div>
-                        
-                        <div x-show="bestExpansion" style="margin-bottom:20px; background:var(--bg-input); padding:15px; border-radius:12px; border:1px solid var(--success);">
-                            <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; font-weight:bold;">A un paso de la gloria</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <div style="font-weight:900; font-size:1.1rem; color:var(--success);" x-text="bestExpansion?.name"></div>
-                                <div style="font-weight:900;" x-text="bestExpansion?.pct + '%'"></div>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom:30px; background:rgba(255,255,255,0.05); padding:15px; border-radius:16px;">
-                            <div class="exp-progress-label">
-                                <span style="color:var(--text-light)">TOTAL GLOBAL</span>
-                                <span>
-                                    <span x-text="computedProgress.owned + ' / ' + computedProgress.total"></span>
-                                    (<span x-text="computedProgress.pct + '%'"></span>)
-                                </span>
-                            </div>
-                            <div class="exp-progress-track">
-                                <div class="exp-progress-bar" :style="`width: ${computedProgress.pct}%`"></div>
-                            </div>
-                        </div>
-
-                        <div style="max-height:200px; overflow-y:auto; padding-right:10px;">
-                            <template x-for="exp in expansionStats" :key="exp.name">
-                                <div class="exp-progress-row">
-                                    <div class="exp-progress-label">
-                                        <span x-text="exp.name"></span>
-                                        <span><span x-text="exp.owned"></span>/<span x-text="exp.total"></span> (<span x-text="exp.pct + '%'"></span>)</span>
-                                    </div>
-                                    <div class="exp-progress-track">
-                                        <div class="exp-progress-bar" :style="`width: ${exp.pct}%; background-color: ${exp.pct == 100 ? 'var(--success)' : 'var(--accent-primary)'}`"></div>
-                                    </div>
-                                </div>
-                            </template>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="card-panel" style="margin-top:35px; max-height:200px; overflow-y:auto; background:var(--bg-panel);" x-show="!zenMode">
                     <h3 style="font-size:0.9rem; color:var(--text-muted); margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:5px;">📰 FEED DEL SERVIDOR</h3>
                     <template x-for="act in globalFeed">
@@ -503,7 +487,12 @@
                     <input type="text" class="social-search-bar" x-model="socialSearch" placeholder="🕵️ Buscar jugador, carta o rareza...">
                     <div class="filter-scroll-container">
                         
-                        <input type="text" x-model="socialFilters.user" placeholder="👤 Usuario..." style="min-width:120px; padding:5px; background:#222; border:1px solid #444; border-radius:15px; color:white;">
+                        <select x-model="socialFilters.user" class="filter-select" style="min-width:120px; background:#222; color:white;">
+                            <option value="">👤 Todos</option>
+                            <template x-for="acc in accounts">
+                                <option :value="acc.nombre" x-text="acc.nombre"></option>
+                            </template>
+                        </select>
 
                         <select x-model="socialFilters.rarity" class="filter-select"><option value="TODAS">💎 Rareza: Todas</option><template x-for="opt in allRarityOptions.filter(o=>o.val!=='TODAS')"><option :value="opt.val" x-text="opt.label"></option></template></select>
                         <select x-model="socialFilters.expansion" class="filter-select"><option value="TODAS">📂 Exp: Todas</option><template x-for="e in expansiones"><option :value="e" x-text="e"></option></template></select>
@@ -689,7 +678,7 @@
                             <h4 style="color:var(--accent-primary); margin-bottom:5px;">JUGADOR A</h4>
                             
                             <div style="display:flex; gap:3px; margin-bottom:5px;">
-                                <select id="filter-rarity-A" @change="filterAdminInventory('A')" style="flex:1; padding:5px; font-size:0.75rem;">
+                                <select id="filter-rarity-A" onchange="adminModule.filterAdminInventory('A')" style="flex:1; padding:5px; font-size:0.75rem;">
                                     <option value="ALL">Todas Rarezas</option>
                                     <option value="1 Rombo">♦</option>
                                     <option value="2 Rombos">♦♦</option>
@@ -697,10 +686,10 @@
                                     <option value="4 Rombos">♦♦♦♦</option>
                                     <option value="1 Estrella">⭐</option>
                                     <option value="2 Estrellas">⭐⭐</option>
-                                    <option value="Shiny 1 Estrella">⭐✨ (Shiny)</option>
-                                    <option value="Shiny 2 Estrellas">⭐⭐✨ (Shiny)</option>
+                                    <option value="Shiny 1 Estrella">⭐✨</option>
+                                    <option value="Shiny 2 Estrellas">⭐⭐✨</option>
                                 </select>
-                                <select id="filter-exp-A" @change="filterAdminInventory('A')" style="flex:1; padding:5px; font-size:0.75rem;">
+                                <select id="filter-exp-A" onchange="adminModule.filterAdminInventory('A')" style="flex:1; padding:5px; font-size:0.75rem;">
                                     <option value="ALL">Todas Exp.</option>
                                     <template x-for="e in expansiones">
                                         <option :value="e" x-text="e"></option>
@@ -713,6 +702,8 @@
                                 <template x-for="acc in accounts"><option :value="acc.id_cuenta" x-text="acc.nombre"></option></template>
                             </select>
                             
+                            <input type="text" x-model="adminTrade.searchA" class="admin-search-input" placeholder="Buscar..." @input="adminModule.filterAdminInventory('A')">
+
                             <div class="card-picker-area" x-show="adminTrade.userA">
                                 <div class="results-dropdown" style="max-height:150px; overflow-y:auto; border:1px solid #444; background:#111;">
                                     <template x-for="c in adminUserAInventoryFiltered">
@@ -742,7 +733,7 @@
                             <h4 style="color:var(--success); margin-bottom:5px;">JUGADOR B</h4>
                             
                             <div style="display:flex; gap:3px; margin-bottom:5px;">
-                                <select id="filter-rarity-B" @change="filterAdminInventory('B')" style="flex:1; padding:5px; font-size:0.75rem;">
+                                <select id="filter-rarity-B" onchange="adminModule.filterAdminInventory('B')" style="flex:1; padding:5px; font-size:0.75rem;">
                                     <option value="ALL">Todas Rarezas</option>
                                     <option value="1 Rombo">♦</option>
                                     <option value="2 Rombos">♦♦</option>
@@ -750,10 +741,10 @@
                                     <option value="4 Rombos">♦♦♦♦</option>
                                     <option value="1 Estrella">⭐</option>
                                     <option value="2 Estrellas">⭐⭐</option>
-                                    <option value="Shiny 1 Estrella">⭐✨ (Shiny)</option>
-                                    <option value="Shiny 2 Estrellas">⭐⭐✨ (Shiny)</option>
+                                    <option value="Shiny 1 Estrella">⭐✨</option>
+                                    <option value="Shiny 2 Estrellas">⭐⭐✨</option>
                                 </select>
-                                <select id="filter-exp-B" @change="filterAdminInventory('B')" style="flex:1; padding:5px; font-size:0.75rem;">
+                                <select id="filter-exp-B" onchange="adminModule.filterAdminInventory('B')" style="flex:1; padding:5px; font-size:0.75rem;">
                                     <option value="ALL">Todas Exp.</option>
                                     <template x-for="e in expansiones">
                                         <option :value="e" x-text="e"></option>
@@ -766,6 +757,8 @@
                                 <template x-for="acc in accounts"><option :value="acc.id_cuenta" x-text="acc.nombre"></option></template>
                             </select>
                             
+                            <input type="text" x-model="adminTrade.searchB" class="admin-search-input" placeholder="Buscar..." @input="adminModule.filterAdminInventory('B')">
+
                             <div class="card-picker-area" x-show="adminTrade.userB">
                                 <div class="results-dropdown" style="max-height:150px; overflow-y:auto; border:1px solid #444; background:#111;">
                                     <template x-for="c in adminUserBInventoryFiltered">
