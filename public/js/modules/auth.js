@@ -79,5 +79,80 @@ export const authModule = {
         // Limpiar datos sensibles de la memoria
         this.cards = [];
         this.socialData = { shares: [], trades: [] };
+    },
+
+    // --- FUNCIONES DE REGISTRO (FIX PARA EL BOTÓN 'NUEVO') ---
+
+    openCreateUserModal() {
+        const loginContainer = document.querySelector('.login-container');
+        // Ocultar rejilla de perfiles
+        const grid = loginContainer.querySelector('.profiles-grid');
+        // Mostrar formulario (buscamos por ID)
+        const form = document.getElementById('register-form'); 
+        
+        if(grid) grid.style.display = 'none';
+        
+        if(form) {
+            form.classList.remove('hidden');
+            form.style.display = 'block';
+            // Mover el formulario dentro del contenedor de login si no estaba ahí
+            if(form.parentNode !== loginContainer) {
+               loginContainer.appendChild(form);
+            }
+        }
+        
+        // Cambiar título
+        const title = loginContainer.querySelector('.login-title');
+        if(title) title.textContent = "Crear Entrenador";
+    },
+    
+    cancelCreateUser() {
+        const loginContainer = document.querySelector('.login-container');
+        const grid = loginContainer.querySelector('.profiles-grid');
+        const form = document.getElementById('register-form');
+        
+        if(grid) grid.style.display = 'grid';
+        if(form) form.style.display = 'none';
+        
+        const title = loginContainer.querySelector('.login-title');
+        if(title) title.textContent = "Seleccionar Perfil";
+    },
+
+    async registerNewUser() {
+        // Obtenemos valores directos de los inputs del formulario
+        const name = document.getElementById('reg-username').value;
+        const pin = document.getElementById('reg-password').value;
+
+        if (!name || !pin) return this.showToast("Rellena todos los datos", "warning");
+        if (pin.length !== 4) return this.showToast("El PIN debe ser de 4 dígitos", "warning");
+
+        try {
+            const res = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ user: name, pass: pin })
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                this.showToast("Usuario creado! Inicia sesión.", "success");
+                
+                // Recargar la lista de cuentas para que aparezca el nuevo
+                const r = await fetch('/api/cuentas');
+                if (r.ok) this.accounts = await r.json();
+                
+                // Volver a la pantalla de selección
+                this.cancelCreateUser();
+                
+                // Limpiar inputs
+                document.getElementById('reg-username').value = '';
+                document.getElementById('reg-password').value = '';
+            } else {
+                this.showToast(data.msg || "Error al crear usuario", "error");
+            }
+        } catch (e) {
+            console.error(e);
+            this.showToast("Error de conexión", "error");
+        }
     }
 };
