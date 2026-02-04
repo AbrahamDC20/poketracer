@@ -25,34 +25,31 @@
     
     <style>
         @media (max-width: 900px) {
-            /* Fix 5: Pestañas montadas */
+            /* Fix Pestañas montadas */
             .inventory-controls, .toolbar {
-                background-color: var(--bg-main) !important;
-                position: relative !important;
+                position: sticky !important;
+                top: 0 !important;
                 z-index: 50 !important;
+                background-color: var(--bg-main) !important;
                 padding-bottom: 10px !important;
             }
             .cards-grid {
-                margin-top: 10px !important;
+                margin-top: 15px !important;
+                padding-top: 15px !important;
                 z-index: 1 !important;
             }
-            
-            /* Fix 6: Cortes en Social */
+            /* Fix Social Cortado */
             .social-split-view { display: block !important; width: 100% !important; }
-            .social-column { width: 100% !important; padding: 0 !important; overflow: visible !important; }
+            .social-column { width: 100% !important; padding: 0 !important; overflow: visible !important; margin-bottom: 40px !important; }
             .trade-capsule, .gift-ticket { width: 96% !important; margin: 5px auto !important; }
-            
-            /* Fix 7: Menú Overlay */
+            /* Fix Menú Overlay */
             #menu-overlay { z-index: 9998 !important; }
             #side-menu { z-index: 9999 !important; }
-            
-            /* Fix 8: Textos Admin */
+            /* Fix Textos Admin */
             .admin-panel button, .btn-save, .btn-outline {
                 white-space: normal !important;
                 height: auto !important;
                 min-height: 45px !important;
-                padding: 5px !important;
-                line-height: 1.1 !important;
                 font-size: 0.8rem !important;
             }
         }
@@ -108,20 +105,20 @@
                         </div>
                     </div>
                 </template>
-                <div class="profile-card add-user-card" @click="openCreateUserModal()">
+                <div class="profile-card add-user-card" @click="authModule.openCreateUserModal()">
                     <div class="avatar-circle"><span>+</span></div>
                     <h3>Nuevo</h3>
                     <small>Crear Cuenta</small>
                 </div>
             </div>
             
-            <div id="register-form" style="display:none; padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1);">
-                <h3 style="margin-bottom:15px; color:white;">Nuevo Entrenador</h3>
+            <div id="register-form" style="display:none; padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.2); border-radius:10px;">
+                <h3 style="margin-bottom:15px; color:white;">✨ Nuevo Entrenador</h3>
                 <input type="text" id="reg-username" placeholder="Tu Nombre..." style="width:100%; margin-bottom:15px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <input type="password" id="reg-password" placeholder="Elige un PIN (4 dígitos)..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <div style="display:flex; gap:10px;">
-                    <button class="btn-outline" @click="cancelCreateUser()" style="flex:1;">Cancelar</button>
-                    <button class="btn-save" @click="registerNewUser()" style="flex:1;">Crear</button>
+                    <button class="btn-outline" onclick="authModule.cancelCreateUser()" style="flex:1;">Cancelar</button>
+                    <button class="btn-save" onclick="authModule.registerNewUser()" style="flex:1;">Crear</button>
                 </div>
             </div>
 
@@ -130,7 +127,7 @@
 
     <div id="app-container" x-show="currentUser" x-cloak>
         
-        <div id="menu-overlay" class="mobile-sidebar-overlay" :class="{'active': showMobileSidebar}" @click="closeSideMenu()"></div>
+        <div id="menu-overlay" class="mobile-sidebar-overlay" :class="{'active': showMobileSidebar}" onclick="closeSideMenu()"></div>
 
         <button class="menu-trigger" @click="toggleMobileSidebar()">☰</button>
 
@@ -188,7 +185,9 @@
         </aside>
 
         <div id="side-menu" class="mobile-sidebar" :class="{'open': showMobileSidebar}">
-            <div class="sidebar-header">
+            <div class="sidebar-header" style="position:relative;">
+                <button onclick="closeSideMenu()" style="position:absolute; top:15px; right:15px; font-size:1.5rem; color:white; z-index:100;">✕</button>
+                
                 <div class="user-profile">
                     <div class="avatar-circle" :style="currentUser?.avatar_img ? `background-image:url(${currentUser.avatar_img});` : ''"></div>
                     <h3 x-text="currentUser?.nombre"></h3>
@@ -324,6 +323,61 @@
                     </div>
                 </div>
 
+                <div style="display:flex; gap:35px; flex-wrap:wrap;" :class="{'zen-hidden': zenMode}">
+                    
+                    <div class="card-panel" style="flex:1; min-width:300px; display:flex; flex-direction:column; align-items:center;">
+                        <h3 style="width:100%">📊 Rarezas</h3>
+                        <div style="height:250px; width:100%; position:relative;">
+                            <canvas id="rarityChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card-panel" style="flex:1.5; min-width:350px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
+                            <h3 style="margin:0;">📈 Progreso</h3>
+                            <div class="toggle-pill">
+                                <div class="toggle-option" :class="{'active': !showSecrets}" @click="showSecrets=false">Normal</div>
+                                <div class="toggle-option" :class="{'active': showSecrets}" @click="showSecrets=true">Full</div>
+                            </div>
+                        </div>
+                        
+                        <div x-show="bestExpansion" style="margin-bottom:20px; background:var(--bg-input); padding:15px; border-radius:12px; border:1px solid var(--success);">
+                            <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; font-weight:bold;">A un paso de la gloria</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <div style="font-weight:900; font-size:1.1rem; color:var(--success);" x-text="bestExpansion?.name"></div>
+                                <div style="font-weight:900;" x-text="bestExpansion?.pct + '%'"></div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom:30px; background:rgba(255,255,255,0.05); padding:15px; border-radius:16px;">
+                            <div class="exp-progress-label">
+                                <span style="color:var(--text-light)">TOTAL GLOBAL</span>
+                                <span>
+                                    <span x-text="computedProgress.owned + ' / ' + computedProgress.total"></span>
+                                    (<span x-text="computedProgress.pct + '%'"></span>)
+                                </span>
+                            </div>
+                            <div class="exp-progress-track">
+                                <div class="exp-progress-bar" :style="`width: ${computedProgress.pct}%`"></div>
+                            </div>
+                        </div>
+
+                        <div style="max-height:200px; overflow-y:auto; padding-right:10px;">
+                            <template x-for="exp in expansionStats" :key="exp.name">
+                                <div class="exp-progress-row">
+                                    <div class="exp-progress-label">
+                                        <span x-text="exp.name"></span>
+                                        <span><span x-text="exp.owned"></span>/<span x-text="exp.total"></span> (<span x-text="exp.pct + '%'"></span>)</span>
+                                    </div>
+                                    <div class="exp-progress-track">
+                                        <div class="exp-progress-bar" :style="`width: ${exp.pct}%; background-color: ${exp.pct == 100 ? 'var(--success)' : 'var(--accent-primary)'}`"></div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card-panel" style="margin-top:35px; max-height:200px; overflow-y:auto; background:var(--bg-panel);" x-show="!zenMode">
                     <h3 style="font-size:0.9rem; color:var(--text-muted); margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:5px;">📰 FEED DEL SERVIDOR</h3>
                     <template x-for="act in globalFeed">
@@ -448,10 +502,13 @@
                 <div style="position: sticky; top: 0; z-index: 50; background: var(--bg-main); padding: 15px 0;">
                     <input type="text" class="social-search-bar" x-model="socialSearch" placeholder="🕵️ Buscar jugador, carta o rareza...">
                     <div class="filter-scroll-container">
+                        
+                        <input type="text" x-model="socialFilters.user" placeholder="👤 Usuario..." style="min-width:120px; padding:5px; background:#222; border:1px solid #444; border-radius:15px; color:white;">
+
                         <select x-model="socialFilters.rarity" class="filter-select"><option value="TODAS">💎 Rareza: Todas</option><template x-for="opt in allRarityOptions.filter(o=>o.val!=='TODAS')"><option :value="opt.val" x-text="opt.label"></option></template></select>
                         <select x-model="socialFilters.expansion" class="filter-select"><option value="TODAS">📂 Exp: Todas</option><template x-for="e in expansiones"><option :value="e" x-text="e"></option></template></select>
                         <div class="filter-chip" :class="{'active': socialFilters.onlyFav}" @click="socialFilters.onlyFav = !socialFilters.onlyFav">❤️ Wishlist</div>
-                        <div class="filter-chip" @click="socialFilters.rarity='TODAS'; socialFilters.expansion='TODAS'; socialFilters.onlyFav=false">✖ Limpiar</div>
+                        <div class="filter-chip" @click="socialFilters.rarity='TODAS'; socialFilters.expansion='TODAS'; socialFilters.onlyFav=false; socialFilters.user=''">✖ Limpiar</div>
                     </div>
                 </div>
 
@@ -625,10 +682,12 @@
 
                 <div class="card-panel">
                     <h3>⚡ Gestor de Intercambios & Regalos (Admin)</h3>
+                    
                     <div class="admin-trade-container">
                         
                         <div class="admin-trade-side">
                             <h4 style="color:var(--accent-primary); margin-bottom:5px;">JUGADOR A</h4>
+                            
                             <div style="display:flex; gap:3px; margin-bottom:5px;">
                                 <select id="filter-rarity-A" @change="filterAdminInventory('A')" style="flex:1; padding:5px; font-size:0.75rem;">
                                     <option value="ALL">Todas Rarezas</option>
@@ -648,10 +707,12 @@
                                     </template>
                                 </select>
                             </div>
+
                             <select x-model="adminTrade.userA" @change="loadAdminUserInventory($event.target.value, 'A')" style="width:100%; margin-bottom:5px;">
                                 <option value="">Seleccionar Usuario...</option>
                                 <template x-for="acc in accounts"><option :value="acc.id_cuenta" x-text="acc.nombre"></option></template>
                             </select>
+                            
                             <div class="card-picker-area" x-show="adminTrade.userA">
                                 <div class="results-dropdown" style="max-height:150px; overflow-y:auto; border:1px solid #444; background:#111;">
                                     <template x-for="c in adminUserAInventoryFiltered">
@@ -679,6 +740,7 @@
 
                         <div class="admin-trade-side">
                             <h4 style="color:var(--success); margin-bottom:5px;">JUGADOR B</h4>
+                            
                             <div style="display:flex; gap:3px; margin-bottom:5px;">
                                 <select id="filter-rarity-B" @change="filterAdminInventory('B')" style="flex:1; padding:5px; font-size:0.75rem;">
                                     <option value="ALL">Todas Rarezas</option>
@@ -698,10 +760,12 @@
                                     </template>
                                 </select>
                             </div>
+
                             <select x-model="adminTrade.userB" @change="loadAdminUserInventory($event.target.value, 'B')" style="width:100%; margin-bottom:5px;">
                                 <option value="">Seleccionar Usuario...</option>
                                 <template x-for="acc in accounts"><option :value="acc.id_cuenta" x-text="acc.nombre"></option></template>
                             </select>
+                            
                             <div class="card-picker-area" x-show="adminTrade.userB">
                                 <div class="results-dropdown" style="max-height:150px; overflow-y:auto; border:1px solid #444; background:#111;">
                                     <template x-for="c in adminUserBInventoryFiltered">
@@ -800,7 +864,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <button class="btn-outline" style="width:100%; margin-top:25px;" @click="openCreateUserModal()">+ Registrar Nuevo Usuario</button>
+                    <button class="btn-outline" style="width:100%; margin-top:25px;" @click="authModule.openCreateUserModal()">+ Registrar Nuevo Usuario</button>
                 </div>
             </div>
         </main>

@@ -1,323 +1,166 @@
 /* ==========================================================================
-   MÓDULO: ADMINISTRACIÓN
-   Herramientas avanzadas, gestión de usuarios y mantenimiento de DB
+   MAIN.JS - MODO SEGURO (CON STORE Y MEDIA INTEGRADOS)
    ========================================================================== */
 
-export const adminModule = {
-    
-    // Carga de datos generales del panel admin
-    async loadAdminData() { 
-        this.adminStats = { totalUsers: this.accounts.length }; 
-    },
+// Importamos los módulos
+import { authModule } from './modules/auth.js';
+import { inventoryModule } from './modules/inventory.js';
+import { socialModule } from './modules/social.js';
+import { adminModule } from './modules/admin.js';
+import { helpersModule } from './utils/helpers.js';
 
-    // --- GESTOR DE INTERCAMBIOS ADMIN ---
+console.log('🔄 Cargando Main.js en Modo Seguro...');
 
-    async loadAdminUserInventory(userId, side) {
-        if (!userId) return;
-        try {
-            // Cargamos el inventario completo del usuario
-            const res = await fetch('/api/inventario?id_cuenta=' + userId + '&expansion=TODAS');
-            const data = await res.json();
-            
-            // Filtramos solo las que tiene (> 0)
-            const ownedItems = data.filter(c => c.cantidad > 0);
+// --- EXPOSICIÓN GLOBAL PARA HTML ONCLICK (FIX CRÍTICO) ---
+// Esto permite que el HTML llame a las funciones (ej: authModule.registerNewUser())
+window.authModule = authModule;
+window.adminModule = adminModule;
 
-            if (side === 'A') {
-                this.adminUserAInventory = ownedItems;
-                this.adminUserAInventoryFiltered = ownedItems;
-                this.adminTrade.cardA = null; // Resetear selección
-                this.adminTrade.searchA = '';
-            } else {
-                this.adminUserBInventory = ownedItems;
-                this.adminUserBInventoryFiltered = ownedItems;
-                this.adminTrade.cardB = null; // Resetear selección
-                this.adminTrade.searchB = '';
-            }
-            
-            // Aplicar filtros inmediatamente después de cargar
-            this.filterAdminInventory(side);
-
-        } catch(e) { console.error("Error cargando inventario admin:", e); }
-    },
-
-    // Función de filtrado Corregida (Doble Filtro A/B)
-    filterAdminInventory(side) {
-        // Obtenemos los valores de los selectores específicos de cada lado
-        // Usamos el operador ?. por si el DOM aún no está listo, aunque debería estarlo
-        const rarityVal = document.getElementById(`filter-rarity-${side}`)?.value || 'ALL';
-        const expVal = document.getElementById(`filter-exp-${side}`)?.value || 'ALL';
-        
-        // Buscamos en el texto (buscador input)
-        const search = (side === 'A' ? this.adminTrade.searchA : this.adminTrade.searchB).toLowerCase();
-        
-        // Fuente de datos original
-        const source = side === 'A' ? this.adminUserAInventory : this.adminUserBInventory;
-        
-        const filtered = source.filter(c => {
-            // 1. Coincidencia de Texto
-            const matchesText = c.nombre.toLowerCase().includes(search) || c.id_carta.toLowerCase().includes(search);
-            
-            // 2. Coincidencia de Rareza
-            let matchesRarity = true;
-            if (rarityVal !== 'ALL') {
-                matchesRarity = c.rareza === rarityVal;
-            }
-
-            // 3. Coincidencia de Expansión
-            let matchesExp = true;
-            if (expVal !== 'ALL') {
-                // Comparamos strings exactos o parciales
-                matchesExp = c.expansion === expVal;
-            }
-
-            return matchesText && matchesRarity && matchesExp;
-        });
-        
-        // Asignamos al array filtrado correspondiente
-        if (side === 'A') this.adminUserAInventoryFiltered = filtered;
-        else this.adminUserBInventoryFiltered = filtered;
-    },
-
-    selectAdminCard(card, side) {
-        if (side === 'A') this.adminTrade.cardA = card;
-        else this.adminTrade.cardB = card;
-    },
-
-    getTradeCost(rarity) {
-        if (!rarity) return 0;
-        return this.TRADE_COSTS[rarity] !== undefined ? this.TRADE_COSTS[rarity] : null;
-    },
-
-    async executeAdminTrade() {
-        // Validaciones
-        if (!this.adminTrade.cardA || !this.adminTrade.cardB) return this.showToast("Faltan cartas", "warning");
-        
-        const cost = this.getTradeCost(this.adminTrade.cardA.rareza);
-        if (cost === null) return this.showToast("Rareza NO intercambiable (Corona/3★)", "error");
-        
-        if (this.adminTrade.cardA.rareza !== this.adminTrade.cardB.rareza) return this.showToast("Las rarezas no coinciden", "error");
-
-        try {
-            const res = await fetch('/api/social/execute_trade', {
-                method: 'POST', 
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    id_origen: this.adminTrade.userA, 
-                    id_destino: this.adminTrade.userB,
-                    give_id: this.adminTrade.cardA.id_carta, 
-                    get_id: this.adminTrade.cardB.id_carta,
-                    exp_give: this.adminTrade.cardA.expansion, 
-                    exp_get: this.adminTrade.cardB.expansion,
-                    rarity: this.adminTrade.cardA.rareza
-                })
-            });
-            const d = await res.json();
-            
-            if(d.success) {
-                this.showToast("✅ Intercambio realizado", "success");
-                // Recargar ambos inventarios para ver cambios
-                this.loadAdminUserInventory(this.adminTrade.userA, 'A');
-                this.loadAdminUserInventory(this.adminTrade.userB, 'B');
-            } else {
-                this.showToast(d.msg, "error");
-            }
-        } catch(e) { 
-            this.showToast("Error de conexión", "error"); 
+// 1. GESTOR DE MEDIOS
+const mediaManager = {
+    loadImage(card) {
+        if (!card || !card.id_carta) return 'assets/images/card-back.webp';
+        const parts = card.id_carta.split('-');
+        if (parts.length === 2) {
+            return `assets/images/cards/${parts[0]}-${parseInt(parts[1], 10)}.webp`;
         }
+        return 'assets/images/card-back.webp';
     },
-    
-    async executeAdminGift() { 
-        this.showToast("Función Gift en desarrollo", "info"); 
+    fallbackImage(e) { e.target.src = 'assets/images/card-back.webp'; },
+    loadSetLogo(exp) {
+        if (!exp || exp === 'TODAS') return null;
+        return `assets/images/sets/${exp.split(' ')[0]}.webp`;
     },
-
-    // --- INYECTOR DE SOBRES ---
-
-    updatePackConfig() {
-        const isDeluxe = this.packSimulator.expansion.toLowerCase().includes('deluxe');
-        this.packSimulator.slots = [null,null,null,null,null,null];
-        this.packSimulator.queries = ['','','','','',''];
-        this.packSimulator.searchResults = [[],[],[],[],[],[]];
-        this.packSimulator.activeCount = isDeluxe ? 4 : 5;
+    loadEnergyIcon(type, map) {
+        if (!type) return '';
+        const cleanType = type.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+        const finalName = (map && map[cleanType]) ? map[cleanType] : cleanType;
+        const fileName = finalName.charAt(0).toUpperCase() + finalName.slice(1).toLowerCase();
+        return `assets/images/types/${fileName}.webp`;
     },
-    
-    addSixthCardSlot() { 
-        if(this.packSimulator.activeCount < 6) this.packSimulator.activeCount = 6; 
+    handle3DMyCard(e, isLowPower) {
+        if (isLowPower) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const target = e.currentTarget.querySelector('.card-aura-box') || e.currentTarget;
+        target.style.transform = `perspective(1000px) rotateX(${((y - rect.height/2)/20)*-1}deg) rotateY(${(x - rect.width/2)/20}deg) scale(1.05)`;
     },
-
-    searchCardForPack(index) {
-        const q = this.packSimulator.queries[index].toLowerCase();
-        if(q.length < 1) { 
-            this.packSimulator.searchResults[index] = []; 
-            return; 
-        }
-        const exp = this.packSimulator.expansion;
-        
-        this.packSimulator.searchResults[index] = this.masterCardList.filter(c => 
-            (c.nombre.toLowerCase().includes(q) || c.id_carta.toLowerCase().includes(q)) && 
-            c.expansion === exp
-        ).slice(0, 5);
-    },
-
-    selectCardForSlot(i, c) {
-        this.packSimulator.slots[i] = {...c}; 
-        this.packSimulator.queries[i] = c.nombre;
-        this.packSimulator.searchResults[i] = []; 
-    },
-    
-    clearSlot(i) { 
-        this.packSimulator.slots[i] = null; 
-        this.packSimulator.queries[i] = ''; 
-    },
-
-    async executePackOpening() {
-        if(!this.adminPack.targetUser) return this.showToast("Elige usuario destino", "error");
-        
-        const cards = this.packSimulator.slots.filter(s => s);
-        if(cards.length < 4) return this.showToast("Mínimo 4 cartas", "warning");
-
-        try {
-            const res = await fetch('/api/admin/inject_pack', {
-                method: 'POST', headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ 
-                    id_cuenta: this.adminPack.targetUser, 
-                    cards: cards 
-                })
-            });
-            const d = await res.json();
-            if(d.success) this.showToast("⚡ Sobre abierto correctamente", "success");
-            else this.showToast(d.msg, "error");
-        } catch(e) { this.showToast("Error Red", "error"); }
-    },
-
-    // --- GESTIÓN DE USUARIOS ---
-
-    openCreateUserModal() { 
-        this.adminUserForm.visible = true; 
-    },
-    
-    async adminCreateUser() {
-        if(!this.adminUserForm.name) return this.showToast("Falta nombre", "warning");
-        this.showToast("Usuario creado (Simulación)", "success");
-        this.adminUserForm.visible = false;
-    },
-    
-    async adminDeleteUser(id) {
-        if(!confirm("¿Borrar usuario permanentemente?")) return;
-        try {
-            await fetch('/api/admin/account/delete', {
-                method:'POST', headers:{'Content-Type':'application/json'},
-                body: JSON.stringify({id_cuenta: id})
-            });
-            this.accounts = this.accounts.filter(a => a.id_cuenta !== id);
-            this.showToast("Usuario eliminado", "success");
-        } catch(e) { this.showToast("Error", "error"); }
-    },
-    
-    async adminResetPass(userId) {
-        if(!confirm("¿Resetear clave a '1234'?")) return;
-        try {
-            await fetch('/api/admin/tools/reset_password', {
-                method:'POST', headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({id_cuenta: userId})
-            });
-            this.showToast("Contraseña reseteada", "success");
-        } catch(e) { this.showToast("Error", "error"); }
-    },
-
-    // --- HERRAMIENTAS DE MANTENIMIENTO ---
-
-    async adminFixRarities() {
-        if(!confirm("¿Reparar rarezas?")) return;
-        try {
-            const res = await fetch('/api/admin/fix-rarities', { method: 'POST' });
-            const d = await res.json();
-            alert(d.msg || "Hecho");
-        } catch(e) { alert("Error"); }
-    },
-
-    async syncWiki() {
-        // En Cloud solo mostramos el aviso
-        const res = await fetch('/api/admin/sync_wiki');
-        const d = await res.json();
-        if(!d.success) this.showToast(d.msg, "info");
-        else this.showToast("Sincronización OK", "success");
-    },
-    
-    async forceReset() {
-        if(!confirm("¿Forzar Reset Diario?")) return;
-        await fetch('/api/admin/force_reset', {method:'POST'});
-        this.showToast("Reset Completado", "success");
-    },
-    
-    // FIX: Usamos Fetch + Blob para descargar el archivo en Cloud
-    async fullDbBackup() { 
-        this.showToast("⏳ Generando respaldo...", "info");
-        try {
-            const response = await fetch('/api/admin/export_db');
-            if (!response.ok) throw new Error("Error en servidor");
-            
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = "respaldo_poketracer_" + new Date().toISOString().slice(0,10) + ".json";
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            this.showToast("✅ Respaldo descargado", "success");
-        } catch (e) {
-            console.error(e);
-            this.showToast("❌ Error al descargar DB", "error");
-        }
-    },
-    
-    fullDbRestore(e) {
-        const f = e.target.files[0]; 
-        if(!f || !confirm("⚠ PELIGRO: ¿Sobrescribir base de datos?")) return;
-        
-        const r = new FileReader();
-        r.onload = async (ev) => {
-            try {
-                const dataObj = JSON.parse(ev.target.result);
-                await fetch('/api/admin/import_db', { // Asegúrate de tener esta ruta configurada
-                    method:'POST', 
-                    headers:{'Content-Type':'application/json'},
-                    body: JSON.stringify(dataObj)
-                });
-                alert("Restauración OK. Recargando..."); 
-                location.reload();
-            } catch(err) { alert("Archivo inválido"); }
-        };
-        r.readAsText(f);
-    },
-
-    async adminReverseSearch() {
-        if(!this.adminSearchQuery) return;
-        const r = await fetch('/api/admin/tools/reverse_search?query='+this.adminSearchQuery);
-        this.adminSearchResults = await r.json();
-    },
-
-    async adminCleanDB() {
-        if(!confirm("¿Limpiar duplicados en DB?")) return;
-        const r = await fetch('/api/admin/tools/clean_db', {method:'POST'});
-        const d = await r.json();
-        this.showToast(d.msg, "success");
-    },
-    
-    async adminUpdateUser(user) {
-        try {
-            await fetch('/api/admin/account/update', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    id_cuenta: user.id_cuenta,
-                    tipo: user.tipo,
-                    prioridad: user.prioridad
-                })
-            });
-            this.showToast("Usuario actualizado", "success");
-        } catch (e) {
-            this.showToast("Error actualizando", "error");
-        }
+    reset3DCard(e) {
+        const target = e.currentTarget.querySelector('.card-aura-box') || e.currentTarget;
+        target.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
     }
+};
+
+window.mediaManager = mediaManager;
+
+// 2. ESTADO INICIAL
+const initialState = () => ({
+    isLoading: true, currentUser: null, isAdmin: false, readOnly: false,
+    accounts: [], expansiones: [], cards: [], masterCardList: [], history: [], wishlist: [],
+    rawStats: { breakdown: [], totalCards: 0, ownedCards: 0, byExpansion: [] },
+    adminStats: { totalUsers: 0, totalCards: 0, activeToday: 0 },
+    tab: 'info', section: 'Normal', currentExp: 'TODAS', currentTheme: 'neon', showMobileSidebar: false,
+    showPinPad: false, pinInput: "", selectedUserForLogin: null,
+    filters: { search: '', rarity: 'TODAS', energy: '', sortBy: 'id_asc' },
+    zenMode: false, bulkMode: false, hideOwned: false, showSecrets: false, isListening: false,
+    saveStatus: 'Listo', autoSaveTimeout: null, showScrollTop: false,
+    modalCard: null, showSettings: false, contextMenu: { visible: false, x: 0, y: 0, card: null }, toasts: [],
+    settingsForm: { avatar: null, passOld: '', passNew: '' },
+    adminUserForm: { visible: false, name: '', role: 'Secundaria', priority: 10 },
+    socialData: { shares: [], trades: [] }, socialSearch: '', socialFilters: { rarity: 'TODAS', expansion: 'TODAS', onlyFav: false, user: '' },
+    holdTimer: null, holdProgress: 0, holdingTrade: null,
+    notifications: [], unreadNotif: 0, showNotifications: false, globalFeed: [],
+    settingsTab: 'profile', compactMode: localStorage.getItem('compactMode') === 'true', lowPowerMode: localStorage.getItem('lowPowerMode') === 'true',
+    adminSearchQuery: '', adminSearchResults: [], csvFileContent: null, importTextData: '',
+    windowWidth: window.innerWidth,
+    socialMobileTab: 'gifts', // Tab inicial para móvil
+    virtual: { shareScroll: 0, tradeScroll: 0, itemHeightShare: 210, itemHeightTrade: 180, buffer: 15, containerHeight: 800 },
+    adminTrade: { userA: '', userB: '', cardA: null, cardB: null, searchA: '', searchB: '' },
+    adminUserAInventory: [], adminUserAInventoryFiltered: [], adminUserBInventory: [], adminUserBInventoryFiltered: [],
+    adminPack: { targetUser: '' },
+    packSimulator: { expansion: 'Genetica Apex (A1)', slots: [null,null,null,null,null,null], queries: ['','','','','',''], searchResults: [[],[],[],[],[],[]], activeCount: 6 },
+    RARITY_RANK: { "Corona": 100, "3 Estrellas": 90, "Shiny 2 Estrellas": 85, "2 Estrellas": 80, "Shiny 1 Estrella": 75, "1 Estrella": 70, "4 Rombos": 60, "3 Rombos": 50, "2 Rombos": 40, "1 Rombo": 10 },
+    DUPLICATE_VALUES: { "1 Rombo": 20, "2 Rombos": 40, "3 Rombos": 240, "4 Rombos": 720, "1 Estrella": 470, "2 Estrellas": 2400, "Shiny 1 Estrella": 1700, "Shiny 2 Estrellas": 3600, "3 Estrellas": 5400, "Corona": 30000 },
+    TRADE_COSTS: { "1 Rombo": 0, "2 Rombos": 0, "3 Rombos": 1200, "4 Rombos": 5000, "1 Estrella": 4000, "2 Estrellas": 25000, "Shiny 1 Estrella": 10000, "Shiny 2 Estrellas": 30000, "3 Estrellas": null, "Corona": null },
+    TYPE_MAP: { 'planta': 'Planta', 'grass': 'Planta', 'fuego': 'Fuego', 'fire': 'Fuego', 'agua': 'Agua', 'water': 'Agua', 'electrico': 'Electrico', 'lightning': 'Electrico', 'psiquico': 'Psiquico', 'psychic': 'Psiquico', 'lucha': 'Lucha', 'fighting': 'Lucha', 'oscuro': 'Oscuro', 'siniestro': 'Oscuro', 'darkness': 'Oscuro', 'acero': 'Acero', 'metal': 'Acero', 'dragon': 'Dragon', 'incoloro': 'Incoloro', 'normal': 'Incoloro', 'colorless': 'Incoloro' }
+});
+
+// 3. INICIALIZAR ALPINE
+document.addEventListener('alpine:init', () => {
+    Alpine.data('pokeApp', () => ({
+        ...initialState(),
+        ...authModule,
+        ...inventoryModule,
+        ...socialModule,
+        ...adminModule,
+        ...helpersModule,
+        mediaManager: mediaManager,
+
+        async init() {
+            console.log('🚀 Sistema arrancando...');
+            const self = this;
+            window.addEventListener('resize', () => {
+                self.windowWidth = window.innerWidth;
+                if(self.recalcVirtualScroll) self.recalcVirtualScroll();
+            });
+
+            try {
+                const ra = await fetch('/api/cuentas');
+                if (ra.ok) this.accounts = await ra.json();
+                const re = await fetch('/api/expansiones');
+                if (re.ok) this.expansiones = await re.json();
+            } catch (e) {
+                console.error("Error init:", e);
+                this.accounts = [{ id_cuenta: 1, nombre: 'Admin', tipo: 'Principal', avatar_img: null }];
+                this.expansiones = ['Genetica Apex (A1)'];
+            }
+            
+            this.currentUser = null;
+            setTimeout(() => { self.isLoading = false; }, 800);
+
+            // Watchers para filtros
+            this.$watch('socialFilters.rarity', () => this.resetVirtualScrolls && this.resetVirtualScrolls());
+            this.$watch('socialFilters.expansion', () => this.resetVirtualScrolls && this.resetVirtualScrolls());
+            this.$watch('socialFilters.onlyFav', () => this.resetVirtualScrolls && this.resetVirtualScrolls());
+            this.$watch('socialFilters.user', () => this.resetVirtualScrolls && this.resetVirtualScrolls());
+            this.$watch('socialSearch', () => this.resetVirtualScrolls && this.resetVirtualScrolls());
+
+            setInterval(() => {
+                if(this.currentUser) {
+                    if(this.checkNotifications) this.checkNotifications();
+                    if(this.loadFeed) this.loadFeed();
+                }
+            }, 30000);
+        }
+    }));
+});
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+}
+
+/* --- FIXES GLOBALES INTERFAZ --- */
+
+// FIX #7: Cierre de Menú Lateral (Llamado desde HTML onclick="closeSideMenu()")
+window.closeSideMenu = function() {
+    // 1. Cerrar visualmente
+    const menu = document.getElementById('side-menu');
+    const overlay = document.getElementById('menu-overlay');
+    
+    if (menu) menu.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+    
+    // 2. Sincronizar estado Alpine (si es accesible)
+    const alpineEl = document.querySelector('[x-data]');
+    if (alpineEl && alpineEl.__x) {
+        alpineEl.__x.$data.showMobileSidebar = false;
+    }
+};
+
+// Función Legacy para filtros (solo si quedan referencias antiguas)
+window.filterAdminCards = function() {
+    // Esta función ya no se usa en el nuevo Admin Trade V2, 
+    // pero se mantiene para evitar errores si algún elemento la llama.
+    // La nueva lógica está en adminModule.filterAdminInventory
 };

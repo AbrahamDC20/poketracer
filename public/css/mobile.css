@@ -1,6 +1,6 @@
 /* ==========================================================================
    POKÉTRACKER PRO - SISTEMA DE ESTILOS MÓVIL (Touch First)
-   Versión: 5.6.0 (Ultimate Fix)
+   Versión: 5.6.1 (Definitive Fix)
    Descripción: Adaptación completa, autónoma y con menú lateral para < 768px
    ========================================================================== */
 
@@ -1221,71 +1221,97 @@ h3 {
 }
 
 /* ==========================================================================
-   15. FIXES FINALES AGRESIVOS (SOLUCIÓN DEFINITIVA UI)
+   15. FIXES FINALES (V2 - SOLUCIÓN DEFINITIVA)
    ========================================================================== */
 
-/* FIX 5: Superposición de Filtros sobre Cartas */
-.inventory-controls, 
-.toolbar, 
-.mobile-controls-grid {
-    background-color: var(--bg-main) !important; /* Fondo sólido para tapar lo que pase por debajo */
-    position: relative !important;
-    z-index: 50 !important;
-    padding-bottom: 10px !important;
-    display: block !important;
+/* FIX 5: Superposición en Pestañas (Grid baja para dejar sitio a filtros) */
+@media (max-width: 900px) {
+    .inventory-controls, 
+    .toolbar {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 50 !important;
+        background-color: var(--bg-main) !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+    }
+
+    .cards-grid {
+        margin-top: 15px !important;
+        padding-top: 15px !important; /* Espacio extra para que no se tape la 1ª fila */
+        z-index: 1 !important;
+        padding-bottom: 100px !important; /* Espacio final para que no tape el footer */
+        position: relative !important;
+    }
 }
 
-.cards-grid {
-    margin-top: 10px !important; 
-    padding-top: 10px !important;
-    z-index: 1 !important;
-    position: relative !important;
+/* FIX 6: Social Cortado y Recursos Tapando */
+@media (max-width: 900px) {
+    /* Forzar vista vertical completa sin cortes */
+    .social-split-view {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    .social-column {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 5px !important;
+        margin-bottom: 80px !important; /* Espacio para que no choque con el footer */
+        overflow: visible !important;
+    }
+
+    /* Recursos (Polvos/Fichas) fijos abajo del todo, pero con fondo para que se lean */
+    .social-footer {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(0,0,0,0.9) !important;
+        border-top: 1px solid var(--accent-primary) !important;
+        z-index: 6000 !important; /* Por encima de todo */
+        padding: 10px !important;
+        display: flex !important;
+        justify-content: space-around !important;
+    }
+    
+    /* Ajuste de tarjetas de intercambio */
+    .trade-capsule, .gift-ticket {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        flex-wrap: wrap !important;
+        display: flex !important;
+    }
+    
+    .capsule-left, .capsule-mid, .capsule-right {
+        flex: 1 1 100% !important; /* Apilar verticalmente en móvil */
+        text-align: center !important;
+        margin-bottom: 5px !important;
+        min-width: 100% !important;
+    }
+    
+    .trade-capsule {
+        flex-direction: column !important;
+    }
 }
 
-/* FIX 6: Cortes en Social y Mercado (Layout Vertical Forzado) */
-.social-split-view {
-    display: block !important; /* Romper el grid de 2 columnas */
-    width: 100% !important;
-}
-
-.social-column {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 30px !important;
-    padding: 0 !important;
-    overflow: visible !important;
-}
-
-.trade-capsule, .gift-ticket {
-    width: 96% !important;
-    margin: 10px auto !important;
-    max-width: none !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-}
-
-/* Asegurar que las partes del trade se acomoden */
-.capsule-left, .capsule-mid, .capsule-right {
-    flex: 1 1 auto !important;
-    min-width: 30% !important;
-}
-
-/* FIX 7: Cierre de Menú (Overlay Global) */
-#menu-overlay {
+/* FIX 7: Z-Index del Menú y Overlay */
+#menu-overlay { 
+    z-index: 9998 !important; 
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
     background: rgba(0,0,0,0.8) !important;
-    z-index: 9998 !important;
-    /* Se oculta/muestra con la clase .active definida arriba o por JS */
 }
-#side-menu {
-    z-index: 9999 !important;
+#side-menu { 
+    z-index: 9999 !important; 
 }
 
-/* FIX 8: Textos Desbordados en Admin */
+/* FIX 8: Textos Admin Desbordados */
 .admin-panel button, 
 .btn-action, 
 .btn-save, 

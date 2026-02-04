@@ -81,41 +81,34 @@ export const authModule = {
         this.socialData = { shares: [], trades: [] };
     },
 
-    // --- FUNCIONES DE REGISTRO (FIX PARA EL BOTÓN 'NUEVO') ---
+    // --- FUNCIONES DE REGISTRO (LOGICA SIMPLIFICADA PARA FIX) ---
 
     openCreateUserModal() {
-        const loginContainer = document.querySelector('.login-container');
-        // Ocultar rejilla de perfiles
-        const grid = loginContainer.querySelector('.profiles-grid');
-        // Mostrar formulario (buscamos por ID)
-        const form = document.getElementById('register-form'); 
-        
+        // 1. Ocultar la rejilla de perfiles
+        const grid = document.querySelector('.profiles-grid');
         if(grid) grid.style.display = 'none';
         
+        // 2. Mostrar el formulario (ya está en el sitio correcto en HTML)
+        const form = document.getElementById('register-form');
         if(form) {
-            form.classList.remove('hidden');
             form.style.display = 'block';
-            // Mover el formulario dentro del contenedor de login si no estaba ahí
-            if(form.parentNode !== loginContainer) {
-               loginContainer.appendChild(form);
-            }
+            form.classList.remove('hidden');
         }
         
-        // Cambiar título
-        const title = loginContainer.querySelector('.login-title');
-        if(title) title.textContent = "Crear Entrenador";
+        // 3. Cambiar título
+        const title = document.querySelector('.login-title');
+        if(title) title.innerText = "Crear Nuevo Entrenador";
     },
-    
+
     cancelCreateUser() {
-        const loginContainer = document.querySelector('.login-container');
-        const grid = loginContainer.querySelector('.profiles-grid');
-        const form = document.getElementById('register-form');
-        
+        const grid = document.querySelector('.profiles-grid');
         if(grid) grid.style.display = 'grid';
+        
+        const form = document.getElementById('register-form');
         if(form) form.style.display = 'none';
         
-        const title = loginContainer.querySelector('.login-title');
-        if(title) title.textContent = "Seleccionar Perfil";
+        const title = document.querySelector('.login-title');
+        if(title) title.innerText = "Seleccionar Perfil";
     },
 
     async registerNewUser() {
