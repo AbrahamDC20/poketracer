@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MÓDULO: ADMINISTRACIÓN (FIXED SCOPE & CONTEXT)
+   MÓDULO: ADMINISTRACIÓN (SCOPE FIX)
    ========================================================================== */
 
 function getApp() {
@@ -20,7 +20,7 @@ export const adminModule = {
         if(app) app.adminStats = { totalUsers: app.accounts.length }; 
     },
 
-    // --- GESTOR DE INTERCAMBIOS ADMIN (FIXED) ---
+    // --- GESTOR DE INTERCAMBIOS ---
 
     async loadAdminUserInventory(userId, side) {
         if (!userId) return;
@@ -42,22 +42,21 @@ export const adminModule = {
                 app.adminTrade.cardB = null; 
             }
             
-            // Forzamos el filtrado inicial
+            // Usamos la función del módulo, no 'this'
             adminModule.filterAdminInventory(side);
 
         } catch(e) { console.error(e); }
     },
 
-    // ESTA FUNCIÓN PROVOCABA EL ERROR "searchA undefined". AHORA ESTÁ CORREGIDA.
     filterAdminInventory(side) {
         const app = getApp();
         if (!app) return;
 
-        // Leemos valores del DOM directamente para evitar desincronización
+        // Leer del DOM directamente
         const rarityVal = document.getElementById(`filter-rarity-${side}`)?.value || 'ALL';
         const expVal = document.getElementById(`filter-exp-${side}`)?.value || 'ALL';
         
-        // Accedemos a las variables de búsqueda a través de 'app', no 'this'
+        // Acceder a la variable de búsqueda en la APP, no en 'this'
         const searchVal = (side === 'A' ? app.adminTrade.searchA : app.adminTrade.searchB || '').toLowerCase();
         
         const source = side === 'A' ? app.adminUserAInventory : app.adminUserBInventory;
@@ -72,13 +71,13 @@ export const adminModule = {
             return matchText && matchRarity && matchExp && isTradeable;
         });
         
-        // Escribimos el resultado en la app
         if (side === 'A') app.adminUserAInventoryFiltered = filtered;
         else app.adminUserBInventoryFiltered = filtered;
     },
 
     selectAdminCard(card, side) {
         const app = getApp();
+        if (!app) return;
         if (side === 'A') app.adminTrade.cardA = card;
         else app.adminTrade.cardB = card;
     },
@@ -91,12 +90,14 @@ export const adminModule = {
 
     async executeAdminTrade() {
         const app = getApp();
+        if (!app) return;
+        
         if (!app.adminTrade.cardA || !app.adminTrade.cardB) return safeToast("Faltan cartas", "warning");
         
         const cost = adminModule.getTradeCost(app.adminTrade.cardA.rareza);
         if (cost === null) return safeToast("Rareza Prohibida", "error");
         
-        if (app.adminTrade.cardA.rareza !== app.adminTrade.cardB.rareza) return safeToast("Rarezas distintas", "error");
+        if (app.adminTrade.cardA.rareza !== app.adminTrade.cardB.rareza) return safeToast("Rarezas no coinciden", "error");
 
         try {
             const res = await fetch('/api/social/execute_trade', {
@@ -110,21 +111,21 @@ export const adminModule = {
             });
             const d = await res.json();
             if(d.success) {
-                safeToast("✅ Intercambio Admin OK", "success");
+                safeToast("Intercambio Éxito", "success");
                 adminModule.loadAdminUserInventory(app.adminTrade.userA, 'A');
                 adminModule.loadAdminUserInventory(app.adminTrade.userB, 'B');
-                app.adminTrade.cardA = null; 
-                app.adminTrade.cardB = null;
+                app.adminTrade.cardA = null; app.adminTrade.cardB = null;
             } else safeToast(d.msg, "error");
-        } catch(e) { safeToast("Error de Red", "error"); }
+        } catch(e) { safeToast("Error Red", "error"); }
     },
     
     async executeAdminGift() { safeToast("Función Gift (WIP)", "info"); },
 
-    // --- INYECTOR DE SOBRES ---
+    // --- PACKS ---
 
     updatePackConfig() {
         const app = getApp();
+        if(!app) return;
         const isDeluxe = app.packSimulator.expansion.toLowerCase().includes('deluxe');
         app.packSimulator.slots = [null,null,null,null,null,null];
         app.packSimulator.queries = ['','','','','',''];
@@ -134,11 +135,12 @@ export const adminModule = {
     
     addSixthCardSlot() { 
         const app = getApp();
-        if(app.packSimulator.activeCount < 6) app.packSimulator.activeCount = 6; 
+        if(app && app.packSimulator.activeCount < 6) app.packSimulator.activeCount = 6; 
     },
 
     searchCardForPack(index) {
         const app = getApp();
+        if(!app) return;
         const q = app.packSimulator.queries[index].toLowerCase();
         if(q.length < 1) { app.packSimulator.searchResults[index] = []; return; }
         const exp = app.packSimulator.expansion;
@@ -149,20 +151,22 @@ export const adminModule = {
 
     selectCardForSlot(i, c) {
         const app = getApp();
-        app.packSimulator.slots[i] = {...c}; 
+        if(!app) return;
+        app.packSimulator.slots[i] = {...c};
         app.packSimulator.queries[i] = c.nombre;
-        app.packSimulator.searchResults[i] = []; 
+        app.packSimulator.searchResults[i] = [];
     },
     
     clearSlot(i) { 
         const app = getApp();
+        if(!app) return;
         app.packSimulator.slots[i] = null; 
         app.packSimulator.queries[i] = ''; 
     },
 
     async executePackOpening() {
         const app = getApp();
-        if(!app.adminPack.targetUser) return safeToast("Elige usuario", "error");
+        if(!app || !app.adminPack.targetUser) return safeToast("Elige usuario", "error");
         const cards = app.packSimulator.slots.filter(s => s);
         if(cards.length < 4) return safeToast("Mínimo 4 cartas", "warning");
 
@@ -172,7 +176,7 @@ export const adminModule = {
                 body: JSON.stringify({ id_cuenta: app.adminPack.targetUser, cards: cards })
             });
             const d = await res.json();
-            if(d.success) safeToast("⚡ Sobre abierto!", "success");
+            if(d.success) safeToast("Sobre abierto!", "success");
             else safeToast(d.msg, "error");
         } catch(e) { safeToast("Error Red", "error"); }
     },
@@ -181,40 +185,40 @@ export const adminModule = {
 
     openCreateUserModal() { 
         const app = getApp();
-        app.adminUserForm.visible = true; 
+        if(app) app.adminUserForm.visible = true; 
     },
     
     async adminCreateUser() {
         const app = getApp();
-        if(!app.adminUserForm.name) return;
-        safeToast("Usuario Simulado OK", "success");
+        if(!app || !app.adminUserForm.name) return;
+        safeToast("Simulación usuario creado", "success");
         app.adminUserForm.visible = false;
     },
     
     async adminDeleteUser(id) {
-        if(!confirm("¿Eliminar usuario?")) return;
         const app = getApp();
+        if(!confirm("¿Eliminar usuario?")) return;
         try {
             await fetch('/api/admin/account/delete', {
                 method:'POST', headers:{'Content-Type':'application/json'},
                 body: JSON.stringify({id_cuenta: id})
             });
-            app.accounts = app.accounts.filter(a => a.id_cuenta !== id);
+            if(app) app.accounts = app.accounts.filter(a => a.id_cuenta !== id);
             safeToast("Eliminado", "success");
         } catch(e) { safeToast("Error", "error"); }
     },
     
     async adminResetPass(userId) {
-        if(!confirm("¿Reset a '1234'?")) return;
+        if(!confirm("¿Reset a 1234?")) return;
         try {
             await fetch('/api/admin/tools/reset_password', {
                 method:'POST', headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({id_cuenta: userId})
             });
-            safeToast("Reset OK", "success");
+            safeToast("Contraseña reseteada", "success");
         } catch(e) { safeToast("Error", "error"); }
     },
-
+    
     async adminUpdateUser(user) {
         try {
             await fetch('/api/admin/account/update', {
@@ -225,11 +229,11 @@ export const adminModule = {
                     prioridad: user.prioridad
                 })
             });
-            safeToast("Usuario actualizado", "success");
-        } catch (e) { safeToast("Error", "error"); }
+            safeToast("Actualizado", "success");
+        } catch(e) { safeToast("Error", "error"); }
     },
 
-    // --- MANTENIMIENTO (FIXED DOWNLOAD) ---
+    // --- TOOLS ---
 
     async adminFixRarities() {
         if(!confirm("¿Reparar rarezas?")) return;
@@ -245,37 +249,32 @@ export const adminModule = {
         try {
             const res = await fetch('/api/admin/sync_wiki');
             const d = await res.json();
-            safeToast(d.msg || "Sincronizado", d.success ? "success" : "info");
+            safeToast(d.msg || "Sincronizado", d.success ? "success":"error");
         } catch(e) { safeToast("Error conexión", "error"); }
     },
     
     async forceReset() {
-        if(!confirm("¿Forzar Reset?")) return;
+        if(!confirm("¿Forzar Reset Diario?")) return;
         await fetch('/api/admin/force_reset', {method:'POST'});
         safeToast("Reset Ejecutado", "success");
     },
     
-    // FIX PANTALLA BLANCA AL EXPORTAR: Usamos descarga por link directo
     async fullDbBackup() { 
-        safeToast("⏳ Iniciando descarga...", "info");
+        safeToast("⏳ Descargando...", "info");
         try {
             const link = document.createElement('a');
             link.href = '/api/admin/export_db';
-            link.setAttribute('download', `backup_poketrader_${Date.now()}.json`);
+            link.setAttribute('download', `backup_${Date.now()}.json`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            safeToast("✅ Descarga iniciada", "success");
-        } catch (e) {
-            console.error(e);
-            safeToast("❌ Error al descargar", "error");
-        }
+            safeToast("Descarga iniciada", "success");
+        } catch(e) { safeToast("Error backup", "error"); }
     },
     
     fullDbRestore(e) {
         const f = e.target.files[0]; 
-        if(!f || !confirm("¿Sobrescribir DB?")) return;
-        
+        if(!f || !confirm("¿Restaurar DB?")) return;
         const r = new FileReader();
         r.onload = async (ev) => {
             try {
@@ -284,8 +283,7 @@ export const adminModule = {
                     method:'POST', headers:{'Content-Type':'application/json'},
                     body: JSON.stringify(d)
                 });
-                alert("Restaurado. Recargando..."); 
-                location.reload();
+                alert("Restaurado. Recargando..."); location.reload();
             } catch(err) { alert("JSON inválido"); }
         };
         r.readAsText(f);
@@ -300,7 +298,7 @@ export const adminModule = {
 
     async adminReverseSearch() {
         const app = getApp();
-        if(!app.adminSearchQuery) return;
+        if(!app || !app.adminSearchQuery) return;
         const r = await fetch('/api/admin/tools/reverse_search?query='+app.adminSearchQuery);
         app.adminSearchResults = await r.json();
     }

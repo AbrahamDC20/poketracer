@@ -1,10 +1,10 @@
 /* ==========================================================================
-   MÓDULO: AUTENTICACIÓN (FIXED SCOPE & CONTEXT)
+   MÓDULO: AUTENTICACIÓN (SCOPE FIX)
    Login, Registro y Gestión de Sesión blindados
    ========================================================================== */
 
-// 1. HELPER PARA OBTENER LA APP (EL CEREBRO DE ALPINE)
-// Esto soluciona el error "this is undefined" o "showToast is not a function"
+// 1. PUENTE AL CEREBRO DE ALPINE
+// Esto permite que el archivo acceda a showToast, currentUser, etc.
 function getApp() {
     const el = document.querySelector('[x-data]');
     return (el && el.__x) ? el.__x.$data : null;
@@ -14,14 +14,13 @@ function getApp() {
 function safeToast(msg, type) {
     const app = getApp();
     if (app && app.showToast) app.showToast(msg, type);
-    else console.log(`[${type}] ${msg}`); // Fallback por si acaso
+    else console.log(`[${type}] ${msg}`);
 }
 
 export const authModule = {
     
     // --- LOGIN ---
     selectUserForLogin(acc) { 
-        // Al llamarse desde HTML, 'this' puede perderse, así que usamos getApp() para escribir datos
         const app = getApp();
         if(!app) return;
         
@@ -35,7 +34,8 @@ export const authModule = {
         if(!app) return;
 
         if (app.pinInput.length < 4) app.pinInput += n; 
-        if (app.pinInput.length === 4) authModule.verifyPin(); // Llamamos a verifyPin explícitamente
+        // Importante: Llamamos a la función dentro de authModule
+        if (app.pinInput.length === 4) authModule.verifyPin(); 
     },
     
     clearPin() { 
@@ -61,13 +61,13 @@ export const authModule = {
             const data = await res.json();
             
             if (data.success) {
-                // Login Exitoso: Escribimos en la App Global
+                // Escribimos en la App Global
                 app.currentUser = app.selectedUserForLogin;
                 app.isAdmin = data.isAdmin;
                 
                 if (app.currentUser.tema) app.currentTheme = app.currentUser.tema;
                 
-                // Cargamos datos usando las funciones globales de la app si existen
+                // Cargar datos
                 if(app.loadMasterList) await app.loadMasterList(); 
                 if(app.loadInfo) await app.loadInfo(); 
                 if(app.loadInventory) await app.loadInventory();
@@ -89,7 +89,7 @@ export const authModule = {
                 if(app.loadMasterList) app.loadMasterList(); 
                 if(app.loadInventory) app.loadInventory(); 
                 authModule.closePinPad();
-                safeToast("Modo Emergencia Activado", "warning");
+                safeToast("Modo Emergencia", "warning");
             } else { 
                 safeToast("Error de conexión", "error"); 
                 app.pinInput = ""; 
@@ -109,18 +109,20 @@ export const authModule = {
     },
 
     // --- REGISTRO DE USUARIOS (SOLUCIÓN DEFINITIVA) ---
-    // Estas funciones ya no dependen de 'this', buscan los elementos directo.
 
     openCreateUserModal() {
         const app = getApp();
-        // Usamos la variable localRegisterMode del x-data del HTML si existe, o la global
+        // Usamos la variable global de Alpine
         if(app) app.registerMode = true; 
         
-        // Fallback visual por si Alpine falla
+        // Fallback visual por si Alpine tarda
         const form = document.getElementById('register-form');
         const grid = document.querySelector('.profiles-grid');
         if(form) form.style.display = 'block';
         if(grid) grid.style.display = 'none';
+        
+        const title = document.querySelector('.login-title');
+        if(title) title.innerText = "Crear Nuevo Entrenador";
     },
 
     cancelCreateUser() {
@@ -132,12 +134,15 @@ export const authModule = {
         const grid = document.querySelector('.profiles-grid');
         if(form) form.style.display = 'none';
         if(grid) grid.style.display = 'grid';
+        
+        const title = document.querySelector('.login-title');
+        if(title) title.innerText = "Seleccionar Perfil";
     },
 
     async registerNewUser() {
         console.log("🚀 Iniciando registro...");
         
-        // 1. Obtener valores directamente del DOM (a prueba de fallos)
+        // 1. Obtener valores directamente del DOM (más seguro)
         const nameInput = document.getElementById('reg-username');
         const pinInput = document.getElementById('reg-password');
 
@@ -178,9 +183,12 @@ export const authModule = {
                     
                     // 6. Cerrar el formulario
                     app.registerMode = false;
-                    // También intentamos cerrar la versión local del HTML por si acaso
+                    
+                    // Cerrar también la variable local del HTML por si acaso
                     const loginContainer = document.querySelector('.login-container');
-                    if(loginContainer && loginContainer.__x) loginContainer.__x.$data.localRegisterMode = false;
+                    if(loginContainer && loginContainer.__x) {
+                        loginContainer.__x.$data.localRegisterMode = false;
+                    }
                 }
                 
                 // Fallback visual forzoso
