@@ -57,6 +57,7 @@ window.mediaManager = mediaManager;
 // 2. ESTADO INICIAL
 const initialState = () => ({
     isLoading: true, currentUser: null, isAdmin: false, readOnly: false,
+    registerMode: false, // <--- VARIABLE CRÍTICA PARA EL LOGIN (FIX #1)
     accounts: [], expansiones: [], cards: [], masterCardList: [], history: [], wishlist: [],
     rawStats: { breakdown: [], totalCards: 0, ownedCards: 0, byExpansion: [] },
     adminStats: { totalUsers: 0, totalCards: 0, activeToday: 0 },

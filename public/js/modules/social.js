@@ -1,6 +1,6 @@
 /* ==========================================================================
-   MÓDULO: SOCIAL
-   Mercado, Regalos, Feed, Notificaciones y Scroll Virtual
+   MÓDULO: SOCIAL (VERSIÓN FIX: SIN VIRTUAL SCROLL Y CON FILTRO USUARIO)
+   Mercado, Regalos, Feed, Notificaciones
    ========================================================================== */
 
 export const socialModule = {
@@ -10,59 +10,82 @@ export const socialModule = {
         this.isLoading = true; 
         this.socialData = { shares: [], trades: [] };
         
-        this.resetVirtualScrolls();
-        
         try {
             const res = await fetch('/api/social/smart-matches?id_usuario=' + this.currentUser.id_cuenta);
             if (res.ok) {
                 this.socialData = await res.json();
-                this.$nextTick(() => this.recalcVirtualScroll());
             }
         } catch (e) {
-            this.showToast("Error Social", "error");
+            this.showToast("Error cargando social", "error");
         } finally {
             this.isLoading = false;
         }
     },
 
-    // Helpers de Interfaz Social
-    toggleUserAccordion(user) { this.expandedUser = (this.expandedUser === user.user.id) ? null : user.user.id; },
-    hasTrades(user) { return user.trades && user.trades.length > 0; },
+    // --- FILTRADO POTENTE (FIX PUNTO 6) ---
+    get filteredSocialItems() {
+        // Obtenemos filtros reactivos de Alpine
+        const rarity = this.socialFilters.rarity;
+        const exp = this.socialFilters.expansion;
+        const onlyFav = this.socialFilters.onlyFav;
+        const userSearch = (this.socialFilters.user || '').toLowerCase(); // Filtro de usuario
+        const globalSearch = (this.socialSearch || '').toLowerCase();     // Búsqueda texto general
 
-    // --- VIRTUAL SCROLL LOGIC ---
+        // Función de filtrado común para Gifts y Trades
+        const filterFn = (item) => {
+            // Unificar estructura: en Gift es 'card', en Trade es 'get' (la carta que recibes)
+            const card = item.card || item.get; 
+            // Unificar usuario: en Gift es 'targetUser', en Trade es 'partner'
+            const userObj = item.targetUser || item.partner;
+            const userName = userObj ? userObj.name.toLowerCase() : '';
+
+            // 1. Filtro Rareza
+            if (rarity !== 'TODAS' && card.rareza !== rarity) return false;
+            
+            // 2. Filtro Expansión
+            if (exp !== 'TODAS' && card.expansion !== exp) return false;
+            
+            // 3. Filtro Favoritos (Wishlist)
+            if (onlyFav && !card.deseada) return false;
+
+            // 4. Filtro Usuario (Dropdown específico)
+            if (userSearch && !userName.includes(userSearch)) return false;
+
+            // 5. Búsqueda Global (Input texto: busca en nombre de carta O nombre de usuario)
+            if (globalSearch) {
+                const matchCard = card.nombre.toLowerCase().includes(globalSearch);
+                const matchUser = userName.includes(globalSearch);
+                if (!matchCard && !matchUser) return false;
+            }
+
+            return true;
+        };
+
+        // Devolvemos los arrays filtrados
+        return {
+            shares: this.socialData.shares.filter(filterFn),
+            trades: this.socialData.trades.filter(filterFn)
+        };
+    },
+
+    // --- DATOS PARA VISTA (SIN VIRTUAL SCROLL) ---
+    // Devolvemos la lista entera para que el CSS nativo maneje el scroll.
+    // Esto soluciona que "se vean cortados" o "no carguen todos".
     
-    resetVirtualScrolls() {
-        this.virtual.shareScroll = 0;
-        this.virtual.tradeScroll = 0;
-        document.querySelectorAll('.social-column-scroll').forEach(el => el.scrollTop = 0);
-    },
-    
-    recalcVirtualScroll() {
-        this.virtual.containerWidth = window.innerWidth;
-        const cols = document.querySelector('.social-column-scroll');
-        if (cols && cols.clientHeight > 0) {
-            this.virtual.containerHeight = cols.clientHeight;
-        } else {
-            this.virtual.containerHeight = 800; // Altura segura por defecto
-        }
+    get virtualSharesData() {
+        return { items: this.filteredSocialItems.shares, totalHeight: 'auto', offsetY: 0 };
     },
 
-    handleVirtualScroll(type, event) {
-        const scrollTop = event.target.scrollTop;
-        const clientHeight = event.target.clientHeight;
-        
-        if (clientHeight > 0 && this.virtual.containerHeight !== clientHeight) {
-            this.virtual.containerHeight = clientHeight;
-        }
-
-        if (type === 'SHARE') {
-            this.virtual.shareScroll = scrollTop;
-        } else {
-            this.virtual.tradeScroll = scrollTop;
-        }
+    get virtualTradesData() {
+        return { items: this.filteredSocialItems.trades, totalHeight: 'auto', offsetY: 0 };
     },
 
-    // --- HOLD TO TRADE LOGIC ---
+    // Funciones dummy para evitar errores si el HTML antiguo las llama
+    resetVirtualScrolls() {},
+    recalcVirtualScroll() {},
+    handleVirtualScroll(type, event) {}, // El scroll ahora es nativo CSS
+
+    // --- LÓGICA DE INTERCAMBIO (HOLD) ---
 
     startHold(trade, user, el) {
         if(this.holdTimer) clearTimeout(this.holdTimer);
@@ -71,7 +94,7 @@ export const socialModule = {
         this.holdProgress = 0;
         
         const step = 20; 
-        const duration = 800;
+        const duration = 800; // 0.8 segundos para confirmar
         
         this.holdTimer = setInterval(() => {
             this.holdProgress += (step / duration) * 100;
@@ -89,20 +112,27 @@ export const socialModule = {
         this.holdingTrade = null;
     },
 
-    // --- ACCIONES DE INTERCAMBIO Y REGALO ---
+    // --- EJECUCIÓN DE ACCIONES ---
 
     visualTradeEffect(btn, trade, u) {
+        // Efecto visual antes de la petición
         const capsule = btn.closest('.trade-capsule');
         this.requestTrade(trade).then(success => { 
             if(success && capsule) {
-                capsule.classList.add('ghost-out');
+                capsule.style.transition = "transform 0.5s, opacity 0.5s";
+                capsule.style.transform = "translateX(100%)";
+                capsule.style.opacity = "0";
+                setTimeout(() => {
+                    // Eliminamos localmente para feedback instantáneo
+                    this.socialData.trades = this.socialData.trades.filter(t => t !== trade);
+                }, 500);
             }
         });
     },
 
     async requestTrade(tradeInfo) {
         if(this.currentUser.polvos_iris < tradeInfo.cost) {
-            this.showToast("Insuficientes Polvos", "error");
+            this.showToast("No tienes suficientes Polvos Iris", "error");
             return false;
         }
         
@@ -121,14 +151,22 @@ export const socialModule = {
                 })
             });
             const d = await res.json();
+            
             if(d.success) { 
-                this.showToast("¡Intercambio Épico Realizado!", "success"); 
+                this.showToast("¡Intercambio Épico Realizado!", "success");
+                
+                // Actualizar recursos visualmente
                 this.currentUser.polvos_iris -= tradeInfo.cost;
-                this.currentUser.fichas_cambio -= 1;
-                setTimeout(() => this.initSocial(), 1200); 
+                this.currentUser.fichas_cambio = (this.currentUser.fichas_cambio || 0) - 1;
+                
+                // Efecto confeti
+                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                
+                // Recargar datos en segundo plano
+                this.loadInventory(); 
                 return true;
             } else {
-                this.showToast(d.msg, "error");
+                this.showToast(d.msg || "Error en el intercambio", "error");
                 return false;
             }
         } catch(e) { 
@@ -137,53 +175,90 @@ export const socialModule = {
         }
     },
 
+    // --- LOGICA DE REGALOS (WONDER TRADE) ---
+    
     visualGiftEffect(btn, item) {
         const ticket = btn.closest('.gift-ticket');
+        
+        // Animación CSS (asume que existe clase packing-anim o fade-out)
         if(ticket) {
-            ticket.classList.add('packing-anim');
-            setTimeout(() => {
-                this.requestShare(item);
-            }, 800);
+            ticket.style.transition = "all 0.5s";
+            ticket.style.transform = "scale(0)";
+            ticket.style.opacity = "0";
         }
+        
+        // Ejecutar envío
+        this.requestShare(item);
     },
 
-    requestShare(item) {
-        fetch('/api/social/execute_gift', {
-            method: 'POST', 
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ 
-                id_origen: this.currentUser.id_cuenta, 
-                id_destino: item.targetUser.id, 
-                id_carta: item.card.id_carta, 
-                expansion: item.card.expansion 
-            })
-        }).then(res => {
-            this.showToast("Regalo enviado", "success");
-            this.initSocial();
-        });
+    async requestShare(item) {
+        try {
+            const res = await fetch('/api/social/execute_gift', {
+                method: 'POST', 
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ 
+                    id_origen: this.currentUser.id_cuenta, 
+                    id_destino: item.targetUser.id, 
+                    id_carta: item.card.id_carta, 
+                    expansion: item.card.expansion 
+                })
+            });
+            
+            if(res.ok) {
+                this.showToast("🎁 Regalo enviado a " + item.targetUser.name, "success");
+                // Eliminar de la lista local
+                this.socialData.shares = this.socialData.shares.filter(s => s !== item);
+            }
+        } catch(e) { console.error(e); }
     },
 
     // --- NOTIFICACIONES Y FEED ---
 
     async checkNotifications() {
         if(!this.currentUser) return;
-        const r = await fetch('/api/social/notifications?id_cuenta='+this.currentUser.id_cuenta);
-        if(r.ok) {
-            this.notifications = await r.json();
-            this.unreadNotif = this.notifications.filter(n => !n.leida).length;
-        }
+        try {
+            const r = await fetch('/api/social/notifications?id_cuenta='+this.currentUser.id_cuenta);
+            if(r.ok) {
+                this.notifications = await r.json();
+                this.unreadNotif = this.notifications.filter(n => !n.leida).length;
+            }
+        } catch(e) {}
     },
 
     async markRead() {
-        await fetch('/api/social/notifications/read', {
-            method:'POST', headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({id_cuenta:this.currentUser.id_cuenta})
-        });
-        this.unreadNotif = 0;
+        if(this.unreadNotif === 0) return;
+        try {
+            await fetch('/api/social/notifications/read', {
+                method:'POST', headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({id_cuenta:this.currentUser.id_cuenta})
+            });
+            this.unreadNotif = 0;
+        } catch(e) {}
     },
 
     async loadFeed() {
-        const r = await fetch('/api/social/feed');
-        if(r.ok) this.globalFeed = await r.json();
+        try {
+            const r = await fetch('/api/social/feed');
+            if(r.ok) this.globalFeed = await r.json();
+        } catch(e) {}
+    },
+
+    // Helpers Visuales
+    getBiomeClass(type) {
+        if(!type) return 'biome-base';
+        return 'biome-' + type.toLowerCase();
+    },
+    
+    getAuraClass(rarity) {
+        if(!rarity) return '';
+        if(rarity.includes('Corona')) return 'aura-rainbow';
+        if(rarity.includes('Estrella')) return 'aura-gold';
+        if(rarity.includes('4 Rombos')) return 'aura-purple';
+        return 'aura-blue';
+    },
+
+    isSetCompleter(card) {
+        // Lógica simple: Si la desea es True, asumimos que completa set o es buscada
+        return card.deseada === true || card.deseada === 1;
     }
 };

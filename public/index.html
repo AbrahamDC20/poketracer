@@ -129,9 +129,9 @@
                  alt="Logo Pokémon TCG" 
                  class="login-logo">
             
-            <h1 class="login-title">Seleccionar Perfil</h1>
+            <h1 class="login-title" x-text="registerMode ? 'Nuevo Entrenador' : 'Seleccionar Perfil'"></h1>
             
-            <div class="profiles-grid">
+            <div class="profiles-grid" x-show="!registerMode">
                 <template x-for="acc in accounts" :key="acc.id_cuenta">
                     <div class="profile-card" @click="selectUserForLogin(acc)">
                         <div class="avatar-circle" :style="acc.avatar_img ? `background-image:url(${acc.avatar_img});` : ''">
@@ -144,20 +144,20 @@
                         </div>
                     </div>
                 </template>
-                <div class="profile-card add-user-card" @click="authModule.openCreateUserModal()">
+                <div class="profile-card add-user-card" @click="registerMode = true">
                     <div class="avatar-circle"><span>+</span></div>
                     <h3>Nuevo</h3>
                     <small>Crear Cuenta</small>
                 </div>
             </div>
             
-            <div id="register-form" class="hidden" style="padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.5); border-radius:10px;">
-                <h3 style="margin-bottom:15px; color:white;">✨ Nuevo Entrenador</h3>
-                <input type="text" id="reg-username" placeholder="Tu Nombre..." style="width:100%; margin-bottom:15px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
-                <input type="password" id="reg-password" placeholder="Elige un PIN (4 dígitos)..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
+            <div x-show="registerMode" style="padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.5); border-radius:10px;">
+                <h3 style="margin-bottom:15px; color:white;">✨ Crea tu perfil</h3>
+                <input type="text" id="reg-username" placeholder="Nombre de usuario..." style="width:100%; margin-bottom:15px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
+                <input type="password" id="reg-password" placeholder="PIN de 4 dígitos..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <div style="display:flex; gap:10px;">
-                    <button class="btn-outline" onclick="authModule.cancelCreateUser()" style="flex:1;">Cancelar</button>
-                    <button class="btn-save" onclick="authModule.registerNewUser()" style="flex:1;">Crear</button>
+                    <button class="btn-outline" @click="registerMode = false" style="flex:1;">Cancelar</button>
+                    <button class="btn-save" onclick="authModule.registerNewUser()" style="flex:1;">Confirmar</button>
                 </div>
             </div>
 
