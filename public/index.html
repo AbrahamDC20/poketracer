@@ -124,14 +124,14 @@
     </div>
 
     <div id="login-screen" x-show="!currentUser && !isLoading" x-transition.opacity.duration.500ms>
-        <div class="login-container">
+        <div class="login-container" x-data="{ localRegisterMode: false }">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" 
                  alt="Logo Pokémon TCG" 
                  class="login-logo">
             
-            <h1 class="login-title" x-text="registerMode ? 'Nuevo Entrenador' : 'Seleccionar Perfil'"></h1>
+            <h1 class="login-title" x-text="localRegisterMode ? 'Nuevo Entrenador' : 'Seleccionar Perfil'"></h1>
             
-            <div class="profiles-grid" x-show="!registerMode">
+            <div class="profiles-grid" x-show="!localRegisterMode">
                 <template x-for="acc in accounts" :key="acc.id_cuenta">
                     <div class="profile-card" @click="selectUserForLogin(acc)">
                         <div class="avatar-circle" :style="acc.avatar_img ? `background-image:url(${acc.avatar_img});` : ''">
@@ -144,20 +144,20 @@
                         </div>
                     </div>
                 </template>
-                <div class="profile-card add-user-card" @click="registerMode = true">
+                <div class="profile-card add-user-card" @click="localRegisterMode = true">
                     <div class="avatar-circle"><span>+</span></div>
                     <h3>Nuevo</h3>
                     <small>Crear Cuenta</small>
                 </div>
             </div>
             
-            <div x-show="registerMode" style="padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.5); border-radius:10px;">
+            <div x-show="localRegisterMode" style="padding:15px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.5); border-radius:10px; display:none;" :style="localRegisterMode ? 'display:block' : 'display:none'">
                 <h3 style="margin-bottom:15px; color:white;">✨ Crea tu perfil</h3>
                 <input type="text" id="reg-username" placeholder="Nombre de usuario..." style="width:100%; margin-bottom:15px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <input type="password" id="reg-password" placeholder="PIN de 4 dígitos..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <div style="display:flex; gap:10px;">
-                    <button class="btn-outline" @click="registerMode = false" style="flex:1;">Cancelar</button>
-                    <button class="btn-save" onclick="authModule.registerNewUser()" style="flex:1;">Confirmar</button>
+                    <button class="btn-outline" @click="localRegisterMode = false" style="flex:1;">Cancelar</button>
+                    <button class="btn-save" onclick="if(window.authModule) window.authModule.registerNewUser(); else alert('Error: JS no cargado')" style="flex:1;">Confirmar</button>
                 </div>
             </div>
 
