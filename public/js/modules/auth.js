@@ -1,139 +1,160 @@
 /* ==========================================================================
-   MÓDULO: AUTENTICACIÓN
-   Login, PIN Pad, Logout y Gestión de Sesión
+   MÓDULO: AUTENTICACIÓN (FIXED SCOPE & CONTEXT)
+   Login, Registro y Gestión de Sesión blindados
    ========================================================================== */
+
+// 1. HELPER PARA OBTENER LA APP (EL CEREBRO DE ALPINE)
+// Esto soluciona el error "this is undefined" o "showToast is not a function"
+function getApp() {
+    const el = document.querySelector('[x-data]');
+    return (el && el.__x) ? el.__x.$data : null;
+}
+
+// 2. HELPER SEGURO PARA TOASTS
+function safeToast(msg, type) {
+    const app = getApp();
+    if (app && app.showToast) app.showToast(msg, type);
+    else console.log(`[${type}] ${msg}`); // Fallback por si acaso
+}
 
 export const authModule = {
     
-    // Seleccionar usuario en la pantalla de login
+    // --- LOGIN ---
     selectUserForLogin(acc) { 
-        this.selectedUserForLogin = acc; 
-        this.pinInput = ""; 
-        this.showPinPad = true; 
+        // Al llamarse desde HTML, 'this' puede perderse, así que usamos getApp() para escribir datos
+        const app = getApp();
+        if(!app) return;
+        
+        app.selectedUserForLogin = acc; 
+        app.pinInput = ""; 
+        app.showPinPad = true; 
     },
     
-    // Manejar entrada del PIN Pad
     handlePinInput(n) { 
-        if (this.pinInput.length < 4) this.pinInput += n; 
-        if (this.pinInput.length === 4) this.verifyPin(); 
+        const app = getApp();
+        if(!app) return;
+
+        if (app.pinInput.length < 4) app.pinInput += n; 
+        if (app.pinInput.length === 4) authModule.verifyPin(); // Llamamos a verifyPin explícitamente
     },
     
-    clearPin() { this.pinInput = ""; },
-    closePinPad() { this.showPinPad = false; },
+    clearPin() { 
+        const app = getApp();
+        if(app) app.pinInput = ""; 
+    },
+    
+    closePinPad() { 
+        const app = getApp();
+        if(app) app.showPinPad = false; 
+    },
 
-    // Verificar PIN contra el servidor
     async verifyPin() {
+        const app = getApp();
+        if(!app) return;
+
         try {
             const res = await fetch('/api/auth/login', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ user: this.selectedUserForLogin.nombre, pass: this.pinInput })
+                body: JSON.stringify({ user: app.selectedUserForLogin.nombre, pass: app.pinInput })
             });
             const data = await res.json();
             
             if (data.success) {
-                // Login Exitoso
-                this.currentUser = this.selectedUserForLogin;
-                this.isAdmin = data.isAdmin;
+                // Login Exitoso: Escribimos en la App Global
+                app.currentUser = app.selectedUserForLogin;
+                app.isAdmin = data.isAdmin;
                 
-                // Aplicar tema del usuario si existe
-                if (this.currentUser.tema) this.currentTheme = this.currentUser.tema;
+                if (app.currentUser.tema) app.currentTheme = app.currentUser.tema;
                 
-                // Cargar datos iniciales
-                await this.loadMasterList(); 
-                await this.loadInfo(); 
-                await this.loadInventory();
+                // Cargamos datos usando las funciones globales de la app si existen
+                if(app.loadMasterList) await app.loadMasterList(); 
+                if(app.loadInfo) await app.loadInfo(); 
+                if(app.loadInventory) await app.loadInventory();
                 
-                // Iniciar polling social
-                this.checkNotifications();
-                this.loadFeed();
+                if(app.checkNotifications) app.checkNotifications();
+                if(app.loadFeed) app.loadFeed();
 
-                this.closePinPad();
-                this.showToast("Bienvenido, " + this.currentUser.nombre, "success");
+                authModule.closePinPad();
+                safeToast("Bienvenido, " + app.currentUser.nombre, "success");
             } else {
-                this.showToast("PIN Incorrecto", "error"); 
-                this.pinInput = "";
+                safeToast("PIN Incorrecto", "error"); 
+                app.pinInput = "";
             }
         } catch (e) {
-            // Backdoor de emergencia (Solo para desarrollo local si la DB falla)
-            if (this.pinInput === '0000') {
-                this.currentUser = this.selectedUserForLogin; 
-                this.isAdmin = true;
-                this.loadMasterList(); 
-                this.loadInfo(); 
-                this.loadInventory(); 
-                this.closePinPad();
-                this.showToast("Modo Emergencia Activado", "warning");
+            // Backdoor emergencia
+            if (app.pinInput === '0000') {
+                app.currentUser = app.selectedUserForLogin; 
+                app.isAdmin = true;
+                if(app.loadMasterList) app.loadMasterList(); 
+                if(app.loadInventory) app.loadInventory(); 
+                authModule.closePinPad();
+                safeToast("Modo Emergencia Activado", "warning");
             } else { 
-                this.showToast("Error de conexión con el servidor", "error"); 
-                this.pinInput = ""; 
+                safeToast("Error de conexión", "error"); 
+                app.pinInput = ""; 
             }
         }
     },
 
-    // Cerrar Sesión
     logout() { 
-        this.currentUser = null; 
-        this.tab = 'info'; 
-        this.showMobileSidebar = false;
-        // Limpiar datos sensibles de la memoria
-        this.cards = [];
-        this.socialData = { shares: [], trades: [] };
+        const app = getApp();
+        if(!app) return;
+        
+        app.currentUser = null; 
+        app.tab = 'info'; 
+        app.showMobileSidebar = false;
+        app.cards = [];
+        app.socialData = { shares: [], trades: [] };
     },
 
-    // --- FUNCIONES DE REGISTRO ---
+    // --- REGISTRO DE USUARIOS (SOLUCIÓN DEFINITIVA) ---
+    // Estas funciones ya no dependen de 'this', buscan los elementos directo.
 
-    // Abre el modo registro (compatible con el sistema JS puro)
     openCreateUserModal() {
-        const grid = document.querySelector('.profiles-grid');
+        const app = getApp();
+        // Usamos la variable localRegisterMode del x-data del HTML si existe, o la global
+        if(app) app.registerMode = true; 
+        
+        // Fallback visual por si Alpine falla
         const form = document.getElementById('register-form');
-        const title = document.querySelector('.login-title');
-
+        const grid = document.querySelector('.profiles-grid');
+        if(form) form.style.display = 'block';
         if(grid) grid.style.display = 'none';
-        
-        if(form) {
-            form.classList.remove('hidden'); // Quitar clase CSS
-            form.style.display = 'block';    // Forzar display
-        }
-        
-        if(title) title.innerText = "Crear Nuevo Entrenador";
     },
 
-    // Cancela y vuelve a la lista (compatible con JS puro)
     cancelCreateUser() {
-        const grid = document.querySelector('.profiles-grid');
-        const form = document.getElementById('register-form');
-        const title = document.querySelector('.login-title');
+        const app = getApp();
+        if(app) app.registerMode = false;
 
-        if(grid) grid.style.display = 'grid';
+        // Fallback visual
+        const form = document.getElementById('register-form');
+        const grid = document.querySelector('.profiles-grid');
         if(form) form.style.display = 'none';
-        
-        if(title) title.innerText = "Seleccionar Perfil";
+        if(grid) grid.style.display = 'grid';
     },
 
-    // Función principal de registro (Mejorada para Logs y Feedback)
     async registerNewUser() {
-        console.log("Intentando registrar usuario...");
+        console.log("🚀 Iniciando registro...");
         
-        // Búsqueda robusta de elementos por ID
+        // 1. Obtener valores directamente del DOM (a prueba de fallos)
         const nameInput = document.getElementById('reg-username');
         const pinInput = document.getElementById('reg-password');
 
-        if (!nameInput || !pinInput) {
-            console.error("Error: No se encuentran los inputs de registro en el DOM");
-            return this.showToast("Error interno: Recarga la página", "error");
-        }
+        if (!nameInput || !pinInput) return safeToast("Error interno: Inputs no encontrados", "error");
 
         const name = nameInput.value.trim();
         const pin = pinInput.value.trim();
 
-        if (!name || !pin) return this.showToast("Rellena nombre y PIN", "warning");
-        if (pin.length !== 4) return this.showToast("El PIN debe ser de 4 dígitos", "warning");
+        // 2. Validaciones
+        if (!name || !pin) return safeToast("Rellena todos los datos", "warning");
+        if (pin.length !== 4) return safeToast("El PIN debe tener 4 dígitos", "warning");
+
+        const app = getApp();
+        if(app) app.isLoading = true;
 
         try {
-            // Mostrar carga (si tienes spinner global)
-            this.isLoading = true; 
-            
+            // 3. Llamada al servidor
             const res = await fetch('/api/auth/register', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -141,35 +162,37 @@ export const authModule = {
             });
             const data = await res.json();
             
-            this.isLoading = false;
+            if(app) app.isLoading = false;
 
             if (data.success) {
-                this.showToast("✅ Usuario creado. ¡Ya puedes entrar!", "success");
+                safeToast("✅ Usuario creado correctamente", "success");
                 
-                // Limpiar campos
+                // 4. Limpiar formulario
                 nameInput.value = '';
                 pinInput.value = '';
                 
-                // Recargar lista de cuentas para que aparezca el nuevo
-                const r = await fetch('/api/cuentas');
-                if (r.ok) this.accounts = await r.json();
-                
-                // Volver a la pantalla de selección
-                // Si estamos usando el modo "blindado" (localRegisterMode), lo cerramos
-                // Si no, usamos el método estándar
-                if (typeof this.registerMode !== 'undefined') {
-                    this.registerMode = false;
-                } else {
-                    this.cancelCreateUser();
+                // 5. Actualizar lista de cuentas en la app
+                if(app) {
+                    const r = await fetch('/api/cuentas');
+                    if (r.ok) app.accounts = await r.json();
+                    
+                    // 6. Cerrar el formulario
+                    app.registerMode = false;
+                    // También intentamos cerrar la versión local del HTML por si acaso
+                    const loginContainer = document.querySelector('.login-container');
+                    if(loginContainer && loginContainer.__x) loginContainer.__x.$data.localRegisterMode = false;
                 }
                 
+                // Fallback visual forzoso
+                authModule.cancelCreateUser();
+                
             } else {
-                this.showToast(data.msg || "Error al crear usuario", "error");
+                safeToast(data.msg || "Error al crear usuario", "error");
             }
         } catch (e) {
-            this.isLoading = false;
+            if(app) app.isLoading = false;
             console.error(e);
-            this.showToast("Error de conexión", "error");
+            safeToast("Error de conexión", "error");
         }
     }
 };

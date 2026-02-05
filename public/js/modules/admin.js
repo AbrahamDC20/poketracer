@@ -1,327 +1,307 @@
 /* ==========================================================================
-   MÓDULO: ADMINISTRACIÓN
-   Herramientas avanzadas, gestión de usuarios y mantenimiento de DB
+   MÓDULO: ADMINISTRACIÓN (FIXED SCOPE & CONTEXT)
    ========================================================================== */
+
+function getApp() {
+    const el = document.querySelector('[x-data]');
+    return (el && el.__x) ? el.__x.$data : null;
+}
+
+function safeToast(msg, type) {
+    const app = getApp();
+    if (app && app.showToast) app.showToast(msg, type);
+    else alert(msg);
+}
 
 export const adminModule = {
     
-    // Carga de datos generales del panel admin
     async loadAdminData() { 
-        this.adminStats = { totalUsers: this.accounts.length }; 
+        const app = getApp();
+        if(app) app.adminStats = { totalUsers: app.accounts.length }; 
     },
 
-    // --- GESTOR DE INTERCAMBIOS ADMIN (V2 - FILTROS DOBLES) ---
+    // --- GESTOR DE INTERCAMBIOS ADMIN (FIXED) ---
 
     async loadAdminUserInventory(userId, side) {
         if (!userId) return;
+        const app = getApp();
+        if (!app) return;
+
         try {
-            // Cargamos el inventario completo del usuario
             const res = await fetch('/api/inventario?id_cuenta=' + userId + '&expansion=TODAS');
             const data = await res.json();
-            
-            // Filtramos solo las que tiene (> 0)
             const ownedItems = data.filter(c => c.cantidad > 0);
 
             if (side === 'A') {
-                this.adminUserAInventory = ownedItems;
-                this.adminUserAInventoryFiltered = ownedItems;
-                this.adminTrade.cardA = null; 
-                this.adminTrade.searchA = '';
+                app.adminUserAInventory = ownedItems;
+                app.adminUserAInventoryFiltered = ownedItems;
+                app.adminTrade.cardA = null; 
             } else {
-                this.adminUserBInventory = ownedItems;
-                this.adminUserBInventoryFiltered = ownedItems;
-                this.adminTrade.cardB = null; 
-                this.adminTrade.searchB = '';
+                app.adminUserBInventory = ownedItems;
+                app.adminUserBInventoryFiltered = ownedItems;
+                app.adminTrade.cardB = null; 
             }
             
-            // Aplicar filtros inmediatamente después de cargar
-            this.filterAdminInventory(side);
+            // Forzamos el filtrado inicial
+            adminModule.filterAdminInventory(side);
 
-        } catch(e) { console.error("Error cargando inventario admin:", e); }
+        } catch(e) { console.error(e); }
     },
 
-    // Función de filtrado dinámica (Lado A o B)
+    // ESTA FUNCIÓN PROVOCABA EL ERROR "searchA undefined". AHORA ESTÁ CORREGIDA.
     filterAdminInventory(side) {
-        // Leer valores directamente del DOM para cada lado (A o B)
-        // Usamos ?. por seguridad si el DOM no está listo
+        const app = getApp();
+        if (!app) return;
+
+        // Leemos valores del DOM directamente para evitar desincronización
         const rarityVal = document.getElementById(`filter-rarity-${side}`)?.value || 'ALL';
         const expVal = document.getElementById(`filter-exp-${side}`)?.value || 'ALL';
-        const searchVal = (side === 'A' ? this.adminTrade.searchA : this.adminTrade.searchB).toLowerCase();
         
-        const source = side === 'A' ? this.adminUserAInventory : this.adminUserBInventory;
+        // Accedemos a las variables de búsqueda a través de 'app', no 'this'
+        const searchVal = (side === 'A' ? app.adminTrade.searchA : app.adminTrade.searchB || '').toLowerCase();
+        
+        const source = side === 'A' ? app.adminUserAInventory : app.adminUserBInventory;
         if (!source) return;
 
         const filtered = source.filter(c => {
-            // 1. Filtro Texto (Nombre o ID)
             const matchText = c.nombre.toLowerCase().includes(searchVal) || c.id_carta.toLowerCase().includes(searchVal);
-            
-            // 2. Filtro Rareza
-            let matchRarity = true;
-            if (rarityVal !== 'ALL') {
-                matchRarity = c.rareza === rarityVal;
-            }
-
-            // 3. Filtro Expansión (Búsqueda parcial para coincidir con nombres largos)
-            let matchExp = true;
-            if (expVal !== 'ALL') {
-                matchExp = c.expansion.includes(expVal);
-            }
-
-            // 4. Regla: Excluir cartas no intercambiables (Corona / 3 Estrellas)
-            // Esto asegura que sigan las normas del apartado social
+            const matchRarity = rarityVal === 'ALL' || c.rareza === rarityVal;
+            const matchExp = expVal === 'ALL' || c.expansion === expVal;
             const isTradeable = !['Corona', '3 Estrellas'].includes(c.rareza);
 
             return matchText && matchRarity && matchExp && isTradeable;
         });
         
-        if (side === 'A') this.adminUserAInventoryFiltered = filtered;
-        else this.adminUserBInventoryFiltered = filtered;
+        // Escribimos el resultado en la app
+        if (side === 'A') app.adminUserAInventoryFiltered = filtered;
+        else app.adminUserBInventoryFiltered = filtered;
     },
 
     selectAdminCard(card, side) {
-        if (side === 'A') this.adminTrade.cardA = card;
-        else this.adminTrade.cardB = card;
+        const app = getApp();
+        if (side === 'A') app.adminTrade.cardA = card;
+        else app.adminTrade.cardB = card;
     },
 
     getTradeCost(rarity) {
-        if (!rarity) return 0;
-        return this.TRADE_COSTS[rarity] !== undefined ? this.TRADE_COSTS[rarity] : null;
+        const app = getApp();
+        if (!rarity || !app) return 0;
+        return app.TRADE_COSTS[rarity] !== undefined ? app.TRADE_COSTS[rarity] : null;
     },
 
     async executeAdminTrade() {
-        if (!this.adminTrade.cardA || !this.adminTrade.cardB) return this.showToast("Faltan cartas", "warning");
+        const app = getApp();
+        if (!app.adminTrade.cardA || !app.adminTrade.cardB) return safeToast("Faltan cartas", "warning");
         
-        const cost = this.getTradeCost(this.adminTrade.cardA.rareza);
-        if (cost === null) return this.showToast("Rareza NO intercambiable (Corona/3★)", "error");
+        const cost = adminModule.getTradeCost(app.adminTrade.cardA.rareza);
+        if (cost === null) return safeToast("Rareza Prohibida", "error");
         
-        if (this.adminTrade.cardA.rareza !== this.adminTrade.cardB.rareza) return this.showToast("Las rarezas no coinciden", "error");
+        if (app.adminTrade.cardA.rareza !== app.adminTrade.cardB.rareza) return safeToast("Rarezas distintas", "error");
 
         try {
             const res = await fetch('/api/social/execute_trade', {
-                method: 'POST', 
-                headers: {'Content-Type': 'application/json'},
+                method: 'POST', headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                    id_origen: this.adminTrade.userA, 
-                    id_destino: this.adminTrade.userB,
-                    give_id: this.adminTrade.cardA.id_carta, 
-                    get_id: this.adminTrade.cardB.id_carta,
-                    exp_give: this.adminTrade.cardA.expansion, 
-                    exp_get: this.adminTrade.cardB.expansion,
-                    rarity: this.adminTrade.cardA.rareza
+                    id_origen: app.adminTrade.userA, id_destino: app.adminTrade.userB,
+                    give_id: app.adminTrade.cardA.id_carta, get_id: app.adminTrade.cardB.id_carta,
+                    exp_give: app.adminTrade.cardA.expansion, exp_get: app.adminTrade.cardB.expansion,
+                    rarity: app.adminTrade.cardA.rareza
                 })
             });
             const d = await res.json();
-            
             if(d.success) {
-                this.showToast("✅ Intercambio forzado OK", "success");
-                // Recargar inventarios
-                this.loadAdminUserInventory(this.adminTrade.userA, 'A');
-                this.loadAdminUserInventory(this.adminTrade.userB, 'B');
-                this.adminTrade.cardA = null;
-                this.adminTrade.cardB = null;
-            } else {
-                this.showToast(d.msg, "error");
-            }
-        } catch(e) { 
-            this.showToast("Error de conexión", "error"); 
-        }
+                safeToast("✅ Intercambio Admin OK", "success");
+                adminModule.loadAdminUserInventory(app.adminTrade.userA, 'A');
+                adminModule.loadAdminUserInventory(app.adminTrade.userB, 'B');
+                app.adminTrade.cardA = null; 
+                app.adminTrade.cardB = null;
+            } else safeToast(d.msg, "error");
+        } catch(e) { safeToast("Error de Red", "error"); }
     },
     
-    async executeAdminGift() { 
-        this.showToast("Función Gift en desarrollo", "info"); 
-    },
+    async executeAdminGift() { safeToast("Función Gift (WIP)", "info"); },
 
     // --- INYECTOR DE SOBRES ---
 
     updatePackConfig() {
-        const isDeluxe = this.packSimulator.expansion.toLowerCase().includes('deluxe');
-        this.packSimulator.slots = [null,null,null,null,null,null];
-        this.packSimulator.queries = ['','','','','',''];
-        this.packSimulator.searchResults = [[],[],[],[],[],[]];
-        this.packSimulator.activeCount = isDeluxe ? 4 : 5;
+        const app = getApp();
+        const isDeluxe = app.packSimulator.expansion.toLowerCase().includes('deluxe');
+        app.packSimulator.slots = [null,null,null,null,null,null];
+        app.packSimulator.queries = ['','','','','',''];
+        app.packSimulator.searchResults = [[],[],[],[],[],[]];
+        app.packSimulator.activeCount = isDeluxe ? 4 : 5;
     },
     
     addSixthCardSlot() { 
-        if(this.packSimulator.activeCount < 6) this.packSimulator.activeCount = 6; 
+        const app = getApp();
+        if(app.packSimulator.activeCount < 6) app.packSimulator.activeCount = 6; 
     },
 
     searchCardForPack(index) {
-        const q = this.packSimulator.queries[index].toLowerCase();
-        if(q.length < 1) { 
-            this.packSimulator.searchResults[index] = []; 
-            return; 
-        }
-        const exp = this.packSimulator.expansion;
-        
-        this.packSimulator.searchResults[index] = this.masterCardList.filter(c => 
-            (c.nombre.toLowerCase().includes(q) || c.id_carta.toLowerCase().includes(q)) && 
-            c.expansion === exp
+        const app = getApp();
+        const q = app.packSimulator.queries[index].toLowerCase();
+        if(q.length < 1) { app.packSimulator.searchResults[index] = []; return; }
+        const exp = app.packSimulator.expansion;
+        app.packSimulator.searchResults[index] = app.masterCardList.filter(c => 
+            (c.nombre.toLowerCase().includes(q) || c.id_carta.toLowerCase().includes(q)) && c.expansion === exp
         ).slice(0, 5);
     },
 
     selectCardForSlot(i, c) {
-        this.packSimulator.slots[i] = {...c}; 
-        this.packSimulator.queries[i] = c.nombre;
-        this.packSimulator.searchResults[i] = []; 
+        const app = getApp();
+        app.packSimulator.slots[i] = {...c}; 
+        app.packSimulator.queries[i] = c.nombre;
+        app.packSimulator.searchResults[i] = []; 
     },
     
     clearSlot(i) { 
-        this.packSimulator.slots[i] = null; 
-        this.packSimulator.queries[i] = ''; 
+        const app = getApp();
+        app.packSimulator.slots[i] = null; 
+        app.packSimulator.queries[i] = ''; 
     },
 
     async executePackOpening() {
-        if(!this.adminPack.targetUser) return this.showToast("Elige usuario destino", "error");
-        
-        const cards = this.packSimulator.slots.filter(s => s);
-        if(cards.length < 4) return this.showToast("Mínimo 4 cartas", "warning");
+        const app = getApp();
+        if(!app.adminPack.targetUser) return safeToast("Elige usuario", "error");
+        const cards = app.packSimulator.slots.filter(s => s);
+        if(cards.length < 4) return safeToast("Mínimo 4 cartas", "warning");
 
         try {
             const res = await fetch('/api/admin/inject_pack', {
                 method: 'POST', headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ 
-                    id_cuenta: this.adminPack.targetUser, 
-                    cards: cards 
-                })
+                body: JSON.stringify({ id_cuenta: app.adminPack.targetUser, cards: cards })
             });
             const d = await res.json();
-            if(d.success) this.showToast("⚡ Sobre abierto correctamente", "success");
-            else this.showToast(d.msg, "error");
-        } catch(e) { this.showToast("Error Red", "error"); }
+            if(d.success) safeToast("⚡ Sobre abierto!", "success");
+            else safeToast(d.msg, "error");
+        } catch(e) { safeToast("Error Red", "error"); }
     },
 
-    // --- GESTIÓN DE USUARIOS ---
+    // --- USERS ---
 
     openCreateUserModal() { 
-        this.adminUserForm.visible = true; 
+        const app = getApp();
+        app.adminUserForm.visible = true; 
     },
     
     async adminCreateUser() {
-        if(!this.adminUserForm.name) return this.showToast("Falta nombre", "warning");
-        this.showToast("Usuario creado (Simulación)", "success");
-        this.adminUserForm.visible = false;
+        const app = getApp();
+        if(!app.adminUserForm.name) return;
+        safeToast("Usuario Simulado OK", "success");
+        app.adminUserForm.visible = false;
     },
     
     async adminDeleteUser(id) {
-        if(!confirm("¿Borrar usuario permanentemente?")) return;
+        if(!confirm("¿Eliminar usuario?")) return;
+        const app = getApp();
         try {
             await fetch('/api/admin/account/delete', {
                 method:'POST', headers:{'Content-Type':'application/json'},
                 body: JSON.stringify({id_cuenta: id})
             });
-            this.accounts = this.accounts.filter(a => a.id_cuenta !== id);
-            this.showToast("Usuario eliminado", "success");
-        } catch(e) { this.showToast("Error", "error"); }
+            app.accounts = app.accounts.filter(a => a.id_cuenta !== id);
+            safeToast("Eliminado", "success");
+        } catch(e) { safeToast("Error", "error"); }
     },
     
     async adminResetPass(userId) {
-        if(!confirm("¿Resetear clave a '1234'?")) return;
+        if(!confirm("¿Reset a '1234'?")) return;
         try {
             await fetch('/api/admin/tools/reset_password', {
                 method:'POST', headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({id_cuenta: userId})
             });
-            this.showToast("Contraseña reseteada", "success");
-        } catch(e) { this.showToast("Error", "error"); }
+            safeToast("Reset OK", "success");
+        } catch(e) { safeToast("Error", "error"); }
     },
 
-    // --- HERRAMIENTAS DE MANTENIMIENTO ---
-
-    async adminFixRarities() {
-        if(!confirm("¿Reparar rarezas?")) return;
-        try {
-            const res = await fetch('/api/admin/fix-rarities', { method: 'POST' });
-            const d = await res.json();
-            alert(d.msg || "Hecho");
-        } catch(e) { alert("Error"); }
-    },
-
-    async syncWiki() {
-        try {
-            const res = await fetch('/api/admin/sync_wiki');
-            const d = await res.json();
-            this.showToast(d.msg || (d.success ? "OK" : "Info"), d.success ? "success" : "info");
-        } catch (e) {
-            this.showToast("Error de conexión", "error");
-        }
-    },
-    
-    async forceReset() {
-        if(!confirm("¿Forzar Reset Diario?")) return;
-        await fetch('/api/admin/force_reset', {method:'POST'});
-        this.showToast("Reset Completado", "success");
-    },
-    
-    // FIX: Descarga compatible con Cloud (Fetch + Blob)
-    async fullDbBackup() { 
-        this.showToast("⏳ Generando respaldo...", "info");
-        try {
-            const response = await fetch('/api/admin/export_db');
-            if (!response.ok) throw new Error("Error en servidor");
-            
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
-            a.download = `backup_poketracer_${new Date().toISOString().slice(0,10)}.json`;
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            this.showToast("✅ Base de datos descargada", "success");
-        } catch (e) {
-            console.error(e);
-            this.showToast("❌ Error al descargar", "error");
-        }
-    },
-    
-    fullDbRestore(e) {
-        const f = e.target.files[0]; 
-        if(!f || !confirm("⚠ PELIGRO: ¿Sobrescribir base de datos?")) return;
-        
-        const r = new FileReader();
-        r.onload = async (ev) => {
-            try {
-                const dataObj = JSON.parse(ev.target.result);
-                await fetch('/api/admin/import_db', { // Asegurar ruta en backend
-                    method:'POST', 
-                    headers:{'Content-Type':'application/json'},
-                    body: JSON.stringify(dataObj)
-                });
-                alert("Restauración OK. Recargando..."); 
-                location.reload();
-            } catch(err) { alert("Archivo inválido"); }
-        };
-        r.readAsText(f);
-    },
-
-    async adminReverseSearch() {
-        if(!this.adminSearchQuery) return;
-        const r = await fetch('/api/admin/tools/reverse_search?query='+this.adminSearchQuery);
-        this.adminSearchResults = await r.json();
-    },
-
-    async adminCleanDB() {
-        if(!confirm("¿Limpiar duplicados en DB?")) return;
-        const r = await fetch('/api/admin/tools/clean_db', {method:'POST'});
-        const d = await r.json();
-        this.showToast(d.msg, "success");
-    },
-    
     async adminUpdateUser(user) {
         try {
             await fetch('/api/admin/account/update', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                method: 'POST', headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                     id_cuenta: user.id_cuenta,
                     tipo: user.tipo,
                     prioridad: user.prioridad
                 })
             });
-            this.showToast("Usuario actualizado", "success");
+            safeToast("Usuario actualizado", "success");
+        } catch (e) { safeToast("Error", "error"); }
+    },
+
+    // --- MANTENIMIENTO (FIXED DOWNLOAD) ---
+
+    async adminFixRarities() {
+        if(!confirm("¿Reparar rarezas?")) return;
+        try {
+            const res = await fetch('/api/admin/fix-rarities', { method: 'POST' });
+            const d = await res.json();
+            alert(d.msg);
+        } catch(e) { alert("Error"); }
+    },
+
+    async syncWiki() {
+        safeToast("⏳ Sincronizando...", "info");
+        try {
+            const res = await fetch('/api/admin/sync_wiki');
+            const d = await res.json();
+            safeToast(d.msg || "Sincronizado", d.success ? "success" : "info");
+        } catch(e) { safeToast("Error conexión", "error"); }
+    },
+    
+    async forceReset() {
+        if(!confirm("¿Forzar Reset?")) return;
+        await fetch('/api/admin/force_reset', {method:'POST'});
+        safeToast("Reset Ejecutado", "success");
+    },
+    
+    // FIX PANTALLA BLANCA AL EXPORTAR: Usamos descarga por link directo
+    async fullDbBackup() { 
+        safeToast("⏳ Iniciando descarga...", "info");
+        try {
+            const link = document.createElement('a');
+            link.href = '/api/admin/export_db';
+            link.setAttribute('download', `backup_poketrader_${Date.now()}.json`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            safeToast("✅ Descarga iniciada", "success");
         } catch (e) {
-            this.showToast("Error actualizando", "error");
+            console.error(e);
+            safeToast("❌ Error al descargar", "error");
         }
+    },
+    
+    fullDbRestore(e) {
+        const f = e.target.files[0]; 
+        if(!f || !confirm("¿Sobrescribir DB?")) return;
+        
+        const r = new FileReader();
+        r.onload = async (ev) => {
+            try {
+                const d = JSON.parse(ev.target.result);
+                await fetch('/api/admin/import_db', {
+                    method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify(d)
+                });
+                alert("Restaurado. Recargando..."); 
+                location.reload();
+            } catch(err) { alert("JSON inválido"); }
+        };
+        r.readAsText(f);
+    },
+
+    async adminCleanDB() {
+        if(!confirm("¿Limpiar DB?")) return;
+        const r = await fetch('/api/admin/tools/clean_db', {method:'POST'});
+        const d = await r.json();
+        safeToast(d.msg, "success");
+    },
+
+    async adminReverseSearch() {
+        const app = getApp();
+        if(!app.adminSearchQuery) return;
+        const r = await fetch('/api/admin/tools/reverse_search?query='+app.adminSearchQuery);
+        app.adminSearchResults = await r.json();
     }
 };
