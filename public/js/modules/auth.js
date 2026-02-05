@@ -1,15 +1,17 @@
 /* ==========================================================================
-   MÓDULO: AUTENTICACIÓN (FIXED CONTEXT)
+   MÓDULO: AUTENTICACIÓN (SCOPE FIX)
+   Login, Registro y Gestión de Sesión blindados
    ========================================================================== */
 
-// 1. HELPER PARA OBTENER LA INSTANCIA DE ALPINE
-// Esto es el "puente" que conecta este archivo con el HTML
+// 1. PUENTE AL CEREBRO DE ALPINE
+// Esto permite que el archivo acceda a showToast, currentUser, etc. desde cualquier lugar
 function getApp() {
     const el = document.querySelector('[x-data]');
     return (el && el.__x) ? el.__x.$data : null;
 }
 
-// 2. HELPER PARA MOSTRAR NOTIFICACIONES SIN ERROR
+// 2. HELPER SEGURO PARA TOASTS
+// Evita el error "this.showToast is not a function"
 function safeToast(msg, type) {
     const app = getApp();
     if (app && app.showToast) app.showToast(msg, type);
@@ -19,6 +21,7 @@ function safeToast(msg, type) {
 export const authModule = {
     
     // --- LOGIN ---
+    
     selectUserForLogin(acc) { 
         const app = getApp();
         if(!app) return;
@@ -33,7 +36,8 @@ export const authModule = {
         if(!app) return;
 
         if (app.pinInput.length < 4) app.pinInput += n; 
-        // Llamamos a verifyPin explícitamente desde el módulo
+        
+        // Importante: Llamamos a la función explícitamente desde el módulo
         if (app.pinInput.length === 4) authModule.verifyPin(); 
     },
     
@@ -60,13 +64,13 @@ export const authModule = {
             const data = await res.json();
             
             if (data.success) {
-                // Login Exitoso: Escribimos los datos en la App Global
+                // Escribimos en la App Global
                 app.currentUser = app.selectedUserForLogin;
                 app.isAdmin = data.isAdmin;
                 
                 if (app.currentUser.tema) app.currentTheme = app.currentUser.tema;
                 
-                // Cargamos datos usando las funciones globales de la app
+                // Cargar datos (si las funciones existen en la app)
                 if(app.loadMasterList) await app.loadMasterList(); 
                 if(app.loadInfo) await app.loadInfo(); 
                 if(app.loadInventory) await app.loadInventory();
@@ -81,7 +85,7 @@ export const authModule = {
                 app.pinInput = "";
             }
         } catch (e) {
-            // Backdoor emergencia
+            // Backdoor de emergencia (Solo para desarrollo local si falla la conexión)
             if (app.pinInput === '0000') {
                 app.currentUser = app.selectedUserForLogin; 
                 app.isAdmin = true;
@@ -107,13 +111,13 @@ export const authModule = {
         app.socialData = { shares: [], trades: [] };
     },
 
-    // --- REGISTRO DE USUARIOS (FIXED) ---
+    // --- REGISTRO DE USUARIOS (SOLUCIÓN DEFINITIVA) ---
 
     openCreateUserModal() {
         const app = getApp();
         if(app) app.registerMode = true; 
         
-        // Fallback visual por si Alpine aún no ha renderizado el cambio
+        // Fallback visual por si Alpine tarda
         const form = document.getElementById('register-form');
         const grid = document.querySelector('.profiles-grid');
         if(form) form.style.display = 'block';
@@ -180,13 +184,14 @@ export const authModule = {
                     if (r.ok) app.accounts = await r.json();
                     
                     // 6. Cerrar el formulario
-                    app.registerMode = false;
-                    
-                    // Cerrar también la variable local del HTML por si acaso
+                    // Intentamos cerrar la variable local del HTML (localRegisterMode) si existe
                     const loginContainer = document.querySelector('.login-container');
                     if(loginContainer && loginContainer.__x) {
                         loginContainer.__x.$data.localRegisterMode = false;
                     }
+                    
+                    // También cerramos la variable global por si acaso
+                    app.registerMode = false;
                 }
                 
                 // Fallback visual forzoso para asegurar que vuelve a la lista
