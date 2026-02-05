@@ -81,8 +81,9 @@ export const authModule = {
         this.socialData = { shares: [], trades: [] };
     },
 
-    // --- FUNCIONES DE REGISTRO (FIX PARA EL BOTÓN 'NUEVO') ---
+    // --- FUNCIONES DE REGISTRO ---
 
+    // Abre el modo registro (compatible con el sistema JS puro)
     openCreateUserModal() {
         const grid = document.querySelector('.profiles-grid');
         const form = document.getElementById('register-form');
@@ -91,13 +92,14 @@ export const authModule = {
         if(grid) grid.style.display = 'none';
         
         if(form) {
-            form.classList.remove('hidden'); // Quitar clase CSS si existe
-            form.style.display = 'block';    // Forzar display block
+            form.classList.remove('hidden'); // Quitar clase CSS
+            form.style.display = 'block';    // Forzar display
         }
         
         if(title) title.innerText = "Crear Nuevo Entrenador";
     },
 
+    // Cancela y vuelve a la lista (compatible con JS puro)
     cancelCreateUser() {
         const grid = document.querySelector('.profiles-grid');
         const form = document.getElementById('register-form');
@@ -109,39 +111,63 @@ export const authModule = {
         if(title) title.innerText = "Seleccionar Perfil";
     },
 
+    // Función principal de registro (Mejorada para Logs y Feedback)
     async registerNewUser() {
-        // Obtenemos valores directos de los inputs del formulario
-        const name = document.getElementById('reg-username').value;
-        const pin = document.getElementById('reg-password').value;
+        console.log("Intentando registrar usuario...");
+        
+        // Búsqueda robusta de elementos por ID
+        const nameInput = document.getElementById('reg-username');
+        const pinInput = document.getElementById('reg-password');
 
-        if (!name || !pin) return this.showToast("Rellena todos los datos", "warning");
+        if (!nameInput || !pinInput) {
+            console.error("Error: No se encuentran los inputs de registro en el DOM");
+            return this.showToast("Error interno: Recarga la página", "error");
+        }
+
+        const name = nameInput.value.trim();
+        const pin = pinInput.value.trim();
+
+        if (!name || !pin) return this.showToast("Rellena nombre y PIN", "warning");
         if (pin.length !== 4) return this.showToast("El PIN debe ser de 4 dígitos", "warning");
 
         try {
+            // Mostrar carga (si tienes spinner global)
+            this.isLoading = true; 
+            
             const res = await fetch('/api/auth/register', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ user: name, pass: pin })
             });
             const data = await res.json();
+            
+            this.isLoading = false;
 
             if (data.success) {
-                this.showToast("Usuario creado! Inicia sesión.", "success");
+                this.showToast("✅ Usuario creado. ¡Ya puedes entrar!", "success");
                 
-                // Recargar la lista de cuentas para que aparezca el nuevo
+                // Limpiar campos
+                nameInput.value = '';
+                pinInput.value = '';
+                
+                // Recargar lista de cuentas para que aparezca el nuevo
                 const r = await fetch('/api/cuentas');
                 if (r.ok) this.accounts = await r.json();
                 
                 // Volver a la pantalla de selección
-                this.cancelCreateUser();
+                // Si estamos usando el modo "blindado" (localRegisterMode), lo cerramos
+                // Si no, usamos el método estándar
+                if (typeof this.registerMode !== 'undefined') {
+                    this.registerMode = false;
+                } else {
+                    this.cancelCreateUser();
+                }
                 
-                // Limpiar inputs
-                document.getElementById('reg-username').value = '';
-                document.getElementById('reg-password').value = '';
             } else {
                 this.showToast(data.msg || "Error al crear usuario", "error");
             }
         } catch (e) {
+            this.isLoading = false;
             console.error(e);
             this.showToast("Error de conexión", "error");
         }

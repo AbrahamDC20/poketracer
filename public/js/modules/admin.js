@@ -34,7 +34,7 @@ export const adminModule = {
                 this.adminTrade.searchB = '';
             }
             
-            // Aplicar filtros inmediatamente después de cargar para respetar configuración visual
+            // Aplicar filtros inmediatamente después de cargar
             this.filterAdminInventory(side);
 
         } catch(e) { console.error("Error cargando inventario admin:", e); }
@@ -240,7 +240,6 @@ export const adminModule = {
         try {
             const res = await fetch('/api/admin/sync_wiki');
             const d = await res.json();
-            // Feedback adaptado a respuesta Cloud
             this.showToast(d.msg || (d.success ? "OK" : "Info"), d.success ? "success" : "info");
         } catch (e) {
             this.showToast("Error de conexión", "error");
@@ -254,7 +253,6 @@ export const adminModule = {
     },
     
     // FIX: Descarga compatible con Cloud (Fetch + Blob)
-    // Esto evita que se quede la pantalla en blanco
     async fullDbBackup() { 
         this.showToast("⏳ Generando respaldo...", "info");
         try {
@@ -273,7 +271,7 @@ export const adminModule = {
             this.showToast("✅ Base de datos descargada", "success");
         } catch (e) {
             console.error(e);
-            this.showToast("❌ Error al descargar DB", "error");
+            this.showToast("❌ Error al descargar", "error");
         }
     },
     
@@ -285,7 +283,7 @@ export const adminModule = {
         r.onload = async (ev) => {
             try {
                 const dataObj = JSON.parse(ev.target.result);
-                await fetch('/api/admin/import_db', { // Asegúrate de tener esta ruta configurada
+                await fetch('/api/admin/import_db', { // Asegurar ruta en backend
                     method:'POST', 
                     headers:{'Content-Type':'application/json'},
                     body: JSON.stringify(dataObj)

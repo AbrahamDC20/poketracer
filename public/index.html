@@ -157,7 +157,7 @@
                 <input type="password" id="reg-password" placeholder="PIN de 4 dígitos..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <div style="display:flex; gap:10px;">
                     <button class="btn-outline" @click="localRegisterMode = false" style="flex:1;">Cancelar</button>
-                    <button class="btn-save" onclick="if(window.authModule) window.authModule.registerNewUser(); else alert('Error: JS no cargado')" style="flex:1;">Confirmar</button>
+                    <button class="btn-save" onclick="if(window.authModule) window.authModule.registerNewUser(); else alert('Cargando sistema...')" style="flex:1;">Confirmar</button>
                 </div>
             </div>
 
@@ -488,7 +488,7 @@
                     <div class="filter-scroll-container">
                         
                         <select x-model="socialFilters.user" class="filter-select" style="min-width:120px; background:#222; color:white;">
-                            <option value="">👤 Todos</option>
+                            <option value="">👤 Todos los Usuarios</option>
                             <template x-for="acc in accounts">
                                 <option :value="acc.nombre" x-text="acc.nombre"></option>
                             </template>

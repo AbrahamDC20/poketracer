@@ -28,8 +28,9 @@ export const socialModule = {
         const rarity = this.socialFilters.rarity;
         const exp = this.socialFilters.expansion;
         const onlyFav = this.socialFilters.onlyFav;
-        const userSearch = (this.socialFilters.user || '').toLowerCase(); // Filtro de usuario
-        const globalSearch = (this.socialSearch || '').toLowerCase();     // Búsqueda texto general
+        // Nos aseguramos que sea string y minúsculas para evitar errores
+        const userSearch = String(this.socialFilters.user || '').toLowerCase().trim();
+        const globalSearch = String(this.socialSearch || '').toLowerCase().trim();
 
         // Función de filtrado común para Gifts y Trades
         const filterFn = (item) => {
@@ -37,19 +38,23 @@ export const socialModule = {
             const card = item.card || item.get; 
             // Unificar usuario: en Gift es 'targetUser', en Trade es 'partner'
             const userObj = item.targetUser || item.partner;
-            const userName = userObj ? userObj.name.toLowerCase() : '';
+            // Obtenemos el nombre del usuario de forma segura
+            const userName = userObj ? String(userObj.name).toLowerCase() : '';
 
-            // 1. Filtro Rareza
+            // 1. Filtro Usuario (CORREGIDO)
+            // Si hay un usuario seleccionado en el filtro, debe coincidir
+            if (userSearch && userSearch !== '' && !userName.includes(userSearch)) {
+                return false;
+            }
+
+            // 2. Filtro Rareza
             if (rarity !== 'TODAS' && card.rareza !== rarity) return false;
             
-            // 2. Filtro Expansión
+            // 3. Filtro Expansión
             if (exp !== 'TODAS' && card.expansion !== exp) return false;
             
-            // 3. Filtro Favoritos (Wishlist)
+            // 4. Filtro Favoritos (Wishlist)
             if (onlyFav && !card.deseada) return false;
-
-            // 4. Filtro Usuario (Dropdown específico)
-            if (userSearch && !userName.includes(userSearch)) return false;
 
             // 5. Búsqueda Global (Input texto: busca en nombre de carta O nombre de usuario)
             if (globalSearch) {
