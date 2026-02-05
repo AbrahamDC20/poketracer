@@ -229,8 +229,8 @@ export const adminModule = {
                     prioridad: user.prioridad
                 })
             });
-            safeToast("Actualizado", "success");
-        } catch(e) { safeToast("Error", "error"); }
+            safeToast("Usuario actualizado", "success");
+        } catch (e) { safeToast("Error", "error"); }
     },
 
     // --- TOOLS ---
@@ -249,32 +249,37 @@ export const adminModule = {
         try {
             const res = await fetch('/api/admin/sync_wiki');
             const d = await res.json();
-            safeToast(d.msg || "Sincronizado", d.success ? "success":"error");
+            safeToast(d.msg || "Sincronizado", d.success ? "success" : "info");
         } catch(e) { safeToast("Error conexión", "error"); }
     },
     
     async forceReset() {
-        if(!confirm("¿Forzar Reset Diario?")) return;
+        if(!confirm("¿Forzar Reset?")) return;
         await fetch('/api/admin/force_reset', {method:'POST'});
         safeToast("Reset Ejecutado", "success");
     },
     
+    // FIX PANTALLA BLANCA AL EXPORTAR: Usamos descarga por link directo
     async fullDbBackup() { 
-        safeToast("⏳ Descargando...", "info");
+        safeToast("⏳ Iniciando descarga...", "info");
         try {
             const link = document.createElement('a');
             link.href = '/api/admin/export_db';
-            link.setAttribute('download', `backup_${Date.now()}.json`);
+            link.setAttribute('download', `backup_poketrader_${Date.now()}.json`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            safeToast("Descarga iniciada", "success");
-        } catch(e) { safeToast("Error backup", "error"); }
+            safeToast("✅ Descarga iniciada", "success");
+        } catch (e) {
+            console.error(e);
+            safeToast("❌ Error al descargar", "error");
+        }
     },
     
     fullDbRestore(e) {
         const f = e.target.files[0]; 
-        if(!f || !confirm("¿Restaurar DB?")) return;
+        if(!f || !confirm("¿Sobrescribir DB?")) return;
+        
         const r = new FileReader();
         r.onload = async (ev) => {
             try {
@@ -283,7 +288,8 @@ export const adminModule = {
                     method:'POST', headers:{'Content-Type':'application/json'},
                     body: JSON.stringify(d)
                 });
-                alert("Restaurado. Recargando..."); location.reload();
+                alert("Restaurado. Recargando..."); 
+                location.reload();
             } catch(err) { alert("JSON inválido"); }
         };
         r.readAsText(f);

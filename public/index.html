@@ -98,8 +98,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
-    <script src="js/app_bundle.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script src="js/app_bundle.js?v=FIX_FINAL"></script>
+    <script type="module" src="js/main.js?v=FIX_FINAL"></script>
 
 </head>
 
@@ -157,13 +157,14 @@
                 <input type="password" id="reg-password" placeholder="PIN de 4 dígitos..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <div style="display:flex; gap:10px;">
                     <button class="btn-outline" @click="localRegisterMode = false" style="flex:1;">Cancelar</button>
-                    <button class="btn-save" onclick="if(window.authModule) window.authModule.registerNewUser(); else alert('Cargando sistema...')" style="flex:1;">Confirmar</button>
+                    <button class="btn-save" onclick="if(window.authModule) window.authModule.registerNewUser(); else alert('El sistema aún está cargando, espera un segundo...')" style="flex:1;">Confirmar</button>
                 </div>
             </div>
 
         </div>
     </div>
 
+    <template x-if="currentUser">
     <div id="app-container" x-show="currentUser" x-cloak>
         
         <div id="menu-overlay" class="mobile-sidebar-overlay" :class="{'active': showMobileSidebar}" onclick="closeSideMenu()"></div>
@@ -860,6 +861,7 @@
                     <button class="btn-outline" style="width:100%; margin-top:25px;" @click="authModule.openCreateUserModal()">+ Registrar Nuevo Usuario</button>
                 </div>
             </div>
+    </template>
         </main>
         
         <div class="modal-overlay" x-show="modalCard" x-cloak @click.self="closeModal" x-transition.opacity>
