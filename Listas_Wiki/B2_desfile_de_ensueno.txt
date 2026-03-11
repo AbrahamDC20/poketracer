@@ -1,0 +1,234 @@
+B2-1 || Ledyba || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-2 || Ledian || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-3 || Shuckle || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-4 || Roselia || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-5 || Roserade || Planta || 3 Rombos || Sobre Desfile de Ensueño
+B2-6 || Cacnea || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-7 || Cacturne || Planta || 2 Rombos || Sobre Desfile de Ensueño
+B2-8 || Chespin || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-9 || Quilladin || Planta || 2 Rombos || Sobre Desfile de Ensueño
+B2-10 || Chesnaught || Planta || 3 Rombos || Sobre Desfile de Ensueño
+B2-11 || Scatterbug || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-12 || Spewpa || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-13 || Vivillon || Planta || 2 Rombos || Sobre Desfile de Ensueño
+B2-14 || Buzzwole || Planta || 3 Rombos || Sobre Desfile de Ensueño
+B2-15 || Gossifleur || Planta || 1 Rombo || Sobre Desfile de Ensueño
+B2-16 || Eldegoss || Planta || 2 Rombos || Sobre Desfile de Ensueño
+B2-17 || Ogerpon Máscara Turquesa ex || Planta || 4 Rombos || Sobre Desfile de Ensueño
+B2-18 || Marowak de Alola || Fuego || 2 Rombos || Sobre Desfile de Ensueño
+B2-19 || Reshiram || Fuego || 3 Rombos || Sobre Desfile de Ensueño
+B2-20 || Litleo || Fuego || 1 Rombo || Sobre Desfile de Ensueño
+B2-21 || Pyroar || Fuego || 2 Rombos || Sobre Desfile de Ensueño
+B2-22 || Oricorio || Fuego || 2 Rombos || Sobre Desfile de Ensueño
+B2-23 || Blacephalon ex || Fuego || 4 Rombos || Sobre Desfile de Ensueño
+B2-24 || Scorbunny || Fuego || 1 Rombo || Sobre Desfile de Ensueño
+B2-25 || Raboot || Fuego || 2 Rombos || Sobre Desfile de Ensueño
+B2-26 || Cinderace || Fuego || 3 Rombos || Sobre Desfile de Ensueño
+B2-27 || Ogerpon Máscara Horno || Fuego || 3 Rombos || Sobre Desfile de Ensueño
+B2-28 || Vulpix de Alola || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-29 || Ninetales de Alola ex || Agua || 4 Rombos || Sobre Desfile de Ensueño
+B2-30 || Mr. Mime de Galar || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-31 || Mr. Rime de Galar || Agua || 2 Rombos || Sobre Desfile de Ensueño
+B2-32 || Delibird || Agua || 2 Rombos || Sobre Desfile de Ensueño
+B2-33 || Mudkip || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-34 || Marshtomp || Agua || 2 Rombos || Sobre Desfile de Ensueño
+B2-35 || Swampert || Agua || 3 Rombos || Sobre Desfile de Ensueño
+B2-36 || Mega-Swampert ex || Agua || 4 Rombos || Sobre Desfile de Ensueño
+B2-37 || Vanillite || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-38 || Vanillish || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-39 || Vanilluxe || Agua || 2 Rombos || Sobre Desfile de Ensueño
+B2-40 || Cryogonal || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-41 || Amaura || Agua || 2 Rombos || Sobre Desfile de Ensueño
+B2-42 || Aurorus || Agua || 3 Rombos || Sobre Desfile de Ensueño
+B2-43 || Chewtle || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-44 || Drednaw || Agua || 2 Rombos || Sobre Desfile de Ensueño
+B2-45 || Cramorant || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-46 || Arrokuda || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-47 || Barraskewda || Agua || 1 Rombo || Sobre Desfile de Ensueño
+B2-48 || Ogerpon Máscara Fuente || Agua || 3 Rombos || Sobre Desfile de Ensueño
+B2-49 || Pikachu || Rayo || 1 Rombo || Sobre Desfile de Ensueño
+B2-50 || Raichu de Alola || Rayo || 3 Rombos || Sobre Desfile de Ensueño
+B2-51 || Zapdos || Rayo || 3 Rombos || Sobre Desfile de Ensueño
+B2-52 || Plusle || Rayo || 1 Rombo || Sobre Desfile de Ensueño
+B2-53 || Minun || Rayo || 1 Rombo || Sobre Desfile de Ensueño
+B2-54 || Toxel || Rayo || 1 Rombo || Sobre Desfile de Ensueño
+B2-55 || Toxtricity ex || Rayo || 4 Rombos || Sobre Desfile de Ensueño
+B2-56 || Tadbulb || Rayo || 1 Rombo || Sobre Desfile de Ensueño
+B2-57 || Bellibolt || Rayo || 2 Rombos || Sobre Desfile de Ensueño
+B2-58 || Ponyta de Galar || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-59 || Rapidash de Galar || Psíquico || 2 Rombos || Sobre Desfile de Ensueño
+B2-60 || Wobbuffet || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-61 || Snubbull || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-62 || Granbull || Psíquico || 2 Rombos || Sobre Desfile de Ensueño
+B2-63 || Ralts || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-64 || Kirlia || Psíquico || 2 Rombos || Sobre Desfile de Ensueño
+B2-65 || Gardevoir || Psíquico || 3 Rombos || Sobre Desfile de Ensueño
+B2-66 || Mega-Gardevoir ex || Psíquico || 4 Rombos || Sobre Desfile de Ensueño
+B2-67 || Litwick || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-68 || Lampent || Psíquico || 2 Rombos || Sobre Desfile de Ensueño
+B2-69 || Chandelure || Psíquico || 3 Rombos || Sobre Desfile de Ensueño
+B2-70 || Meloetta || Psíquico || 2 Rombos || Sobre Desfile de Ensueño
+B2-71 || Pumpkaboo || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-72 || Gourgeist || Psíquico || 3 Rombos || Sobre Desfile de Ensueño
+B2-73 || Mimikyu ex || Psíquico || 4 Rombos || Sobre Desfile de Ensueño
+B2-74 || Sinistea || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-75 || Polteageist || Psíquico || 2 Rombos || Sobre Desfile de Ensueño
+B2-76 || Indeedee || Psíquico || 1 Rombo || Sobre Desfile de Ensueño
+B2-77 || Sandshrew || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-78 || Sandslash || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-79 || Machop || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-80 || Machoke || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-81 || Machamp || Lucha || 2 Rombos || Sobre Desfile de Ensueño
+B2-82 || Cubone || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-83 || Meditite || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-84 || Medicham || Lucha || 2 Rombos || Sobre Desfile de Ensueño
+B2-85 || Roggenrola || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-86 || Boldore || Lucha || 2 Rombos || Sobre Desfile de Ensueño
+B2-87 || Gigalith ex || Lucha || 4 Rombos || Sobre Desfile de Ensueño
+B2-88 || Drilbur || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-89 || Tyrunt || Lucha || 2 Rombos || Sobre Desfile de Ensueño
+B2-90 || Tyrantrum || Lucha || 3 Rombos || Sobre Desfile de Ensueño
+B2-91 || Passimian || Lucha || 1 Rombo || Sobre Desfile de Ensueño
+B2-92 || Falinks || Lucha || 2 Rombos || Sobre Desfile de Ensueño
+B2-93 || Ogerpon Máscara Cimiento || Lucha || 3 Rombos || Sobre Desfile de Ensueño
+B2-94 || Meowth de Alola || Oscuro || 1 Rombo || Sobre Desfile de Ensueño
+B2-95 || Persian de Alola || Oscuro || 2 Rombos || Sobre Desfile de Ensueño
+B2-96 || Grimer de Alola || Oscuro || 1 Rombo || Sobre Desfile de Ensueño
+B2-97 || Muk de Alola || Oscuro || 3 Rombos || Sobre Desfile de Ensueño
+B2-98 || Zigzagoon de Galar || Oscuro || 1 Rombo || Sobre Desfile de Ensueño
+B2-99 || Linoone de Galar || Oscuro || 2 Rombos || Sobre Desfile de Ensueño
+B2-100 || Obstagoon de Galar || Oscuro || 3 Rombos || Sobre Desfile de Ensueño
+B2-101 || Stunky || Oscuro || 1 Rombo || Sobre Desfile de Ensueño
+B2-102 || Skuntank || Oscuro || 2 Rombos || Sobre Desfile de Ensueño
+B2-103 || Spiritomb || Oscuro || 3 Rombos || Sobre Desfile de Ensueño
+B2-104 || Purrloin || Oscuro || 1 Rombo || Sobre Desfile de Ensueño
+B2-105 || Liepard || Oscuro || 2 Rombos || Sobre Desfile de Ensueño
+B2-106 || Scraggy || Oscuro || 1 Rombo || Sobre Desfile de Ensueño
+B2-107 || Scrafty || Oscuro || 2 Rombos || Sobre Desfile de Ensueño
+B2-108 || Yveltal || Oscuro || 3 Rombos || Sobre Desfile de Ensueño
+B2-109 || Guzzlord || Oscuro || 3 Rombos || Sobre Desfile de Ensueño
+B2-110 || Meowth de Galar || Acero || 1 Rombo || Sobre Desfile de Ensueño
+B2-111 || Perrserker de Galar || Acero || 3 Rombos || Sobre Desfile de Ensueño
+B2-112 || Mawile || Acero || 1 Rombo || Sobre Desfile de Ensueño
+B2-113 || Mega-Mawile ex || Acero || 4 Rombos || Sobre Desfile de Ensueño
+B2-114 || Excadrill || Acero || 2 Rombos || Sobre Desfile de Ensueño
+B2-115 || Ferroseed || Acero || 1 Rombo || Sobre Desfile de Ensueño
+B2-116 || Ferrothorn || Acero || 1 Rombo || Sobre Desfile de Ensueño
+B2-117 || Stunfisk de Galar || Acero || 2 Rombos || Sobre Desfile de Ensueño
+B2-118 || Honedge || Acero || 1 Rombo || Sobre Desfile de Ensueño
+B2-119 || Doublade || Acero || 2 Rombos || Sobre Desfile de Ensueño
+B2-120 || Aegislash || Acero || 3 Rombos || Sobre Desfile de Ensueño
+B2-121 || Bagon || Dragón || 1 Rombo || Sobre Desfile de Ensueño
+B2-122 || Shelgon || Dragón || 2 Rombos || Sobre Desfile de Ensueño
+B2-123 || Salamence || Dragón || 3 Rombos || Sobre Desfile de Ensueño
+B2-124 || Meowth || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-125 || Persian || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-126 || Kangaskhan || Incoloro || 2 Rombos || Sobre Desfile de Ensueño
+B2-127 || Mega-Kangaskhan ex || Incoloro || 4 Rombos || Sobre Desfile de Ensueño
+B2-128 || Sentret || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-129 || Furret || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-130 || Smeargle || Incoloro || 2 Rombos || Sobre Desfile de Ensueño
+B2-131 || Lugia || Incoloro || 3 Rombos || Sobre Desfile de Ensueño
+B2-132 || Taillow || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-133 || Swellow || Incoloro || 3 Rombos || Sobre Desfile de Ensueño
+B2-134 || Slakoth || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-135 || Vigoroth || Incoloro || 2 Rombos || Sobre Desfile de Ensueño
+B2-136 || Slaking || Incoloro || 3 Rombos || Sobre Desfile de Ensueño
+B2-137 || Spinda || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-138 || Tornadus || Incoloro || 3 Rombos || Sobre Desfile de Ensueño
+B2-139 || Bunnelby || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-140 || Diggersby || Incoloro || 2 Rombos || Sobre Desfile de Ensueño
+B2-141 || Furfrou || Incoloro || 2 Rombos || Sobre Desfile de Ensueño
+B2-142 || Tandemaus || Incoloro || 1 Rombo || Sobre Desfile de Ensueño
+B2-143 || Maushold || Incoloro || 2 Rombos || Sobre Desfile de Ensueño
+B2-144 || Fósil Mandíbula || Entrenador || 1 Rombo || Sobre Desfile de Ensueño
+B2-145 || Helado Suerte || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-146 || Fósil Aleta || Entrenador || 1 Rombo || Sobre Desfile de Ensueño
+B2-147 || Poncho Protector || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-148 || Barrera Núcleo Metálico || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-149 || Dianta || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-150 || Veraneante || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-151 || Malabarista || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-152 || Nerio || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-153 || Área de Entrenamiento || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-154 || Planicie Inicial || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-155 || Plaza Peculiar || Entrenador || 2 Rombos || Sobre Desfile de Ensueño
+B2-156 || Cacnea || Planta || 1 Estrella || Sobre Desfile de Ensueño
+B2-157 || Roserade || Planta || 1 Estrella || Sobre Desfile de Ensueño
+B2-158 || Vivillon || Planta || 1 Estrella || Sobre Desfile de Ensueño
+B2-159 || Buzzwole || Planta || 1 Estrella || Sobre Desfile de Ensueño
+B2-160 || Reshiram || Fuego || 1 Estrella || Sobre Desfile de Ensueño
+B2-161 || Oricorio || Fuego || 1 Estrella || Sobre Desfile de Ensueño
+B2-162 || Scorbunny || Fuego || 1 Estrella || Sobre Desfile de Ensueño
+B2-163 || Aurorus || Agua || 1 Estrella || Sobre Desfile de Ensueño
+B2-164 || Cramorant || Agua || 1 Estrella || Sobre Desfile de Ensueño
+B2-165 || Minun || Rayo || 1 Estrella || Sobre Desfile de Ensueño
+B2-166 || Toxel || Rayo || 1 Estrella || Sobre Desfile de Ensueño
+B2-167 || Ponyta de Galar || Psíquico || 1 Estrella || Sobre Desfile de Ensueño
+B2-168 || Snubbull || Psíquico || 1 Estrella || Sobre Desfile de Ensueño
+B2-169 || Indeedee || Psíquico || 1 Estrella || Sobre Desfile de Ensueño
+B2-170 || Sandshrew || Lucha || 1 Estrella || Sobre Desfile de Ensueño
+B2-171 || Tyrantrum || Lucha || 1 Estrella || Sobre Desfile de Ensueño
+B2-172 || Falinks || Lucha || 1 Estrella || Sobre Desfile de Ensueño
+B2-173 || Muk de Alola || Oscuro || 1 Estrella || Sobre Desfile de Ensueño
+B2-174 || Purrloin || Oscuro || 1 Estrella || Sobre Desfile de Ensueño
+B2-175 || Yveltal || Oscuro || 1 Estrella || Sobre Desfile de Ensueño
+B2-176 || Obstagoon de Galar || Oscuro || 1 Estrella || Sobre Desfile de Ensueño
+B2-177 || Perrserker de Galar || Acero || 1 Estrella || Sobre Desfile de Ensueño
+B2-178 || Salamence || Dragón || 1 Estrella || Sobre Desfile de Ensueño
+B2-179 || Slakoth || Incoloro || 1 Estrella || Sobre Desfile de Ensueño
+B2-180 || Ogerpon Máscara Turquesa ex || Planta || 2 Estrellas || Sobre Desfile de Ensueño
+B2-181 || Blacephalon ex || Fuego || 2 Estrellas || Sobre Desfile de Ensueño
+B2-182 || Ninetales de Alola ex || Agua || 2 Estrellas || Sobre Desfile de Ensueño
+B2-183 || Mega-Swampert ex || Agua || 2 Estrellas || Sobre Desfile de Ensueño
+B2-184 || Toxtricity ex || Rayo || 2 Estrellas || Sobre Desfile de Ensueño
+B2-185 || Mega-Gardevoir ex || Psíquico || 2 Estrellas || Sobre Desfile de Ensueño
+B2-186 || Mimikyu ex || Psíquico || 2 Estrellas || Sobre Desfile de Ensueño
+B2-187 || Gigalith ex || Lucha || 2 Estrellas || Sobre Desfile de Ensueño
+B2-188 || Mega-Mawile ex || Acero || 2 Estrellas || Sobre Desfile de Ensueño
+B2-189 || Mega-Kangaskhan ex || Incoloro || 2 Estrellas || Sobre Desfile de Ensueño
+B2-190 || Dianta || Entrenador || 2 Estrellas || Sobre Desfile de Ensueño
+B2-191 || Veraneante || Entrenador || 2 Estrellas || Sobre Desfile de Ensueño
+B2-192 || Malabarista || Entrenador || 2 Estrellas || Sobre Desfile de Ensueño
+B2-193 || Nerio || Entrenador || 2 Estrellas || Sobre Desfile de Ensueño
+B2-194 || Ogerpon Máscara Turquesa ex || Planta || 2 Estrellas || Sobre Desfile de Ensueño
+B2-195 || Blacephalon ex || Fuego || 2 Estrellas || Sobre Desfile de Ensueño
+B2-196 || Ninetales de Alola ex || Agua || 2 Estrellas || Sobre Desfile de Ensueño
+B2-197 || Mega-Swampert ex || Agua || 2 Estrellas || Sobre Desfile de Ensueño
+B2-198 || Toxtricity ex || Rayo || 2 Estrellas || Sobre Desfile de Ensueño
+B2-199 || Mimikyu ex || Psíquico || 2 Estrellas || Sobre Desfile de Ensueño
+B2-200 || Gigalith ex || Lucha || 2 Estrellas || Sobre Desfile de Ensueño
+B2-201 || Mega-Mawile ex || Acero || 2 Estrellas || Sobre Desfile de Ensueño
+B2-202 || Mega-Kangaskhan ex || Incoloro || 2 Estrellas || Sobre Desfile de Ensueño
+B2-203 || Mega-Gardevoir ex || Psíquico || 3 Estrellas || Sobre Desfile de Ensueño
+B2-204 || Meowth || Incoloro || 3 Estrellas || Sobre Desfile de Ensueño
+B2-205 || Tangela || Planta || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-206 || Magby || Fuego || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-207 || Magmar || Fuego || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-208 || Horsea || Agua || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-209 || Seadra || Agua || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-210 || Mantyke || Agua || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-211 || Omanyte || Agua || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-212 || Omastar || Agua || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-213 || Pichu || Rayo || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-214 || Clefairy || Psíquico || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-215 || Clefable || Psíquico || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-216 || Latias || Psíquico || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-217 || Latios || Psíquico || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-218 || Hitmonlee || Lucha || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-219 || Hitmonchan || Lucha || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-220 || Kabuto || Lucha || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-221 || Kabutops || Lucha || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-222 || Phanpy || Lucha || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-223 || Tyrogue || Lucha || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-224 || Tauros || Incoloro || Shiny 1 Estrella || Sobre Desfile de Ensueño
+B2-225 || Flareon ex || Fuego || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-226 || Ho-Oh ex || Fuego || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-227 || Kingdra ex || Agua || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-228 || Espeon ex || Psíquico || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-229 || Sylveon ex || Psíquico || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-230 || Donphan ex || Lucha || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-231 || Umbreon ex || Oscuro || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-232 || Lugia ex || Incoloro || Shiny 2 Estrellas || Sobre Desfile de Ensueño
+B2-233 || Meloetta || Psíquico || Corona || Sobre Desfile de Ensueño
+B2-234 || Poncho Protector || Entrenador || Corona || Sobre Desfile de Ensueño

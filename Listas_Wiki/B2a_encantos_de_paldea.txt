@@ -1,0 +1,131 @@
+B2a-1 || Sprigatito || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-2 || Floragato || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-3 || Meowscarada ex || Planta || 4 Rombos || Sobre Encantos de Paldea
+B2a-4 || Tarountula || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-5 || Spidops || Planta || 2 Rombos || Sobre Encantos de Paldea
+B2a-6 || Nymble || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-7 || Smoliv || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-8 || Dolliv || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-9 || Arboliva || Planta || 3 Rombos || Sobre Encantos de Paldea
+B2a-10 || Bramblin || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-11 || Brambleghast || Planta || 2 Rombos || Sobre Encantos de Paldea
+B2a-12 || Capsakid || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-13 || Scovillain || Planta || 2 Rombos || Sobre Encantos de Paldea
+B2a-14 || Rellor || Planta || 1 Rombo || Sobre Encantos de Paldea
+B2a-15 || Wo-Chien || Planta || 3 Rombos || Sobre Encantos de Paldea
+B2a-16 || Fuecoco || Fuego || 1 Rombo || Sobre Encantos de Paldea
+B2a-17 || Crocalor || Fuego || 1 Rombo || Sobre Encantos de Paldea
+B2a-18 || Skeledirge || Fuego || 3 Rombos || Sobre Encantos de Paldea
+B2a-19 || Charcadet || Fuego || 1 Rombo || Sobre Encantos de Paldea
+B2a-20 || Armarouge ex || Fuego || 4 Rombos || Sobre Encantos de Paldea
+B2a-21 || Chi-Yu || Fuego || 3 Rombos || Sobre Encantos de Paldea
+B2a-22 || Quaxly || Agua || 1 Rombo || Sobre Encantos de Paldea
+B2a-23 || Quaxwell || Agua || 1 Rombo || Sobre Encantos de Paldea
+B2a-24 || Quaquaval || Agua || 3 Rombos || Sobre Encantos de Paldea
+B2a-25 || Wiglett || Agua || 1 Rombo || Sobre Encantos de Paldea
+B2a-26 || Wugtrio || Agua || 2 Rombos || Sobre Encantos de Paldea
+B2a-27 || Finizen || Agua || 1 Rombo || Sobre Encantos de Paldea
+B2a-28 || Palafin || Agua || 3 Rombos || Sobre Encantos de Paldea
+B2a-29 || Cetoddle || Agua || 1 Rombo || Sobre Encantos de Paldea
+B2a-30 || Cetitan || Agua || 2 Rombos || Sobre Encantos de Paldea
+B2a-31 || Veluza || Agua || 2 Rombos || Sobre Encantos de Paldea
+B2a-32 || Dondozo || Agua || 2 Rombos || Sobre Encantos de Paldea
+B2a-33 || Tatsugiri || Agua || 2 Rombos || Sobre Encantos de Paldea
+B2a-34 || Frigibax || Agua || 1 Rombo || Sobre Encantos de Paldea
+B2a-35 || Arctibax || Agua || 1 Rombo || Sobre Encantos de Paldea
+B2a-36 || Baxcalibur || Agua || 3 Rombos || Sobre Encantos de Paldea
+B2a-37 || Chien-Pao ex || Agua || 4 Rombos || Sobre Encantos de Paldea
+B2a-38 || Pawmi || Rayo || 1 Rombo || Sobre Encantos de Paldea
+B2a-39 || Pawmo || Rayo || 1 Rombo || Sobre Encantos de Paldea
+B2a-40 || Pawmot || Rayo || 2 Rombos || Sobre Encantos de Paldea
+B2a-41 || Tadbulb || Rayo || 1 Rombo || Sobre Encantos de Paldea
+B2a-42 || Bellibolt ex || Rayo || 4 Rombos || Sobre Encantos de Paldea
+B2a-43 || Wattrel || Rayo || 1 Rombo || Sobre Encantos de Paldea
+B2a-44 || Kilowattrel || Rayo || 2 Rombos || Sobre Encantos de Paldea
+B2a-45 || Miraidon || Rayo || 3 Rombos || Sobre Encantos de Paldea
+B2a-46 || Fidough || Psíquico || 1 Rombo || Sobre Encantos de Paldea
+B2a-47 || Dachsbun || Psíquico || 2 Rombos || Sobre Encantos de Paldea
+B2a-48 || Ceruledge || Psíquico || 3 Rombos || Sobre Encantos de Paldea
+B2a-49 || Rabsca || Psíquico || 2 Rombos || Sobre Encantos de Paldea
+B2a-50 || Flittle || Psíquico || 1 Rombo || Sobre Encantos de Paldea
+B2a-51 || Espathra || Psíquico || 2 Rombos || Sobre Encantos de Paldea
+B2a-52 || Greavard || Psíquico || 1 Rombo || Sobre Encantos de Paldea
+B2a-53 || Houndstone || Psíquico || 2 Rombos || Sobre Encantos de Paldea
+B2a-54 || Gimmighoul || Psíquico || 1 Rombo || Sobre Encantos de Paldea
+B2a-55 || Mankey || Lucha || 1 Rombo || Sobre Encantos de Paldea
+B2a-56 || Primeape || Lucha || 1 Rombo || Sobre Encantos de Paldea
+B2a-57 || Annihilape || Lucha || 2 Rombos || Sobre Encantos de Paldea
+B2a-58 || Tauros de Paldea || Lucha || 2 Rombos || Sobre Encantos de Paldea
+B2a-59 || Toedscool || Lucha || 1 Rombo || Sobre Encantos de Paldea
+B2a-60 || Toedscruel || Lucha || 2 Rombos || Sobre Encantos de Paldea
+B2a-61 || Klawf || Lucha || 1 Rombo || Sobre Encantos de Paldea
+B2a-62 || Ting-Lu || Lucha || 3 Rombos || Sobre Encantos de Paldea
+B2a-63 || Koraidon || Lucha || 3 Rombos || Sobre Encantos de Paldea
+B2a-64 || Wooper de Paldea || Oscuro || 1 Rombo || Sobre Encantos de Paldea
+B2a-65 || Clodsire de Paldea || Oscuro || 2 Rombos || Sobre Encantos de Paldea
+B2a-66 || Lokix || Oscuro || 2 Rombos || Sobre Encantos de Paldea
+B2a-67 || Maschiff || Oscuro || 1 Rombo || Sobre Encantos de Paldea
+B2a-68 || Mabosstiff || Oscuro || 2 Rombos || Sobre Encantos de Paldea
+B2a-69 || Shroodle || Oscuro || 1 Rombo || Sobre Encantos de Paldea
+B2a-70 || Grafaiai || Oscuro || 2 Rombos || Sobre Encantos de Paldea
+B2a-71 || Bombirdier || Oscuro || 1 Rombo || Sobre Encantos de Paldea
+B2a-72 || Tinkatink || Acero || 1 Rombo || Sobre Encantos de Paldea
+B2a-73 || Tinkatuff || Acero || 1 Rombo || Sobre Encantos de Paldea
+B2a-74 || Tinkaton || Acero || 3 Rombos || Sobre Encantos de Paldea
+B2a-75 || Varoom || Acero || 1 Rombo || Sobre Encantos de Paldea
+B2a-76 || Revavroom || Acero || 2 Rombos || Sobre Encantos de Paldea
+B2a-77 || Orthworm || Acero || 2 Rombos || Sobre Encantos de Paldea
+B2a-78 || Gholdengo ex || Acero || 4 Rombos || Sobre Encantos de Paldea
+B2a-79 || Lechonk || Incoloro || 1 Rombo || Sobre Encantos de Paldea
+B2a-80 || Oinkologne || Incoloro || 1 Rombo || Sobre Encantos de Paldea
+B2a-81 || Tandemaus || Incoloro || 1 Rombo || Sobre Encantos de Paldea
+B2a-82 || Maushold || Incoloro || 2 Rombos || Sobre Encantos de Paldea
+B2a-83 || Squawkabilly || Incoloro || 1 Rombo || Sobre Encantos de Paldea
+B2a-84 || Cyclizar || Incoloro || 2 Rombos || Sobre Encantos de Paldea
+B2a-85 || Flamigo || Incoloro || 1 Rombo || Sobre Encantos de Paldea
+B2a-86 || Generador Eléctrico || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-87 || Globo Helio Grande || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-88 || Recluta del Team Star || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-89 || e-Nigma || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-90 || Mencía || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-91 || Damián || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-92 || Noa || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-93 || Ciudad Meseta || Entrenador || 2 Rombos || Sobre Encantos de Paldea
+B2a-94 || Fuecoco || Fuego || 1 Estrella || Sobre Encantos de Paldea
+B2a-95 || Greavard || Psíquico || 1 Estrella || Sobre Encantos de Paldea
+B2a-96 || Gimmighoul || Psíquico || 1 Estrella || Sobre Encantos de Paldea
+B2a-97 || Wooper de Paldea || Oscuro || 1 Estrella || Sobre Encantos de Paldea
+B2a-98 || Orthworm || Acero || 1 Estrella || Sobre Encantos de Paldea
+B2a-99 || Maushold || Incoloro || 1 Estrella || Sobre Encantos de Paldea
+B2a-100 || Meowscarada ex || Planta || 2 Estrellas || Sobre Encantos de Paldea
+B2a-101 || Armarouge ex || Fuego || 2 Estrellas || Sobre Encantos de Paldea
+B2a-102 || Chien-Pao ex || Agua || 2 Estrellas || Sobre Encantos de Paldea
+B2a-103 || Bellibolt ex || Rayo || 2 Estrellas || Sobre Encantos de Paldea
+B2a-104 || Gholdengo ex || Acero || 2 Estrellas || Sobre Encantos de Paldea
+B2a-105 || Recluta del Team Star || Entrenador || 2 Estrellas || Sobre Encantos de Paldea
+B2a-106 || e-Nigma || Entrenador || 2 Estrellas || Sobre Encantos de Paldea
+B2a-107 || Mencía || Entrenador || 2 Estrellas || Sobre Encantos de Paldea
+B2a-108 || Damián || Entrenador || 2 Estrellas || Sobre Encantos de Paldea
+B2a-109 || Noa || Entrenador || 2 Estrellas || Sobre Encantos de Paldea
+B2a-110 || Meowscarada ex || Planta || 2 Estrellas || Sobre Encantos de Paldea
+B2a-111 || Armarouge ex || Fuego || 2 Estrellas || Sobre Encantos de Paldea
+B2a-112 || Chien-Pao ex || Agua || 2 Estrellas || Sobre Encantos de Paldea
+B2a-113 || Bellibolt ex || Rayo || 2 Estrellas || Sobre Encantos de Paldea
+B2a-114 || Gholdengo ex || Acero || 2 Estrellas || Sobre Encantos de Paldea
+B2a-115 || Damián || Entrenador || 3 Estrellas || Sobre Encantos de Paldea
+B2a-116 || Sprigatito || Planta || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-117 || Floragato || Planta || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-118 || Meowscarada || Planta || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-119 || Pawmi || Rayo || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-120 || Pawmo || Rayo || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-121 || Pawmot || Rayo || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-122 || Gimmighoul || Psíquico || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-123 || Tinkatink || Acero || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-124 || Tinkatuff || Acero || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-125 || Gholdengo || Acero || Shiny 1 Estrella || Sobre Encantos de Paldea
+B2a-126 || Entei ex || Fuego || Shiny 2 Estrellas || Sobre Encantos de Paldea
+B2a-127 || Suicune ex || Agua || Shiny 2 Estrellas || Sobre Encantos de Paldea
+B2a-128 || Raikou ex || Rayo || Shiny 2 Estrellas || Sobre Encantos de Paldea
+B2a-129 || Tinkaton ex || Acero || Shiny 2 Estrellas || Sobre Encantos de Paldea
+B2a-130 || Baxcalibur || Agua || Corona || Sobre Encantos de Paldea
+B2a-131 || Generador Eléctrico || Entrenador || Corona || Sobre Encantos de Paldea

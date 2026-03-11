@@ -1,6 +1,7 @@
 require('dotenv').config(); // Cargar variables de entorno al inicio
 const express = require('express');
 const path = require('path');
+const os = require('os'); // Añadido para detectar tu IP del WiFi
 const apiRoutes = require('./routes/api');
 
 // Inicializar la aplicación Express
@@ -34,12 +35,28 @@ app.get('*', (req, res) => {
 // 3. INICIO DEL SERVIDOR
 // ==========================================================================
 
-app.listen(PORT, () => {
+// Función para obtener la IP de tu red local
+function getLocalIP() {
+    const interfaces = os.networkInterfaces();
+    for (const name of Object.keys(interfaces)) {
+        for (const iface of interfaces[name]) {
+            if (iface.family === 'IPv4' && !iface.internal) {
+                return iface.address;
+            }
+        }
+    }
+    return 'localhost';
+}
+
+// 0.0.0.0 es clave para que dispositivos de la misma red WiFi puedan acceder
+app.listen(PORT, '0.0.0.0', () => {
+    const ip = getLocalIP();
     console.log('===========================================================');
-    console.log(`🚀 PokéTracker Pro (NUBE) corriendo en: http://localhost:${PORT}`);
+    console.log(`🚀 PokéTracker Pro (LOCAL) corriendo en tu red`);
+    console.log(`💻 Para entrar desde este PC: http://localhost:${PORT}`);
+    console.log(`📱 Para entrar desde tu móvil: http://${ip}:${PORT}`);
     console.log('-----------------------------------------------------------');
-    console.log('   ✅ Modo: Híbrido (Local + Turso Cloud)');
-    console.log('   ✅ Base de Datos: Conectando vía database.js');
-    console.log('   ✅ Estáticos: carpeta /public');
+    console.log('   ✅ Modo: 100% Local (Red WiFi)');
+    console.log('   ✅ Base de Datos: Archivo local (.db)');
     console.log('===========================================================');
 });

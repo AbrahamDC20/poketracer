@@ -1,18 +1,12 @@
 const { createClient } = require("@libsql/client");
 require("dotenv").config();
 
-const url = process.env.TURSO_DATABASE_URL;
-const authToken = process.env.TURSO_AUTH_TOKEN;
+const url = process.env.TURSO_DATABASE_URL || "file:./local.db";
 
-if (!url || !authToken) {
-  console.error("❌ ERROR CRÍTICO: No se encontraron las variables de Turso en el archivo .env");
-  process.exit(1);
-}
-
-// Conexión a la nube
+// Conexión a la base de datos local
 const db = createClient({
   url: url,
-  authToken: authToken,
+  // Ya no pedimos authToken porque es un archivo local
 });
 
 module.exports = db;
