@@ -96,10 +96,73 @@ router.post('/fix-rarities', async (req, res) => {
     }
 });
 
-// --- SINCRONIZAR WIKI ---
-router.get('/sync_wiki', (req, res) => {
-    res.json({ success: false, msg: "⚠️ Usa la base de datos local para añadir cartas." });
-});
+// --- SINCRONIZAR WIKI (ACTIVADO PARA LOCAL - FORMATO '||') ---
+    router.get('/sync_wiki', async (req, res) => {
+        try {
+            const fs = require('fs');
+            const path = require('path');
+            
+            // __dirname es routes/api/ -> subimos 2 niveles para llegar a la raíz del proyecto
+            const wikiDir = path.join(__dirname, '../../Listas_Wiki'); 
+
+            if (!fs.existsSync(wikiDir)) {
+                return res.json({ success: false, msg: "❌ No se encuentra la carpeta Listas_Wiki" });
+            }
+
+            const files = fs.readdirSync(wikiDir).filter(f => f.endsWith('.txt'));
+            if (files.length === 0) {
+                return res.json({ success: false, msg: "❌ La carpeta Listas_Wiki está vacía" });
+            }
+
+            const batchOps = [];
+            let count = 0;
+
+            for (const file of files) {
+                const content = fs.readFileSync(path.join(wikiDir, file), 'utf-8');
+                const lines = content.split('\n');
+
+                for (let line of lines) {
+                    if (!line || line.trim() === '') continue;
+
+                    // Cortamos la línea usando tu separador exacto '||'
+                    const data = line.split('||');
+
+                    // Aseguramos que la línea tiene al menos los 5 datos que me has dicho
+                    if (data.length >= 5) { 
+                        const id_carta = data[0].trim();
+                        const nombre = data[1].trim();
+                        const tipo = data[2].trim();
+                        const rareza = data[3].trim();
+                        const expansion = data[4].trim();
+                        
+                        // Por defecto asignamos la sección 'Normal' 
+                        // (Si alguna vez necesitas diferenciar, se puede hacer por ID o rareza)
+                        const seccion = 'Normal';
+
+                        batchOps.push({
+                            sql: `INSERT INTO Cartas (id_carta, nombre, rareza, expansion, tipo, seccion) 
+                                  VALUES (?, ?, ?, ?, ?, ?) 
+                                  ON CONFLICT(id_carta, expansion) DO UPDATE SET 
+                                  nombre=excluded.nombre, rareza=excluded.rareza, tipo=excluded.tipo, seccion=excluded.seccion`,
+                            args: [id_carta, nombre, rareza, expansion, tipo, seccion]
+                        });
+                        count++;
+                    }
+                }
+            }
+
+            // Ejecutamos la inserción masiva en la base de datos
+            if (batchOps.length > 0) {
+                await db.batch(batchOps);
+            }
+
+            res.json({ success: true, msg: `✅ Sincronización OK: ${count} cartas leídas e insertadas.` });
+
+        } catch (e) {
+            console.error("Error en sync_wiki:", e);
+            res.json({ success: false, msg: "❌ Error interno: " + e.message });
+        }
+    });
 
 // --- FORZAR RESET DIARIO ---
 router.post('/force_reset', async (req, res) => { 
