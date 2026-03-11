@@ -101,7 +101,6 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <script src="js/app_bundle.js?v=FIX_FINAL_3"></script>
-    <script type="module" src="js/main.js?v=FIX_FINAL_3"></script>
 
 </head>
 
@@ -159,7 +158,7 @@
                 <input type="password" id="reg-password" placeholder="PIN de 4 dígitos..." maxlength="4" style="width:100%; margin-bottom:20px; padding:12px; border-radius:8px; border:1px solid #555; background:#222; color:white;">
                 <div style="display:flex; gap:10px;">
                     <button class="btn-outline" @click="localRegisterMode = false" style="flex:1;">Cancelar</button>
-                    <button class="btn-save" onclick="if(window.authModule) window.authModule.registerNewUser(); else alert('Error: JS no cargado')" style="flex:1;">Confirmar</button>
+                    <button class="btn-save" @click="registerNewUser()" style="flex:1;">Confirmar</button>
                 </div>
             </div>
 

@@ -1,8 +1,8 @@
 /* ==========================================================================
-   APP BUNDLE - VERSIÓN COMPLETA (LÓGICA REAL RESTAURADA + MOBILE FIXES)
+   APP BUNDLE - VERSIÓN DEFINITIVA (AUTO-LOGIN + FIX RUTAS ADMIN)
    ========================================================================== */
 
-// 1. GESTOR DE MEDIOS (GLOBAL)
+// 1. GESTOR DE MEDIOS
 const mediaManager = {
     loadImage(card) {
         if (!card || !card.id_carta) return 'assets/images/card-back.webp';
@@ -15,7 +15,6 @@ const mediaManager = {
     fallbackImage(e) { e.target.src = 'assets/images/card-back.webp'; },
     loadSetLogo(exp) {
         if (!exp || exp === 'TODAS') return null;
-        // FIX: Aseguramos minúsculas para encontrar la imagen del set
         return `assets/images/sets/${exp.toLowerCase().split(' ')[0]}.webp`;
     },
     loadEnergyIcon(type, map) {
@@ -61,7 +60,6 @@ document.addEventListener('alpine:init', () => {
         settingsForm: { avatar: null, passOld: '', passNew: '' },
         adminUserForm: { visible: false, name: '', role: 'Secundaria', priority: 10 },
         
-        // MODIFICADO: Agregamos socialMobileTab aquí
         socialData: { shares: [], trades: [] }, socialMobileTab: 'gifts', socialSearch: '', socialFilters: { rarity: 'TODAS', expansion: 'TODAS', onlyFav: false },
         holdTimer: null, holdProgress: 0, holdingTrade: null,
         notifications: [], unreadNotif: 0, showNotifications: false, globalFeed: [],
@@ -97,20 +95,17 @@ document.addEventListener('alpine:init', () => {
                 const re = await fetch('/api/expansiones');
                 if (re.ok) this.expansiones = await re.json();
             } catch (e) {
-                console.error("Error init", e);
                 this.accounts = [{ id_cuenta: 1, nombre: 'Admin', tipo: 'Principal', avatar_img: null }];
             }
             
             this.currentUser = null;
             setTimeout(() => { self.isLoading = false; }, 800);
 
-            // Watchers
             this.$watch('socialFilters.rarity', () => this.resetVirtualScrolls());
             this.$watch('socialFilters.expansion', () => this.resetVirtualScrolls());
             this.$watch('socialFilters.onlyFav', () => this.resetVirtualScrolls());
             this.$watch('socialSearch', () => this.resetVirtualScrolls());
 
-            // Polling
             setInterval(() => {
                 if(this.currentUser) {
                     this.checkNotifications();
@@ -147,17 +142,88 @@ document.addEventListener('alpine:init', () => {
                     this.showToast("Bienvenido!");
                 } else { this.showToast("PIN Incorrecto", "error"); this.pinInput = ""; }
             } catch (e) {
-                if(this.pinInput === '0000') { // Backdoor Dev
+                if(this.pinInput === '0000') { 
                     this.currentUser = this.selectedUserForLogin; this.isAdmin = true;
                     this.loadMasterList(); this.loadInfo(); this.loadInventory();
                     this.closePinPad();
                 } else { this.showToast("Error Red", "error"); }
             }
         },
+
         logout() { 
             this.currentUser = null; this.tab = 'info'; 
             this.cards = []; 
             this.socialData = { shares: [], trades: [] };
+        },
+
+        // --- REGISTRO Y AUTO LOGIN ---
+        async registerNewUser() {
+            const nameInput = document.getElementById('reg-username');
+            const pinInput = document.getElementById('reg-password');
+
+            if (!nameInput || !pinInput) return this.showToast("Error interno", "error");
+
+            const name = nameInput.value.trim();
+            const pin = pinInput.value.trim();
+
+            if (!name || !pin) return this.showToast("Rellena todos los datos", "warning");
+            if (pin.length !== 4) return this.showToast("El PIN debe tener 4 dígitos", "warning");
+
+            this.isLoading = true;
+
+            try {
+                const res = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ user: name, pass: pin })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    this.showToast("✅ Entrenador creado correctamente", "success");
+                    
+                    // AUTO-LOGIN DIRECTO
+                    const loginRes = await fetch('/api/auth/login', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ user: name, pass: pin })
+                    });
+                    const loginData = await loginRes.json();
+                    
+                    if (loginData.success) {
+                        this.currentUser = loginData.user;
+                        this.isAdmin = loginData.isAdmin;
+                        if (this.currentUser.tema) this.currentTheme = this.currentUser.tema;
+                        
+                        await this.loadMasterList(); 
+                        await this.loadInfo(); 
+                        await this.loadInventory();
+                        this.checkNotifications();
+                        this.loadFeed();
+                        
+                        // Recargar lista de cuentas de fondo
+                        const r = await fetch('/api/cuentas');
+                        if (r.ok) this.accounts = await r.json();
+                        
+                        nameInput.value = '';
+                        pinInput.value = '';
+                        
+                        // Ocultar modal del HTML
+                        const loginContainer = document.querySelector('.login-container');
+                        if (loginContainer && loginContainer.__x) {
+                            loginContainer.__x.$data.localRegisterMode = false;
+                        }
+                        
+                        this.showToast("Bienvenido, " + name, "success");
+                    }
+                } else {
+                    this.showToast(data.msg || "Error al crear usuario", "error");
+                }
+            } catch (e) {
+                this.showToast("Error de conexión", "error");
+            } finally {
+                this.isLoading = false;
+            }
         },
 
         // --- NAVIGATION ---
@@ -168,7 +234,6 @@ document.addEventListener('alpine:init', () => {
             if(t === 'grid') this.loadInventory();
             else if(t === 'info') { 
                 this.loadInfo(); 
-                // FIX: Retraso para que la gráfica cargue al cambiar de pestaña
                 setTimeout(() => this.renderChart(), 300);
             }
             else if(t === 'social') {
@@ -183,7 +248,7 @@ document.addEventListener('alpine:init', () => {
         },
         toggleMobileSidebar() { this.showMobileSidebar = !this.showMobileSidebar; },
 
-        // --- DATA LOADING (REAL) ---
+        // --- DATA LOADING ---
         async loadInventory() {
             if (!this.currentUser) return;
             this.saveStatus = 'Cargando...';
@@ -193,7 +258,6 @@ document.addEventListener('alpine:init', () => {
                 if (res.ok) { 
                     const rawData = await res.json(); 
                     const uniqueMap = new Map();
-                    // FIX: Normalizar expansiones para evitar duplicados
                     rawData.forEach(card => {
                         card.expansion = card.expansion ? card.expansion.toLowerCase() : '';
                         const key = card.id_carta;
@@ -215,7 +279,6 @@ document.addEventListener('alpine:init', () => {
                 const res = await fetch(`/api/inventario?id_cuenta=${this.currentUser.id_cuenta}&expansion=TODAS&seccion=TODAS`);
                 if (res.ok) {
                     const raw = await res.json();
-                    // FIX: Normalizar expansiones
                     this.masterCardList = raw.map(c => ({...c, expansion: c.expansion ? c.expansion.toLowerCase() : ''}));
                 }
             } catch(e) {}
@@ -239,13 +302,9 @@ document.addEventListener('alpine:init', () => {
         async loadHistory() {
             if (!this.currentUser) return;
             try {
-                // Ahora apunta a /api/transacciones correctamente
                 const r = await fetch(`/api/transacciones?id_cuenta=${this.currentUser.id_cuenta}`);
-                if(r.ok) {
-                    this.history = await r.json();
-                    console.log("Historial cargado:", this.history.length);
-                }
-            } catch(e) { console.error(e); }
+                if(r.ok) this.history = await r.json();
+            } catch(e) {}
         },
 
         async loadLeaderboard() {
@@ -274,7 +333,6 @@ document.addEventListener('alpine:init', () => {
             let current = parseInt(card.cantidad) || 0;
             let newQty = Math.max(0, current + delta);
             if (newQty === current) return;
-            
             card.cantidad = newQty;
             if (card.cantidad > 0) card.desbloqueada = 1;
             card.justUpdated = true;
@@ -459,7 +517,6 @@ document.addEventListener('alpine:init', () => {
             if (!this.expansionStats.length) return null;
             return [].concat(this.expansionStats).sort((a,b) => parseFloat(b.pct) - parseFloat(a.pct))[0];
         },
-        // FIX: Agrupar expansiones ignorando mayúsculas/minúsculas
         get expansionStats() {
             if (!this.expansiones.length || !this.masterCardList.length) return [];
             var self = this;
@@ -505,14 +562,11 @@ document.addEventListener('alpine:init', () => {
             if(h.cantidad_nueva < h.cantidad_anterior) return 'loss';
             return 'trade';
         },
-        // FIX: Destruir gráfica previa para evitar conflictos
         renderChart() {
             var ctx = document.getElementById('rarityChart');
             if (!ctx || !this.rawStats.breakdown) return;
-            
             var existingChart = Chart.getChart(ctx);
             if (existingChart) existingChart.destroy();
-
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
@@ -559,37 +613,26 @@ document.addEventListener('alpine:init', () => {
             r.onload = function(ev) { self.settingsForm.avatar = ev.target.result; };
             r.readAsDataURL(f);
         },
-        
-        // MODIFICADO: FUNCIÓN DE GUARDAR PERFIL ARREGLADA (Ahora guarda avatar y tema)
         async saveSettingsProfile() {
             if(this.currentUser) {
                 this.currentUser.avatar_img = this.settingsForm.avatar;
                 this.currentUser.tema = this.currentTheme;
-
-                // Guardar Tema
                 await fetch('/api/cuentas/update_theme', {
                     method: 'POST', headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({id_cuenta: this.currentUser.id_cuenta, tema: this.currentTheme})
                 });
-
-                // Guardar Avatar (Fix)
                 await fetch('/api/cuentas/update_resources', {
                     method: 'POST', headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        id_cuenta: this.currentUser.id_cuenta,
-                        fichas: this.currentUser.fichas_cambio,
-                        polvos: this.currentUser.polvos_iris,
-                        relojes: this.currentUser.relojes_arena,
-                        notas: this.currentUser.notas,
-                        avatar: this.settingsForm.avatar 
+                        id_cuenta: this.currentUser.id_cuenta, fichas: this.currentUser.fichas_cambio,
+                        polvos: this.currentUser.polvos_iris, relojes: this.currentUser.relojes_arena,
+                        notas: this.currentUser.notas, avatar: this.settingsForm.avatar 
                     })
                 });
-
                 this.showToast("Perfil actualizado", "success");
                 this.showSettings = false;
             }
         },
-
         async changePassword() { 
             if(!this.settingsForm.passOld || !this.settingsForm.passNew) return this.showToast("Rellena todo", "warning"); 
             const r = await fetch('/api/auth/change_password', {
@@ -610,18 +653,13 @@ document.addEventListener('alpine:init', () => {
             if(this.lowPowerMode) this.showToast("Efectos 3D desactivados", "info");
         },
 
-        // --- SOCIAL & ADMIN MODIFICADO (MOBILE TABS) ---
+        // --- SOCIAL & ADMIN ---
         async initSocial() {
             this.isLoading = true; 
             this.socialData = { shares: [], trades: [] };
             this.resetVirtualScrolls();
-            
-            // LÓGICA MÓVIL: Si soy Dinama20, forzar Mercado.
-            if (this.currentUser && this.currentUser.nombre === 'Dinama20') {
-                this.socialMobileTab = 'trades';
-            } else {
-                this.socialMobileTab = 'gifts';
-            }
+            if (this.currentUser && this.currentUser.nombre === 'Dinama20') { this.socialMobileTab = 'trades'; } 
+            else { this.socialMobileTab = 'gifts'; }
 
             try {
                 const res = await fetch('/api/social/smart-matches?id_usuario=' + this.currentUser.id_cuenta);
@@ -735,8 +773,7 @@ document.addEventListener('alpine:init', () => {
                     body: JSON.stringify({
                         id_origen: this.adminTrade.userA, id_destino: this.adminTrade.userB,
                         give_id: this.adminTrade.cardA.id_carta, get_id: this.adminTrade.cardB.id_carta,
-                        exp_give: this.adminTrade.cardA.expansion, exp_get: this.adminTrade.cardB.expansion,
-                        rarity: this.adminTrade.cardA.rareza
+                        exp_give: this.adminTrade.cardA.expansion, exp_get: this.adminTrade.cardB.expansion, rarity: this.adminTrade.cardA.rareza
                     })
                 });
                 const d = await res.json();
@@ -785,38 +822,27 @@ document.addEventListener('alpine:init', () => {
             await fetch('/api/admin/tools/reset_password', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id_cuenta: userId}) });
             this.showToast("Contraseña reseteada", "success");
         },
-       async syncWiki() {
-            if(!confirm("¿Sincronizar base de datos?")) return;
-            try { 
-                const res = await fetch('/api/admin/sync_wiki'); 
-                const d = await res.json(); 
-                this.showToast(d.msg || "Sincronizado", d.success ? "success" : "info"); 
-            } catch(e) { this.showToast("Error de conexión", "error"); }
+
+        // --- RUTAS ADMIN CORREGIDAS ---
+        async syncWiki() {
+            if(!confirm("¿Sincronizar?")) return;
+            try { const res = await fetch('/api/admin/sync_wiki'); const d = await res.json(); this.showToast(d.msg, d.success ? "success" : "info"); } catch(e) { this.showToast("Error", "error"); }
         },
         async forceReset() {
-            if(!confirm("¿Forzar Reset?")) return;
+            if(!confirm("¿Reset Diario?")) return;
             await fetch('/api/admin/force_reset', {method:'POST'}); this.showToast("Reset OK", "success");
         },
-        fullDbBackup() { 
-            window.open('/api/admin/export_db'); 
-        },
+        fullDbBackup() { window.open('/api/admin/export_db'); },
         fullDbRestore(e) {
-            const f = e.target.files[0]; 
-            if(!f || !confirm("¿Sobrescribir base de datos actual?")) return;
+            const f = e.target.files[0]; if(!f || !confirm("¿Restaurar DB?")) return;
             const r = new FileReader();
             r.onload = async (ev) => {
                 try {
                     const d = JSON.parse(ev.target.result);
-                    await fetch('/api/admin/import_db', { 
-                        method:'POST', 
-                        headers:{'Content-Type':'application/json'}, 
-                        body: JSON.stringify(d) 
-                    });
-                    alert("Restaurado correctamente. Recargando..."); 
-                    location.reload();
-                } catch(err) { alert("Error: Archivo inválido"); }
-            }; 
-            r.readAsText(f);
+                    await fetch('/api/admin/import_db', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d) });
+                    alert("OK. Recargando."); location.reload();
+                } catch(err) { alert("Error"); }
+            }; r.readAsText(f);
         },
         async adminCleanDB() {
             if(!confirm("¿Limpiar DB?")) return;
@@ -848,12 +874,7 @@ document.addEventListener('alpine:init', () => {
             await fetch('/api/user/tools/auto_wishlist', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id_cuenta:this.currentUser.id_cuenta}) });
             this.showToast("Wishlist actualizada", "success"); this.loadInventory();
         },
-        async loadAdminData() { this.adminStats = { totalUsers: this.accounts.length }; },
-
-        // --- STUB HELPERS (Para evitar errores si no se usan) ---
-        getBiomeClass(t) { return 'biome-dark'; },
-        getAuraClass(r) { return 'aura-rombo'; },
-        isSetCompleter(c) { return false; }
+        async loadAdminData() { this.adminStats = { totalUsers: this.accounts.length }; }
     }));
 });
 
