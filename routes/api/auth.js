@@ -56,22 +56,40 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// ==========================================================================
+// REGISTRO (ARREGLADO DEFINITIVAMENTE)
+// ==========================================================================
 router.post('/register', async (req, res) => {
-    // FIX: Leemos user y pass en lugar de username
-    const { user, pass } = req.body;
-    if (!user || user.trim() === "") return res.json({ success: false, msg: "Nombre inválido" });
+    // Aceptamos 'user' o 'username' por si acaso
+    const userName = req.body.user || req.body.username;
+    const userPass = req.body.pass || req.body.password;
+
+    if (!userName || userName.trim() === "") {
+        return res.json({ success: false, msg: "Nombre de usuario inválido o vacío." });
+    }
 
     try {
-        // FIX: Usamos la contraseña real que introduce el usuario
-        const hash = await bcrypt.hash(pass, 10);
+        // 1. Comprobar si el nombre de usuario ya existe
+        const checkUser = await db.execute({
+            sql: "SELECT id_cuenta FROM Cuentas WHERE nombre = ?",
+            args: [userName]
+        });
+
+        if (checkUser.rows.length > 0) {
+            return res.json({ success: false, msg: "Ese nombre de usuario ya está en uso." });
+        }
+
+        // 2. Si el nombre está libre, encriptamos el PIN y creamos la cuenta
+        const hash = await bcrypt.hash(userPass, 10);
 
         const result = await db.execute({
             sql: "INSERT INTO Cuentas (nombre, tipo, prioridad, password_hash) VALUES (?, 'Secundaria', 100, ?)",
-            args: [user, hash]
+            args: [userName, hash]
         });
 
         const newId = result.lastInsertRowid;
 
+        // 3. Crear su entrada en el Diario
         await db.execute({
             sql: "INSERT INTO Diario (id_cuenta, ultima_actualizacion) VALUES (?, datetime('now'))",
             args: [newId]
@@ -81,7 +99,7 @@ router.post('/register', async (req, res) => {
 
     } catch (error) {
         console.error("❌ Error en Registro:", error);
-        res.json({ success: false, msg: "Error al crear usuario" });
+        res.json({ success: false, msg: "Error al crear usuario en la Base de Datos." });
     }
 });
 
