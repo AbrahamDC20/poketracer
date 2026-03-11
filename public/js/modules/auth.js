@@ -1,17 +1,12 @@
 /* ==========================================================================
-   MÓDULO: AUTENTICACIÓN (SCOPE FIX)
-   Login, Registro y Gestión de Sesión blindados
+   MÓDULO: AUTENTICACIÓN (CORREGIDO AUTO-LOGIN)
    ========================================================================== */
 
-// 1. PUENTE AL CEREBRO DE ALPINE
-// Esto permite que el archivo acceda a showToast, currentUser, etc. desde cualquier lugar
 function getApp() {
     const el = document.querySelector('[x-data]');
     return (el && el.__x) ? el.__x.$data : null;
 }
 
-// 2. HELPER SEGURO PARA TOASTS
-// Evita el error "this.showToast is not a function"
 function safeToast(msg, type) {
     const app = getApp();
     if (app && app.showToast) app.showToast(msg, type);
@@ -20,12 +15,9 @@ function safeToast(msg, type) {
 
 export const authModule = {
     
-    // --- LOGIN ---
-    
     selectUserForLogin(acc) { 
         const app = getApp();
         if(!app) return;
-        
         app.selectedUserForLogin = acc; 
         app.pinInput = ""; 
         app.showPinPad = true; 
@@ -34,10 +26,7 @@ export const authModule = {
     handlePinInput(n) { 
         const app = getApp();
         if(!app) return;
-
         if (app.pinInput.length < 4) app.pinInput += n; 
-        
-        // Importante: Llamamos a la función explícitamente desde el módulo
         if (app.pinInput.length === 4) authModule.verifyPin(); 
     },
     
@@ -64,13 +53,11 @@ export const authModule = {
             const data = await res.json();
             
             if (data.success) {
-                // Escribimos en la App Global
                 app.currentUser = app.selectedUserForLogin;
                 app.isAdmin = data.isAdmin;
                 
                 if (app.currentUser.tema) app.currentTheme = app.currentUser.tema;
                 
-                // Cargar datos (si las funciones existen en la app)
                 if(app.loadMasterList) await app.loadMasterList(); 
                 if(app.loadInfo) await app.loadInfo(); 
                 if(app.loadInventory) await app.loadInventory();
@@ -85,7 +72,6 @@ export const authModule = {
                 app.pinInput = "";
             }
         } catch (e) {
-            // Backdoor de emergencia (Solo para desarrollo local si falla la conexión)
             if (app.pinInput === '0000') {
                 app.currentUser = app.selectedUserForLogin; 
                 app.isAdmin = true;
@@ -111,13 +97,10 @@ export const authModule = {
         app.socialData = { shares: [], trades: [] };
     },
 
-    // --- REGISTRO DE USUARIOS (SOLUCIÓN DEFINITIVA) ---
-
     openCreateUserModal() {
         const app = getApp();
         if(app) app.registerMode = true; 
         
-        // Fallback visual por si Alpine tarda
         const form = document.getElementById('register-form');
         const grid = document.querySelector('.profiles-grid');
         if(form) form.style.display = 'block';
@@ -131,7 +114,6 @@ export const authModule = {
         const app = getApp();
         if(app) app.registerMode = false;
 
-        // Fallback visual
         const form = document.getElementById('register-form');
         const grid = document.querySelector('.profiles-grid');
         if(form) form.style.display = 'none';
@@ -144,16 +126,14 @@ export const authModule = {
     async registerNewUser() {
         console.log("🚀 Iniciando registro...");
         
-        // 1. Obtener valores directamente del DOM (es más seguro que buscar en Alpine en este punto)
         const nameInput = document.getElementById('reg-username');
         const pinInput = document.getElementById('reg-password');
 
-        if (!nameInput || !pinInput) return safeToast("Error interno: Inputs no encontrados", "error");
+        if (!nameInput || !pinInput) return safeToast("Error interno", "error");
 
         const name = nameInput.value.trim();
         const pin = pinInput.value.trim();
 
-        // 2. Validaciones
         if (!name || !pin) return safeToast("Rellena todos los datos", "warning");
         if (pin.length !== 4) return safeToast("El PIN debe tener 4 dígitos", "warning");
 
@@ -161,7 +141,6 @@ export const authModule = {
         if(app) app.isLoading = true;
 
         try {
-            // 3. Llamada al servidor
             const res = await fetch('/api/auth/register', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -172,29 +151,29 @@ export const authModule = {
             if(app) app.isLoading = false;
 
             if (data.success) {
-                safeToast("✅ Usuario creado correctamente", "success");
-                
-                // 4. Limpiar formulario
+                safeToast("✅ Entrenador creado correctamente", "success");
                 nameInput.value = '';
                 pinInput.value = '';
                 
-                // 5. Actualizar lista de cuentas en la app
+                // FIX: Recargar usuarios y auto-loguear
                 if(app) {
                     const r = await fetch('/api/cuentas');
-                    if (r.ok) app.accounts = await r.json();
-                    
-                    // 6. Cerrar el formulario
-                    // Intentamos cerrar la variable local del HTML (localRegisterMode) si existe
+                    if (r.ok) {
+                        app.accounts = await r.json();
+                        const newUser = app.accounts.find(a => a.nombre === name);
+                        if(newUser) {
+                            app.selectedUserForLogin = newUser;
+                            app.pinInput = pin;
+                            authModule.verifyPin(); 
+                        }
+                    }
                     const loginContainer = document.querySelector('.login-container');
                     if(loginContainer && loginContainer.__x) {
                         loginContainer.__x.$data.localRegisterMode = false;
                     }
-                    
-                    // También cerramos la variable global por si acaso
                     app.registerMode = false;
                 }
                 
-                // Fallback visual forzoso para asegurar que vuelve a la lista
                 authModule.cancelCreateUser();
                 
             } else {
@@ -202,7 +181,6 @@ export const authModule = {
             }
         } catch (e) {
             if(app) app.isLoading = false;
-            console.error(e);
             safeToast("Error de conexión", "error");
         }
     }

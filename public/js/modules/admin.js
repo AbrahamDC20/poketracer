@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MÓDULO: ADMINISTRACIÓN (SCOPE FIX)
+   MÓDULO: ADMINISTRACIÓN (RUTAS CORREGIDAS)
    ========================================================================== */
 
 function getApp() {
@@ -20,8 +20,6 @@ export const adminModule = {
         if(app) app.adminStats = { totalUsers: app.accounts.length }; 
     },
 
-    // --- GESTOR DE INTERCAMBIOS ---
-
     async loadAdminUserInventory(userId, side) {
         if (!userId) return;
         const app = getApp();
@@ -41,10 +39,7 @@ export const adminModule = {
                 app.adminUserBInventoryFiltered = ownedItems;
                 app.adminTrade.cardB = null; 
             }
-            
-            // Usamos la función del módulo, no 'this'
             adminModule.filterAdminInventory(side);
-
         } catch(e) { console.error(e); }
     },
 
@@ -52,11 +47,8 @@ export const adminModule = {
         const app = getApp();
         if (!app) return;
 
-        // Leer del DOM directamente
         const rarityVal = document.getElementById(`filter-rarity-${side}`)?.value || 'ALL';
         const expVal = document.getElementById(`filter-exp-${side}`)?.value || 'ALL';
-        
-        // Acceder a la variable de búsqueda en la APP, no en 'this'
         const searchVal = (side === 'A' ? app.adminTrade.searchA : app.adminTrade.searchB || '').toLowerCase();
         
         const source = side === 'A' ? app.adminUserAInventory : app.adminUserBInventory;
@@ -67,7 +59,6 @@ export const adminModule = {
             const matchRarity = rarityVal === 'ALL' || c.rareza === rarityVal;
             const matchExp = expVal === 'ALL' || c.expansion === expVal;
             const isTradeable = !['Corona', '3 Estrellas'].includes(c.rareza);
-
             return matchText && matchRarity && matchExp && isTradeable;
         });
         
@@ -93,10 +84,8 @@ export const adminModule = {
         if (!app) return;
         
         if (!app.adminTrade.cardA || !app.adminTrade.cardB) return safeToast("Faltan cartas", "warning");
-        
         const cost = adminModule.getTradeCost(app.adminTrade.cardA.rareza);
         if (cost === null) return safeToast("Rareza Prohibida", "error");
-        
         if (app.adminTrade.cardA.rareza !== app.adminTrade.cardB.rareza) return safeToast("Rarezas no coinciden", "error");
 
         try {
@@ -120,8 +109,6 @@ export const adminModule = {
     },
     
     async executeAdminGift() { safeToast("Función Gift (WIP)", "info"); },
-
-    // --- PACKS ---
 
     updatePackConfig() {
         const app = getApp();
@@ -181,8 +168,6 @@ export const adminModule = {
         } catch(e) { safeToast("Error Red", "error"); }
     },
 
-    // --- USERS ---
-
     openCreateUserModal() { 
         const app = getApp();
         if(app) app.adminUserForm.visible = true; 
@@ -223,18 +208,13 @@ export const adminModule = {
         try {
             await fetch('/api/admin/account/update', {
                 method: 'POST', headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    id_cuenta: user.id_cuenta,
-                    tipo: user.tipo,
-                    prioridad: user.prioridad
-                })
+                body: JSON.stringify({ id_cuenta: user.id_cuenta, tipo: user.tipo, prioridad: user.prioridad })
             });
             safeToast("Usuario actualizado", "success");
         } catch (e) { safeToast("Error", "error"); }
     },
 
-    // --- TOOLS ---
-
+    // FIX RUTA: /sync-wiki a /sync_wiki
     async adminFixRarities() {
         if(!confirm("¿Reparar rarezas?")) return;
         try {
@@ -245,12 +225,12 @@ export const adminModule = {
     },
 
     async syncWiki() {
-        safeToast("⏳ Sincronizando...", "info");
+        if(!confirm("¿Sincronizar base de datos de cartas?")) return;
         try {
             const res = await fetch('/api/admin/sync_wiki');
             const d = await res.json();
             safeToast(d.msg || "Sincronizado", d.success ? "success" : "info");
-        } catch(e) { safeToast("Error conexión", "error"); }
+        } catch(e) { safeToast("Error de conexión", "error"); }
     },
     
     async forceReset() {
@@ -259,26 +239,15 @@ export const adminModule = {
         safeToast("Reset Ejecutado", "success");
     },
     
-    // FIX PANTALLA BLANCA AL EXPORTAR: Usamos descarga por link directo
-    async fullDbBackup() { 
-        safeToast("⏳ Iniciando descarga...", "info");
-        try {
-            const link = document.createElement('a');
-            link.href = '/api/admin/export_db';
-            link.setAttribute('download', `backup_poketrader_${Date.now()}.json`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            safeToast("✅ Descarga iniciada", "success");
-        } catch (e) {
-            console.error(e);
-            safeToast("❌ Error al descargar", "error");
-        }
+    // FIX RUTA: /backup/export a /export_db
+    fullDbBackup() { 
+        window.open('/api/admin/export_db'); 
     },
     
+    // FIX RUTA: /backup/import a /import_db
     fullDbRestore(e) {
         const f = e.target.files[0]; 
-        if(!f || !confirm("¿Sobrescribir DB?")) return;
+        if(!f || !confirm("¿ATENCIÓN: Esto borrará la base de datos actual y cargará el respaldo. ¿Continuar?")) return;
         
         const r = new FileReader();
         r.onload = async (ev) => {
@@ -288,9 +257,9 @@ export const adminModule = {
                     method:'POST', headers:{'Content-Type':'application/json'},
                     body: JSON.stringify(d)
                 });
-                alert("Restaurado. Recargando..."); 
+                alert("Base de datos restaurada correctamente. Recargando página..."); 
                 location.reload();
-            } catch(err) { alert("JSON inválido"); }
+            } catch(err) { alert("El archivo JSON es inválido o está corrupto."); }
         };
         r.readAsText(f);
     },
