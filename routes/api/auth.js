@@ -57,10 +57,9 @@ router.post('/login', async (req, res) => {
 });
 
 // ==========================================================================
-// REGISTRO (ARREGLADO DEFINITIVAMENTE)
+// REGISTRO (CONVERSIÓN DE BIGINT SOLUCIONADA)
 // ==========================================================================
 router.post('/register', async (req, res) => {
-    // Aceptamos 'user' o 'username' por si acaso
     const userName = req.body.user || req.body.username;
     const userPass = req.body.pass || req.body.password;
 
@@ -87,7 +86,8 @@ router.post('/register', async (req, res) => {
             args: [userName, hash]
         });
 
-        const newId = result.lastInsertRowid;
+        // FIX CRÍTICO: Convertir el BigInt a un Número normal de Javascript
+        const newId = Number(result.lastInsertRowid);
 
         // 3. Crear su entrada en el Diario
         await db.execute({
