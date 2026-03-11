@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MÓDULO: AUTENTICACIÓN (CORREGIDO AUTO-LOGIN)
+   MÓDULO: AUTENTICACIÓN (CORREGIDO AUTO-LOGIN DIRECTO)
    ========================================================================== */
 
 function getApp() {
@@ -147,38 +147,51 @@ export const authModule = {
                 body: JSON.stringify({ user: name, pass: pin })
             });
             const data = await res.json();
-            
-            if(app) app.isLoading = false;
 
             if (data.success) {
                 safeToast("✅ Entrenador creado correctamente", "success");
-                nameInput.value = '';
-                pinInput.value = '';
                 
-                // FIX: Recargar usuarios y auto-loguear
-                if(app) {
-                    const r = await fetch('/api/cuentas');
-                    if (r.ok) {
-                        app.accounts = await r.json();
-                        const newUser = app.accounts.find(a => a.nombre === name);
-                        if(newUser) {
-                            app.selectedUserForLogin = newUser;
-                            app.pinInput = pin;
-                            authModule.verifyPin(); 
+                // NUEVO: AUTO-LOGIN INMEDIATO
+                try {
+                    const loginRes = await fetch('/api/auth/login', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ user: name, pass: pin })
+                    });
+                    const loginData = await loginRes.json();
+                    
+                    if (loginData.success && app) {
+                        app.currentUser = loginData.user;
+                        app.isAdmin = loginData.isAdmin;
+                        
+                        if(app.loadMasterList) await app.loadMasterList(); 
+                        if(app.loadInfo) await app.loadInfo(); 
+                        if(app.loadInventory) await app.loadInventory();
+                        
+                        // Recargar lista de cuentas de fondo para cuando cierre sesión
+                        fetch('/api/cuentas').then(r => r.json()).then(d => app.accounts = d);
+                        
+                        nameInput.value = '';
+                        pinInput.value = '';
+                        
+                        const loginContainer = document.querySelector('.login-container');
+                        if (loginContainer && loginContainer.__x) {
+                            loginContainer.__x.$data.localRegisterMode = false;
                         }
+                        app.registerMode = false;
+                        authModule.cancelCreateUser();
+                        
+                        safeToast("Bienvenido, " + name, "success");
                     }
-                    const loginContainer = document.querySelector('.login-container');
-                    if(loginContainer && loginContainer.__x) {
-                        loginContainer.__x.$data.localRegisterMode = false;
-                    }
-                    app.registerMode = false;
+                } catch(e) {
+                    safeToast("Creado. Inicia sesión manualmente.", "warning");
+                    authModule.cancelCreateUser();
                 }
-                
-                authModule.cancelCreateUser();
                 
             } else {
                 safeToast(data.msg || "Error al crear usuario", "error");
             }
+            if(app) app.isLoading = false;
         } catch (e) {
             if(app) app.isLoading = false;
             safeToast("Error de conexión", "error");
