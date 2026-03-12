@@ -96,7 +96,7 @@ router.post('/fix-rarities', async (req, res) => {
     }
 });
 
-// --- SINCRONIZAR WIKI (CORREGIDO: EXPANSIÓN = NOMBRE DEL ARCHIVO) ---
+// --- SINCRONIZAR WIKI (VERSIÓN DEFINITIVA Y LIMPIA) ---
     router.get('/sync_wiki', async (req, res) => {
         try {
             const fs = require('fs');
@@ -119,7 +119,7 @@ router.post('/fix-rarities', async (req, res) => {
                 const content = fs.readFileSync(path.join(wikiDir, file), 'utf-8');
                 const lines = content.split('\n');
                 
-                // ¡LA MAGIA AQUÍ! El nombre de la expansión es el nombre del archivo (quitando el .txt)
+                // Formateamos el nombre del archivo para el desplegable (Ej: "B2 Desfile de Ensueño")
                 const nombreExpansion = file.replace('.txt', '').trim();
 
                 for (let line of lines) {
@@ -132,11 +132,15 @@ router.post('/fix-rarities', async (req, res) => {
                         const nombre = data[1].trim();
                         const tipo = data[2].trim();
                         const rareza = data[3].trim();
-                        // data[4] es el "Sobre", ya no lo usamos para ensuciar la 'expansión'
                         
-                        const seccion = 'Normal';
+                        // LÓGICA INTELIGENTE DE PESTAÑAS
+                        // Si la rareza contiene Estrella, Corona o Shiny, va a la pestaña "Especial"
+                        let seccion = 'Normal';
+                        const rarezaLower = rareza.toLowerCase();
+                        if (rarezaLower.includes('estrella') || rarezaLower.includes('corona') || rarezaLower.includes('shiny')) {
+                            seccion = 'Especial';
+                        }
 
-                        // Usamos INSERT OR REPLACE para sobreescribir la carta si ya existía y corregirla
                         batchOps.push({
                             sql: `INSERT OR REPLACE INTO Cartas (id_carta, nombre, rareza, expansion, tipo, seccion) 
                                   VALUES (?, ?, ?, ?, ?, ?)`,
@@ -151,7 +155,7 @@ router.post('/fix-rarities', async (req, res) => {
                 await db.batch(batchOps);
             }
 
-            res.json({ success: true, msg: `✅ Sincronización OK: ${count} cartas leídas e insertadas.` });
+            res.json({ success: true, msg: `✅ Éxito: ${count} cartas añadidas y separadas por rareza.` });
 
         } catch (e) {
             console.error("Error en sync_wiki:", e);
