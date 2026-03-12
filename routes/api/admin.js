@@ -96,13 +96,11 @@ router.post('/fix-rarities', async (req, res) => {
     }
 });
 
-// --- SINCRONIZAR WIKI (ACTIVADO PARA LOCAL - FORMATO '||') ---
+// --- SINCRONIZAR WIKI (CORREGIDO: EXPANSIÓN = NOMBRE DEL ARCHIVO) ---
     router.get('/sync_wiki', async (req, res) => {
         try {
             const fs = require('fs');
             const path = require('path');
-            
-            // __dirname es routes/api/ -> subimos 2 niveles para llegar a la raíz del proyecto
             const wikiDir = path.join(__dirname, '../../Listas_Wiki'); 
 
             if (!fs.existsSync(wikiDir)) {
@@ -120,38 +118,35 @@ router.post('/fix-rarities', async (req, res) => {
             for (const file of files) {
                 const content = fs.readFileSync(path.join(wikiDir, file), 'utf-8');
                 const lines = content.split('\n');
+                
+                // ¡LA MAGIA AQUÍ! El nombre de la expansión es el nombre del archivo (quitando el .txt)
+                const nombreExpansion = file.replace('.txt', '').trim();
 
                 for (let line of lines) {
                     if (!line || line.trim() === '') continue;
 
-                    // Cortamos la línea usando tu separador exacto '||'
                     const data = line.split('||');
 
-                    // Aseguramos que la línea tiene al menos los 5 datos que me has dicho
                     if (data.length >= 5) { 
                         const id_carta = data[0].trim();
                         const nombre = data[1].trim();
                         const tipo = data[2].trim();
                         const rareza = data[3].trim();
-                        const expansion = data[4].trim();
+                        // data[4] es el "Sobre", ya no lo usamos para ensuciar la 'expansión'
                         
-                        // Por defecto asignamos la sección 'Normal' 
-                        // (Si alguna vez necesitas diferenciar, se puede hacer por ID o rareza)
                         const seccion = 'Normal';
 
+                        // Usamos INSERT OR REPLACE para sobreescribir la carta si ya existía y corregirla
                         batchOps.push({
-                            sql: `INSERT INTO Cartas (id_carta, nombre, rareza, expansion, tipo, seccion) 
-                                  VALUES (?, ?, ?, ?, ?, ?) 
-                                  ON CONFLICT(id_carta, expansion) DO UPDATE SET 
-                                  nombre=excluded.nombre, rareza=excluded.rareza, tipo=excluded.tipo, seccion=excluded.seccion`,
-                            args: [id_carta, nombre, rareza, expansion, tipo, seccion]
+                            sql: `INSERT OR REPLACE INTO Cartas (id_carta, nombre, rareza, expansion, tipo, seccion) 
+                                  VALUES (?, ?, ?, ?, ?, ?)`,
+                            args: [id_carta, nombre, rareza, nombreExpansion, tipo, seccion]
                         });
                         count++;
                     }
                 }
             }
 
-            // Ejecutamos la inserción masiva en la base de datos
             if (batchOps.length > 0) {
                 await db.batch(batchOps);
             }
